@@ -1,10 +1,7 @@
-# Astro Starter Kit: Basics
-
+# Astro Starter
 ```sh
-npm create astro@latest -- --template basics
+npm create astro@latest
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ## 🚀 Project Structure
 
