@@ -1,10 +1,7 @@
-# Astro Starter Kit: Basics
-
+# Astro Starter
 ```sh
-npm create astro@latest -- --template basics
+npm create astro@latest
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ## 🚀 Project Structure
 
@@ -18,9 +15,9 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── assets
 │   │   └── astro.svg
 │   ├── components
-│   │   └── Welcome.astro
+│   │   └── Home.astro
 │   ├── layouts
-│   │   └── Layout.astro
+│   │   └── BaseLayout.astro
 │   └── pages
 │       └── index.astro
 └── package.json
