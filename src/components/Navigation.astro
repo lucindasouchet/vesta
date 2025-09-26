@@ -133,11 +133,12 @@
     <nav class="space-y-4 p-4 font-medium my-4">
         <!-- Partner Program (Mobile) -->
         <div>
-            <a
-                href="#"
+            <button
+                type="button"
                 class="block hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-                >Partner Program</a
             >
+                Partner Program
+            </button>
         </div>
 
         <!-- Language Dropdown (Mobile) -->
@@ -245,10 +246,12 @@
 <script>
     //****************************************************** Mobile  *************************************/
     // Mobile Menu toggle
-    const openBtn = document.getElementById("openMenu");
-    const closeBtn = document.getElementById("closeMenu");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const mobileMenuBg = document.getElementById("menuBg");
+    // Typescript also has a non-null assertion that you can use when you are sure
+    // that the value is never null by adding the ! operator to the end of your statement
+    const openBtn: HTMLElement = document.querySelector("#openMenu")!;
+    const closeBtn: HTMLElement = document.querySelector("#closeMenu")!;
+    const mobileMenu: HTMLElement = document.querySelector("#mobileMenu")!;
+    const mobileMenuBg: HTMLElement = document.querySelector("#menuBg")!;
 
     openBtn.addEventListener("click", () => {
         mobileMenu.classList.remove("translate-x-full");
@@ -264,24 +267,25 @@
     }
 
     // Mobile dropdown toggle
-    function toggleDropdown(id) {
-        document.getElementById(id).classList.toggle("hidden");
+    function toggleDropdown(id: NonNullable<string>) {
+        document.getElementById(id)!.classList.toggle("hidden");
+        // document.querySelector(`${id}`)!.classList.toggle("hidden");
     }
 
     // Mobile Language dropdown toggle onclick
     const btnDdpMobileLanguage = document.getElementById(
         "dropdownBtnMobileLanguage",
-    );
+    )!;
     const menuDdpMobileLanguage = document.getElementById(
         "dropdownMenuMobileLanguage",
-    );
+    )!;
 
     btnDdpMobileLanguage.addEventListener("click", () => {
         menuDdpMobileLanguage.classList.toggle("hidden");
     });
 
     // Close if clicked outside
-    document.addEventListener("click", (event) => {
+    document.addEventListener("click", (event: any) => {
         if (
             !btnDdpMobileLanguage.contains(event.target) &&
             !menuDdpMobileLanguage.contains(event.target)
@@ -291,17 +295,19 @@
     });
 
     // Mobile About dropdown toggle onclick
-    const btnDdpMobileAbout = document.getElementById("dropdownBtnMobileAbout");
+    const btnDdpMobileAbout = document.getElementById(
+        "dropdownBtnMobileAbout",
+    )!;
     const menuDdpMobileAbout = document.getElementById(
         "dropdownMenuMobileAbout",
-    );
+    )!;
 
     btnDdpMobileAbout.addEventListener("click", () => {
         menuDdpMobileAbout.classList.toggle("hidden");
     });
 
     // Close if clicked outside
-    document.addEventListener("click", (event) => {
+    document.addEventListener("click", (event: any) => {
         if (
             !btnDdpMobileAbout.contains(event.target) &&
             !menuDdpMobileAbout.contains(event.target)
@@ -309,4 +315,8 @@
             menuDdpMobileAbout.classList.add("hidden");
         }
     });
+
+    function assert(arg0: boolean, arg1: string) {
+        throw new Error("Function not implemented.");
+    }
 </script>
