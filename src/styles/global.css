@@ -43,10 +43,22 @@
   --font-roboto-condensed: 'Roboto Condensed', sans-serif;
   --font-inter: 'Inter', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
+
+  /******************************************* animation */
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  @keyframes wiggle {
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
 }
 
   /******************************************* core */
-/* * {
+* {
   box-sizing: border-box;
 }
 
@@ -69,9 +81,13 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .wrapper {
   flex: 1 0 auto;
-}
+} 
+
 .footer {
-  flex-shrink: 0;
-} */
+  /* flex-shrink: 0; */
+  position: absolute;
+  bottom: 0;
+}
