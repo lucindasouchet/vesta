@@ -46,7 +46,7 @@
 }
 
   /******************************************* core */
-/* * {
+* {
   box-sizing: border-box;
 }
 
@@ -74,4 +74,8 @@ body {
 }
 .footer {
   flex-shrink: 0;
-} */
+}
+
+#page-container {
+    min-height: 100vh;
+}
