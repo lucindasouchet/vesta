@@ -1,41 +1,28 @@
 import i18next from "i18next";
 import HttpBackend from "i18next-http-backend";
+import LanguageDetector from "i18next-browser-languagedetector";
+
 
 i18next
 	.use(HttpBackend)
+	.use(LanguageDetector) // detect from localStorage, navigator, etc.
 	.init({
-		lng: "en",            // default language
-		fallbackLng: "en",    // fallback
-		interpolation: {
-			escapeValue: false
-		},
+		supportedLngs: ['en', 'fr', 'es'], // allows i18next to pick the best match from the list of detected languages
+		// lng: "en", // default language
+		fallbackLng: "en", // fallback
 		debug: true, // logs loading process in console
 		backend: {
 			loadPath: "/locales/{{lng}}/{{ns}}.json", // path to JSON files
 		},
-		resources: {
-			en: {
-				translation: {
-					key1: "Hello World",
-					key2: "english",
-					welcome: "Welcome",
-					hello: "Hello World"
-				}
-			},
-			es: {
-				translation: {
-					key1: "Hola Mundo",
-					key2: "español"
-				}
-			},
-			fr: {
-				translation: {
-					key1: "Bonjour Monde",
-					key2: "français",
-					welcome: "Bienvenue",
-					hello: "Bonjour le monde"
-				}
-			},
+		detection: {
+			// order of detection
+			order: ["navigator", "localStorage"],
+
+			// where to save the language
+			caches: ["localStorage"],
+		},
+		interpolation: {
+			escapeValue: false
 		},
 	});
 

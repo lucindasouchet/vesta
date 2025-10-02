@@ -13,6 +13,7 @@ import FooterComponent from "../components/Footer.astro";
 
 	<button class="border-2 rounded-md p-1" id="btn-en">English</button>
 	<button class="border-2 rounded-md p-1" id="btn-fr">Français</button>
+	<button class="border-2 rounded-md p-1" id="btn-es">Español</button>
 	<FooterComponent />
 </BaseLayout>
 
@@ -25,10 +26,8 @@ import FooterComponent from "../components/Footer.astro";
 		document.getElementById("hello")!.innerText = i18next.t("hello");
 	}
 
-	// // initialize with default language
-	// updateContent();
-
 	// wait until translations are loaded
+	// update UI when initialized or language changes
 	i18next.on("initialized", () => {
 		updateContent();
 	});
@@ -44,5 +43,9 @@ import FooterComponent from "../components/Footer.astro";
 
 	document.getElementById("btn-fr")!.addEventListener("click", () => {
 		i18next.changeLanguage("fr").then(updateContent);
+	});
+
+	document.getElementById("btn-es")!.addEventListener("click", () => {
+		i18next.changeLanguage("es").then(updateContent);
 	});
 </script>
