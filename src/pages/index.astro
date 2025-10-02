@@ -1,12 +1,39 @@
 ---
-import HomeComponent from '../components/Home.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HeaderComponent from '../components/Header.astro';
-import FooterComponent from '../components/Footer.astro';
+import HomeComponent from "../components/Home.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeaderComponent from "../components/Header.astro";
+import FooterComponent from "../components/Footer.astro";
 ---
 
 <BaseLayout>
 	<HeaderComponent />
 	<HomeComponent />
+	<h1 id="welcome"></h1>
+	<p id="hello"></p>
+
+	<button class="border-2 rounded-md p-1" id="btn-en">English</button>
+	<button class="border-2 rounded-md p-1" id="btn-fr">Français</button>
 	<FooterComponent />
 </BaseLayout>
+
+<script>
+	import i18next from "../i18n.js";
+
+	// function to update all texts
+	function updateContent() {
+		document.getElementById("welcome")!.innerText = i18next.t("welcome");
+		document.getElementById("hello")!.innerText = i18next.t("hello");
+	}
+
+	// initialize with default language
+	updateContent();
+
+	// language switch buttons
+	document.getElementById("btn-en")!.addEventListener("click", () => {
+		i18next.changeLanguage("en").then(updateContent);
+	});
+
+	document.getElementById("btn-fr")!.addEventListener("click", () => {
+		i18next.changeLanguage("fr").then(updateContent);
+	});
+</script>
