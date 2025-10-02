@@ -25,8 +25,17 @@ import FooterComponent from "../components/Footer.astro";
 		document.getElementById("hello")!.innerText = i18next.t("hello");
 	}
 
-	// initialize with default language
-	updateContent();
+	// // initialize with default language
+	// updateContent();
+
+	// wait until translations are loaded
+	i18next.on("initialized", () => {
+		updateContent();
+	});
+
+	i18next.on("languageChanged", () => {
+		updateContent();
+	});
 
 	// language switch buttons
 	document.getElementById("btn-en")!.addEventListener("click", () => {
