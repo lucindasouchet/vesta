@@ -12,7 +12,8 @@ import "../styles/global.css";
 	<h1 id="welcome"></h1>
 	<p id="hello"></p>
 
-	<div id="lang-switcher"></div> <!-- buttons will be created here -->
+	<div id="lang-switcher"></div>
+	<!-- buttons will be created here -->
 
 	<!-- <button class="border-2 rounded-md p-1" id="btn-en">English</button>
 	<button class="border-2 rounded-md p-1" id="btn-fr">Français</button>
@@ -60,9 +61,25 @@ import "../styles/global.css";
 		const container = document.getElementById("lang-switcher");
 		container!.innerHTML = ""; // clear old buttons
 
-		if (Array.isArray(i18next.options.supportedLngs)) {
-			i18next.options.supportedLngs?.forEach((lng: string) => {
-				if (lng === "cimode") return; // i18next internal test mode, skip
+		// Static list
+		// if (Array.isArray(i18next.options.supportedLngs)) {
+		// 	i18next.options.supportedLngs?.forEach((lng: string) => {
+		// 		if (lng === "cimode") return; // i18next internal test mode, skip
+		// 		const btn = document.createElement("button");
+		// 		btn.innerText = lng.toUpperCase();
+		// 		btn.addEventListener("click", () =>
+		// 			i18next.changeLanguage(lng),
+		// 		);
+		// 		container!.appendChild(btn);
+		// 	});
+		// }
+
+		// Dynamic list from config file
+		fetch("/locales/languages.json")
+		.then((res) => res.json())
+		.then((langs) => {
+			const container = document.getElementById("lang-switcher");
+			langs.forEach((lng: string) => {
 				const btn = document.createElement("button");
 				btn.innerText = lng.toUpperCase();
 				btn.addEventListener("click", () =>
@@ -70,8 +87,9 @@ import "../styles/global.css";
 				);
 				container!.appendChild(btn);
 			});
-		}
+		});
 	});
 
 	i18next.on("languageChanged", () => updateContent());
+
 </script>
