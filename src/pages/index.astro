@@ -12,12 +12,8 @@ import "../styles/global.css";
 	<h1 id="welcome"></h1>
 	<p id="hello"></p>
 
+	<!-- build the buttons -->
 	<div id="lang-switcher"></div>
-	<!-- buttons will be created here -->
-
-	<!-- <button class="border-2 rounded-md p-1" id="btn-en">English</button>
-	<button class="border-2 rounded-md p-1" id="btn-fr">Français</button>
-	<button class="border-2 rounded-md p-1" id="btn-es">Español</button> -->
 	<FooterComponent />
 </BaseLayout>
 
@@ -30,66 +26,90 @@ import "../styles/global.css";
 		document.getElementById("hello")!.innerText = i18next.t("hello");
 	}
 
-	// // wait until translations are loaded
-	// // update UI when initialized or language changes
+	// // initialize UI
 	// i18next.on("initialized", () => {
 	// 	updateContent();
+
+	// 	// dynamically build language switcher
+	// 	const container = document.getElementById("lang-switcher");
+	// 	container!.innerHTML = ""; // clear old buttons
+
+	// 	// Static list
+	// 	// if (Array.isArray(i18next.options.supportedLngs)) {
+	// 	// 	i18next.options.supportedLngs?.forEach((lng: string) => {
+	// 	// 		if (lng === "cimode") return; // i18next internal test mode, skip
+	// 	// 		const btn = document.createElement("button");
+	// 	// 		btn.innerText = lng.toUpperCase();
+	// 	// 		btn.addEventListener("click", () =>
+	// 	// 			i18next.changeLanguage(lng),
+	// 	// 		);
+	// 	// 		container!.appendChild(btn);
+	// 	// 	});
+	// 	// }
+
+	// 	// Dynamic list from config file
+	// 	fetch("/locales/languages.json")
+	// 		.then((res) => res.json())
+	// 		.then((langs) => {
+	// 			const container = document.getElementById("lang-switcher");
+	// 			langs.forEach((lng: string) => {
+	// 				const btn = document.createElement("button");
+	// 				btn.innerText = lng.toUpperCase();
+	// 				btn.addEventListener("click", () => i18next.changeLanguage(lng));
+	// 				container!.appendChild(btn);
+	// 			});
+	// 		});
 	// });
 
-	// i18next.on("languageChanged", () => {
-	// 	updateContent();
-	// });
+	// i18next.on("languageChanged", () => updateContent());
 
-	// // language switch buttons
-	// document.getElementById("btn-en")!.addEventListener("click", () => {
-	// 	i18next.changeLanguage("en").then(updateContent);
-	// });
+	// Build dynamic language buttons
 
-	// document.getElementById("btn-fr")!.addEventListener("click", () => {
-	// 	i18next.changeLanguage("fr").then(updateContent);
-	// });
+	function buildLanguageSwitcher() {
+		// const container = document.getElementById("lang-switcher");
+		// container!.innerHTML = ""; // clear old buttons
 
-	// document.getElementById("btn-es")!.addEventListener("click", () => {
-	// 	i18next.changeLanguage("es").then(updateContent);
-	// });
+		const displayNames = new Intl.DisplayNames([i18next.language], {
+			type: "language",
+		});
 
-	// initialize UI
-	i18next.on("initialized", () => {
-		updateContent();
-
-		// dynamically build language switcher
-		const container = document.getElementById("lang-switcher");
-		container!.innerHTML = ""; // clear old buttons
-
-		// Static list
+		// // Static list
 		// if (Array.isArray(i18next.options.supportedLngs)) {
 		// 	i18next.options.supportedLngs?.forEach((lng: string) => {
-		// 		if (lng === "cimode") return; // i18next internal test mode, skip
+		// 		if (lng === "cimode") return;
 		// 		const btn = document.createElement("button");
-		// 		btn.innerText = lng.toUpperCase();
-		// 		btn.addEventListener("click", () =>
-		// 			i18next.changeLanguage(lng),
-		// 		);
+		// 		btn.innerText = displayNames.of(lng) || lng.toUpperCase();
+		// 		btn.addEventListener("click", () => i18next.changeLanguage(lng));
 		// 		container!.appendChild(btn);
 		// 	});
 		// }
 
 		// Dynamic list from config file
 		fetch("/locales/languages.json")
-		.then((res) => res.json())
-		.then((langs) => {
-			const container = document.getElementById("lang-switcher");
-			langs.forEach((lng: string) => {
-				const btn = document.createElement("button");
-				btn.innerText = lng.toUpperCase();
-				btn.addEventListener("click", () =>
-					i18next.changeLanguage(lng),
-				);
-				container!.appendChild(btn);
+			.then((res) => res.json())
+			.then((langs) => {
+				const container = document.getElementById("lang-switcher");
+				container!.innerHTML = ""; // clear old buttons
+				console.log(langs);
+				langs.forEach((lng: string) => {
+					const btn = document.createElement("button");
+					// btn.innerText = lng.toUpperCase();
+					btn.innerText = displayNames.of(lng) || lng.toUpperCase();
+					btn.addEventListener("click", () =>
+						i18next.changeLanguage(lng),
+					);
+					container!.appendChild(btn);
+				});
 			});
-		});
+	}
+
+	i18next.on("initialized", () => {
+		updateContent();
+		buildLanguageSwitcher();
 	});
 
-	i18next.on("languageChanged", () => updateContent());
-
+	i18next.on("languageChanged", () => {
+		updateContent();
+		buildLanguageSwitcher(); // rebuild so names update according to new UI language
+	});
 </script>
