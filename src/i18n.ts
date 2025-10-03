@@ -12,7 +12,7 @@ i18next
 		fallbackLng: "en", // fallback
 		debug: true, // logs loading process in console
 		backend: {
-			loadPath: "/locales/{{lng}}/{{ns}}.json", // path to JSON files
+			loadPath: "./locales/{{lng}}/{{ns}}.json", // path to JSON files
 		},
 		detection: {
 			// order of detection
@@ -24,6 +24,7 @@ i18next
 		interpolation: {
 			escapeValue: false
 		},
+		preload: ["en", "es", "fr"], // 👈 preload multiple languages
 	});
 
 export default i18next;
