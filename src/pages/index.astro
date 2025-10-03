@@ -24,6 +24,14 @@ import "../styles/global.css";
 <script>
 	import i18next from "../i18n.js";
 
+	type languageFlags = {[key: string]: string};
+
+	const languageFlags: languageFlags = {
+		en: "🇬🇧",
+		fr: "🇫🇷",
+		es: "🇪🇸"
+	};
+
 	// function to update all texts
 	function updateContent() {
 		document.getElementById("welcome")!.innerText = i18next.t("welcome");
@@ -69,43 +77,43 @@ import "../styles/global.css";
 
 	// Build dynamic language buttons
 
-	function buildLanguageSwitcher() {
-		// const container = document.getElementById("lang-switcher");
-		// container!.innerHTML = ""; // clear old buttons
+	// function buildLanguageSwitcher() {
+	// 	// const container = document.getElementById("lang-switcher");
+	// 	// container!.innerHTML = ""; // clear old buttons
 
-		const displayNames = new Intl.DisplayNames([i18next.language], {
-			type: "language",
-		});
+	// 	const displayNames = new Intl.DisplayNames([i18next.language], {
+	// 		type: "language",
+	// 	});
 
-		// // Static list
-		// if (Array.isArray(i18next.options.supportedLngs)) {
-		// 	i18next.options.supportedLngs?.forEach((lng: string) => {
-		// 		if (lng === "cimode") return;
-		// 		const btn = document.createElement("button");
-		// 		btn.innerText = displayNames.of(lng) || lng.toUpperCase();
-		// 		btn.addEventListener("click", () => i18next.changeLanguage(lng));
-		// 		container!.appendChild(btn);
-		// 	});
-		// }
+	// 	// // Static list
+	// 	// if (Array.isArray(i18next.options.supportedLngs)) {
+	// 	// 	i18next.options.supportedLngs?.forEach((lng: string) => {
+	// 	// 		if (lng === "cimode") return;
+	// 	// 		const btn = document.createElement("button");
+	// 	// 		btn.innerText = displayNames.of(lng) || lng.toUpperCase();
+	// 	// 		btn.addEventListener("click", () => i18next.changeLanguage(lng));
+	// 	// 		container!.appendChild(btn);
+	// 	// 	});
+	// 	// }
 
-		// Dynamic list from config file
-		fetch("/locales/languages.json")
-			.then((res) => res.json())
-			.then((langs) => {
-				const container = document.getElementById("lang-switcher");
-				container!.innerHTML = ""; // clear old buttons
-				console.log(langs);
-				langs.forEach((lng: string) => {
-					const btn = document.createElement("button");
-					// btn.innerText = lng.toUpperCase();
-					btn.innerText = displayNames.of(lng) || lng.toUpperCase();
-					btn.addEventListener("click", () =>
-						i18next.changeLanguage(lng),
-					);
-					container!.appendChild(btn);
-				});
-			});
-	}
+	// 	// Dynamic list from config file
+	// 	fetch("/locales/languages.json")
+	// 		.then((res) => res.json())
+	// 		.then((langs) => {
+	// 			const container = document.getElementById("lang-switcher");
+	// 			container!.innerHTML = ""; // clear old buttons
+	// 			console.log(langs);
+	// 			langs.forEach((lng: string) => {
+	// 				const btn = document.createElement("button");
+	// 				// btn.innerText = lng.toUpperCase();
+	// 				btn.innerText = displayNames.of(lng) || lng.toUpperCase();
+	// 				btn.addEventListener("click", () =>
+	// 					i18next.changeLanguage(lng),
+	// 				);
+	// 				container!.appendChild(btn);
+	// 			});
+	// 		});
+	// }
 
 	function buildLanguageDropdown() {
 		// const container = document.getElementById("lang-switcher");
@@ -132,12 +140,11 @@ import "../styles/global.css";
 			.then((langs) => {
 				const select = document.getElementById("lang-select");
 				select!.innerHTML = ""; // reset options
-				console.log(langs);
 				langs.forEach((lng: string) => {
 					const option = document.createElement("option");
 					option.value = lng;
 					option.textContent =
-						displayNames.of(lng) || lng.toUpperCase();
+						`${languageFlags[lng] || ""} ${displayNames.of(lng) || lng.toUpperCase()}`;
 					if (lng === i18next.language) option.selected = true;
 					select!.appendChild(option);
 				});
