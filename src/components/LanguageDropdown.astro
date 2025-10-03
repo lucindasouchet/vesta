@@ -1,0 +1,56 @@
+<label for="lang-select">🌍 Language:</label>
+<select id="lang-select"></select>
+
+<script>
+    import i18next from "../i18n.js";
+
+    type languageFlags = { [key: string]: string };
+
+    const languageFlags: languageFlags = {
+        en: "🇬🇧",
+        fr: "🇫🇷",
+        es: "🇪🇸",
+    };
+
+    // function to update all texts
+    function updateContent() {
+        document.getElementById("welcome")!.innerText = i18next.t("welcome");
+        document.getElementById("hello")!.innerText = i18next.t("hello");
+    }
+
+    function buildLanguageDropdown() {
+        const displayNames = new Intl.DisplayNames([i18next.language], {
+            type: "language",
+        });
+
+        // Dynamic list from config file
+        fetch("/locales/languages.json")
+            .then((res) => res.json())
+            .then((langs) => {
+                const select = document.getElementById("lang-select");
+                select!.innerHTML = ""; // reset options
+                langs.forEach((lng: string) => {
+                    const option = document.createElement("option");
+                    option.value = lng;
+                    option.textContent = `${languageFlags[lng] || ""} ${displayNames.of(lng) || lng.toUpperCase()}`;
+                    if (lng === i18next.language) option.selected = true;
+                    select!.appendChild(option);
+                });
+
+                // Handle selection change
+                select!.addEventListener("change", (e: any) => {
+                    i18next.changeLanguage(e.target.value);
+                });
+            });
+    }
+
+    i18next.on("initialized", () => {
+        updateContent();
+        buildLanguageDropdown();
+    });
+
+    i18next.on("languageChanged", () => {
+        updateContent();
+        buildLanguageDropdown();
+    });
+</script>
