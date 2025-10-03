@@ -13,7 +13,11 @@ import "../styles/global.css";
 	<p id="hello"></p>
 
 	<!-- build the buttons -->
-	<div id="lang-switcher"></div>
+	<!-- <div id="lang-switcher"></div> -->
+
+	<label for="lang-select">🌍 Language:</label>
+	<select id="lang-select"></select>
+	<!-- dropdown here -->
 	<FooterComponent />
 </BaseLayout>
 
@@ -103,13 +107,80 @@ import "../styles/global.css";
 			});
 	}
 
+	function buildLanguageDropdown() {
+		// const container = document.getElementById("lang-switcher");
+		// container!.innerHTML = ""; // clear old buttons
+
+		const displayNames = new Intl.DisplayNames([i18next.language], {
+			type: "language",
+		});
+
+		// // Static list
+		// if (Array.isArray(i18next.options.supportedLngs)) {
+		// 	i18next.options.supportedLngs?.forEach((lng: string) => {
+		// 		if (lng === "cimode") return;
+		// 		const btn = document.createElement("button");
+		// 		btn.innerText = displayNames.of(lng) || lng.toUpperCase();
+		// 		btn.addEventListener("click", () => i18next.changeLanguage(lng));
+		// 		container!.appendChild(btn);
+		// 	});
+		// }
+
+		// Dynamic list from config file
+		fetch("/locales/languages.json")
+			.then((res) => res.json())
+			.then((langs) => {
+				const select = document.getElementById("lang-select");
+				select!.innerHTML = ""; // reset options
+				console.log(langs);
+				langs.forEach((lng: string) => {
+					const option = document.createElement("option");
+					option.value = lng;
+					option.textContent =
+						displayNames.of(lng) || lng.toUpperCase();
+					if (lng === i18next.language) option.selected = true;
+					select!.appendChild(option);
+				});
+
+				// Handle selection change
+				select!.addEventListener("change", (e: any) => {
+					i18next.changeLanguage(e.target.value);
+				});
+			});
+
+		// const select = document.getElementById("lang-select");
+		// select!.innerHTML = ""; // reset options
+
+		// const displayNames = new Intl.DisplayNames([i18next.language], {
+		// 	type: "language",
+		// });
+
+		// if (Array.isArray(i18next.options.supportedLngs)) {
+		// 	i18next.options.supportedLngs.forEach((lng) => {
+		// 		if (lng === "cimode") return; // skip i18next test mode
+		// 		const option = document.createElement("option");
+		// 		option.value = lng;
+		// 		option.textContent = displayNames.of(lng) || lng.toUpperCase();
+		// 		if (lng === i18next.language) option.selected = true;
+		// 		select!.appendChild(option);
+		// 	});
+		// }
+
+		// // Handle selection change
+		// select!.addEventListener("change", (e: any) => {
+		// 	i18next.changeLanguage(e.target.value);
+		// });
+	}
+
 	i18next.on("initialized", () => {
 		updateContent();
-		buildLanguageSwitcher();
+		// buildLanguageSwitcher();
+		buildLanguageDropdown();
 	});
 
 	i18next.on("languageChanged", () => {
 		updateContent();
-		buildLanguageSwitcher(); // rebuild so names update according to new UI language
+		// buildLanguageSwitcher(); // rebuild so names update according to new UI language
+		buildLanguageDropdown();
 	});
 </script>
