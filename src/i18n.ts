@@ -16,7 +16,7 @@ i18next
 		},
 		detection: {
 			// order of detection
-			order: ["navigator", "localStorage"],
+			order: ["localStorage", "navigator"],
 
 			// where to save the language
 			caches: ["localStorage"],
@@ -24,7 +24,7 @@ i18next
 		interpolation: {
 			escapeValue: false
 		},
-		preload: ["en", "es", "fr"], // 👈 preload multiple languages
+		preload: ["en", "es", "fr"], // preload multiple languages (option recommanded for 2-3 languages)
 	});
 
 export default i18next;
