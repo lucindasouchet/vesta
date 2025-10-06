@@ -1,16 +1,26 @@
-<label for="lang-select">🌍 Language:</label>
 <select id="lang-select"></select>
 
 <script>
     import i18next from "../i18n.js";
+    import * as Utils from "../utils/formatters.ts";
 
     type languageFlags = { [key: string]: string };
 
-    const languageFlags: languageFlags = {
-        en: "🇬🇧",
-        fr: "🇫🇷",
-        es: "🇪🇸",
-    };
+    // languageFlags (can be used for mobile)
+    // const languageFlags: languageFlags = {
+    //     en: "🇬🇧",
+    //     fr: "🇫🇷",
+    //     es: "🇪🇸",
+    // };
+
+    const selectClasses = [
+        "mr-2",
+        "pr-4",
+        "hover:text-secondary-20-dark",
+        "focus:outline-none",
+        "focus:text-primary-10-light",
+    ];
+    const optionClasses = ["text-black", "text-sm", "hover:bg-neutral-20"];
 
     // Update all elements that have data-i18n attributes
     function updateContent() {
@@ -31,10 +41,17 @@
             .then((langs) => {
                 const select = document.getElementById("lang-select");
                 select!.innerHTML = ""; // reset options
+                select?.classList.add(...selectClasses);
                 langs.forEach((lng: string) => {
                     const option = document.createElement("option");
                     option.value = lng;
-                    option.textContent = `${languageFlags[lng] || ""} ${displayNames.of(lng) || lng.toUpperCase()}`;
+                    console.log(lng);
+                    option.textContent = `${displayNames.of(lng) || lng.toUpperCase()}`;
+                    // `${languageFlags[lng] || ""} ${displayNames.of(lng) || lng.toUpperCase()}`; // display prefixed with languageFlags (can be used for mobile)
+                    option.classList.add(...optionClasses);
+                    option.textContent = Utils.capitalizeFirstLetter(
+                        option.textContent,
+                    );
                     if (lng === i18next.language) option.selected = true;
                     select!.appendChild(option);
                 });
