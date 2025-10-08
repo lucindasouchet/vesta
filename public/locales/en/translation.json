@@ -2,49 +2,46 @@
   "test": {
     "welcome": "Welcome to the home page!",
     "hello": "Hello",
-    "products_page": "products page"
+    "products_page": "Products page"
   },
-
   "header": {
-    "products_page": "products_page",
-    "vesta partner program": "Vesta Partner Program",
-    "products": "products",
-    "News and Events": "News and Events",
-    "About Vesta Security": "About Vesta Security",
-    "I want Vesta now": "I want Vesta now"
+    "products_page": "Products page",
+    "vesta_partner_program": "Vesta Partner Program",
+    "products": "Products",
+    "news_and_events": "News and Events",
+    "about_vesta_security": "About Vesta Security",
+    "i_want_vesta_now": "I want Vesta now"
   },
-
   "footer": {
-    "Security alarm": "Security alarm",
-    "Radio alarm": "Radio alarm",
-    "Battery-powered alarm": "Battery-powered alarm",
-    "Hybrid alarm": "Hybrid alarm",
-    "Medical alarm": "Medical alarm",
-    "Mobile Pro Series": "Mobile Pro Series",
-    "MX Series": "MX Series",
-    "GX Series": "GX Series",
-    "Videovigilancia": "Videovigilancia",
-    "Vesta Home Video": "Vesta Home Video",
-    "Vesta Advanced Video": "Vesta Advanced Video",
-    "General catalog": "General catalog",
-    "All products": "All products",
-    "News Blog": "News Blog",
-    "VESTA Academy": "VESTA Academy",
-    "About Us": "About Us",
-    "Software": "Software",
-    "Smart Home Sec": "Smart Home Sec",
-    "MedAlert SHS": "MedAlert SHS",
-    "Copyright": "© Copyright 2025 VESTA",
-    "Privacy Policy": "Privacy Policy",
-    "Cookie policy": "Cookie policy",
-    "Cookie settings": "Cookie settings",
-    "Legal notice": "Legal notice",
-    "SmartHomeSec Privacy Policy": "SmartHomeSec Privacy Policy",
-    "MedAlert SHS Privacy Policy": "MedAlert SHS Privacy Policy"
+    "security_alarm": "Security alarm",
+    "radio_alarm": "Radio alarm",
+    "battery_powered_alarm": "Battery-powered alarm",
+    "hybrid_alarm": "Hybrid alarm",
+    "medical_alarm": "Medical alarm",
+    "mobile_pro_series": "Mobile Pro Series",
+    "mx_series": "MX Series",
+    "gx_series": "GX Series",
+    "video_surveillance": "Video surveillance",
+    "vesta_home_video": "Vesta Home Video",
+    "vesta_advanced_video": "Vesta Advanced Video",
+    "general_catalog": "General catalog",
+    "all_products": "All products",
+    "news_blog": "News Blog",
+    "vesta_academy": "VESTA Academy",
+    "about_us": "About Us",
+    "software": "Software",
+    "smart_home_sec": "Smart Home Sec",
+    "medAlert_shs": "MedAlert SHS",
+    "copyright": "© Copyright 2025 VESTA",
+    "privacy_policy": "Privacy Policy",
+    "cookie_policy": "Cookie policy",
+    "cookie_settings": "Cookie settings",
+    "legal_notice": "Legal notice",
+    "smartHomeSec_privacy_policy": "SmartHomeSec Privacy Policy",
+    "medAlert_shs_privacy_policy": "MedAlert SHS Privacy Policy"
   },
-  
   "product_page": {
-    "Vesta Security Systems": "VESTA Security Systems: a solution for every need",
-    "Three communication technologies": "Three communication technologies that adapt to any home or business issue, with various possibilities for zones and partitions, as well as more than 70 proprietary devices and the integration of leading brands in video surveillance, intrusion detection, and home automation."
+    "vesta_security_systems": "VESTA Security Systems: a solution for every need",
+    "three_communication_technologies": "Three communication technologies that adapt to any home or business issue, with various possibilities for zones and partitions, as well as more than 70 proprietary devices and the integration of leading brands in video surveillance, intrusion detection, and home automation."
   }
 }

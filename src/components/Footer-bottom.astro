@@ -7,8 +7,10 @@ import LanguageDropdownComponent from "./LanguageDropdown.astro";
 >
     <!-- Left -->
     <div>
-        <div class="font-bold mb-3 md:mb-4 text-center md:text-left">
-            © Copyright 2025 VESTA
+        <div
+            class="font-bold mb-3 md:mb-4 text-center md:text-left"
+            data-i18n="footer.copyright"
+        >
         </div>
         <div
             class="flex flex-col justify-left md:flex-row md:flex-wrap md:gap-y-1 md:gap-x-2 lg:gap-y-2 lg:gap-x-4 text-center"
@@ -16,36 +18,32 @@ import LanguageDropdownComponent from "./LanguageDropdown.astro";
             <a
                 href="#"
                 class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                >Política de privacidad</a
-            >
+                data-i18n="footer.privacy_policy"></a>
             <span class="hidden md:inline">|</span>
             <a
                 href="#"
                 class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                >Política de cookies</a
-            >
+                data-i18n="footer.cookie_policy"></a>
             <span class="hidden md:inline">|</span>
             <a
                 href="#"
                 class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                >Configuración de cookies</a
-            >
+                data-i18n="footer.cookie_settings"></a>
             <span class="hidden md:inline">|</span>
             <a
                 href="#"
                 class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                >Aviso legal</a
-            >
+                data-i18n="footer.legal_notice"></a>
+            <span class="hidden md:inline">|</span>
             <a
                 href="#"
                 class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                >Politica de privacidad de SmartHomeSec</a
-            >
+                data-i18n="footer.smartHomeSec_privacy_policy"></a>
+            <span class="hidden md:inline">|</span>
             <a
                 href="#"
                 class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                >Politica de privacidad de MedAlert SHS</a
-            >
+                data-i18n="footer.medAlert_shs_privacy_policy"></a>
         </div>
     </div>
 
