@@ -1,5 +1,50 @@
 {
-  "welcome": "Welcome to the home page!",
-  "hello": "Hello World",
-  "products_page": "products page"
+  "test": {
+    "welcome": "Welcome to the home page!",
+    "hello": "Hello",
+    "products_page": "products page"
+  },
+
+  "header": {
+    "products_page": "products_page",
+    "vesta partner program": "Vesta Partner Program",
+    "products": "products",
+    "News and Events": "News and Events",
+    "About Vesta Security": "About Vesta Security",
+    "I want Vesta now": "I want Vesta now"
+  },
+
+  "footer": {
+    "Security alarm": "Security alarm",
+    "Radio alarm": "Radio alarm",
+    "Battery-powered alarm": "Battery-powered alarm",
+    "Hybrid alarm": "Hybrid alarm",
+    "Medical alarm": "Medical alarm",
+    "Mobile Pro Series": "Mobile Pro Series",
+    "MX Series": "MX Series",
+    "GX Series": "GX Series",
+    "Videovigilancia": "Videovigilancia",
+    "Vesta Home Video": "Vesta Home Video",
+    "Vesta Advanced Video": "Vesta Advanced Video",
+    "General catalog": "General catalog",
+    "All products": "All products",
+    "News Blog": "News Blog",
+    "VESTA Academy": "VESTA Academy",
+    "About Us": "About Us",
+    "Software": "Software",
+    "Smart Home Sec": "Smart Home Sec",
+    "MedAlert SHS": "MedAlert SHS",
+    "Copyright": "© Copyright 2025 VESTA",
+    "Privacy Policy": "Privacy Policy",
+    "Cookie policy": "Cookie policy",
+    "Cookie settings": "Cookie settings",
+    "Legal notice": "Legal notice",
+    "SmartHomeSec Privacy Policy": "SmartHomeSec Privacy Policy",
+    "MedAlert SHS Privacy Policy": "MedAlert SHS Privacy Policy"
+  },
+  
+  "product_page": {
+    "Vesta Security Systems": "VESTA Security Systems: a solution for every need",
+    "Three communication technologies": "Three communication technologies that adapt to any home or business issue, with various possibilities for zones and partitions, as well as more than 70 proprietary devices and the integration of leading brands in video surveillance, intrusion detection, and home automation."
+  }
 }

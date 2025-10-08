@@ -1,12 +1,18 @@
-<select id="lang-select"></select>
+---
+const { id, name, classes,  } = Astro.props;
+---
+
+<!-- <select id=`${id}` data-message={name} class=`${name}`></select> -->
+<select id="languageDdlIndex"></select>
 
 <script>
     import i18next from "../i18n.js";
     import * as Utils from "../utils/formatters.ts";
 
-    type languageFlags = { [key: string]: string };
+    const id = "languageDdlIndex";
 
     // languageFlags (can be used for mobile)
+    // type languageFlags = { [key: string]: string };
     // const languageFlags: languageFlags = {
     //     en: "🇬🇧",
     //     fr: "🇫🇷",
@@ -30,16 +36,36 @@
         });
     }
 
-    function buildLanguageDropdown() {
+    function buildLanguageDropdown(this: any) {
         const displayNames = new Intl.DisplayNames([i18next.language], {
             type: "language",
         });
+        
+        // // Dynamic list filled with all supported languages listed in supportedLngs option of the i18n config file
+        // const select = document.getElementById("languageDdlIndex");
+        // select!.innerHTML = ""; // reset options
 
-        // Dynamic list from config file
+        // if (Array.isArray(i18next.options.supportedLngs)) {
+        //     i18next.options.supportedLngs.forEach((lng) => {
+        //         if (lng === "cimode") return; // skip i18next test mode
+        //         const option = document.createElement("option");
+        //         option.value = lng;
+        //         option.textContent = displayNames.of(lng) || lng.toUpperCase();
+        //         if (lng === i18next.language) option.selected = true;
+        //         select!.appendChild(option);
+        //     });
+        // }
+
+        // // Handle selection change
+        // select!.addEventListener("change", (e: any) => {
+        //     i18next.changeLanguage(e.target.value);
+        // });
+
+        // Dynamic list from config file: /public locales/translation.json
         fetch("/locales/languages.json")
             .then((res) => res.json())
             .then((langs) => {
-                const select = document.getElementById("lang-select");
+                const select = document.getElementById("languageDdlIndex");
                 select!.innerHTML = ""; // reset options
                 select?.classList.add(...selectClasses);
                 langs.forEach((lng: string) => {

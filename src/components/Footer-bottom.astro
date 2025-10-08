@@ -1,3 +1,7 @@
+---
+import LanguageDropdownComponent from "./LanguageDropdown.astro";
+---
+
 <div
     class="flex flex-col md:flex-row items-center justify-between bg-primary-dark px-24 pt-12 pb-6 text-xs text-white"
 >
@@ -45,7 +49,7 @@
         </div>
     </div>
 
-    <!-- HOVER Footer Language selector - Dropdown Wrapper (Mobile) -->
+    <!-- HOVER Footer Language selector - Dropdown Wrapper (Desktop) -->
     <div class="relative group z-10">
         <button
             id="desktop-footer-language-selector"
@@ -84,6 +88,8 @@
             >
         </div>
     </div>
+
+    <!-- <LanguageDropdownComponent name="languageDdlFooter" classes="" /> -->
 
     <!-- ON CLICK Footer Language selector - Dropdown Wrapper (Mobile) -->
     <div class="relative inline-block text-left mt-3 md:hidden">

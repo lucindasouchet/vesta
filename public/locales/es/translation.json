@@ -1,4 +1,10 @@
 {
+  "test": {
+    "welcome": "¡Bienvenido a la página de inicio!",
+    "hello": "Hola",
+    "products_page": "página de productos"
+  },
+
   "header": {
     "products_page": "página de productos",
     "vesta partner program": "Vesta Partner Program",
@@ -7,6 +13,7 @@
     "About Vesta Security": "Sobre Vesta Security",
     "I want Vesta now": "Quiero Vesta ahora"
   },
+
   "footer": {
     "Security alarm": "Alarma de seguridad",
     "Radio alarm": "Alarma vía radio",
@@ -35,6 +42,7 @@
     "SmartHomeSec Privacy Policy": "Política de privacidad de SmartHomeSec",
     "MedAlert SHS Privacy Policy": "Política de privacidad de MedAlert SHS"
   },
+
   "product_page": {
     "Vesta Security Systems": "Sistemas de Seguridad VESTA: una solución para cada necesidad",
     "Three communication technologies": "Tres tecnologías de comunicación que se adaptan a cualquier problemática de hogar o negocio, con diversas  posibilidades de zonas y particiones, así como más de 70 dispositivos  propios y la integración de marcas líderes de videovigilancia, intrusión y domótica."

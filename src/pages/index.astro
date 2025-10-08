@@ -9,12 +9,12 @@ import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
 
 <BaseLayout>
 	<HeaderComponent />
-	<HomeComponent />
 
 	<!-- to test <LanguageDropdownComponent /> quickly -->
-	<!-- <h1 data-i18n="welcome"></h1>
-	<p data-i18n="hello"></p> -->
-	<LanguageDropdownComponent />
-
+	<!-- <h1 data-i18n="test.welcome"></h1>
+	<p data-i18n="test.hello"></p> -->
+	<LanguageDropdownComponent id="languageDdlIndex" name="languageDdlIndex" classes="" />
+	
+	<HomeComponent />
 	<FooterComponent />
 </BaseLayout>
