@@ -11,5 +11,12 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+
+  // // Astro’s built-in i18n
+  // i18n: {
+  //   defaultLocale: "en",           // fallback language
+  //   locales: ["en", "fr", "es"],         // supported languages
+  //   routing: "prefix",             // /en/, /fr/ URLs
+  // },
 });

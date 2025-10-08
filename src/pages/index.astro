@@ -1,12 +1,20 @@
 ---
-import HomeComponent from '../components/Home.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HeaderComponent from '../components/Header.astro';
-import FooterComponent from '../components/Footer.astro';
+import "../styles/global.css";
+import HomeComponent from "../components/Home.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeaderComponent from "../components/Header.astro";
+import FooterComponent from "../components/Footer.astro";
+import LanguageDropdownComponent from "../components/LanguageDropdown.astro";	
 ---
 
 <BaseLayout>
 	<HeaderComponent />
+
+	<!-- to test <LanguageDropdownComponent /> quickly -->
+	<!-- <h1 data-i18n="test.welcome"></h1>
+	<p data-i18n="test.hello"></p> -->
+	<LanguageDropdownComponent id="languageDdlIndex" name="languageDdlIndex" classes="" />
+	
 	<HomeComponent />
 	<FooterComponent />
 </BaseLayout>

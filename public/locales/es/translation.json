@@ -1,0 +1,47 @@
+{
+  "test": {
+    "welcome": "¡Bienvenido a la página de inicio!",
+    "hello": "Hola",
+    "products_page": "Página de productos"
+  },
+  "header": {
+    "products_page": "Página de productos",
+    "vesta_partner_program": "Vesta Partner Program",
+    "products": "Productos",
+    "news_and_events": "Noticias y Eventos",
+    "about_vesta_security": "Sobre Vesta Security",
+    "i_want_vesta_now": "Quiero Vesta ahora"
+  },
+  "footer": {
+    "security_alarm": "Alarma de seguridad",
+    "radio_alarm": "Alarma vía radio",
+    "battery_powered_alarm": "Alarma a pilas",
+    "hybrid_alarm": "Alarma híbrida",
+    "medical_alarm": "Alarma médica",
+    "mobile_pro_series": "Serie Mobile Pro",
+    "mx_series": "Serie MX",
+    "gx_series": "Serie GX",
+    "video_surveillance": "videovigilancia",
+    "vesta_home_video": "Vesta Home Video",
+    "vesta_advanced_video": "Vesta Advanced Video",
+    "general_catalog": "Catálogo general",
+    "all_products": "Todos los porductos",
+    "news_blog": "Blog de Noticias",
+    "vesta_academy": "Academia VESTA",
+    "about_us": "Acerca de Nosotros",
+    "software": "Software",
+    "smart_home_sec": "Smart Home Sec",
+    "medAlert_shs": "MedAlert SHS",
+    "copyright": "© Copyright 2025 VESTA",
+    "privacy_policy": "Política de privacidad",
+    "cookie_policy": "Política de cookies",
+    "cookie_settings": "Configuración de cookies",
+    "legal_notice": "Aviso legal",
+    "smartHomeSec_privacy_policy": "Política de privacidad de SmartHomeSec",
+    "medAlert_shs_privacy_policy": "Política de privacidad de MedAlert SHS"
+  },
+  "product_page": {
+    "vesta_security_systems": "Sistemas de Seguridad VESTA: una solución para cada necesidad",
+    "three_communication_technologies": "Tres tecnologías de comunicación que se adaptan a cualquier problemática de hogar o negocio, con diversas  posibilidades de zonas y particiones, así como más de 70 dispositivos  propios y la integración de marcas líderes de videovigilancia, intrusión y domótica."
+  }
+}
