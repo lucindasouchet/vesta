@@ -4,17 +4,56 @@ import HomeComponent from "../components/Home.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeaderComponent from "../components/Header.astro";
 import FooterComponent from "../components/Footer.astro";
-import LanguageDropdownComponent from "../components/LanguageDropdown.astro";	
+import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
+// import SelectClient from "../components/LanguageDropdown.js";
 ---
 
 <BaseLayout>
 	<HeaderComponent />
 
+	<!-- <select id="countrySelect">
+		<option value="es">Spain</option>
+		<option value="fr">France</option>
+	</select> -->
+
 	<!-- to test <LanguageDropdownComponent /> quickly -->
 	<!-- <h1 data-i18n="test.welcome"></h1>
 	<p data-i18n="test.hello"></p> -->
-	<LanguageDropdownComponent id="languageDdlIndex" name="languageDdlIndex" classes="" />
-	
+	<LanguageDropdownComponent
+		id="languageDdlIndex"
+		name="languageDdlIndex"
+		classes=""
+	/>
+
+	<!-- <LanguageDropdownComponent
+		id="languageDdlIndex2"
+		name="languageDdlIndex"
+		classes=""
+	/> -->
+
 	<HomeComponent />
 	<FooterComponent />
 </BaseLayout>
+
+<!-- <script type="module">
+	// safe: run after the element exists in the DOM
+	const countrySelect = document.getElementById("countrySelect");
+	console.log("select id:", countrySelect.id); // -> "countrySelect"
+	countrySelect.addEventListener("change", (e) => {
+		console.log("selected value:", e.target.value);
+	});
+
+	const languageDdlIndex = document.getElementById("languageDdlIndex");
+	console.log("select id:", languageDdlIndex.id); // -> "countrySelect"
+	languageDdlIndex.addEventListener("change", (e) => {
+		console.log("selected value:", e.target.value);
+	});
+
+
+
+	const languageDdlIndex2 = document.getElementById("languageDdlIndex2");
+	console.log("select id:", languageDdlIndex2.id); // -> "countrySelect"
+	languageDdlIndex2.addEventListener("change", (e) => {
+		console.log("selected value:", e.target.value);
+	});
+</script> -->

@@ -1,10 +1,19 @@
 ---
-import "../i18n"; // import i18n config once
+// import '../i18n';
+import i18next from "../i18n.ts";
+import Title from "./Title.astro";
+import Text from "./Text.astro";
+
+const { t } = i18next;
 ---
 
 <div id="page-container" class="m-4">
-	<h1 class="text-sky-600 text-xl font-bold mb-4" data-i18n="test.welcome"></h1>
-	<p class="mb-4" data-i18n="test.hello"></p>
+	<Title
+		id="section1-title"
+		classes="text-sky-600 text-xl font-bold mb-4"
+		content={t("test.welcome")}
+	/>
+	<Text id="section1-text" classes="mb-4" content={t("test.hello")} />
 	<a href="/products">
 		<!-- <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" type="button" data-i18n="test.products_page"></button> -->
 	</a>
