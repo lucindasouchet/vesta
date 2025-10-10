@@ -1,5 +1,5 @@
 ---
-const { classes, content} = Astro.props;
+const { id, classes, content} = Astro.props;
 ---
 
-<h2 class={`${classes}`}>{content}</h2>
+<h2 id={id} class={`${classes}`} data-i18n={`${content}`}></h2>

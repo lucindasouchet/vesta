@@ -1,7 +1,7 @@
 {
   "test": {
     "welcome": "Welcome to the home page!",
-    "hello": "Hello",
+    "hello": "Hello ...",
     "products_page": "Products page"
   },
   "header": {
@@ -44,4 +44,5 @@
     "vesta_security_systems": "VESTA Security Systems: a solution for every need",
     "three_communication_technologies": "Three communication technologies that adapt to any home or business issue, with various possibilities for zones and partitions, as well as more than 70 proprietary devices and the integration of leading brands in video surveillance, intrusion detection, and home automation."
   }
+
 }
