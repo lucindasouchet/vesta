@@ -1,0 +1,7 @@
+---
+const { id, classes, content, href, type} = Astro.props;
+---
+
+<a href={`${href}`}>
+	<button id={id} class={`${classes}`} type={type} data-i18n={`${content}`}></button>
+</a>

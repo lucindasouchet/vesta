@@ -1,20 +1,28 @@
 ---
-// import '../i18n';
 import i18next from "../i18n.ts";
-import Title from "./Title.astro";
-import Text from "./Text.astro";
+import TitleComponent from "./core/Title.astro";
+import TextComponent from "./core/Text.astro";
+import ButtonWithoutIconComponent from "./core/ButtonWithoutIcon.astro";
 
 const { t } = i18next;
 ---
 
 <div id="page-container" class="m-4">
-	<Title
+	<TitleComponent
 		id="section1-title"
 		classes="text-sky-600 text-xl font-bold mb-4"
 		content={t("test.welcome")}
 	/>
-	<Text id="section1-text" classes="mb-4" content={t("test.hello")} />
-	<a href="/products">
-		<!-- <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" type="button" data-i18n="test.products_page"></button> -->
-	</a>
+	<TextComponent
+		id="section1-text"
+		classes="mb-4"
+		content={t("test.hello")}
+	/>
+	<ButtonWithoutIconComponent
+		id="section1-products-btn"
+		classes="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+		type="button"
+		content={t("test.products_page")}
+		href="/products"
+	/>
 </div>
