@@ -102,7 +102,8 @@ Back to [top](#tableOfContents)
 
 ---
 
-## 👀 Want to learn more?
+## 👀 Want to learn more about Astro?
 
 [Astro Documentation](https://docs.astro.build)
+
 [Astro Discord server](https://astro.build/chat)
