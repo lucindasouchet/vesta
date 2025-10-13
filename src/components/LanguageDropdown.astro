@@ -1,15 +1,16 @@
 ---
-const { id, name, classes,  } = Astro.props;
+const { id, name } = Astro.props;
 ---
 
-<!-- <select id=`${id}` data-message={name} class=`${name}`></select> -->
-<select id="languageDdlIndex"></select>
+<select id=`${id}` name=`${name}`></select>
 
 <script>
-    import i18next from "../i18n.js";
+    import i18next from "../i18n.ts";
     import * as Utils from "../utils/formatters.ts";
 
     const id = "languageDdlIndex";
+    // const id = JSON.parse(decodeURIComponent("{{encodeURIComponent(id)}}"));
+    // const el = document.getElementById(id);
 
     // languageFlags (can be used for mobile)
     // type languageFlags = { [key: string]: string };
@@ -26,6 +27,7 @@ const { id, name, classes,  } = Astro.props;
         "focus:outline-none",
         "focus:text-primary-10-light",
     ];
+
     const optionClasses = ["text-black", "text-sm", "hover:bg-neutral-20"];
 
     // Update all elements that have data-i18n attributes
@@ -36,7 +38,7 @@ const { id, name, classes,  } = Astro.props;
         });
     }
 
-    function buildLanguageDropdown(this: any) {
+    function buildLanguageDropdown(this:any) {
         const displayNames = new Intl.DisplayNames([i18next.language], {
             type: "language",
         });
@@ -65,10 +67,10 @@ const { id, name, classes,  } = Astro.props;
         fetch("/locales/languages.json")
             .then((res) => res.json())
             .then((langs) => {
-                const select = document.getElementById("languageDdlIndex");
+                const select = document.getElementById(id);
                 select!.innerHTML = ""; // reset options
                 select?.classList.add(...selectClasses);
-                langs.forEach((lng: string) => {
+                langs.forEach((lng:any) => {
                     const option = document.createElement("option");
                     option.value = lng;
                     console.log(lng);
@@ -83,7 +85,7 @@ const { id, name, classes,  } = Astro.props;
                 });
 
                 // Handle selection change
-                select!.addEventListener("change", (e: any) => {
+                select!.addEventListener("change", (e:any) => {
                     i18next.changeLanguage(e.target.value);
                 });
             });

@@ -48,7 +48,7 @@ import LanguageDropdownComponent from "./LanguageDropdown.astro";
     </div>
 
     <!-- HOVER Footer Language selector - Dropdown Wrapper (Desktop) -->
-    <div class="relative group z-10">
+    <!-- <div class="relative group z-10">
         <button
             id="desktop-footer-language-selector"
             class="items-center px-6 py-4 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light hidden md:flex"
@@ -85,13 +85,12 @@ import LanguageDropdownComponent from "./LanguageDropdown.astro";
                 >Portugués</a
             >
         </div>
-    </div>
+    </div> -->
 
-    <!-- <LanguageDropdownComponent name="languageDdlFooter" classes="" /> -->
-
+    <!-- <LanguageDropdownComponent id="languageDdlFooter" name="languageDdlFooter" /> -->
+    
     <!-- ON CLICK Footer Language selector - Dropdown Wrapper (Mobile) -->
-    <div class="relative inline-block text-left mt-3 md:hidden">
-        <!-- Trigger Button -->
+    <!-- <div class="relative inline-block text-left mt-3 md:hidden">
         <button
             id="dropdownBtnFooterLanguageMobile"
             class="inline-flex cursor-pointer items-center hover:underline"
@@ -112,7 +111,6 @@ import LanguageDropdownComponent from "./LanguageDropdown.astro";
             </svg>
         </button>
 
-        <!-- Dropdown Menu (Opens Up) -->
         <div
             id="dropdownMenuFooterLanguageMobile"
             class="absolute right-0 bottom-full mb-2 mr-[-22px] hidden w-28 rounded-xl bg-primary-light text-dark py-3 opacity-100 shadow-lg inset-shadow-sm inset-shadow-primary-dark transition-opacity group-hover:visible group-hover:opacity-100"
@@ -130,10 +128,11 @@ import LanguageDropdownComponent from "./LanguageDropdown.astro";
                 >Portugués</a
             >
         </div>
-    </div>
+    </div> -->
 </div>
 
-<script>
+<!-- scripts used with the dd language selector -->
+<!-- <script>
     // Footer Language dropdown toggle onclick
     const btnDdpFooterLanguageMobile = document.getElementById(
         "dropdownBtnFooterLanguageMobile",
@@ -155,4 +154,4 @@ import LanguageDropdownComponent from "./LanguageDropdown.astro";
             menuDdpFooterLanguageMobile.classList.add("hidden");
         }
     });
-</script>
+</script> -->

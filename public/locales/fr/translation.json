@@ -2,7 +2,7 @@
   "test": {
     "welcome": "Bienvenue sur la page d'accueil !",
     "hello ...": "Bonjour",
-    "products_page": "page produits"
+    "products_page": "Page produits"
   },
   "header": {
     "products_page": "page produits",
