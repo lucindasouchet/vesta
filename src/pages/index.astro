@@ -4,10 +4,7 @@ import HomeComponent from "../components/Home.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeaderComponent from "../components/Header.astro";
 import FooterComponent from "../components/Footer.astro";
-import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
 // import SelectClient from "../components/LanguageDropdown.js";
-import ButtonWithIconComponent from "../components/core/ButtonWithIcon.astro";
-import PartnerProgramIcon from "../../public/images/icons/partner-program.svg";
 import i18next from "../i18n.ts";
 
 const { t } = i18next;
@@ -20,11 +17,6 @@ const { t } = i18next;
 		<option value="es">Spain</option>
 		<option value="fr">France</option>
 	</select> -->
-
-	<!-- <LanguageDropdownComponent
-		id="languageDdlIndex2"
-		name="languageDdlIndex"
-	/> -->
 
 	<HomeComponent />
 	<FooterComponent />
