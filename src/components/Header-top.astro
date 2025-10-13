@@ -3,9 +3,9 @@
 import ButtonWithIconComponent from "../components/core/ButtonWithIcon.astro";
 import PartnerProgramIcon from "../../public/images/icons/partner-program.svg";
 import i18next from "../i18n.ts";
+import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
 
 const { t } = i18next;
-
 ---
 
 <div id="header-top">
@@ -20,7 +20,7 @@ const { t } = i18next;
 					id="partner-program-btn"
 					label={t("header.vesta_partner_program")}
 					icon={PartnerProgramIcon}
-                    variantButton="hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+					variantButton="hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
 					variantLabel="label-1"
 					variantIcon="h-7 w-7"
 					type="button"
@@ -28,60 +28,10 @@ const { t } = i18next;
 				/>
 
 				<!-- language select -->
-				<!-- <div class="relative group z-10">
-                        <button
-                            id="desktop-language-selector"
-                            type="button"
-                            class="flex items-center pr-4 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-                        >
-                            Español
-                            <svg
-                                class="ml-2 h-4 w-4"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="absolute right-0 w-36 py-3 bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity"
-                        >
-                            <a
-                                href="#"
-                                class="block px-6 py-2 text-sm hover:bg-neutral-20"
-                                >Español</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-6 py-2 text-sm hover:bg-neutral-20"
-                                >Inglés</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-6 py-2 text-sm hover:bg-neutral-20"
-                                >Francés</a
-                            >
-                            <a
-                                href="#"
-                                class="block px-6 py-2 text-sm hover:bg-neutral-20"
-                                >Portugués</a
-                            >
-                        </div>
-                    </div> -->
-
-				<!-- ddl -->
-				<!-- <LanguageDropdownComponent
-                    id="languageDdlHeader"
-                    name="languageDdlHeader"
-                    classes=""
-                    client:load
-                /> -->
-				<!-- value={selected} on:change={onChange}    -->
+				<LanguageDropdownComponent
+					id="languageDdlIndex"
+					name="languageDdlIndex"
+				/>
 			</div>
 		</div>
 	</div>
