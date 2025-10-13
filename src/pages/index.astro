@@ -6,6 +6,11 @@ import HeaderComponent from "../components/Header.astro";
 import FooterComponent from "../components/Footer.astro";
 import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
 // import SelectClient from "../components/LanguageDropdown.js";
+import ButtonWithIconComponent from "../components/core/ButtonWithIcon.astro";
+import PartnerProgramIcon from "../../public/images/icons/partner-program.svg";
+import i18next from "../i18n.ts";
+
+const { t } = i18next;
 ---
 
 <BaseLayout>
