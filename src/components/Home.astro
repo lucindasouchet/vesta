@@ -20,9 +20,10 @@ const { t } = i18next;
 	/>
 	<ButtonWithoutIconComponent
 		id="section1-products-btn"
-		classes="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+		label={t("test.products_page")}
+		variantButton="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+		variantLabel="text-white"
 		type="button"
-		content={t("test.products_page")}
 		href="/products"
 	/>
 </div>

@@ -1,7 +1,7 @@
 ---
-const { id, classes, content, href, type} = Astro.props;
+const { id, label, href, type, variantButton="default", variantLabel="default"} = Astro.props;
 ---
 
 <a href={`${href}`}>
-	<button id={id} class={`${classes}`} type={type} data-i18n={`${content}`}></button>
+	<button id={id} class={`${variantButton} ${variantLabel}`} type={type}> <span data-i18n={`${label}`}></span></button>
 </a>
