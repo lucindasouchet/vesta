@@ -245,6 +245,16 @@ body {
   color: var(--color-secondary-00);
 }
 
+.link-footer-bottom {
+  text-decoration: none;
+  text-underline-offset: 0;
+  color: var(--color-neutral-05);
+}
+
+.link-footer-bottom:hover {
+  text-decoration: underline;
+}
+
 /*********************************************** titles */
 
 .h2 {
