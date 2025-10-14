@@ -2,334 +2,427 @@
 
 /******************************************** theme  */
 @theme {
-	/*********************************** colors */
-	--color-primary-dark: #14203F;
-	--color-primary-medium: #283f7e;
-	--color-primary-light: #F9FAFC;
-	--color-primary-00: #22509B;
-	--color-primary-10-light: #4761A8;
-	--color-primary-20-light: #5B72B1;
-	--color-primary-40-light: #8495C5;
-	--color-primary-60-light: #ADB9D8;
+  /*********************************** colors */
+  /************************** primary */
+  --color-primary-90-light: #EBEDF5;
+  --color-primary-60-light: #ADB9D8;
+  --color-primary-40-light: #8495C5;
+  --color-primary-20-light: #5B72B1;
+  --color-primary-10-light: #4761A8;
+  --color-primary-00: #22509B;
+  --color-primary-10-dark: #2D478E;
+  --color-primary-20-dark: #283F7E;
+  --color-primary-40-dark: #1E2F5F;
+  --color-primary-60-dark: #14203F;
+  --color-primary-80-dark: #0A1020;
 
+  /************************** secondary */
+  --color-secondary-90-light: #EFF9FE;
+  --color-secondary-60-light: #BDE8FA;
+  --color-secondary-40-light: #9DDCF7;
+  --color-secondary-20-light: #7CD1F5;
+  --color-secondary-10-light: #6BCBF3;
+  --color-secondary-00: #5BC5F2;
+  --color-secondary-10-dark: #52B1DA;
+  --color-secondary-20-dark: #499EC2;
+  --color-secondary-40-dark: ##377691;
+  --color-secondary-60-dark: #244F61;
+  --color-secondary-80-dark: #122730;
 
-	--color-secondary-60-light: #bde8fa;
-	--color-secondary-90-light: #eff9fe;
-	--color-secondary-20-dark: #499EC2;
+  /************************** neutral */
+  --color-neutral-00: #FFFFFF;
+  --color-neutral-05: #F3F3F4;
+  --color-neutral-10: #E7E7E9;
+  --color-neutral-20: #CECFD2;
+  --color-neutral-40: #9D9FA6;
+  --color-neutral-60: #6C7079;
+  --color-neutral-80: #3B404D;
+  --color-neutral-90: #232836;
+  --color-neutral-100: #0A1020;
 
-	--color-neutral-00: #FFFFFF;
-	--color-neutral-05: #f3f3f4;
-	--color-neutral-20: #CECFD2;
-	--color-neutral-40: #9D9FA6;
-	--color-neutral-60: #6C7079;
-	--color-neutral-80: #3B404D;
+  /************************** semantic */
+  --color-success-light: #B9E9DD;
+  --color-success-medium: #37AE91;
+  --color-success-dark: #174A3D;
+  --color-warning-light: #FFF7B8;
+  --color-warning-medium: #FFE205;
+  --color-warning-dark: #B8A200;
+  --color-info-light: #EBEDF5;
+  --color-info-medium: #8495C5;
+  --color-info-dark: #283F7E;
+  --color-error-light: #F7BDAB;
+  --color-error-medium: #E65528;
+  --color-error-dark: #912808;
 
-	--color-dark: #232836;
-	--color-light: #cecfd2;
+  /************************** background */
+  --color-bg-primary-light: #F9FAFC;
+  --color-bg-helper: #FAFAFA;
 
-	--color-link: #5BC5F2;
-	--color-heading: #324f9e;
-	--color-opacities-dark-05: #0A1020;
+  /************************** opacities */
+  --color-opacities-dark-05: rgba(10, 16, 32, 0.05);
+  --color-opacities-dark-10: rgba(10, 16, 32, 0.1);
+  --color-opacities-dark-20: rgba(10, 16, 32, 0.2);
+  --color-opacities-dark-40: rgba(10, 16, 32, 0.4);
+  --color-opacities-dark-80: rgba(10, 16, 32, 0.8);
+  --color-opacities-light-05: rgba(235, 237, 245, 0.05);
+  --color-opacities-light-10: rgba(235, 237, 245, 0.1);
+  --color-opacities-light-20: rgba(235, 237, 245, 0.2);
+  --color-opacities-light-40: rgba(235, 237, 245, 0.4);
+  --color-opacities-light-80: rgba(235, 237, 245, 0.8);
 
-	/*********************************** font sizes */
-	--text-89: 5.61rem;
-	/* 89.76px */
-	--text-80: 5rem;
-	/* 80px */
-	---text-67: 4.209rem;
-	/* 67.34px */
-	---text-50: 3.157rem;
-	/* 50.52px */
-	--text-37: 2.369rem;
-	/* 37.9px */
-	--text-28: 1.777rem;
-	/* 28.43px */
-	--text-24: 1.5rem;
-	/* 24px */
-	--text-20: 1.25rem;
-	/* 20px */
-	--text-18: 1.125rem;
-	/* 18px */
-	--text-16: 1rem;
-	/* 16px */
-	--text-14: 0.875rem;
-	/* 14px */
-	--text-12: 0.75rem;
-	/* 12px */
+  /************************** shadows */
+  --color-shadows-light-soft: rgba(2, 0, 15, 0.15);
+  --color-shadows-light-medium: rgba(8, 0, 4, 0.15);
+  --color-shadows-light-strong: rgba(16, 0, 8, 0.2);
+  --color-shadows-dark-soft: rgba(2, 0, 2, 0.15);
+  --color-shadows-dark-medium: rgba(235, 237, 245, 0.4);
+  --color-shadows-dark-strong: rgba(235, 237, 245, 0.4);
 
-	/* to update */
-	--text-xxs: 0.63rem;
-	/* --text-18: 67.34px; */
-	--text-12-5: 50.52px;
-	--text-9-5: 37.9px;
-	--text-7: 28.43px;
+  /************************** gradients */
+  --color-gradient-scrim: linearGradient(rgba(10, 16, 32, 0.5), rgba(10, 16, 32, 0));
+  --color-gradient-light: linearGradient(rgba(235, 237, 245, 1), rgba(235, 237, 245, 0));
 
-	/*********************************** weights */
-	--font-weight-black: '900';
-	--font-weight-bold: '700';
-	--font-weight-medium: '500';
-	--font-weight-regular: '400';
-	--font-weight-light: '300';
+  /*********************************** font sizes */
+  --text-89: 5.61rem;
+  /* 89.76px */
+  --text-80: 5rem;
+  /* 80px */
+  ---text-67: 4.209rem;
+  /* 67.34px */
+  ---text-50: 3.157rem;
+  /* 50.52px */
+  --text-37: 2.369rem;
+  /* 37.9px */
+  --text-28: 1.777rem;
+  /* 28.43px */
+  --text-24: 1.5rem;
+  /* 24px */
+  --text-20: 1.25rem;
+  /* 20px */
+  --text-18: 1.125rem;
+  /* 18px */
+  --text-16: 1rem;
+  /* 16px */
+  --text-14: 0.875rem;
+  /* 14px */
+  --text-12: 0.75rem;
+  /* 12px */
+  --text-48: 3.052rem;
+  /* 48.83px */
+  --text-39: 2.441rem;
+  /* 39.06px */
+  --text-31: 1.953rem;
+  /* 31.25px */
+  --text-25: 1.563rem;
+  /* 25px */
 
-	/*********************************** font */
-	--font-roboto-condensed: 'Roboto Condensed', sans-serif;
-	--font-inter: 'Inter', sans-serif;
-	--font-roboto: 'Roboto', sans-serif;
-	--font-anta: 'Anta', sans-serif;
+  /* to update */
+  --text-xxs: 0.63rem;
+  /* --text-18: 67.34px; */
+  --text-12-5: 50.52px;
+  --text-9-5: 37.9px;
+  --text-7: 28.43px;
 
-	/*********************************** font */
-	--line-height-109: 6.85rem; /* 109.6px - Tagline Desktop */
-	--line-height-98: 6.175rem; /* 98.8px - Heading 1 Desktop */
-	--line-height-78: 4.931rem; /* 78.9px - Heading 2 Desktop */
-	--line-height-59: 3.7rem; /* 59.2px - Heading 3 Desktop */
-	--line-height-44: 2.775rem; /* 44.4px - Heading 4 Desktop */
-	--line-height-38: 2.394rem; /* 38.3px - Heading 5 Desktop */
-	--line-height-23: 1.438rem; /* 23px - Reference style */ 
-	--line-height-21: 1.313rem; /* 21px - Model style */ 
-	--line-height-24: 1.5rem; /* 24px - Subtitle, Label 1, Body 2 */ 
-	--line-height-20: 1.25rem; /* 20px - Label 2 */ 
-	--line-height-18: 1.125rem; /* 18px - Label 3 */ 
-	--line-height-30: 1.875rem; /* 30px - Body 1 */ 
-	--line-height-12: 0.75rem; /* 12px - Body 3 */ 
-	--line-height-14: 0.875rem; /* 12px - Caption */
-	--line-height-40: 2.5rem; /* 40px - Body 0 */
+  /*********************************** weights */
+  --font-weight-black: '900';
+  --font-weight-bold: '700';
+  --font-weight-medium: '500';
+  --font-weight-regular: '400';
+  --font-weight-light: '300';
 
-	/*********************************** animation */
-	--animate-wiggle: wiggle 1s ease-in-out infinite;
+  /*********************************** font */
+  --font-roboto-condensed: 'Roboto Condensed', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-anta: 'Anta', sans-serif;
 
-	@keyframes wiggle {
+  /*********************************** font */
+  --line-height-109: 6.85rem;
+  /* 109.6px - Tagline - Desktop */
+  --line-height-98: 6.175rem;
+  /* 98.8px - Heading 1 - Desktop */
+  --line-height-78: 4.931rem;
+  /* 78.9px - Heading 2 - Desktop */
+  --line-height-59: 3.7rem;
+  /* 59.2px - Heading 3 - Desktop */
+  --line-height-44: 2.775rem;
+  /* 44.4px - Heading 4 - Desktop */
+  --line-height-38: 2.394rem;
+  /* 38.3px - Heading 5 - Desktop */
+  --line-height-23: 1.438rem;
+  /* 23px - Reference - Common */
+  --line-height-21: 1.313rem;
+  /* 21px - Model - Common */
+  --line-height-24: 1.5rem;
+  /* 24px - Subtitle, Label 1, Body 2 - Common */
+  --line-height-20: 1.25rem;
+  /* 20px - Label 2 - Common */
+  --line-height-18: 1.125rem;
+  /* 18px - Label 3 - Common */
+  --line-height-30: 1.875rem;
+  /* 30px - Body 1 - Common */
+  --line-height-12: 0.75rem;
+  /* 12px - Body 3 - Common */
+  --line-height-14: 0.875rem;
+  /* 12px - Caption - Common */
+  --line-height-40: 2.5rem;
+  /* 40px - Body 0 - Common */
+  --line-height-59: 3.725rem;
+  /* 59.6px - Tagline - Mobile */
+  --line-height-57: 3.563rem;
+  /* 57px - Heading 1 - Mobile */
+  --line-height-45: 2.863rem;
+  /* 45.8px - Heading 2 - Mobile */
+  --line-height-36: 2.288rem;
+  /* 36.6px - Heading 3 - Mobile */
+  --line-height-29: 1.831rem;
+  /* 29.3px - Heading 4 - Mobile */
+  --line-height-23: 1.438rem;
+  /* 23px - Heading 5 - Mobile */
+  --line-height-18: 1.175rem;
+  /* 18.8px - Heading 6 - Mobile */
 
-		0%,
-		100% {
-			transform: rotate(-3deg);
-		}
+  /*********************************** animation */
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
 
-		50% {
-			transform: rotate(3deg);
-		}
-	}
+  @keyframes wiggle {
+
+    0%,
+    100% {
+      transform: rotate(-3deg);
+    }
+
+    50% {
+      transform: rotate(3deg);
+    }
+  }
 }
 
 /*********************************************** core */
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	box-sizing: border-box;
-	min-height: 100%;
-	padding: 0;
-	margin: 0;
-	font-family: var(--font-roboto);
-	background-color: var(--color-primary-light);
-	color: var(--color-dark);
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-roboto);
+  background-color: var(--color-primary-light);
+  color: var(--color-neutral-90);
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
-	flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .footer {
-	flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 #page-container {
-	min-height: 100vh;
+  min-height: 100vh;
 }
 
 .link {
-	text-decoration: underline;
-	text-underline-offset: 0;
+  text-decoration: underline;
+  text-underline-offset: 0;
   color: var(--color-secondary-60-light);
 }
 
 .link:hover {
-  color: var(--color-link);
+  color: var(--color-secondary-00);
 }
 
 /*********************************************** titles */
 
 .h2 {
-	color: var(--color-heading);
-	letter-spacing: normal;
-	text-align: center;
+  color: var(--color-primary-00);
+  letter-spacing: normal;
+  text-align: center;
 }
 
 .b0 {
-	color: var(--color-dark);
-	letter-spacing: normal;
-	text-align: center;
+  color: var(--color-neutral-90);
+  letter-spacing: normal;
+  text-align: center;
 }
 
 /*********************************************** style */
 /******************************* desktop */
 .tagline-desktop {
-	font-family: var(--font-anta);
-	font-weight: var(--font-weight-regular);
-	font-size: var(--text-89);
-	line-height: var(--line-height-109);
+  font-family: var(--font-anta);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-89);
+  line-height: var(--line-height-109);
 }
 
 .heading-1-desktop {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-medium);
-	font-size: var(--text-80);
-	line-height: var(--line-height-98);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-80);
+  line-height: var(--line-height-98);
 }
 
 .heading-2-desktop {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-medium);
-	font-size: var(---text-67);
-	line-height: var(--line-height-78);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(---text-67);
+  line-height: var(--line-height-78);
 }
 
 .heading-3-desktop {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-medium);
-	font-size: var(---text-50);
-	line-height: var(--line-height-59);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(---text-50);
+  line-height: var(--line-height-59);
 }
 
 .heading-4-desktop {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--text-37);
-	line-height: var(--line-height-44);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-37);
+  line-height: var(--line-height-44);
 }
 
 .heading-5-desktop {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-semibold);
-	font-size: var(--text-28);
-	line-height: var(--line-height-38);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-28);
+  line-height: var(--line-height-38);
 }
 
-/* #TODO */
 /******************************* mobile */
 .tagline-mobile {
-	/* font-family: var(--font-anta);
-        font-weight: var(--font-weight-regular); 
-        font-size :var(--text-89); */
+  font-family: var(--font-anta);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-48);
+  line-height: var(--line-height-59);
 }
 
 .heading-1-mobile {
-	/* font-family: var(--font-roboto);
-        font-weight: var(--font-weight-medium); 
-        font-size :var(--text-80); */
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-48);
+  line-height: var(--line-height-57);
 }
 
 .heading-2-mobile {
-	/* font-family: var(--font-roboto);
-        font-weight: var(--font-weight-medium); 
-        font-size :var(---text-67); */
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(---text-39);
+  line-height: var(--line-height-45);
 }
 
 .heading-3-mobile {
-	/* font-family: var(--font-roboto);
-        font-weight: var(--font-weight-medium); 
-        font-size :var(---text-50); */
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(---text-31);
+  line-height: var(--line-height-36);
 }
 
 .heading-4-mobile {
-	/* font-family: var(--font-roboto);
-        font-weight: var(--font-weight-semibold); 
-        font-size :var(--text-37); */
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-25);
+  line-height: var(--line-height-29);
 }
 
 .heading-5-mobile {
-	/* font-family: var(--font-roboto);
-        font-weight: var(--font-weight-semibold); 
-        font-size :var(--text-28); */
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--text-20);
+  line-height: var(--line-height-23);
 }
 
 .heading-6-mobile {
-	/* font-family: var(--font-roboto);
-        font-weight: var(--font-weight-semibold); 
-        font-size :var(--text-28); */
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-16);
+  line-height: var(--line-height-18);
 }
 
 /******************************* common */
 .reference {
-	font-family: var(--font-roboto-condensed);
-	font-weight: var(--font-weight-medium);
-	font-size: var(--text-20);
-	text-transform: uppercase;
-	line-height: var(--line-height-23);
+  font-family: var(--font-roboto-condensed);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-20);
+  text-transform: uppercase;
+  line-height: var(--line-height-23);
 }
 
 .model {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-medium);
-	font-size: var(--text-18);
-	text-transform: uppercase;
-	line-height: var(--line-height-23);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-18);
+  text-transform: uppercase;
+  line-height: var(--line-height-23);
 }
 
 .subtitle,
 .label-1 {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-medium);
-	font-size: var(--text-20);
-	line-height: var(--line-height-24);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-20);
+  line-height: var(--line-height-24);
 }
 
 .label-2 {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-medium);
-	font-size: var(--text-16);
-	line-height: var(--line-height-20);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-16);
+  line-height: var(--line-height-20);
 }
 
 .label-3 {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-medium);
-	font-size: var(--text-14);
-	line-height: var(--line-height-18);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-14);
+  line-height: var(--line-height-18);
 }
 
 .body-0 {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-regular);
-	font-size: var(--text-24);
-	line-height: var(--line-height-40);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-24);
+  line-height: var(--line-height-40);
 }
 
 .body-1 {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-regular);
-	font-size: var(--text-20);
-	line-height: var(--line-height-30);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-20);
+  line-height: var(--line-height-30);
 }
 
 .body-2 {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-regular);
-	font-size: var(--text-16);
-	line-height: var(--line-height-24);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-16);
+  line-height: var(--line-height-24);
 }
 
 .body-3 {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-regular);
-	font-size: var(--text-14);
-	line-height: var(--line-height-12);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-14);
+  line-height: var(--line-height-12);
 }
 
 .caption {
-	font-family: var(--font-roboto);
-	font-weight: var(--font-weight-regular);
-	font-size: var(--text-12);
-	line-height: var(--line-height-14);
+  font-family: var(--font-roboto);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-12);
+  line-height: var(--line-height-14);
 }
-
