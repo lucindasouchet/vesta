@@ -1,0 +1,5 @@
+---
+const { id, classes, content, href} = Astro.props;
+---
+
+<a id={id} class={`link caption link:hover ${classes}`} data-i18n={`${content}`} href={href}></a>

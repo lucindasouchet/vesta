@@ -147,6 +147,16 @@ body {
 	min-height: 100vh;
 }
 
+.link {
+	text-decoration: underline;
+	text-underline-offset: 0;
+  color: var(--color-secondary-60-light);
+}
+
+.link:hover {
+  color: var(--color-link);
+}
+
 /*********************************************** titles */
 
 .h2 {
@@ -322,3 +332,4 @@ body {
 	font-size: var(--text-12);
 	line-height: var(--line-height-14);
 }
+
