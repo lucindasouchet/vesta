@@ -11,9 +11,11 @@
   --color-primary-10-light: #4761A8;
   --color-primary-00: #22509B;
   --color-primary-10-dark: #2D478E;
-  --color-primary-20-dark: #283F7E; /* background primary medium */
+  --color-primary-20-dark: #283F7E;
+  /* background primary medium */
   --color-primary-40-dark: #1E2F5F;
-  --color-primary-60-dark: #14203F; /* background primary dark */
+  --color-primary-60-dark: #14203F;
+  /* background primary dark */
   --color-primary-80-dark: #0A1020;
 
   /************************** secondary */
@@ -435,4 +437,29 @@ body {
   font-weight: var(--font-weight-regular);
   font-size: var(--text-12);
   line-height: var(--line-height-14);
+}
+
+/*********************************************** media queries */
+/* sm - mobile */
+@media screen and (max-width: 640px) {
+}
+
+/* md - tablet */
+@media screen and (min-width: 641px) {
+
+}
+
+/* lg - laptop */
+@media screen and (min-width: 768px) {
+
+}
+
+/* xl - desktop */
+@media screen and (min-width: 1280px) {
+
+}
+
+/* 2xl - large desktop */
+@media screen and (min-width: 1536px) {
+
 }
