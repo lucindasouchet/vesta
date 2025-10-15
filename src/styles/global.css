@@ -11,9 +11,9 @@
   --color-primary-10-light: #4761A8;
   --color-primary-00: #22509B;
   --color-primary-10-dark: #2D478E;
-  --color-primary-20-dark: #283F7E;
+  --color-primary-20-dark: #283F7E; /* background primary medium */
   --color-primary-40-dark: #1E2F5F;
-  --color-primary-60-dark: #14203F;
+  --color-primary-60-dark: #14203F; /* background primary dark */
   --color-primary-80-dark: #0A1020;
 
   /************************** secondary */
