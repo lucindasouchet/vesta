@@ -6,16 +6,22 @@ import i18next from "i18next";
 const { t } = i18next;
 ---
 
-<div id="page-container" class="m-4">
-  <section class="p-12 gap-12">
+<div id="page-container" class="flex flex-col items-start space-y-24 mt-24">
+  <section id="products-page-section-1" class="items-center py-12 px-24">
     <TitleComponent
       id="section1-title"
-      classes="h2 heading-2-desktop pb-12"
+      classes="h2 heading-2-desktop pb-24"
       content={t("product_page.vesta_security_systems")}
     />
     <TextComponent
       classes="b0 body-0"
       content={t("product_page.three_communication_technologies")}
     />
+  </section>
+  <section id="products-page-section-2">
+    <p>section 2</p>
+  </section>
+  <section id="products-page-section-3">
+    <p>section 3</p>
   </section>
 </div>
