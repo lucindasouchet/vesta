@@ -259,10 +259,18 @@ body {
 
 /*********************************************** titles */
 
-.h2 {
-  color: var(--color-primary-00);
+.h2,
+.h3 {
   letter-spacing: normal;
   text-align: center;
+}
+
+.h2 {
+  color: var(--color-primary-00);
+}
+
+.h3 {
+  color: var(--color-primary-40-light);
 }
 
 .b0 {
@@ -441,25 +449,16 @@ body {
 
 /*********************************************** media queries */
 /* sm - mobile */
-@media screen and (max-width: 640px) {
-}
+@media screen and (max-width: 640px) {}
 
 /* md - tablet */
-@media screen and (min-width: 641px) {
-
-}
+@media screen and (min-width: 641px) {}
 
 /* lg - laptop */
-@media screen and (min-width: 768px) {
-
-}
+@media screen and (min-width: 768px) {}
 
 /* xl - desktop */
-@media screen and (min-width: 1280px) {
-
-}
+@media screen and (min-width: 1280px) {}
 
 /* 2xl - large desktop */
-@media screen and (min-width: 1536px) {
-
-}
+@media screen and (min-width: 1536px) {}
