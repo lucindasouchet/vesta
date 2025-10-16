@@ -86,37 +86,37 @@
 
   /*********************************** font sizes */
   --text-89: 5.61rem;
-  /* 89.76px */
+  /* 89.76px - tagline-desktop */
   --text-80: 5rem;
-  /* 80px */
-  ---text-67: 4.209rem;
-  /* 67.34px */
-  ---text-50: 3.157rem;
-  /* 50.52px */
+  /* 80px - heading-1-desktop */
+  --text-67: 4.209rem;
+  /* 67.34px - heading-2-desktop */
+  --text-50: 3.157rem;
+  /* 50.52px - heading-3-desktop */
   --text-37: 2.369rem;
-  /* 37.9px */
+  /* 37.9px - heading-4-desktop */
   --text-28: 1.777rem;
-  /* 28.43px */
+  /* 28.43px - heading-5-desktop */
   --text-24: 1.5rem;
-  /* 24px */
+  /* 24px - body-0 (Common) */
   --text-20: 1.25rem;
-  /* 20px */
+  /* 20px - heading-5-mobile, reference, body-1 (Common) */
   --text-18: 1.125rem;
-  /* 18px */
+  /* 18px - model (Common) */
   --text-16: 1rem;
-  /* 16px */
+  /* 16px - heading-6-mobile, label-2, body-2 (Common) */
   --text-14: 0.875rem;
-  /* 14px */
+  /* 14px - label-3, body-3 (Common) */
   --text-12: 0.75rem;
-  /* 12px */
+  /* 12px - caption */
   --text-48: 3.052rem;
-  /* 48.83px */
+  /* 48.83px - tagline-mobile, heading-1-mobile */
   --text-39: 2.441rem;
-  /* 39.06px */
+  /* 39.06px - heading-2-mobile */
   --text-31: 1.953rem;
-  /* 31.25px */
+  /* 31.25px -  heading-3-mobile */
   --text-25: 1.563rem;
-  /* 25px */
+  /* 25px -  heading-4-mobile */
 
   /* to update */
   --text-xxs: 0.63rem;
@@ -140,49 +140,49 @@
 
   /*********************************** font */
   --line-height-109: 6.85rem;
-  /* 109.6px - Tagline - Desktop */
+  /* 109.6px - tagline-desktop */
   --line-height-98: 6.175rem;
-  /* 98.8px - Heading 1 - Desktop */
+  /* 98.8px - heading-1-desktop */
   --line-height-78: 4.931rem;
-  /* 78.9px - Heading 2 - Desktop */
+  /* 78.9px - heading-2.desktop */
   --line-height-59: 3.7rem;
-  /* 59.2px - Heading 3 - Desktop */
+  /* 59.2px - heading-3-desktop - tagline-mobile */
   --line-height-44: 2.775rem;
-  /* 44.4px - Heading 4 - Desktop */
+  /* 44.4px - heading-4-desktop */
   --line-height-38: 2.394rem;
-  /* 38.3px - Heading 5 - Desktop */
+  /* 38.3px - heading-5-desktop */
   --line-height-23: 1.438rem;
-  /* 23px - Reference - Common */
+  /* 23px - reference (Common) */
   --line-height-21: 1.313rem;
-  /* 21px - Model - Common */
+  /* 21px - model (Common) */
   --line-height-24: 1.5rem;
-  /* 24px - Subtitle, Label 1, Body 2 - Common */
+  /* 24px - subtitle, label-1, body-2 (Common) */
   --line-height-20: 1.25rem;
-  /* 20px - Label 2 - Common */
+  /* 20px - subtitle, label-1, label-2 (Common) */
   --line-height-18: 1.125rem;
-  /* 18px - Label 3 - Common */
+  /* 18px - label-3 (Common) */
   --line-height-30: 1.875rem;
-  /* 30px - Body 1 - Common */
+  /* 30px - body-1 (Common) */
   --line-height-12: 0.75rem;
-  /* 12px - Body 3 - Common */
+  /* 12px - body-3 (Common) */
   --line-height-14: 0.875rem;
-  /* 12px - Caption - Common */
+  /* 14px - caption (Common) */
   --line-height-40: 2.5rem;
-  /* 40px - Body 0 - Common */
+  /* 40px - body-0 (Common) */
   --line-height-59: 3.725rem;
-  /* 59.6px - Tagline - Mobile */
+  /* 59.6px - tagline-mobile */
   --line-height-57: 3.563rem;
-  /* 57px - Heading 1 - Mobile */
+  /* 57px - heading-1-mobile */
   --line-height-45: 2.863rem;
-  /* 45.8px - Heading 2 - Mobile */
+  /* 45.8px - heading-2-mobile */
   --line-height-36: 2.288rem;
-  /* 36.6px - Heading 3 - Mobile */
+  /* 36.6px - heading-3-mobile */
   --line-height-29: 1.831rem;
-  /* 29.3px - Heading 4 - Mobile */
+  /* 29.3px - heading-4-mobile */
   --line-height-23: 1.438rem;
-  /* 23px - Heading 5 - Mobile */
+  /* 23px - heading-5-mobile */
   --line-height-18: 1.175rem;
-  /* 18.8px - Heading 6 - Mobile */
+  /* 18.8px - heading-6-mobile */
 
   /*********************************** animation */
   --animate-wiggle: wiggle 1s ease-in-out infinite;
@@ -276,167 +276,167 @@ body {
 .tagline-desktop {
   font-family: var(--font-anta);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-89);
-  line-height: var(--line-height-109);
+  /* font-size: var(--text-89);
+  line-height: var(--line-height-109); */
 }
 
 .heading-1-desktop {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-80);
-  line-height: var(--line-height-98);
+  /* font-size: var(--text-80);
+  line-height: var(--line-height-98); */
 }
 
 .heading-2-desktop {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(---text-67);
-  line-height: var(--line-height-78);
+  /* font-size: var(--text-67);
+  line-height: var(--line-height-78); */
 }
 
 .heading-3-desktop {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(---text-50);
-  line-height: var(--line-height-59);
+  /* font-size: var(--text-50);
+  line-height: var(--line-height-59); */
 }
 
 .heading-4-desktop {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-semibold);
-  font-size: var(--text-37);
-  line-height: var(--line-height-44);
+  /* font-size: var(--text-37);
+  line-height: var(--line-height-44); */
 }
 
 .heading-5-desktop {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-semibold);
-  font-size: var(--text-28);
-  line-height: var(--line-height-38);
+  /* font-size: var(--text-28);
+  line-height: var(--line-height-38); */
 }
 
 /******************************* mobile */
 .tagline-mobile {
   font-family: var(--font-anta);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-48);
-  line-height: var(--line-height-59);
+  /* font-size: var(--text-48);
+  line-height: var(--line-height-59); */
 }
 
 .heading-1-mobile {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-48);
-  line-height: var(--line-height-57);
+  /* font-size: var(--text-48);
+  line-height: var(--line-height-57); */
 }
 
 .heading-2-mobile {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(---text-39);
-  line-height: var(--line-height-45);
+  /* font-size: var(--text-39);
+  line-height: var(--line-height-45); */
 }
 
 .heading-3-mobile {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(---text-31);
-  line-height: var(--line-height-36);
+  /* font-size: var(--text-31);
+  line-height: var(--line-height-36); */
 }
 
 .heading-4-mobile {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-semibold);
-  font-size: var(--text-25);
-  line-height: var(--line-height-29);
+  /* font-size: var(--text-25);
+  line-height: var(--line-height-29); */
 }
 
 .heading-5-mobile {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-semibold);
-  font-size: var(--text-20);
-  line-height: var(--line-height-23);
+  /* font-size: var(--text-20);
+  line-height: var(--line-height-23); */
 }
 
 .heading-6-mobile {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-bold);
-  font-size: var(--text-16);
-  line-height: var(--line-height-18);
+  /* font-size: var(--text-16);
+  line-height: var(--line-height-18); */
 }
 
 /******************************* common */
 .reference {
   font-family: var(--font-roboto-condensed);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-20);
   text-transform: uppercase;
-  line-height: var(--line-height-23);
+  /* font-size: var(--text-20);
+  line-height: var(--line-height-23); */
 }
 
 .model {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-18);
   text-transform: uppercase;
-  line-height: var(--line-height-23);
+  /* font-size: var(--text-18);
+  line-height: var(--line-height-21); */
 }
 
 .subtitle,
 .label-1 {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-20);
-  line-height: var(--line-height-24);
+  /* font-size: var(--text-20);
+  line-height: var(--line-height-24); */
 }
 
 .label-2 {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-16);
-  line-height: var(--line-height-20);
+  /* font-size: var(--text-16);
+  line-height: var(--line-height-20); */
 }
 
 .label-3 {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-medium);
-  font-size: var(--text-14);
-  line-height: var(--line-height-18);
+  /* font-size: var(--text-14);
+  line-height: var(--line-height-18); */
 }
 
 .body-0 {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-24);
-  line-height: var(--line-height-40);
+  /* font-size: var(--text-24);
+  line-height: var(--line-height-40); */
 }
 
 .body-1 {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-20);
-  line-height: var(--line-height-30);
+  /* font-size: var(--text-20);
+  line-height: var(--line-height-30); */
 }
 
 .body-2 {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-16);
-  line-height: var(--line-height-24);
+  /* font-size: var(--text-16);
+  line-height: var(--line-height-24); */
 }
 
 .body-3 {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-14);
-  line-height: var(--line-height-12);
+  /* font-size: var(--text-14);
+  line-height: var(--line-height-12); */
 }
 
 .caption {
   font-family: var(--font-roboto);
   font-weight: var(--font-weight-regular);
-  font-size: var(--text-12);
-  line-height: var(--line-height-14);
+  /* font-size: var(--text-12);
+  line-height: var(--line-height-14); */
 }
 
 /*********************************************** media queries */
