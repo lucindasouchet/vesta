@@ -2,6 +2,7 @@
 import TitleComponent from "./core/Title.astro";
 import TextComponent from "./core/Text.astro";
 import i18next from "i18next";
+import Divider from "./core/Divider.astro";
 
 const { t } = i18next;
 ---
@@ -124,7 +125,7 @@ const { t } = i18next;
             classes="h6 heading-6-mobile text-left text-16"
             content={t("product_page.vesta-description-title")}
           />
-          <hr class="my-1 h-0.25 border-t-0 bg-primary-60-light" />
+          <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
           <TextComponent
             id="section-2-inner-card-description-text"
             classes="b2 body-2 text-left text-16"
@@ -222,7 +223,7 @@ const { t } = i18next;
             classes="h6 heading-6-mobile text-left text-16"
             content={t("product_page.vesta-description-title")}
           />
-          <hr class="my-1 h-0.25 border-t-0 bg-primary-60-light" />
+          <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
           <TextComponent
             id="section-2-inner-card-description-text"
             classes="b2 body-2 text-left text-16"
@@ -320,7 +321,7 @@ const { t } = i18next;
             classes="h6 heading-6-mobile text-left text-16"
             content={t("product_page.vesta-description-title")}
           />
-          <hr class="my-1 h-0.25 border-t-0 bg-primary-60-light" />
+          <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
           <TextComponent
             id="section-2-inner-card-description-text"
             classes="b2 body-2 text-left text-16"

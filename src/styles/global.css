@@ -73,12 +73,12 @@
   --color-opacities-light-80: rgba(235, 237, 245, 0.8);
 
   /************************** shadows */
-  --color-shadows-light-soft: rgba(2, 0, 15, 0.15);
+  --color-shadows-light-soft: rgba(2, 0, 2, 0.15);
   --color-shadows-light-medium: rgba(8, 0, 4, 0.15);
   --color-shadows-light-strong: rgba(16, 0, 8, 0.2);
-  --color-shadows-dark-soft: rgba(2, 0, 2, 0.15);
-  --color-shadows-dark-medium: rgba(235, 237, 245, 0.4);
-  --color-shadows-dark-strong: rgba(235, 237, 245, 0.4);
+  --color-shadows-dark-soft: rgba(0, 2, 10, 0.15);
+  --color-shadows-dark-medium: rgba(0, 4, 10, 0.15);
+  --color-shadows-dark-strong: rgba(0, 6, 10, 0.15);
 
   /************************** gradients */
   --color-gradient-scrim: linearGradient(rgba(10, 16, 32, 0.5), rgba(10, 16, 32, 0));
