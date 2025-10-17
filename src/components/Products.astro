@@ -3,6 +3,7 @@ import TitleComponent from "./core/Title.astro";
 import TextComponent from "./core/Text.astro";
 import i18next from "i18next";
 import Divider from "./core/Divider.astro";
+import Label from "./core/Label.astro";
 
 const { t } = i18next;
 ---
@@ -33,11 +34,14 @@ const { t } = i18next;
         classes="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
         content={t("product_page.radio_alarm_centers")}
       />
-      <div class="grid grid-cols-2 gap-4 md:gap-5 lg:gap-6">
-        <div id="card-container-1" class="product-card-container rounded-xl p-4 md:p-8 lg:p-12">
-          <div class="flex flex-col pb-12">
-            <div class="flex flex-col md:flex-row md:gap-6">
-              <div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+        <div
+          id="card-container-1"
+          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12 item-center lg:items-start"
+        >
+          <div class="flex flex-col mb-4 md:mb-8 lg:mb-12">
+            <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
+              <div class="place-items-center">
                 <img
                   src="https://placehold.co/366x305?text=placeholder"
                   alt="placeholder"
@@ -45,19 +49,19 @@ const { t } = i18next;
                 />
               </div>
               <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
-                <TitleComponent
+                <Label
                   id="section-2-inner-card-reference"
-                  classes="ref reference text-left text-20"
+                  classes="ref reference text-left text-16 md:text-18 lg:text-20"
                   content={t("product_page.vesta-product-reference")}
                 />
-                <TextComponent
+                <Label
                   id="section-2-inner-card-model"
-                  classes="mod model text-left text-18 pb-9"
+                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
                   content={t("product_page.vesta-product-model")}
                 />
                 <div>
                   <!-- Icons Grid -->
-                  <div class="flex flex-row flex-wrap items-start gap-6">
+                  <div class="flex flex-row flex-wrap items-start place-items-center gap-6">
                     <!-- Item -->
                     <div
                       class="flex flex-col items-center text-center flex-wrap"
@@ -120,22 +124,27 @@ const { t } = i18next;
               </div>
             </div>
           </div>
-          <TitleComponent
-            id="section-2-inner-card-description-title"
-            classes="h6 heading-6-mobile text-left text-16"
-            content={t("product_page.vesta-description-title")}
-          />
-          <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
-          <TextComponent
-            id="section-2-inner-card-description-text"
-            classes="b2 body-2 text-left text-16"
-            content={t("product_page.vesta-description-text")}
-          />
+          <div>
+            <TitleComponent
+              id="section-2-inner-card-description-title"
+              classes="h6 heading-6-mobile text-left text-16"
+              content={t("product_page.vesta-description-title")}
+            />
+            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <TextComponent
+              id="section-2-inner-card-description-text"
+              classes="b2 body-2 text-left text-16"
+              content={t("product_page.vesta-description-text")}
+            />
+          </div>
         </div>
-        <div id="card-container-1" class="product-card-container rounded-xl p-4 md:p-8 lg:p-12">
-          <div class="flex flex-col pb-12">
-            <div class="flex flex-col md:flex-row md:gap-6">
-              <div>
+<div
+          id="card-container-2"
+          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12 item-center lg:items-start"
+        >
+          <div class="flex flex-col mb-4 md:mb-8 lg:mb-12">
+            <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
+              <div class="place-items-center">
                 <img
                   src="https://placehold.co/366x305?text=placeholder"
                   alt="placeholder"
@@ -143,19 +152,19 @@ const { t } = i18next;
                 />
               </div>
               <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
-                <TitleComponent
+                <Label
                   id="section-2-inner-card-reference"
-                  classes="ref reference text-left text-20"
+                  classes="ref reference text-left text-16 md:text-18 lg:text-20"
                   content={t("product_page.vesta-product-reference")}
                 />
-                <TextComponent
+                <Label
                   id="section-2-inner-card-model"
-                  classes="mod model text-left text-18 pb-9"
+                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
                   content={t("product_page.vesta-product-model")}
                 />
                 <div>
                   <!-- Icons Grid -->
-                  <div class="flex flex-row flex-wrap items-start gap-6">
+                  <div class="flex flex-row flex-wrap items-start place-items-center gap-6">
                     <!-- Item -->
                     <div
                       class="flex flex-col items-center text-center flex-wrap"
@@ -218,22 +227,27 @@ const { t } = i18next;
               </div>
             </div>
           </div>
-          <TitleComponent
-            id="section-2-inner-card-description-title"
-            classes="h6 heading-6-mobile text-left text-16"
-            content={t("product_page.vesta-description-title")}
-          />
-          <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
-          <TextComponent
-            id="section-2-inner-card-description-text"
-            classes="b2 body-2 text-left text-16"
-            content={t("product_page.vesta-description-text")}
-          />
+          <div>
+            <TitleComponent
+              id="section-2-inner-card-description-title"
+              classes="h6 heading-6-mobile text-left text-16"
+              content={t("product_page.vesta-description-title")}
+            />
+            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <TextComponent
+              id="section-2-inner-card-description-text"
+              classes="b2 body-2 text-left text-16"
+              content={t("product_page.vesta-description-text")}
+            />
+          </div>
         </div>
-        <div id="card-container-1" class="product-card-container rounded-xl p-4 md:p-8 lg:p-12">
-          <div class="flex flex-col pb-12">
-            <div class="flex flex-col md:flex-row md:gap-6">
-              <div>
+        <div
+          id="card-container-3"
+          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12 item-center lg:items-start"
+        >
+          <div class="flex flex-col mb-4 md:mb-8 lg:mb-12">
+            <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
+              <div class="place-items-center">
                 <img
                   src="https://placehold.co/366x305?text=placeholder"
                   alt="placeholder"
@@ -241,19 +255,19 @@ const { t } = i18next;
                 />
               </div>
               <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
-                <TitleComponent
+                <Label
                   id="section-2-inner-card-reference"
-                  classes="ref reference text-left text-20"
+                  classes="ref reference text-left text-16 md:text-18 lg:text-20"
                   content={t("product_page.vesta-product-reference")}
                 />
-                <TextComponent
+                <Label
                   id="section-2-inner-card-model"
-                  classes="mod model text-left text-18 pb-9"
+                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
                   content={t("product_page.vesta-product-model")}
                 />
                 <div>
                   <!-- Icons Grid -->
-                  <div class="flex flex-row flex-wrap items-start gap-6">
+                  <div class="flex flex-row flex-wrap items-start place-items-center gap-6">
                     <!-- Item -->
                     <div
                       class="flex flex-col items-center text-center flex-wrap"
@@ -316,22 +330,357 @@ const { t } = i18next;
               </div>
             </div>
           </div>
-          <TitleComponent
-            id="section-2-inner-card-description-title"
-            classes="h6 heading-6-mobile text-left text-16"
-            content={t("product_page.vesta-description-title")}
-          />
-          <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
-          <TextComponent
-            id="section-2-inner-card-description-text"
-            classes="b2 body-2 text-left text-16"
-            content={t("product_page.vesta-description-text")}
-          />
+          <div>
+            <TitleComponent
+              id="section-2-inner-card-description-title"
+              classes="h6 heading-6-mobile text-left text-16"
+              content={t("product_page.vesta-description-title")}
+            />
+            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <TextComponent
+              id="section-2-inner-card-description-text"
+              classes="b2 body-2 text-left text-16"
+              content={t("product_page.vesta-description-text")}
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
+  <section id="products-page-section-3">
+    <div class="flex flex-col p-4 lg:p-8 xl:p-12 2xl:p-24">
+      <TitleComponent
+        id="section-2-title"
+        classes="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+        content={t("product_page.wireless-keyboards")}
+      />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+        <div
+          id="card-container-1"
+          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
+        >
+          <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
+            <div class="place-items-center">
+              <img
+                src="https://placehold.co/366x305?text=placeholder"
+                alt="placeholder"
+                class=""
+              />
+            </div>
+            <div class="flex flex-col md:flex-row md:gap-6">
+              <div class="flex flex-col">
+                <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9">
+                  <Label
+                    id="section-3-inner-card-reference"
+                    classes="ref reference text-left text-20"
+                    content={t("product_page.vesta-product-reference")}
+                  />
+                  <Label
+                    id="section-3-inner-card-model"
+                    classes="mod model text-left text-18 pb-9"
+                    content={t("product_page.vesta-product-model")}
+                  />
+                  <div>
+                    <!-- Icons Grid -->
+                    <div class="flex flex-row flex-wrap items-start gap-6">
+                      <!-- Item -->
+                      <div
+                        class="flex flex-col items-center text-center flex-wrap"
+                      >
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <TitleComponent
+                    id="section-2-inner-card-description-title"
+                    classes="h6 heading-6-mobile text-left text-16"
+                    content={t("product_page.vesta-description-title")}
+                  />
+                  <Divider
+                    classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                  />
+                  <TextComponent
+                    id="section-2-inner-card-description-text"
+                    classes="b2 body-2 text-left text-16"
+                    content={t("product_page.vesta-description-text")}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="card-container-2"
+          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
+        >
+          <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
+            <div class="place-items-center">
+              <img
+                src="https://placehold.co/366x305?text=placeholder"
+                alt="placeholder"
+                class=""
+              />
+            </div>
+            <div class="flex flex-col md:flex-row md:gap-6">
+              <div class="flex flex-col">
+                <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9">
+                  <Label
+                    id="section-3-inner-card-reference"
+                    classes="ref reference text-left text-20"
+                    content={t("product_page.vesta-product-reference")}
+                  />
+                  <Label
+                    id="section-3-inner-card-model"
+                    classes="mod model text-left text-18 pb-9"
+                    content={t("product_page.vesta-product-model")}
+                  />
+                  <div>
+                    <!-- Icons Grid -->
+                    <div class="flex flex-row flex-wrap items-start gap-6">
+                      <!-- Item -->
+                      <div
+                        class="flex flex-col items-center text-center flex-wrap"
+                      >
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <TitleComponent
+                    id="section-2-inner-card-description-title"
+                    classes="h6 heading-6-mobile text-left text-16"
+                    content={t("product_page.vesta-description-title")}
+                  />
+                  <Divider
+                    classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                  />
+                  <TextComponent
+                    id="section-2-inner-card-description-text"
+                    classes="b2 body-2 text-left text-16"
+                    content={t("product_page.vesta-description-text")}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="card-container-3"
+          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
+        >
+          <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
+            <div class="place-items-center">
+              <img
+                src="https://placehold.co/366x305?text=placeholder"
+                alt="placeholder"
+                class=""
+              />
+            </div>
+            <div class="flex flex-col md:flex-row md:gap-6">
+              <div class="flex flex-col">
+                <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9">
+                  <Label
+                    id="section-3-inner-card-reference"
+                    classes="ref reference text-left text-20"
+                    content={t("product_page.vesta-product-reference")}
+                  />
+                  <Label
+                    id="section-3-inner-card-model"
+                    classes="mod model text-left text-18 pb-9"
+                    content={t("product_page.vesta-product-model")}
+                  />
+                  <div>
+                    <!-- Icons Grid -->
+                    <div class="flex flex-row flex-wrap items-start gap-6">
+                      <!-- Item -->
+                      <div
+                        class="flex flex-col items-center text-center flex-wrap"
+                      >
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+
+                      <div class="flex flex-col items-center text-center">
+                        <img
+                          src="https://placehold.co/26x26?text=icon"
+                          alt="Odd zonas"
+                          class="w-8 h-8 mb-2"
+                        />
+                        <span
+                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                        ></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <TitleComponent
+                    id="section-2-inner-card-description-title"
+                    classes="h6 heading-6-mobile text-left text-16"
+                    content={t("product_page.vesta-description-title")}
+                  />
+                  <Divider
+                    classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                  />
+                  <TextComponent
+                    id="section-2-inner-card-description-text"
+                    classes="b2 body-2 text-left text-16"
+                    content={t("product_page.vesta-description-text")}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 </div>
-<section id="products-page-section-3">
-  <p>section 3</p>
+<section id="products-page-section-4">
+  <p>section 4</p>
 </section>
