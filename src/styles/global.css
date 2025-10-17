@@ -126,11 +126,11 @@
   --text-7: 28.43px;
 
   /*********************************** weights */
-  --font-weight-black: '900';
-  --font-weight-bold: '700';
-  --font-weight-medium: '500';
-  --font-weight-regular: '400';
-  --font-weight-light: '300';
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+  --font-weight-light: 300;
 
   /*********************************** font */
   --font-roboto-condensed: 'Roboto Condensed', sans-serif;
@@ -260,9 +260,13 @@ body {
 /*********************************************** titles */
 
 .h2,
-.h3 {
+.h3,
+.h6,
+.b0,
+.ref,
+.mod,
+.b2 {
   letter-spacing: normal;
-  text-align: center;
 }
 
 .h2 {
@@ -273,12 +277,22 @@ body {
   color: var(--color-primary-40-light);
 }
 
-.b0 {
-  color: var(--color-neutral-90);
-  letter-spacing: normal;
-  text-align: center;
+.h6 {
+  color: var(--color-primary-20-light);
 }
 
+.b0,
+.ref {
+  color: var(--color-neutral-90);
+}
+
+.b2 {
+  color: var(--color-neutral-60);
+}
+
+.mod {
+  color: var(--color-neutral-40);
+}
 /*********************************************** style */
 /******************************* desktop */
 .tagline-desktop {
@@ -445,6 +459,13 @@ body {
   font-weight: var(--font-weight-regular);
   /* font-size: var(--text-12);
   line-height: var(--line-height-14); */
+}
+
+/*********************************************** product */
+
+.product-card-container {
+  background-color: var(--color-bg-primary-light);
+  box-shadow: 0 8px 16px 0 var(--color-shadows-light-strong);
 }
 
 /*********************************************** media queries */
