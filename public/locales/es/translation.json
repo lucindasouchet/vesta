@@ -50,6 +50,7 @@
     "vesta_description_text": "Vesta - texto descripción",
     "wireless_keyboards": "Teclados vía radio",
     "radio_detectors": "Detectores vía radio",
-    "magnetic_contacts": "Contactos magnéticos"
+    "magnetic_contacts": "Contactos magnéticos",
+    "radio_accessories": "Accesorios vía radio"
   }
 }
