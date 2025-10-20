@@ -44,11 +44,12 @@
     "vesta_security_systems": "Sistemas de Seguridad VESTA: una solución para cada necesidad",
     "three_communication_technologies": "Tres tecnologías de comunicación que se adaptan a cualquier problemática de hogar o negocio, con diversas  posibilidades de zonas y particiones, así como más de 70 dispositivos  propios y la integración de marcas líderes de videovigilancia, intrusión y domótica.",
     "radio_alarm_centers": "Centrales de Alarma vía radio",
-    "vesta-product-reference": "Vesta - referencia producto",
-    "vesta-product-model": "Vesta - modelo producto",
-    "vesta-description-title": "Vesta - título descripción",
-    "vesta-description-text": "Vesta - texto descripción",
-    "wireless-keyboards": "Teclados vía radio",
-    "radio detectors": "Detectores vía radio"
+    "vesta_product_reference": "Vesta - referencia producto",
+    "vesta_product_model": "Vesta - modelo producto",
+    "vesta_description_title": "Vesta - título descripción",
+    "vesta_description_text": "Vesta - texto descripción",
+    "wireless_keyboards": "Teclados vía radio",
+    "radio_detectors": "Detectores vía radio",
+    "magnetic_contacts": "Contactos magnéticos"
   }
 }
