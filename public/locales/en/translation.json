@@ -10,7 +10,11 @@
     "products": "Products",
     "news_and_events": "News and Events",
     "about_vesta_security": "About Vesta Security",
-    "buy_vesta": "Buy Vesta"
+    "buy_vesta": "Buy Vesta",
+    "medical_alarm_serie_mobile_pro": "Medical alarm Mobile Pro Series",
+    "medical_alarm_mx_series": "Medical alarm MX Series",
+    "medical_alarm_gx_series": "Medical alarm GX Series",
+    "all_products": "All products"
   },
   "footer": {
     "security_alarm": "Security alarm",

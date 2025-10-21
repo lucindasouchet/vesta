@@ -3,6 +3,7 @@ import ButtonWithIconComponent from "./core/ButtonWithIcon.astro";
 import PartnerProgramIcon from "../../public/images/icons/partner-program.svg";
 import ChevronIcon from "../../public/images/icons/chevron-min.svg";
 import i18next from "../i18n.ts";
+import ButtonWithoutIconComponent from "./core/ButtonWithoutIcon.astro";
 
 const { t } = i18next;
 ---
@@ -51,9 +52,9 @@ const { t } = i18next;
               id="radio-alarm-btn"
               label={t("footer.radio_alarm")}
               icon={PartnerProgramIcon}
-              variantFullComponent="hover:bg-neutral-05 py-4 pr-6 pl-3"
-              variantButton="gap-6 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-              variantLabel="label-1 text-neutral-90"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light"
+              variantLabel="label-1"
               variantIcon="h-7 w-7 stroke-primary-20-dark"
               type="button"
               href="/#"
@@ -62,8 +63,8 @@ const { t } = i18next;
               id="battery-powered-alarm-btn"
               label={t("footer.battery_powered_alarm")}
               icon={PartnerProgramIcon}
-              variantFullComponent="hover:bg-neutral-05 py-4 pr-6 pl-3"
-              variantButton="gap-6 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
@@ -73,8 +74,8 @@ const { t } = i18next;
               id="hybrid-alarm-btn"
               label={t("footer.hybrid_alarm")}
               icon={PartnerProgramIcon}
-              variantFullComponent="hover:bg-neutral-05 py-4 pr-6 pl-3"
-              variantButton="gap-6 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
@@ -82,10 +83,10 @@ const { t } = i18next;
             />
             <ButtonWithIconComponent
               id="medical-alarm-serie-mobile-pro-btn"
-              label={t("product_page.medical_alarm_serie_mobile_pro")}
+              label={t("header.medical_alarm_serie_mobile_pro")}
               icon={PartnerProgramIcon}
-              variantFullComponent="hover:bg-neutral-05 py-4 pr-6 pl-3"
-              variantButton="gap-6 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
@@ -93,10 +94,10 @@ const { t } = i18next;
             />
             <ButtonWithIconComponent
               id="medical-alarm-mx-series-btn"
-              label={t("product_page.medical_alarm_mx_series")}
+              label={t("header.medical_alarm_mx_series")}
               icon={PartnerProgramIcon}
-              variantFullComponent="hover:bg-neutral-05 py-4 pr-6 pl-3"
-              variantButton="gap-6 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
@@ -104,10 +105,10 @@ const { t } = i18next;
             />
             <ButtonWithIconComponent
               id="medical-alarm-gx-series-btn"
-              label={t("product_page.medical_alarm_gx_series")}
+              label={t("header.medical_alarm_gx_series")}
               icon={PartnerProgramIcon}
-              variantFullComponent="hover:bg-neutral-05 py-4 pr-6 pl-3"
-              variantButton="gap-6 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
@@ -117,8 +118,8 @@ const { t } = i18next;
               id="vesta-home-video-btn"
               label={t("footer.vesta_home_video")}
               icon={PartnerProgramIcon}
-              variantFullComponent="hover:bg-neutral-05 py-4 pr-6 pl-3"
-              variantButton="gap-6 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
@@ -128,8 +129,8 @@ const { t } = i18next;
               id="vesta-advanced-video-btn"
               label={t("footer.vesta_advanced_video")}
               icon={PartnerProgramIcon}
-              variantFullComponent="hover:bg-neutral-05 py-4 pr-6 pl-3"
-              variantButton="gap-6 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
@@ -137,10 +138,10 @@ const { t } = i18next;
             />
             <ButtonWithIconComponent
               id="all-products-btn"
-              label={t("product_page.all_products")}
+              label={t("header.all_products")}
               icon={ChevronIcon}
-              variantFullComponent="hover:bg-neutral-05 py-4 pr-6 pl-3"
-              variantButton="gap-6 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
@@ -173,6 +174,14 @@ const { t } = i18next;
           <div
             class="absolute right-0 w-36 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
+            <ButtonWithoutIconComponent
+              id="section1-products-btn"
+              label={t("test.products_page")}
+              variantButton="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-4"
+              variantLabel="text-white"
+              type="button"
+              href="/products"
+            />
             <a href="#" class="block px-8 py-2 text-sm hover:bg-neutral-05"
               >Tema 1</a
             >
