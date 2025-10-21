@@ -1,194 +1,289 @@
+---
+import ButtonWithIconComponent from "./core/ButtonWithIcon.astro";
+import PartnerProgramIcon from "../../public/images/icons/partner-program.svg";
+import ChevronIcon from "../../public/images/icons/chevron-min.svg";
+import i18next from "../i18n.ts";
+import ButtonWithoutIconComponent from "./core/ButtonWithoutIcon.astro";
+
+const { t } = i18next;
+---
+
 <nav class="shadow-md z-0">
-    <div class="px-4 sm:px-6 lg:px-12 2xl:px-16 ">
-        <div class="flex h-23 items-center justify-between">
-            <!-- Left: Logo -->
-            <a href="./index.html">
-                <div class="flex items-center space-x-2">
-                    <!-- Icon (placeholder box) -->
-                    <div
-                        class="h-7 w-5 md:h-8 md:w-6 lg:h-10 lg:w-7 rounded bg-sky-300"
-                    >
-                    </div>
-                    <span class="font-bold text-3xl md:text-4xl lg:text-5xl"
-                        >Vesta</span
-                    >
-                </div>
-            </a>
-
-            <!-- Right: Links and actions -->
-            <div class="hidden items-center space-x-5 md:flex">
-                <!-- Productos -->
-                <div class="relative group">
-                    <button
-                        type="button"
-                        class="px-4 py-2 flex items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light md:text-lg lg:text-xl/6"
-                    >
-                        <span class="icon">
-                            <svg
-                                class="mx-2 h-4 w-4"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </span>
-                        <span data-i18n="header.products"></span>
-                    </button>
-                    <div
-                        class="absolute right-0 w-36 py-3 bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
-                    >
-                        <a
-                            href="#"
-                            class="block px-8 py-2 text-sm hover:bg-neutral-20"
-                            >Tema 1</a
-                        >
-                        <a
-                            href="#"
-                            class="block px-8 py-2 text-sm hover:bg-neutral-20"
-                            >Tema 2</a
-                        >
-                        <a
-                            href="#"
-                            class="block px-8 py-2 text-sm hover:bg-neutral-20"
-                            >Tema 3</a
-                        >
-                    </div>
-                </div>
-
-                <!-- Sobre Noticia y eventos Dropdown -->
-                <div class="relative group">
-                    <button
-                        class="px-4 py-2 flex items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light md:text-lg lg:text-xl/6"
-                    >
-                        <span class="icon">
-                            <svg
-                                class="mx-2 h-4 w-4"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </span>
-                        <span data-i18n="header.news_and_events"></span>
-                    </button>
-                    <div
-                        class="absolute right-0 w-36 py-3 bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
-                    >
-                        <a
-                            href="#"
-                            class="block px-8 py-2 text-sm hover:bg-neutral-20"
-                            >Tema 1</a
-                        >
-                        <a
-                            href="#"
-                            class="block px-8 py-2 text-sm hover:bg-neutral-20"
-                            >Tema 2</a
-                        >
-                        <a
-                            href="#"
-                            class="block px-8 py-2 text-sm hover:bg-neutral-20"
-                            >Tema 3</a
-                        >
-                    </div>
-                </div>
-
-                <!-- Sobre Vesta Security Dropdown -->
-                <div class="relative group">
-                    <button
-                        class="px-4 py-2 flex items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light md:text-lg lg:text-xl/6"
-                    >
-                        <span class="icon">
-                            <svg
-                                class="mx-2 h-4 w-4"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </span>
-                        <span data-i18n="header.about_vesta_security"></span>
-                    </button>
-                    <div
-                        class="absolute right-0 w-36 py-3 bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
-                    >
-                        <a
-                            href="#"
-                            class="block px-8 py-2 text-sm hover:bg-neutral-20"
-                            >Tema 1</a
-                        >
-                        <a
-                            href="#"
-                            class="block px-8 py-2 text-sm hover:bg-neutral-20"
-                            >Tema 2</a
-                        >
-                        <a
-                            href="#"
-                            class="block px-8 py-2 text-sm hover:bg-neutral-20"
-                            >Tema 3</a
-                        >
-                    </div>
-                </div>
-
-                <!-- CTA Button -->
-                <button
-                    type="button"
-                    onclick="alert('To do')"
-                    class="inline-flex items-center rounded-full border md:border-2 border-primary-00 pl-7 md:text-sm pr-3 py-1 text-primary-00 transition hover:bg-neutral-20 z-0 focus:text-primary-10-light focus:outline-none focus:border-primary-10-light"
-                >
-                    <span class="mr-1" data-i18n="header.i_want_vesta_now"
-                    ></span>
-                    <span class="icon">
-                        <svg
-                            class="mx-1 h-4 w-4"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            viewBox="0 0 24 24"
-                            transform="rotate(-90)"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </span>
-                </button>
-            </div>
-
-            <!-- Mobile menu button -->
-            <div class="md:hidden">
-                <button id="openMenu">
-                    <svg
-                        class="h-6 w-6"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
+  <div class="px-4 sm:px-6 lg:px-12 2xl:px-16">
+    <div class="flex h-23 items-center justify-between">
+      <!-- Left: Logo -->
+      <a href="./index.html">
+        <div class="flex items-center space-x-2">
+          <!-- Icon (placeholder box) -->
+          <div class="h-7 w-5 md:h-8 md:w-6 lg:h-10 lg:w-7 rounded bg-sky-300">
+          </div>
+          <span class="font-bold text-3xl md:text-4xl lg:text-5xl">Vesta</span>
         </div>
+      </a>
+
+      <!-- Right: Links and actions -->
+      <div class="hidden items-center space-x-5 md:flex">
+        <!-- Productos -->
+        <div class="relative group">
+          <button
+            type="button"
+            class="px-4 py-2 flex items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light md:text-lg lg:text-xl/6"
+          >
+            <span class="icon">
+              <svg
+                class="mx-2 h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+            <span data-i18n="header.products"></span>
+          </button>
+          <div
+            class="absolute right-auto w-86 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
+          >
+            <ButtonWithIconComponent
+              id="radio-alarm-btn"
+              label={t("footer.radio_alarm")}
+              icon={PartnerProgramIcon}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light"
+              variantLabel="label-1"
+              variantIcon="h-7 w-7 stroke-primary-20-dark"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithIconComponent
+              id="battery-powered-alarm-btn"
+              label={t("footer.battery_powered_alarm")}
+              icon={PartnerProgramIcon}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              variantIcon="h-7 w-7 stroke-primary-40-dark"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithIconComponent
+              id="hybrid-alarm-btn"
+              label={t("footer.hybrid_alarm")}
+              icon={PartnerProgramIcon}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              variantIcon="h-7 w-7 stroke-primary-40-dark"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithIconComponent
+              id="medical-alarm-serie-mobile-pro-btn"
+              label={t("header.medical_alarm_serie_mobile_pro")}
+              icon={PartnerProgramIcon}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              variantIcon="h-7 w-7 stroke-primary-40-dark"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithIconComponent
+              id="medical-alarm-mx-series-btn"
+              label={t("header.medical_alarm_mx_series")}
+              icon={PartnerProgramIcon}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              variantIcon="h-7 w-7 stroke-primary-40-dark"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithIconComponent
+              id="medical-alarm-gx-series-btn"
+              label={t("header.medical_alarm_gx_series")}
+              icon={PartnerProgramIcon}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              variantIcon="h-7 w-7 stroke-primary-40-dark"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithIconComponent
+              id="vesta-home-video-btn"
+              label={t("footer.vesta_home_video")}
+              icon={PartnerProgramIcon}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              variantIcon="h-7 w-7 stroke-primary-40-dark"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithIconComponent
+              id="vesta-advanced-video-btn"
+              label={t("footer.vesta_advanced_video")}
+              icon={PartnerProgramIcon}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              variantIcon="h-7 w-7 stroke-primary-40-dark"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithIconComponent
+              id="all-products-btn"
+              label={t("header.all_products")}
+              icon={ChevronIcon}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              variantIcon="h-7 w-7 stroke-primary-40-dark"
+              type="button"
+              href="/#"
+            />
+          </div>
+        </div>
+
+        <!-- Sobre Noticia y eventos Dropdown -->
+        <div class="relative group">
+          <button
+            class="px-4 py-2 flex items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light md:text-lg lg:text-xl/6"
+          >
+            <span class="icon">
+              <svg
+                class="mx-2 h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+            <span data-i18n="header.news_and_events"></span>
+          </button>
+          <div
+            class="absolute right-auto w-auto py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
+          >
+            <ButtonWithoutIconComponent
+              id="news-blog-btn"
+              label={t("header.news_blog")}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithoutIconComponent
+              id="vesta-academy-btn"
+              label={t("header.vesta_academy")}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              type="button"
+              href="/#"
+            />
+          </div>
+        </div>
+
+        <!-- Sobre Vesta Security Dropdown -->
+        <div class="relative group">
+          <button
+            class="px-4 py-2 flex items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light md:text-lg lg:text-xl/6"
+          >
+            <span class="icon">
+              <svg
+                class="mx-2 h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+            <span data-i18n="header.about_vesta_security"></span>
+          </button>
+          <div
+            class="absolute right-auto w-50 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
+          >
+            <ButtonWithoutIconComponent
+              id="news-blog-btn"
+              label={t("header.about_us")}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              type="button"
+              href="/#"
+            />
+            <ButtonWithoutIconComponent
+              id="news-blog-btn"
+              label={t("header.vesta_partner_program")}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              type="button"
+              href="/#"
+            />
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <button
+          type="button"
+          onclick="alert('To do')"
+          class="inline-flex items-center rounded-full border md:border-2 border-primary-00 pl-7 md:text-sm pr-3 py-1 text-primary-00 transition hover:bg-neutral-05 z-0 focus:text-primary-10-light focus:outline-none focus:border-primary-10-light"
+        >
+          <span class="mr-1" data-i18n="header.buy_vesta"></span>
+          <span class="icon">
+            <svg
+              class="mx-1 h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              transform="rotate(-90)"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button id="openMenu">
+          <svg
+            class="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
     </div>
+  </div>
 </nav>
 
 <!-- Mobile menu Background -->
@@ -197,216 +292,208 @@
 
 <!-- Mobile menu -->
 <div
-    id="mobileMenu"
-    class="fixed top-0 right-0 z-50 h-full w-64 translate-x-full transform bg-primary-light shadow-lg transition-transform duration-300 ease-in-out"
+  id="mobileMenu"
+  class="fixed top-0 right-0 z-50 h-full w-64 translate-x-full transform bg-bg-primary-light shadow-lg transition-transform duration-300 ease-in-out"
 >
-    <!-- Header mobile menu -->
-    <div class="flex items-center justify-between border-b p-4">
-        <span class="text-lg font-semibold">Menú</span>
-        <button id="closeMenu">
-            <svg
-                class="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-        </button>
+  <!-- Header mobile menu -->
+  <div class="flex items-center justify-between border-b p-4">
+    <span class="text-lg font-semibold">Menú</span>
+    <button id="closeMenu">
+      <svg
+        class="h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu content -->
+  <nav class="space-y-4 p-4 font-medium my-4">
+    <!-- Partner Program (Mobile) -->
+    <div>
+      <button
+        type="button"
+        class="block hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+      >
+        Partner Program
+      </button>
     </div>
 
-    <!-- Mobile menu content -->
-    <nav class="space-y-4 p-4 font-medium my-4">
-        <!-- Partner Program (Mobile) -->
-        <div>
-            <button
-                type="button"
-                class="block hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-            >
-                Partner Program
-            </button>
-        </div>
+    <!-- Language Dropdown (Mobile) -->
+    <div>
+      <button
+        id="dropdownBtnMobileLanguage"
+        class="w-full flex justify-between items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+      >
+        Español
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="dropdownMenuMobileLanguage" class="hidden pl-4 space-y-3 mt-2">
+        <a
+          href="#"
+          class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          >Español</a
+        >
+        <a
+          href="#"
+          class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          >Inglés</a
+        >
+        <a
+          href="#"
+          class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          >Francés</a
+        >
+        <a
+          href="#"
+          class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          >Portugués</a
+        >
+      </div>
+    </div>
 
-        <!-- Language Dropdown (Mobile) -->
-        <div>
-            <button
-                id="dropdownBtnMobileLanguage"
-                class="w-full flex justify-between items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-            >
-                Español
-                <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-            <div
-                id="dropdownMenuMobileLanguage"
-                class="hidden pl-4 space-y-3 mt-2"
-            >
-                <a
-                    href="#"
-                    class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-                    >Español</a
-                >
-                <a
-                    href="#"
-                    class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-                    >Inglés</a
-                >
-                <a
-                    href="#"
-                    class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-                    >Francés</a
-                >
-                <a
-                    href="#"
-                    class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-                    >Portugués</a
-                >
-            </div>
-        </div>
+    <!-- Sobre Nosotros Dropdown (Mobile) -->
+    <div>
+      <button
+        id="dropdownBtnMobileAbout"
+        class="w-full flex justify-between items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+      >
+        Sobre Nosotros
+        <svg
+          class="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </button>
+      <div id="dropdownMenuMobileAbout" class="hidden pl-4 space-y-3 mt-2">
+        <a
+          href="#"
+          class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          >Historia</a
+        >
+        <a
+          href="#"
+          class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          >Valores</a
+        >
+        <a
+          href="#"
+          class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          >Equipo</a
+        >
+      </div>
+    </div>
 
-        <!-- Sobre Nosotros Dropdown (Mobile) -->
-        <div>
-            <button
-                id="dropdownBtnMobileAbout"
-                class="w-full flex justify-between items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-            >
-                Sobre Nosotros
-                <svg
-                    class="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </button>
-            <div
-                id="dropdownMenuMobileAbout"
-                class="hidden pl-4 space-y-3 mt-2"
-            >
-                <a
-                    href="#"
-                    class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-                    >Historia</a
-                >
-                <a
-                    href="#"
-                    class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-                    >Valores</a
-                >
-                <a
-                    href="#"
-                    class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-                    >Equipo</a
-                >
-            </div>
-        </div>
-
-        <!-- Comprar ahora (Mobile) -->
-        <div>
-            <button
-                type="button"
-                onclick="alert('To do')"
-                class="mt-9 block rounded-full border-2 border-primary-00 px-4 pt-2 pb-2 text-center text-primary-00 transition hover:bg-neutral-20 focus:text-primary-10-light focus:outline-none focus:border-primary-10-light"
-            >
-                <span>Comprar ahora</span>
-            </button>
-        </div>
-    </nav>
+    <!-- Comprar ahora (Mobile) -->
+    <div>
+      <button
+        type="button"
+        onclick="alert('To do')"
+        class="mt-9 block rounded-full border-2 border-primary-00 px-4 pt-2 pb-2 text-center text-primary-00 transition hover:bg-neutral-05 focus:text-primary-10-light focus:outline-none focus:border-primary-10-light"
+      >
+        <span>Comprar ahora</span>
+      </button>
+    </div>
+  </nav>
 </div>
 
 <script>
-    //****************************************************** Mobile  *************************************/
-    // Mobile Menu toggle
-    // Typescript also has a non-null assertion that you can use when you are sure
-    // that the value is never null by adding the ! operator to the end of your statement
-    const openBtn: HTMLElement = document.querySelector("#openMenu")!;
-    const closeBtn: HTMLElement = document.querySelector("#closeMenu")!;
-    const mobileMenu: HTMLElement = document.querySelector("#mobileMenu")!;
-    const mobileMenuBg: HTMLElement = document.querySelector("#menuBg")!;
+  //****************************************************** Mobile  *************************************/
+  // Mobile Menu toggle
+  // Typescript also has a non-null assertion that you can use when you are sure
+  // that the value is never null by adding the ! operator to the end of your statement
+  const openBtn: HTMLElement = document.querySelector("#openMenu")!;
+  const closeBtn: HTMLElement = document.querySelector("#closeMenu")!;
+  const mobileMenu: HTMLElement = document.querySelector("#mobileMenu")!;
+  const mobileMenuBg: HTMLElement = document.querySelector("#menuBg")!;
 
-    openBtn.addEventListener("click", () => {
-        mobileMenu.classList.remove("translate-x-full");
-        mobileMenuBg.classList.remove("hidden");
-    });
+  openBtn.addEventListener("click", () => {
+    mobileMenu.classList.remove("translate-x-full");
+    mobileMenuBg.classList.remove("hidden");
+  });
 
-    closeBtn.addEventListener("click", closeMenu);
-    mobileMenuBg.addEventListener("click", closeMenu);
+  closeBtn.addEventListener("click", closeMenu);
+  mobileMenuBg.addEventListener("click", closeMenu);
 
-    function closeMenu() {
-        mobileMenu.classList.add("translate-x-full");
-        mobileMenuBg.classList.add("hidden");
+  function closeMenu() {
+    mobileMenu.classList.add("translate-x-full");
+    mobileMenuBg.classList.add("hidden");
+  }
+
+  // Mobile dropdown toggle
+  function toggleDropdown(id: NonNullable<string>) {
+    document.getElementById(id)!.classList.toggle("hidden");
+    // document.querySelector(`${id}`)!.classList.toggle("hidden");
+  }
+
+  // Mobile Language dropdown toggle onclick
+  const btnDdpMobileLanguage = document.getElementById(
+    "dropdownBtnMobileLanguage",
+  )!;
+  const menuDdpMobileLanguage = document.getElementById(
+    "dropdownMenuMobileLanguage",
+  )!;
+
+  btnDdpMobileLanguage.addEventListener("click", () => {
+    menuDdpMobileLanguage.classList.toggle("hidden");
+  });
+
+  // Close if clicked outside
+  document.addEventListener("click", (event: any) => {
+    if (
+      !btnDdpMobileLanguage.contains(event.target) &&
+      !menuDdpMobileLanguage.contains(event.target)
+    ) {
+      menuDdpMobileLanguage.classList.add("hidden");
     }
+  });
 
-    // Mobile dropdown toggle
-    function toggleDropdown(id: NonNullable<string>) {
-        document.getElementById(id)!.classList.toggle("hidden");
-        // document.querySelector(`${id}`)!.classList.toggle("hidden");
+  // Mobile About dropdown toggle onclick
+  const btnDdpMobileAbout = document.getElementById("dropdownBtnMobileAbout")!;
+  const menuDdpMobileAbout = document.getElementById(
+    "dropdownMenuMobileAbout",
+  )!;
+
+  btnDdpMobileAbout.addEventListener("click", () => {
+    menuDdpMobileAbout.classList.toggle("hidden");
+  });
+
+  // Close if clicked outside
+  document.addEventListener("click", (event: any) => {
+    if (
+      !btnDdpMobileAbout.contains(event.target) &&
+      !menuDdpMobileAbout.contains(event.target)
+    ) {
+      menuDdpMobileAbout.classList.add("hidden");
     }
+  });
 
-    // Mobile Language dropdown toggle onclick
-    const btnDdpMobileLanguage = document.getElementById(
-        "dropdownBtnMobileLanguage",
-    )!;
-    const menuDdpMobileLanguage = document.getElementById(
-        "dropdownMenuMobileLanguage",
-    )!;
-
-    btnDdpMobileLanguage.addEventListener("click", () => {
-        menuDdpMobileLanguage.classList.toggle("hidden");
-    });
-
-    // Close if clicked outside
-    document.addEventListener("click", (event: any) => {
-        if (
-            !btnDdpMobileLanguage.contains(event.target) &&
-            !menuDdpMobileLanguage.contains(event.target)
-        ) {
-            menuDdpMobileLanguage.classList.add("hidden");
-        }
-    });
-
-    // Mobile About dropdown toggle onclick
-    const btnDdpMobileAbout = document.getElementById(
-        "dropdownBtnMobileAbout",
-    )!;
-    const menuDdpMobileAbout = document.getElementById(
-        "dropdownMenuMobileAbout",
-    )!;
-
-    btnDdpMobileAbout.addEventListener("click", () => {
-        menuDdpMobileAbout.classList.toggle("hidden");
-    });
-
-    // Close if clicked outside
-    document.addEventListener("click", (event: any) => {
-        if (
-            !btnDdpMobileAbout.contains(event.target) &&
-            !menuDdpMobileAbout.contains(event.target)
-        ) {
-            menuDdpMobileAbout.classList.add("hidden");
-        }
-    });
-
-    function assert(arg0: boolean, arg1: string) {
-        throw new Error("Function not implemented.");
-    }
+  function assert(arg0: boolean, arg1: string) {
+    throw new Error("Function not implemented.");
+  }
 </script>

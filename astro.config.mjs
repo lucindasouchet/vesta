@@ -12,6 +12,9 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
   },
+  devToolbar: {
+    enabled: false
+  }
 
   // // Astro’s built-in i18n
   // i18n: {
