@@ -172,25 +172,26 @@ const { t } = i18next;
             <span data-i18n="header.news_and_events"></span>
           </button>
           <div
-            class="absolute right-0 w-36 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
+            class="absolute right-auto w-auto py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
             <ButtonWithoutIconComponent
-              id="section1-products-btn"
-              label={t("test.products_page")}
-              variantButton="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-4"
-              variantLabel="text-white"
+              id="news-blog-btn"
+              label={t("header.news_blog")}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
               type="button"
-              href="/products"
+              href="/#"
             />
-            <a href="#" class="block px-8 py-2 text-sm hover:bg-neutral-05"
-              >Tema 1</a
-            >
-            <a href="#" class="block px-8 py-2 text-sm hover:bg-neutral-05"
-              >Tema 2</a
-            >
-            <a href="#" class="block px-8 py-2 text-sm hover:bg-neutral-05"
-              >Tema 3</a
-            >
+            <ButtonWithoutIconComponent
+              id="news-blog-btn"
+              label={t("header.vesta_academy")}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantLabel="label-1"
+              type="button"
+              href="/#"
+            />
           </div>
         </div>
 
