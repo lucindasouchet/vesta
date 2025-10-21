@@ -10,7 +10,7 @@
     "products": "Produits",
     "news_and_events": "Actualités et événements",
     "about_vesta_security": "À propos de Vesta Security",
-    "i_want_vesta_now": "Je veux Vesta maintenant"
+    "buy_vesta": "Acheter Vesta"
   },
   "footer": {
     "security_alarm": "Alarme de sécurité",
@@ -19,7 +19,7 @@
     "hybrid_alarm": "Alarme hybride",
     "medical_alarm": "Alarme médicale",
     "mobile_pro_series": "Série Mobile Pro",
-    "mx_series": " Série MX",
+    "mx_series": "Série MX",
     "gx_series": "Série GX",
     "video_surveillance": "Vidéosurveillance",
     "vesta_home_video": "Vesta Home Video",
@@ -51,6 +51,10 @@
     "wireless_keyboards": "Claviers sans fil",
     "radio_detectors": "Détecteurs radio",
     "magnetic_contacts": "Contacts magnétiques",
-    "radio_accessories": "Accessoires radio"
+    "radio_accessories": "Accessoires radio",
+    "medical_alarm_serie_mobile_pro": "Alarme médicale Série Mobile Pro",
+    "medical_alarm_mx_series": "Alarme médicale Série MX",
+    "medical_alarm_gx_series": "Alarme médicale Série GX",
+    "all_products": "Tous les produits"
   }
 }

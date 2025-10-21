@@ -10,7 +10,7 @@
     "products": "Productos",
     "news_and_events": "Noticias y Eventos",
     "about_vesta_security": "Sobre Vesta Security",
-    "i_want_vesta_now": "Quiero Vesta ahora"
+    "buy_vesta": "Comprar Vesta"
   },
   "footer": {
     "security_alarm": "Alarma de seguridad",
@@ -51,6 +51,7 @@
     "wireless_keyboards": "Teclados vía radio",
     "radio_detectors": "Detectores vía radio",
     "magnetic_contacts": "Contactos magnéticos",
-    "radio_accessories": "Accesorios vía radio"
+    "radio_accessories": "Accesorios vía radio",
+    "all_products": "Todos los productos"
   }
 }
