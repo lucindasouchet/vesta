@@ -1,11 +1,9 @@
 ---
-import ButtonWithIconComponent from "./core/ButtonWithIcon.astro";
+import ButtonComponent from "./core/Button.astro";
 import PartnerIcon from "../../public/images/icons/partner-min.svg";
 import ChevronRightIcon from "../../public/images/icons/chevron-right-min.svg";
 import ChevronDownIcon from "../../public/images/icons/chevron-down-min.svg";
 import i18next from "../i18n.ts";
-import ButtonWithoutIconComponent from "./core/ButtonWithoutIcon.astro";
-import { fade } from "astro:transitions";
 
 const { t } = i18next;
 ---
@@ -27,7 +25,7 @@ const { t } = i18next;
       <div class="hidden items-center md:flex">
         <!-- Productos -->
         <div class="relative group">
-          <ButtonWithIconComponent
+          <ButtonComponent
             id="productos-btn"
             label={t("header.products")}
             hasIcon={true}
@@ -43,7 +41,7 @@ const { t } = i18next;
           <div
             class="absolute right-auto w-86 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
-            <ButtonWithIconComponent
+            <ButtonComponent
               id="radio-alarm-btn"
               label={t("footer.radio_alarm")}
               hasIcon={true}
@@ -56,7 +54,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithIconComponent
+            <ButtonComponent
               id="battery-powered-alarm-btn"
               label={t("footer.battery_powered_alarm")}
               hasIcon={true}
@@ -69,7 +67,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithIconComponent
+            <ButtonComponent
               id="hybrid-alarm-btn"
               label={t("footer.hybrid_alarm")}
               hasIcon={true}
@@ -82,7 +80,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithIconComponent
+            <ButtonComponent
               id="medical-alarm-serie-mobile-pro-btn"
               label={t("header.medical_alarm_serie_mobile_pro")}
               hasIcon={true}
@@ -95,7 +93,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithIconComponent
+            <ButtonComponent
               id="medical-alarm-mx-series-btn"
               label={t("header.medical_alarm_mx_series")}
               hasIcon={true}
@@ -108,7 +106,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithIconComponent
+            <ButtonComponent
               id="medical-alarm-gx-series-btn"
               label={t("header.medical_alarm_gx_series")}
               hasIcon={true}
@@ -121,7 +119,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithIconComponent
+            <ButtonComponent
               id="vesta-home-video-btn"
               label={t("footer.vesta_home_video")}
               hasIcon={true}
@@ -134,7 +132,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithIconComponent
+            <ButtonComponent
               id="vesta-advanced-video-btn"
               label={t("footer.vesta_advanced_video")}
               hasIcon={true}
@@ -147,7 +145,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithIconComponent
+            <ButtonComponent
               id="all-products-btn"
               label={t("header.all_products")}
               hasIcon={true}
@@ -165,7 +163,7 @@ const { t } = i18next;
 
         <!-- Sobre Noticia y eventos Dropdown -->
         <div class="relative group">
-          <ButtonWithIconComponent
+          <ButtonComponent
             id="productos-btn"
             label={t("header.news_and_events")}
             hasIcon={true}
@@ -181,7 +179,7 @@ const { t } = i18next;
           <div
             class="absolute right-auto w-auto py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
-            <ButtonWithoutIconComponent
+            <ButtonComponent
               id="news-blog-btn"
               label={t("header.news_blog")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
@@ -190,7 +188,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithoutIconComponent
+            <ButtonComponent
               id="vesta-academy-btn"
               label={t("header.vesta_academy")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
@@ -204,7 +202,7 @@ const { t } = i18next;
 
         <!-- Sobre Vesta Security Dropdown -->
         <div class="relative group">
-          <ButtonWithIconComponent
+          <ButtonComponent
             id="productos-btn"
             label={t("header.about_vesta_security")}
             hasIcon={true}
@@ -220,7 +218,7 @@ const { t } = i18next;
           <div
             class="absolute right-auto w-50 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
-            <ButtonWithoutIconComponent
+            <ButtonComponent
               id="news-blog-btn"
               label={t("header.about_us")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
@@ -229,7 +227,7 @@ const { t } = i18next;
               type="button"
               href="/#"
             />
-            <ButtonWithoutIconComponent
+            <ButtonComponent
               id="news-blog-btn"
               label={t("header.vesta_partner_program")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"

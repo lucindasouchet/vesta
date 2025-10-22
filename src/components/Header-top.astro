@@ -1,6 +1,6 @@
 ---
 // import LanguageDropdownComponent from "./LanguageDropdown.astro";
-import ButtonWithIconComponent from "../components/core/ButtonWithIcon.astro";
+import ButtonComponent from "../components/core/Button.astro";
 import PartnerIcon from "../../public/images/icons/partner-min.svg";
 import i18next from "../i18n.ts";
 import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
@@ -16,7 +16,7 @@ const { t } = i18next;
 			<!-- Right: Links and actions -->
 			<div class="flex items-center gap-8">
 				<!-- Partner Program button with Icon -->
-				<ButtonWithIconComponent
+				<ButtonComponent
 					id="partner-btn"
 					label={t("header.vesta_partner_program")}
           hasIcon={true}
