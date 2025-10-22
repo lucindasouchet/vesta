@@ -1,6 +1,5 @@
 ---
 import ButtonComponent from "./core/Button.astro";
-import PartnerIcon from "../../public/images/icons/partner-min.svg";
 import ChevronRightIcon from "../../public/images/icons/chevron-right-min.svg";
 import ChevronDownIcon from "../../public/images/icons/chevron-down-min.svg";
 import BatteryIcon from "../../public/images/icons/battery-min.svg";
@@ -8,6 +7,7 @@ import HybridIcon from "../../public/images/icons/hybrid-min.svg";
 import MedicalIcon from "../../public/images/icons/medical-min.svg";
 import SurveillanceIcon from "../../public/images/icons/surveillance-min.svg";
 import WirelessIcon from "../../public/images/icons/wireless-min.svg";
+import ChevronBuyVestaBtnIcon from "../../public/images/icons/chevron-buy-vesta-btn-min.svg";
 
 import i18next from "../i18n.ts";
 
@@ -244,30 +244,19 @@ const { t } = i18next;
             />
           </div>
         </div>
-
-        <!-- CTA Button -->
-        <button
+        <ButtonComponent
+          id="buy-vesta-btn"
+          label={t("header.buy_vesta")}
+          hasIcon={true}
+          icon={ChevronBuyVestaBtnIcon}
+          isIconRight={true}
+          variantFullComponent="py-1 pl-5 pr-3 rounded-full border md:border-2 border-primary-00 md:text-sm text-primary-00 stroke-primary-00 hover:bg-neutral-05 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light"
+          variantButton="gap-1"
+          variantLabel="label-1"
+          variantIcon="h-4 w-4"
           type="button"
-          onclick="alert('To do')"
-          class="inline-flex items-center rounded-full border md:border-2 border-primary-00 pl-7 md:text-sm pr-3 py-1 text-primary-00 transition hover:bg-neutral-05 z-0 focus:text-primary-10-light focus:outline-none focus:border-primary-10-light"
-        >
-          <span class="mr-1" data-i18n="header.buy_vesta"></span>
-          <span class="icon">
-            <svg
-              class="mx-1 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              transform="rotate(-90)"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </span>
-        </button>
+          href=""
+        />
       </div>
 
       <!-- Mobile menu button -->
@@ -367,11 +356,6 @@ const { t } = i18next;
           class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
           >Francés</a
         >
-        <a
-          href="#"
-          class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-          >Portugués</a
-        >
       </div>
     </div>
 
@@ -399,17 +383,17 @@ const { t } = i18next;
         <a
           href="#"
           class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-          >Historia</a
+          >Item 1</a
         >
         <a
           href="#"
           class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-          >Valores</a
+          >Item 2</a
         >
         <a
           href="#"
           class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-          >Equipo</a
+          >Item 3</a
         >
       </div>
     </div>
@@ -498,7 +482,9 @@ const { t } = i18next;
     }
   });
 
-  function assert(arg0: boolean, arg1: string) {
-    throw new Error("Function not implemented.");
-  }
+  /* Event listener on #buy-vesta-btn*/ 
+  const buyVestaBtn = document.querySelector("#buy-vesta-btn");
+  buyVestaBtn!.addEventListener("click", () => {
+    console.log("Hello, on client from #buy-vesta-btn!");
+  });
 </script>

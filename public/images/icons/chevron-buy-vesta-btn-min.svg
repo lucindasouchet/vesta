@@ -1,0 +1,23 @@
+<!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" class="pb-2"
+  xmlns:v="https://vecta.io/nano">
+  <path fill-rule="evenodd"
+    d="M15
+24.56c0-.265.087-.502.264-.71l4.717-5.335-4.717-5.337c-.168-.187-.253-.411-.258-.672s.072-.494.227-.695.346-.306.571-.311.422.086.588.274l5.345
+6.047a.8.8 0 0 1 .195.302 1.13 1.13 0 0 1 .068.393 1 1 0 0 1-.264.693l-5.345
+6.018c-.166.187-.363.278-.588.274s-.419-.113-.578-.317a.99.99 0 0
+1-.162-.29c-.042-.113-.063-.224-.063-.333z"
+    fill="#22509b" />
+</svg> -->
+
+<svg
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  viewBox="0 0 24 24"
+  transform="rotate(-90)"
+>
+  <path
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M19 9l-7 7-7-7"></path>
+</svg>
