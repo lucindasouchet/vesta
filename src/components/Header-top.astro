@@ -1,7 +1,7 @@
 ---
 // import LanguageDropdownComponent from "./LanguageDropdown.astro";
 import ButtonWithIconComponent from "../components/core/ButtonWithIcon.astro";
-import PartnerProgramIcon from "../../public/images/icons/partner-program.svg";
+import PartnerIcon from "../../public/images/icons/partner-min.svg";
 import i18next from "../i18n.ts";
 import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
 
@@ -17,10 +17,11 @@ const { t } = i18next;
 			<div class="flex items-center gap-8">
 				<!-- Partner Program button with Icon -->
 				<ButtonWithIconComponent
-					id="partner-program-btn"
+					id="partner-btn"
 					label={t("header.vesta_partner_program")}
-					icon={PartnerProgramIcon}
-					variantButton="hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+					icon={PartnerIcon}
+          variantFullComponent="py-4 pr-6 pl-3 stroke-neutral-90 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:stroke-primary-10-light"
+					variantButton="gap-3"
 					variantLabel="label-1"
 					variantIcon="h-7 w-7"
 					type="button"
