@@ -2,7 +2,7 @@
 import i18next from "../i18n.ts";
 import TitleComponent from "./core/Title.astro";
 import TextComponent from "./core/Text.astro";
-import ButtonWithoutIconComponent from "./core/ButtonWithoutIcon.astro";
+import ButtonComponent from "./core/Button.astro";
 
 const { t } = i18next;
 ---
@@ -18,7 +18,7 @@ const { t } = i18next;
 		classes="m-4"
 		content={t("test.hello")}
 	/>
-	<ButtonWithoutIconComponent
+	<ButtonComponent
 		id="section1-products-btn"
 		label={t("test.products_page")}
 		variantButton="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-4"

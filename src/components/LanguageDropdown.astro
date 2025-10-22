@@ -73,7 +73,7 @@ const { id, name } = Astro.props;
                 langs.forEach((lng:any) => {
                     const option = document.createElement("option");
                     option.value = lng;
-                    console.log(lng);
+                    // console.log(lng);
                     option.textContent = `${displayNames.of(lng) || lng.toUpperCase()}`;
                     // `${languageFlags[lng] || ""} ${displayNames.of(lng) || lng.toUpperCase()}`; // display prefixed with languageFlags (can be used for mobile)
                     option.classList.add(...optionClasses);
