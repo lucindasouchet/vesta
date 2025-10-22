@@ -1,9 +1,11 @@
 ---
 import ButtonWithIconComponent from "./core/ButtonWithIcon.astro";
-import PartnerProgramIcon from "../../public/images/icons/partner-program.svg";
-import ChevronIcon from "../../public/images/icons/chevron-min.svg";
+import PartnerIcon from "../../public/images/icons/partner-min.svg";
+import ChevronRightIcon from "../../public/images/icons/chevron-right-min.svg";
+import ChevronDownIcon from "../../public/images/icons/chevron-down-min.svg";
 import i18next from "../i18n.ts";
 import ButtonWithoutIconComponent from "./core/ButtonWithoutIcon.astro";
+import { fade } from "astro:transitions";
 
 const { t } = i18next;
 ---
@@ -22,36 +24,29 @@ const { t } = i18next;
       </a>
 
       <!-- Right: Links and actions -->
-      <div class="hidden items-center space-x-5 md:flex">
+      <div class="hidden items-center md:flex">
         <!-- Productos -->
         <div class="relative group">
-          <button
+          <ButtonWithIconComponent
+            id="productos-btn"
+            label={t("header.products")}
+            icon={ChevronDownIcon}
+            isIconRight={true}
+            variantFullComponent="py-4 px-3 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:stroke-primary-10-light"
+            variantButton="gap-3"
+            variantLabel="label-1"
+            variantIcon="h-7 w-7"
             type="button"
-            class="px-4 py-2 flex items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light md:text-lg lg:text-xl/6"
-          >
-            <span class="icon">
-              <svg
-                class="mx-2 h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </span>
-            <span data-i18n="header.products"></span>
-          </button>
+            href=""
+          />
           <div
             class="absolute right-auto w-86 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
             <ButtonWithIconComponent
               id="radio-alarm-btn"
               label={t("footer.radio_alarm")}
-              icon={PartnerProgramIcon}
+              icon={PartnerIcon}
+              isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light"
               variantLabel="label-1"
@@ -62,7 +57,8 @@ const { t } = i18next;
             <ButtonWithIconComponent
               id="battery-powered-alarm-btn"
               label={t("footer.battery_powered_alarm")}
-              icon={PartnerProgramIcon}
+              icon={PartnerIcon}
+              isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
@@ -73,7 +69,8 @@ const { t } = i18next;
             <ButtonWithIconComponent
               id="hybrid-alarm-btn"
               label={t("footer.hybrid_alarm")}
-              icon={PartnerProgramIcon}
+              icon={PartnerIcon}
+              isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
@@ -84,7 +81,8 @@ const { t } = i18next;
             <ButtonWithIconComponent
               id="medical-alarm-serie-mobile-pro-btn"
               label={t("header.medical_alarm_serie_mobile_pro")}
-              icon={PartnerProgramIcon}
+              icon={PartnerIcon}
+              isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
@@ -95,7 +93,8 @@ const { t } = i18next;
             <ButtonWithIconComponent
               id="medical-alarm-mx-series-btn"
               label={t("header.medical_alarm_mx_series")}
-              icon={PartnerProgramIcon}
+              icon={PartnerIcon}
+              isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
@@ -106,7 +105,8 @@ const { t } = i18next;
             <ButtonWithIconComponent
               id="medical-alarm-gx-series-btn"
               label={t("header.medical_alarm_gx_series")}
-              icon={PartnerProgramIcon}
+              icon={PartnerIcon}
+              isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
@@ -117,7 +117,8 @@ const { t } = i18next;
             <ButtonWithIconComponent
               id="vesta-home-video-btn"
               label={t("footer.vesta_home_video")}
-              icon={PartnerProgramIcon}
+              icon={PartnerIcon}
+              isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
@@ -128,7 +129,8 @@ const { t } = i18next;
             <ButtonWithIconComponent
               id="vesta-advanced-video-btn"
               label={t("footer.vesta_advanced_video")}
-              icon={PartnerProgramIcon}
+              icon={PartnerIcon}
+              isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
@@ -139,7 +141,8 @@ const { t } = i18next;
             <ButtonWithIconComponent
               id="all-products-btn"
               label={t("header.all_products")}
-              icon={ChevronIcon}
+              icon={ChevronRightIcon}
+              isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
               variantLabel="label-1"
@@ -152,25 +155,18 @@ const { t } = i18next;
 
         <!-- Sobre Noticia y eventos Dropdown -->
         <div class="relative group">
-          <button
-            class="px-4 py-2 flex items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light md:text-lg lg:text-xl/6"
-          >
-            <span class="icon">
-              <svg
-                class="mx-2 h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </span>
-            <span data-i18n="header.news_and_events"></span>
-          </button>
+          <ButtonWithIconComponent
+            id="productos-btn"
+            label={t("header.news_and_events")}
+            icon={ChevronDownIcon}
+            isIconRight={true}
+            variantFullComponent="py-4 px-3 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:stroke-primary-10-light"
+            variantButton="gap-3"
+            variantLabel="label-1"
+            variantIcon="h-7 w-7"
+            type="button"
+            href=""
+          />
           <div
             class="absolute right-auto w-auto py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
@@ -197,25 +193,18 @@ const { t } = i18next;
 
         <!-- Sobre Vesta Security Dropdown -->
         <div class="relative group">
-          <button
-            class="px-4 py-2 flex items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light md:text-lg lg:text-xl/6"
-          >
-            <span class="icon">
-              <svg
-                class="mx-2 h-4 w-4"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </span>
-            <span data-i18n="header.about_vesta_security"></span>
-          </button>
+          <ButtonWithIconComponent
+            id="productos-btn"
+            label={t("header.about_vesta_security")}
+            icon={ChevronDownIcon}
+            isIconRight={true}
+            variantFullComponent="py-4 px-3 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:stroke-primary-10-light"
+            variantButton="gap-3"
+            variantLabel="label-1"
+            variantIcon="h-7 w-7"
+            type="button"
+            href=""
+          />
           <div
             class="absolute right-auto w-50 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
