@@ -3,6 +3,12 @@ import ButtonComponent from "./core/Button.astro";
 import PartnerIcon from "../../public/images/icons/partner-min.svg";
 import ChevronRightIcon from "../../public/images/icons/chevron-right-min.svg";
 import ChevronDownIcon from "../../public/images/icons/chevron-down-min.svg";
+import BatteryIcon from "../../public/images/icons/battery-min.svg";
+import HybridIcon from "../../public/images/icons/hybrid-min.svg";
+import MedicalIcon from "../../public/images/icons/medical-min.svg";
+import SurveillanceIcon from "../../public/images/icons/surveillance-min.svg";
+import WirelessIcon from "../../public/images/icons/wireless-min.svg";
+
 import i18next from "../i18n.ts";
 
 const { t } = i18next;
@@ -45,7 +51,7 @@ const { t } = i18next;
               id="radio-alarm-btn"
               label={t("footer.radio_alarm")}
               hasIcon={true}
-              icon={PartnerIcon}
+              icon={WirelessIcon}
               isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light"
@@ -58,7 +64,7 @@ const { t } = i18next;
               id="battery-powered-alarm-btn"
               label={t("footer.battery_powered_alarm")}
               hasIcon={true}
-              icon={PartnerIcon}
+              icon={BatteryIcon}
               isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -71,7 +77,7 @@ const { t } = i18next;
               id="hybrid-alarm-btn"
               label={t("footer.hybrid_alarm")}
               hasIcon={true}
-              icon={PartnerIcon}
+              icon={HybridIcon}
               isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -84,7 +90,7 @@ const { t } = i18next;
               id="medical-alarm-serie-mobile-pro-btn"
               label={t("header.medical_alarm_serie_mobile_pro")}
               hasIcon={true}
-              icon={PartnerIcon}
+              icon={MedicalIcon}
               isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -97,7 +103,7 @@ const { t } = i18next;
               id="medical-alarm-mx-series-btn"
               label={t("header.medical_alarm_mx_series")}
               hasIcon={true}
-              icon={PartnerIcon}
+              icon={MedicalIcon}
               isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -110,7 +116,7 @@ const { t } = i18next;
               id="medical-alarm-gx-series-btn"
               label={t("header.medical_alarm_gx_series")}
               hasIcon={true}
-              icon={PartnerIcon}
+              icon={MedicalIcon}
               isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -123,7 +129,7 @@ const { t } = i18next;
               id="vesta-home-video-btn"
               label={t("footer.vesta_home_video")}
               hasIcon={true}
-              icon={PartnerIcon}
+              icon={SurveillanceIcon}
               isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -136,7 +142,7 @@ const { t } = i18next;
               id="vesta-advanced-video-btn"
               label={t("footer.vesta_advanced_video")}
               hasIcon={true}
-              icon={PartnerIcon}
+              icon={SurveillanceIcon}
               isIconRight={false}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
