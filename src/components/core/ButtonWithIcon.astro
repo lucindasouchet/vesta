@@ -3,6 +3,7 @@
 const {
   id,
   label,
+  hasIcon = false,
   icon: Icon,
   isIconRight = true,
   href,
@@ -17,9 +18,9 @@ const {
 <div class={`${variantFullComponent}`}>
   <a href={`${href}`}>
     <button id={id} type={type} class={`flex items-center ${variantButton}`}>
-      {Icon && !isIconRight && <Icon class={`${variantIcon}`} />}
+      {hasIcon && Icon && !isIconRight && <Icon class={`${variantIcon}`} />}
       <span data-i18n={`${label}`} class={`${variantLabel}`}></span>
-      {Icon && isIconRight && <Icon class={`${variantIcon}`} />}
+      {hasIcon && Icon && isIconRight && <Icon class={`${variantIcon}`} />}
     </button>
   </a>
 </div>
