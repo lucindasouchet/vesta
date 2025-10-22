@@ -5,99 +5,108 @@ const { id, name } = Astro.props;
 <select id=`${id}` name=`${name}`></select>
 
 <script>
-    import i18next from "../i18n.ts";
-    import * as Utils from "../utils/formatters.ts";
+  import i18next from "../i18n.ts";
+  import * as Utils from "../utils/formatters.ts";
 
-    const id = "languageDdlIndex";
-    // const id = JSON.parse(decodeURIComponent("{{encodeURIComponent(id)}}"));
-    // const el = document.getElementById(id);
+  const id = "languageDdlIndex";
+  // const id = JSON.parse(decodeURIComponent("{{encodeURIComponent(id)}}"));
+  // const el = document.getElementById(id);
 
-    // languageFlags (can be used for mobile)
-    // type languageFlags = { [key: string]: string };
-    // const languageFlags: languageFlags = {
-    //     en: "🇬🇧",
-    //     fr: "🇫🇷",
-    //     es: "🇪🇸",
-    // };
+  // languageFlags (can be used for mobile)
+  // type languageFlags = { [key: string]: string };
+  // const languageFlags: languageFlags = {
+  //     en: "🇬🇧",
+  //     fr: "🇫🇷",
+  //     es: "🇪🇸",
+  // };
 
-    const selectClasses = [
-        "mr-2",
-        "pr-4",
-        "hover:text-secondary-20-dark",
-        "focus:outline-none",
-        "focus:text-primary-10-light",
-    ];
+  const selectClasses = [
+    "mr-2",
+    "pr-4",
+    "hover:text-secondary-20-dark",
+    "focus:outline-none",
+    "focus:text-primary-10-light",
+    "text-14",
+    "lg:text-16",
+    "xl:text-18",
+    "2xl:text-20",
+  ];
 
-    const optionClasses = ["text-black", "text-sm", "hover:bg-neutral-20"];
+  const optionClasses = [
+    "text-black",
+    "hover:bg-neutral-20",
+    "text-14",
+    "lg:text-16",
+    "xl:text-18",
+    "2xl:text-20",
+  ];
 
-    // Update all elements that have data-i18n attributes
-    function updateContent() {
-        document.querySelectorAll("[data-i18n]").forEach((el) => {
-            const key = el.getAttribute("data-i18n");
-            el.innerHTML = i18next.t(key!);
-        });
-    }
+  // Update all elements that have data-i18n attributes
+  function updateContent() {
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      el.innerHTML = i18next.t(key!);
+    });
+  }
 
-    function buildLanguageDropdown(this:any) {
-        const displayNames = new Intl.DisplayNames([i18next.language], {
-            type: "language",
-        });
-        
-        // // Dynamic list filled with all supported languages listed in supportedLngs option of the i18n config file
-        // const select = document.getElementById("languageDdlIndex");
-        // select!.innerHTML = ""; // reset options
-
-        // if (Array.isArray(i18next.options.supportedLngs)) {
-        //     i18next.options.supportedLngs.forEach((lng) => {
-        //         if (lng === "cimode") return; // skip i18next test mode
-        //         const option = document.createElement("option");
-        //         option.value = lng;
-        //         option.textContent = displayNames.of(lng) || lng.toUpperCase();
-        //         if (lng === i18next.language) option.selected = true;
-        //         select!.appendChild(option);
-        //     });
-        // }
-
-        // // Handle selection change
-        // select!.addEventListener("change", (e: any) => {
-        //     i18next.changeLanguage(e.target.value);
-        // });
-
-        // Dynamic list from config file: /public locales/translation.json
-        fetch("/locales/languages.json")
-            .then((res) => res.json())
-            .then((langs) => {
-                const select = document.getElementById(id);
-                select!.innerHTML = ""; // reset options
-                select?.classList.add(...selectClasses);
-                langs.forEach((lng:any) => {
-                    const option = document.createElement("option");
-                    option.value = lng;
-                    // console.log(lng);
-                    option.textContent = `${displayNames.of(lng) || lng.toUpperCase()}`;
-                    // `${languageFlags[lng] || ""} ${displayNames.of(lng) || lng.toUpperCase()}`; // display prefixed with languageFlags (can be used for mobile)
-                    option.classList.add(...optionClasses);
-                    option.textContent = Utils.capitalizeFirstLetter(
-                        option.textContent,
-                    );
-                    if (lng === i18next.language) option.selected = true;
-                    select!.appendChild(option);
-                });
-
-                // Handle selection change
-                select!.addEventListener("change", (e:any) => {
-                    i18next.changeLanguage(e.target.value);
-                });
-            });
-    }
-
-    i18next.on("initialized", () => {
-        updateContent();
-        buildLanguageDropdown();
+  function buildLanguageDropdown(this: any) {
+    const displayNames = new Intl.DisplayNames([i18next.language], {
+      type: "language",
     });
 
-    i18next.on("languageChanged", () => {
-        updateContent();
-        buildLanguageDropdown();
-    });
+    // // Dynamic list filled with all supported languages listed in supportedLngs option of the i18n config file
+    // const select = document.getElementById("languageDdlIndex");
+    // select!.innerHTML = ""; // reset options
+
+    // if (Array.isArray(i18next.options.supportedLngs)) {
+    //     i18next.options.supportedLngs.forEach((lng) => {
+    //         if (lng === "cimode") return; // skip i18next test mode
+    //         const option = document.createElement("option");
+    //         option.value = lng;
+    //         option.textContent = displayNames.of(lng) || lng.toUpperCase();
+    //         if (lng === i18next.language) option.selected = true;
+    //         select!.appendChild(option);
+    //     });
+    // }
+
+    // // Handle selection change
+    // select!.addEventListener("change", (e: any) => {
+    //     i18next.changeLanguage(e.target.value);
+    // });
+
+    // Dynamic list from config file: /public locales/translation.json
+    fetch("/locales/languages.json")
+      .then((res) => res.json())
+      .then((langs) => {
+        const select = document.getElementById(id);
+        select!.innerHTML = ""; // reset options
+        select?.classList.add(...selectClasses);
+        langs.forEach((lng: any) => {
+          const option = document.createElement("option");
+          option.value = lng;
+          // console.log(lng);
+          option.textContent = `${displayNames.of(lng) || lng.toUpperCase()}`;
+          // `${languageFlags[lng] || ""} ${displayNames.of(lng) || lng.toUpperCase()}`; // display prefixed with languageFlags (can be used for mobile)
+          option.classList.add(...optionClasses);
+          option.textContent = Utils.capitalizeFirstLetter(option.textContent);
+          if (lng === i18next.language) option.selected = true;
+          select!.appendChild(option);
+        });
+
+        // Handle selection change
+        select!.addEventListener("change", (e: any) => {
+          i18next.changeLanguage(e.target.value);
+        });
+      });
+  }
+
+  i18next.on("initialized", () => {
+    updateContent();
+    buildLanguageDropdown();
+  });
+
+  i18next.on("languageChanged", () => {
+    updateContent();
+    buildLanguageDropdown();
+  });
 </script>
