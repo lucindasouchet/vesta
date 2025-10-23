@@ -8,11 +8,13 @@ import MedicalIcon from "../../public/images/icons/medical-min.svg";
 import SurveillanceIcon from "../../public/images/icons/surveillance-min.svg";
 import WirelessIcon from "../../public/images/icons/wireless-min.svg";
 import ChevronBuyVestaBtnIcon from "../../public/images/icons/chevron-buy-vesta-btn-min.svg";
-import LogoVestaLargeLightImage from "../../public/images/logo-vesta-large-light-min.svg"
+import ImageComponent from "./core/Image.astro";
 
 import i18next from "../i18n.ts";
 
 const { t } = i18next;
+const LogoVestaLargeLightModeImagePath =
+  "../../public/images/logos/logo-vesta-large-light-mode-min.svg";
 ---
 
 <nav class="shadow-md z-0">
@@ -21,18 +23,17 @@ const { t } = i18next;
       <!-- Left: Logo -->
       <a href="./index.html">
         <div class="flex items-center space-x-2">
-          <!-- Icon (placeholder box) -->
-          <!-- <div class="h-7 w-5 md:h-8 md:w-6 lg:h-10 lg:w-7 rounded bg-sky-300">
-          </div>
-          <span class="font-bold text-3xl md:text-4xl lg:text-5xl">Vesta</span> -->
-          <div>
-            <img src="../../public/images/logo-vesta-large-light-min.svg" alt="Logo Vesta Large Light" class="h-3/4 w-3/4">
-          </div>
+          <ImageComponent
+            id="logoVestaHeader"
+            path={LogoVestaLargeLightModeImagePath}
+            altText="Logo Vesta large light mode"
+            variantImage="h-3/4 w-3/4"
+          />
         </div>
       </a>
 
       <!-- Right: Links and actions -->
-      <div class="hidden items-center md:flex">
+      <div class="hidden items-center justify-start md:flex">
         <!-- Productos -->
         <div class="relative group">
           <ButtonComponent
@@ -49,7 +50,7 @@ const { t } = i18next;
             href=""
           />
           <div
-            class="absolute right-auto w-76 lg:w-84 xl:w-92 2xl:98 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
+            class="absolute right-auto w-76 lg:w-84 xl:w-92 2xl:98 py-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10 justify-start"
           >
             <ButtonComponent
               id="radio-alarm-btn"
@@ -486,7 +487,7 @@ const { t } = i18next;
     }
   });
 
-  /* Event listener on #buy-vesta-btn*/ 
+  /* Event listener on #buy-vesta-btn*/
   const buyVestaBtn = document.querySelector("#buy-vesta-btn");
   buyVestaBtn!.addEventListener("click", () => {
     console.log("Hello, on client from #buy-vesta-btn!");

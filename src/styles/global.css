@@ -119,11 +119,11 @@
   /* 25px -  heading-4-mobile */
 
   /* to update */
-  --text-xxs: 0.63rem;
+  /* --text-xxs: 0.63rem; */
   /* --text-18: 67.34px; */
-  --text-12-5: 50.52px;
-  --text-9-5: 37.9px;
-  --text-7: 28.43px;
+  /* --text-12-5: 50.52px; */
+  /* --text-9-5: 37.9px; */
+  /* --text-7: 28.43px; */
 
   /*********************************** weights */
   --font-weight-black: 900;
@@ -465,21 +465,21 @@ body {
 
 .product-card-container {
   background-color: var(--color-bg-primary-light);
-  box-shadow: 0 8px 16px 0 var(--color-shadows-light-strong);
+  box-shadow: 0 0.5rem 1rem 0 var(--color-shadows-light-strong);
 }
 
 /*********************************************** media queries */
-/* sm - mobile */
-@media screen and (max-width: 640px) {}
+/* sm - mobile - 640px / 40rem */
+@media screen and (max-width: 40rem) {}
 
-/* md - tablet */
-@media screen and (min-width: 641px) {}
+/* md - tablet - 768px / 48rem */
+@media screen and (min-width: 48rem) {}
 
-/* lg - laptop */
-@media screen and (min-width: 768px) {}
+/* lg - laptop - 1024px / 64rem */
+@media screen and (min-width: 64rem) {}
 
-/* xl - desktop */
-@media screen and (min-width: 1280px) {}
+/* xl - desktop - 1280px / 80rem */
+@media screen and (min-width: 80rem) {}
 
-/* 2xl - large desktop */
-@media screen and (min-width: 1536px) {}
+/* 2xl - large desktop - 1536px / 96rem */
+@media screen and (min-width: 96rem) {}
