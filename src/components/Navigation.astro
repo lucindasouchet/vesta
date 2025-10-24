@@ -14,9 +14,9 @@ import i18next from "../i18n.ts";
 
 const { t } = i18next;
 const LogoVestaMediumLightModeImagePath =
-  "../../public/images/logos/logo-vesta-medium-light-mode-min.svg";
+  "/images/logos/logo-vesta-medium-light-mode-min.svg";
 const LogoVestaLargeLightModeImagePath =
-  "../../public/images/logos/logo-vesta-large-light-mode-min.svg";
+  "/images/logos/logo-vesta-large-light-mode-min.svg";
 ---
 
 <nav class="shadow-md z-0">
@@ -26,13 +26,13 @@ const LogoVestaLargeLightModeImagePath =
       <a href="./index.html">
         <div class="flex items-center space-x-2">
           <ImageComponent
-            id="logoVestaHeader"
+            id="LogoVestaMediumLightMode"
             path={LogoVestaMediumLightModeImagePath}
             altText="Logo Vesta large light mode"
             variantImage="h-3/4 w-3/4 lg:hidden"
           />
           <ImageComponent
-            id="logoVestaHeader"
+            id="LogoVestaLargeLightMode"
             path={LogoVestaLargeLightModeImagePath}
             altText="Logo Vesta large light mode"
             variantImage="h-3/4 w-3/4 hidden lg:flex"
