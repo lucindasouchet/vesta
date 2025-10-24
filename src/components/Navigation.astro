@@ -13,6 +13,8 @@ import ImageComponent from "./core/Image.astro";
 import i18next from "../i18n.ts";
 
 const { t } = i18next;
+const LogoVestaMediumLightModeImagePath =
+  "../../public/images/logos/logo-vesta-medium-light-mode-min.svg";
 const LogoVestaLargeLightModeImagePath =
   "../../public/images/logos/logo-vesta-large-light-mode-min.svg";
 ---
@@ -25,9 +27,15 @@ const LogoVestaLargeLightModeImagePath =
         <div class="flex items-center space-x-2">
           <ImageComponent
             id="logoVestaHeader"
+            path={LogoVestaMediumLightModeImagePath}
+            altText="Logo Vesta large light mode"
+            variantImage="h-3/4 w-3/4 lg:hidden"
+          />
+          <ImageComponent
+            id="logoVestaHeader"
             path={LogoVestaLargeLightModeImagePath}
             altText="Logo Vesta large light mode"
-            variantImage="h-3/4 w-3/4"
+            variantImage="h-3/4 w-3/4 hidden lg:flex"
           />
         </div>
       </a>
@@ -317,7 +325,7 @@ const LogoVestaLargeLightModeImagePath =
   </div>
 
   <!-- Mobile menu content -->
-  <nav class="space-y-4 px-12 py-8 font-medium my-4 ">
+  <nav class="space-y-4 px-12 py-8 font-medium my-4">
     <!-- Language Dropdown (Mobile) -->
     <div>
       <button
