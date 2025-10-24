@@ -1,5 +1,5 @@
 ---
-const { id, classes, content} = Astro.props;
+const { id, variantText = "default", text } = Astro.props;
 ---
 
-<p id={id} class={`${classes}`} data-i18n={`${content}`}></p>
+<p id={id} class={`${variantText}`} data-i18n={`${text}`}></p>

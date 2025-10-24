@@ -1,5 +1,9 @@
 ---
-const { id, classes, content, href} = Astro.props;
+const { id, variantLink = "default", text, href } = Astro.props;
 ---
 
-<a id={id} class={`link caption link:hover ${classes}`} data-i18n={`${content}`} href={href}></a>
+<a
+  id={id}
+  class={`link caption link:hover ${variantLink}`}
+  data-i18n={`${text}`}
+  href={href}></a>
