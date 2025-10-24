@@ -185,9 +185,10 @@
   /* 18.8px - heading-6-mobile */
 
   /*********************************** animation */
-  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --animate-wiggle-3: wiggle-3 1s ease-in-out infinite;
+  --animate-wiggle-5: wiggle-5 1s ease-in-out infinite;
 
-  @keyframes wiggle {
+  @keyframes wiggle-3 {
 
     0%,
     100% {
@@ -198,7 +199,20 @@
       transform: rotate(3deg);
     }
   }
+
+  @keyframes wiggle-5 {
+
+    0%,
+    100% {
+      transform: rotate(-5deg);
+    }
+
+    50% {
+      transform: rotate(5deg);
+    }
+  }
 }
+
 
 /*********************************************** core */
 * {

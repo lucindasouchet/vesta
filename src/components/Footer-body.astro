@@ -197,7 +197,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         imageAltText="Apple Store button"
         href="https://www.apple.com/store"
         type="button"
-        variantImage="h-11 w-32"
+        variantImage="h-11 w-32 hover:animate-wiggle-3"
       />
       <ButtonComponent
         id="footer-google-play-btn"
@@ -207,7 +207,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         imageAltText="Google Play button"
         href="https://play.google.com/store/apps?hl=en"
         type="button"
-        variantImage="h-11 w-32"
+        variantImage="h-11 w-32 hover:animate-wiggle-3"
       />
     </div>
   </div>
@@ -217,31 +217,33 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
     class="flex flex-col items-center justify-center md:items-start md:justify-start gap-1 sm:gap-1 md:gap-6"
   >
     <div class="flex place-self-center">
-      <ImageComponent
-        id="LogoVestaLargeDarkMode"
-        path={LogoVestaLargeDarkModeImagePath}
-        altText="Logo Vesta large dark mode"
-        variantImage="hidden md:flex"
-      />
-      <ImageComponent
-        id="LogoVestaMediumDarkMode"
-        path={LogoVestaMediumDarkModeImagePath}
-        altText="Logo Vesta large dark mode"
-        variantImage="w-3/4 h-3/4 sm:w-3/4 sm:h-3/4 md:hidden place-self-center"
-      />
+      <a href="./index.html">
+        <ImageComponent
+          id="LogoVestaLargeDarkMode"
+          path={LogoVestaLargeDarkModeImagePath}
+          altText="Logo Vesta large dark mode"
+          variantImage="hidden md:flex"
+        />
+        <ImageComponent
+          id="LogoVestaMediumDarkMode"
+          path={LogoVestaMediumDarkModeImagePath}
+          altText="Logo Vesta large dark mode"
+          variantImage="w-3/4 h-3/4 sm:w-3/4 sm:h-3/4 md:hidden place-self-center"
+        />
+      </a>
     </div>
     <div class="flex flex-row gap-1">
       <ImageComponent
         id="LinkedinImage"
         path={LinkedinImagePath}
         altText="Linkedin image"
-        variantImage="w-3/4 h-3/4 sm:w-3/4 sm:h-3/4"
+        variantImage="w-3/4 h-3/4 sm:w-3/4 sm:h-3/4 hover:animate-wiggle-5"
       />
       <ImageComponent
         id="LinkedinImage"
         path={LinkedinImagePath}
         altText="Linkedin image"
-        variantImage="w-3/4 h-3/4 sm:w-3/4 sm:h-3/4"
+        variantImage="w-3/4 h-3/4 sm:w-3/4 sm:h-3/4 hover:animate-wiggle-5"
       />
     </div>
   </div>
