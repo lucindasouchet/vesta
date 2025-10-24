@@ -7,8 +7,8 @@ const LogoVestaMediumDarkModeImagePath =
 const LogoVestaLargeDarkModeImagePath =
   "/images/logos/logo-vesta-large-dark-mode-min.svg";
 const LinkedinImagePath = "/images/linkedin-min.svg";
-const AppleStoreImagePath ="/images/app-store-min.svg"
-const GooglePlayImagePath ="/images/google-play-min.svg"
+const AppleStoreImagePath = "/images/app-store-min.svg";
+const GooglePlayImagePath = "/images/google-play-min.svg";
 ---
 
 <div
@@ -189,28 +189,26 @@ const GooglePlayImagePath ="/images/google-play-min.svg"
     <div
       class="flex flex-col gap-4 items-center justify-center md:items-start md:justify-start"
     >
-      <a
+      <ButtonComponent
+        id="footer-apple-store-btn"
+        hasLabel="false"
+        hasImage="true"
+        imagePath={AppleStoreImagePath}
+        imageAltText="Apple Store button"
         href="https://www.apple.com/store"
-        target="_blank"
-        class=""
-      >
-        <img
-          src={AppleStoreImagePath}
-          alt="Apple Store button"
-          class="h-11 w-32"
-        />
-      </a>
-      <a
+        type="button"
+        variantImage="h-11 w-32"
+      />
+      <ButtonComponent
+        id="footer-google-play-btn"
+        hasLabel="false"
+        hasImage="true"
+        imagePath={GooglePlayImagePath}
+        imageAltText="Google Play button"
         href="https://play.google.com/store/apps?hl=en"
-        target="_blank"
-        class=""
-      >
-        <img
-          src={GooglePlayImagePath}
-          alt="Google Play button"
-          class="h-11 w-32"
-        />
-      </a>
+        type="button"
+        variantImage="h-11 w-32"
+      />
     </div>
   </div>
 
