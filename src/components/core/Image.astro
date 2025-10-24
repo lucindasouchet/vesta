@@ -1,0 +1,13 @@
+---
+const {
+  id,
+  path,
+  altText,
+  variantFullComponent = "default",
+  variantImage = "default",
+} = Astro.props;
+---
+
+<div class={`${variantFullComponent}`}>
+  <img id={id} src={`${path}`} alt={`${altText}`} class={`${variantImage}`} />
+</div>
