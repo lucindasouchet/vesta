@@ -13,8 +13,10 @@ import ImageComponent from "./core/Image.astro";
 import i18next from "../i18n.ts";
 
 const { t } = i18next;
+const LogoVestaMediumLightModeImagePath =
+  "/images/logos/logo-vesta-medium-light-mode-min.svg";
 const LogoVestaLargeLightModeImagePath =
-  "../../public/images/logos/logo-vesta-large-light-mode-min.svg";
+  "/images/logos/logo-vesta-large-light-mode-min.svg";
 ---
 
 <nav class="shadow-md z-0">
@@ -24,10 +26,16 @@ const LogoVestaLargeLightModeImagePath =
       <a href="./index.html">
         <div class="flex items-center space-x-2">
           <ImageComponent
-            id="logoVestaHeader"
+            id="LogoVestaMediumLightMode"
+            path={LogoVestaMediumLightModeImagePath}
+            altText="Logo Vesta large light mode"
+            variantImage="h-3/4 w-3/4 lg:hidden"
+          />
+          <ImageComponent
+            id="LogoVestaLargeLightMode"
             path={LogoVestaLargeLightModeImagePath}
             altText="Logo Vesta large light mode"
-            variantImage="h-3/4 w-3/4"
+            variantImage="h-3/4 w-3/4 hidden lg:flex"
           />
         </div>
       </a>
@@ -38,6 +46,7 @@ const LogoVestaLargeLightModeImagePath =
         <div class="relative group">
           <ButtonComponent
             id="productos-btn"
+            hasLabel="true"
             label={t("header.products")}
             hasIcon={true}
             icon={ChevronDownIcon}
@@ -54,6 +63,7 @@ const LogoVestaLargeLightModeImagePath =
           >
             <ButtonComponent
               id="radio-alarm-btn"
+              hasLabel="true"
               label={t("footer.radio_alarm")}
               hasIcon={true}
               icon={WirelessIcon}
@@ -67,6 +77,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="battery-powered-alarm-btn"
+              hasLabel="true"
               label={t("footer.battery_powered_alarm")}
               hasIcon={true}
               icon={BatteryIcon}
@@ -80,6 +91,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="hybrid-alarm-btn"
+              hasLabel="true"
               label={t("footer.hybrid_alarm")}
               hasIcon={true}
               icon={HybridIcon}
@@ -93,6 +105,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="medical-alarm-serie-mobile-pro-btn"
+              hasLabel="true"
               label={t("header.medical_alarm_serie_mobile_pro")}
               hasIcon={true}
               icon={MedicalIcon}
@@ -106,6 +119,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="medical-alarm-mx-series-btn"
+              hasLabel="true"
               label={t("header.medical_alarm_mx_series")}
               hasIcon={true}
               icon={MedicalIcon}
@@ -119,6 +133,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="medical-alarm-gx-series-btn"
+              hasLabel="true"
               label={t("header.medical_alarm_gx_series")}
               hasIcon={true}
               icon={MedicalIcon}
@@ -132,6 +147,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="vesta-home-video-btn"
+              hasLabel="true"
               label={t("footer.vesta_home_video")}
               hasIcon={true}
               icon={SurveillanceIcon}
@@ -145,6 +161,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="vesta-advanced-video-btn"
+              hasLabel="true"
               label={t("footer.vesta_advanced_video")}
               hasIcon={true}
               icon={SurveillanceIcon}
@@ -158,6 +175,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="all-products-btn"
+              hasLabel="true"
               label={t("header.all_products")}
               hasIcon={true}
               icon={ChevronRightIcon}
@@ -176,6 +194,7 @@ const LogoVestaLargeLightModeImagePath =
         <div class="relative group">
           <ButtonComponent
             id="news-and-events-btn"
+            hasLabel="true"
             label={t("header.news_and_events")}
             hasIcon={true}
             icon={ChevronDownIcon}
@@ -192,6 +211,7 @@ const LogoVestaLargeLightModeImagePath =
           >
             <ButtonComponent
               id="news-blog-btn"
+              hasLabel="true"
               label={t("header.news_blog")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -201,6 +221,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="vesta-academy-btn"
+              hasLabel="true"
               label={t("header.vesta_academy")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -215,6 +236,7 @@ const LogoVestaLargeLightModeImagePath =
         <div class="relative group">
           <ButtonComponent
             id="sobre-vesta-security-btn"
+            hasLabel="true"
             label={t("header.about_vesta_security")}
             hasIcon={true}
             icon={ChevronDownIcon}
@@ -231,6 +253,7 @@ const LogoVestaLargeLightModeImagePath =
           >
             <ButtonComponent
               id="news-blog-btn"
+              hasLabel="true"
               label={t("header.about_us")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -240,6 +263,7 @@ const LogoVestaLargeLightModeImagePath =
             />
             <ButtonComponent
               id="news-blog-btn"
+              hasLabel="true"
               label={t("header.vesta_partner_program")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
               variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
@@ -252,6 +276,7 @@ const LogoVestaLargeLightModeImagePath =
 
         <ButtonComponent
           id="buy-vesta-btn"
+          hasLabel="true"
           label={t("header.buy_vesta")}
           hasIcon={true}
           icon={ChevronBuyVestaBtnIcon}
@@ -317,7 +342,7 @@ const LogoVestaLargeLightModeImagePath =
   </div>
 
   <!-- Mobile menu content -->
-  <nav class="space-y-4 px-12 py-8 font-medium my-4 ">
+  <nav class="space-y-4 px-12 py-8 font-medium my-4">
     <!-- Language Dropdown (Mobile) -->
     <div>
       <button

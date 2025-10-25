@@ -2,16 +2,21 @@
 // destructuring icon as Icon and rendering it like a component - this works if the SVG is imported as a component
 const {
   id,
-  label,
+  hasLabel = false,
+  label = "",
   hasIcon = false,
   icon: Icon,
   isIconRight = true,
+  hasImage = false,
+  imagePath,
+  imageAltText,
   href,
   type,
   variantFullComponent = "default",
   variantButton = "default",
   variantLabel = "default",
   variantIcon = "default",
+  variantImage = "default",
 } = Astro.props;
 ---
 
@@ -19,8 +24,9 @@ const {
   <a href={`${href}`}>
     <button id={id} type={type} class={`flex items-center ${variantButton}`}>
       {hasIcon && Icon && !isIconRight && <Icon class={`${variantIcon}`} />}
-      <span data-i18n={`${label}`} class={`${variantLabel}`}></span>
+      {hasLabel && <span data-i18n={`${label}`} class={`${variantLabel}`}></span>}
       {hasIcon && Icon && isIconRight && <Icon class={`${variantIcon}`} />}
+      {hasImage && imagePath && <img src={`${imagePath}`} alt={`${imageAltText}`} class={`${variantImage}`} />}
     </button>
   </a>
 </div>

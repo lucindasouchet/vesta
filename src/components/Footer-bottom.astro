@@ -1,54 +1,71 @@
 ---
 import LanguageDropdownComponent from "./LanguageDropdown.astro";
+import LabelComponent from "./core/Label.astro";
+import LinkComponent from "./core/Link.astro";
+import i18next from "../i18n.ts";
+
+const { t } = i18next;
 ---
 
 <div
-    class="flex flex-col md:flex-row items-center justify-between bg-primary-60-dark px-24 pt-12 pb-6 text-xs text-white"
+  class="flex flex-col md:flex-row items-center justify-between bg-primary-60-dark px-6 lg:px-8 xl:px-12 pt-6 pb-3 2xl:px-24 2xl:pt-12 2xl:pb-6 text-xs text-white"
 >
-    <!-- Left -->
-    <div>
-        <div
-            class="font-bold mb-3 md:mb-4 text-center md:text-left"
-            data-i18n="footer.copyright"
-        >
-        </div>
-        <div
-            class="flex flex-col justify-left md:flex-row md:flex-wrap md:gap-y-1 md:gap-x-2 lg:gap-y-2 lg:gap-x-4 text-center"
-        >
-            <a
-                href="#"
-                class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                data-i18n="footer.privacy_policy"></a>
-            <span class="hidden md:inline">|</span>
-            <a
-                href="#"
-                class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                data-i18n="footer.cookie_policy"></a>
-            <span class="hidden md:inline">|</span>
-            <a
-                href="#"
-                class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                data-i18n="footer.cookie_settings"></a>
-            <span class="hidden md:inline">|</span>
-            <a
-                href="#"
-                class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                data-i18n="footer.legal_notice"></a>
-            <span class="hidden md:inline">|</span>
-            <a
-                href="#"
-                class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                data-i18n="footer.smartHomeSec_privacy_policy"></a>
-            <span class="hidden md:inline">|</span>
-            <a
-                href="#"
-                class="hover:underline mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-                data-i18n="footer.medAlert_shs_privacy_policy"></a>
-        </div>
+  <!-- Left -->
+  <div class="flex flex-col justify-left text-center">
+    <LabelComponent
+      id="copyright-label"
+      variantLabel="label-3 text-12 sm:text-12 md:text-14 text-center md:text-left"
+      text={t("footer.copyright")}
+    />
+    <div
+      class="flex flex-col justify-left md:flex-row md:flex-wrap md:gap-x-2 lg:gap-y-3 text-center mt-3 md:my-3 lg:my-4"
+    >
+      <LinkComponent
+        id="privacy-policy-link"
+        variantLink="caption text-10 md:text-12 text-neutral-05 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
+        text={t("footer.privacy_policy")}
+        href="#"
+      />
+      <span class="label-3 hidden md:inline">|</span>
+      <LinkComponent
+        id="cookie-policy-link"
+        variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
+        text={t("footer.cookie_policy")}
+        href="#"
+      />
+      <span class="label-3 hidden md:inline">|</span>
+      <LinkComponent
+        id="cookie-settings-link"
+        variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
+        text={t("footer.cookie_settings")}
+        href="#"
+      />
+      <span class="label-3 hidden md:inline">|</span>
+      <LinkComponent
+        id="legal-notice-link"
+        variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
+        text={t("footer.legal_notice")}
+        href="#"
+      />
+      <span class="label-3 hidden md:inline">|</span>
+      <LinkComponent
+        id="smartHomeSec-privacy-policy-link"
+        variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
+        text={t("footer.smartHomeSec_privacy_policy")}
+        href="#"
+      />
+      <span class="label-3 hidden md:inline">|</span>
+      <LinkComponent
+        id="medAlert-shs-privacy-policy-link"
+        variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
+        text={t("footer.medAlert_shs_privacy_policy")}
+        href="#"
+      />
     </div>
+  </div>
 
-    <!-- HOVER Footer Language selector - Dropdown Wrapper (Desktop) -->
-    <!-- <div class="relative group z-10">
+  <!-- HOVER Footer Language selector - Dropdown Wrapper (Desktop) -->
+  <!-- <div class="relative group z-10">
         <button
             id="desktop-footer-language-selector"
             class="items-center px-6 py-4 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light hidden md:flex"
@@ -87,10 +104,10 @@ import LanguageDropdownComponent from "./LanguageDropdown.astro";
         </div>
     </div> -->
 
-    <!-- <LanguageDropdownComponent id="languageDdlFooter" name="languageDdlFooter" /> -->
-    
-    <!-- ON CLICK Footer Language selector - Dropdown Wrapper (Mobile) -->
-    <!-- <div class="relative inline-block text-left mt-3 md:hidden">
+  <!-- <LanguageDropdownComponent id="languageDdlFooter" name="languageDdlFooter" /> -->
+
+  <!-- ON CLICK Footer Language selector - Dropdown Wrapper (Mobile) -->
+  <!-- <div class="relative inline-block text-left mt-3 md:hidden">
         <button
             id="dropdownBtnFooterLanguageMobile"
             class="inline-flex cursor-pointer items-center hover:underline"

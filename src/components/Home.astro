@@ -10,16 +10,17 @@ const { t } = i18next;
 <div id="page-container" >
 	<TitleComponent
 		id="section1-title"
-		classes="text-sky-600 text-xl font-bold m-4"
-		content={t("test.welcome")}
+		variantTitle="text-sky-600 text-xl font-bold m-4"
+		text={t("test.welcome")}
 	/>
 	<TextComponent
 		id="section1-text"
-		classes="m-4"
-		content={t("test.hello")}
+		variantText="m-4"
+		text={t("test.hello")}
 	/>
 	<ButtonComponent
 		id="section1-products-btn"
+    hasLabel="true"
 		label={t("test.products_page")}
 		variantButton="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-4"
 		variantLabel="text-white"

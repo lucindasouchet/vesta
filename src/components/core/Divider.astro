@@ -1,5 +1,5 @@
 ---
-const { classes } = Astro.props
+const { variantDivider = "default" } = Astro.props;
 ---
 
-<hr class=`${classes}` />
+<hr class=`${variantDivider}` />
