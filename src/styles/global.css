@@ -247,7 +247,6 @@ body {
 
 .link {
   text-decoration: underline;
-  text-underline-offset: 0;
   color: var(--color-secondary-60-light);
 }
 
