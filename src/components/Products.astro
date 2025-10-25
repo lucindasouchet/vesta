@@ -15,29 +15,29 @@ const { t } = i18next;
   <!-- section 1 -->
   <section
     id="products-page-section-1"
-    class="items-center px-4 md:px-6 lg:px-8 xl:py-12 xl:px-12 2xl:px-24"
+    class="items-center p-4 md:p-6 lg:px-8 xl:p-12 2xl:px-24"
   >
     <TitleComponent
       id="section-1-title"
-      classes="h2 text-center text-39 line-height-45 lg:text-67 lg:line-height-78 heading-2-mobile pb-8 lg:pb-12 2xl:pb-24"
-      content={t("product_page.vesta_security_systems")}
+      variantTitle="h2 text-center text-39 line-height-45 lg:text-67 lg:line-height-78 heading-2-mobile pb-4 md:pb-8 lg:pb-12 2xl:pb-24"
+      text={t("product_page.vesta_security_systems")}
     />
     <TextComponent
       id="section-1-text"
-      classes="b0 text-center text-20 lg:text-24 body-0"
-      content={t("product_page.three_communication_technologies")}
+      variantText="b0 text-center text-20 lg:text-24 body-0"
+      text={t("product_page.three_communication_technologies")}
     />
   </section>
 
   <!-- section 2 -->
   <section id="products-page-section-2">
-    <div class="flex flex-col p-4 lg:p-8 xl:p-12 2xl:p-24">
+    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
       <TitleComponent
         id="section-2-title"
-        classes="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        content={t("product_page.radio_alarm_centers")}
+        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+        text={t("product_page.radio_alarm_centers")}
       />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
           id="card-container-1"
           class="product-card-container rounded-xl p-4 md:p-8 lg:p-12 item-center lg:items-start"
@@ -53,13 +53,13 @@ const { t } = i18next;
               <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
                 <Label
                   id="section-2-inner-card-reference"
-                  classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                  content={t("product_page.vesta_product_reference")}
+                  variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                  text={t("product_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-2-inner-card-model"
-                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
-                  content={t("product_page.vesta_product_model")}
+                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
+                  text={t("product_page.vesta_product_model")}
                 />
                 <div>
                   <!-- Icons Grid -->
@@ -131,14 +131,14 @@ const { t } = i18next;
           <div>
             <TitleComponent
               id="section-2-inner-card-description-title"
-              classes="h6 heading-6-mobile text-left text-16"
-              content={t("product_page.vesta_description_title")}
+              variantTitle="h6 heading-6-mobile text-left text-16"
+              text={t("product_page.vesta_description_title")}
             />
-            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             <TextComponent
               id="section-2-inner-card-description-text"
-              classes="b2 body-2 text-left text-16"
-              content={t("product_page.vesta_description_text")}
+              variantText="b2 body-2 text-left text-16"
+              text={t("product_page.vesta_description_text")}
             />
           </div>
         </div>
@@ -157,13 +157,13 @@ const { t } = i18next;
               <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
                 <Label
                   id="section-2-inner-card-reference"
-                  classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                  content={t("product_page.vesta_product_reference")}
+                  variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                  text={t("product_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-2-inner-card-model"
-                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
-                  content={t("product_page.vesta_product_model")}
+                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
+                  text={t("product_page.vesta_product_model")}
                 />
                 <div>
                   <!-- Icons Grid -->
@@ -235,14 +235,14 @@ const { t } = i18next;
           <div>
             <TitleComponent
               id="section-2-inner-card-description-title"
-              classes="h6 heading-6-mobile text-left text-16"
-              content={t("product_page.vesta_description_title")}
+              variantTitle="h6 heading-6-mobile text-left text-16"
+              text={t("product_page.vesta_description_title")}
             />
-            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             <TextComponent
               id="section-2-inner-card-description-text"
-              classes="b2 body-2 text-left text-16"
-              content={t("product_page.vesta_description_text")}
+              variantText="b2 body-2 text-left text-16"
+              text={t("product_page.vesta_description_text")}
             />
           </div>
         </div>
@@ -261,13 +261,13 @@ const { t } = i18next;
               <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
                 <Label
                   id="section-2-inner-card-reference"
-                  classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                  content={t("product_page.vesta_product_reference")}
+                  variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                  text={t("product_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-2-inner-card-model"
-                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
-                  content={t("product_page.vesta_product_model")}
+                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
+                  text={t("product_page.vesta_product_model")}
                 />
                 <div>
                   <!-- Icons Grid -->
@@ -339,14 +339,14 @@ const { t } = i18next;
           <div>
             <TitleComponent
               id="section-2-inner-card-description-title"
-              classes="h6 heading-6-mobile text-left text-16"
-              content={t("product_page.vesta_description_title")}
+              variantTitle="h6 heading-6-mobile text-left text-16"
+              text={t("product_page.vesta_description_title")}
             />
-            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             <TextComponent
               id="section-2-inner-card-description-text"
-              classes="b2 body-2 text-left text-16"
-              content={t("product_page.vesta_description_text")}
+              variantText="b2 body-2 text-left text-16"
+              text={t("product_page.vesta_description_text")}
             />
           </div>
         </div>
@@ -356,13 +356,13 @@ const { t } = i18next;
 
   <!-- section 3 -->
   <section id="products-page-section-3">
-    <div class="flex flex-col p-4 lg:p-8 xl:p-12 2xl:p-24">
+    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
       <TitleComponent
         id="section-3-title"
-        classes="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        content={t("product_page.wireless_keyboards")}
+        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+        text={t("product_page.wireless_keyboards")}
       />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
           id="card-container-1"
           class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
@@ -381,13 +381,13 @@ const { t } = i18next;
                 >
                   <Label
                     id="section-3-inner-card-reference"
-                    classes="ref reference text-left text-20"
-                    content={t("product_page.vesta_product_reference")}
+                    variantLabel="ref reference text-left text-20"
+                    text={t("product_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-3-inner-card-model"
-                    classes="mod model text-left text-18 pb-9"
-                    content={t("product_page.vesta_product_model")}
+                    variantLabel="mod model text-left text-18 pb-9"
+                    text={t("product_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -455,16 +455,16 @@ const { t } = i18next;
                 <div>
                   <TitleComponent
                     id="section-3-inner-card-description-title"
-                    classes="h6 heading-6-mobile text-left text-16"
-                    content={t("product_page.vesta_description_title")}
+                    variantTitle="h6 heading-6-mobile text-left text-16"
+                    text={t("product_page.vesta_description_title")}
                   />
                   <Divider
-                    classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
                   />
                   <TextComponent
                     id="section-3-inner-card-description-text"
-                    classes="b2 body-2 text-left text-16"
-                    content={t("product_page.vesta_description_text")}
+                    variantText="b2 body-2 text-left text-16"
+                    text={t("product_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -489,13 +489,13 @@ const { t } = i18next;
                 >
                   <Label
                     id="section-3-inner-card-reference"
-                    classes="ref reference text-left text-20"
-                    content={t("product_page.vesta_product_reference")}
+                    variantLabel="ref reference text-left text-20"
+                    text={t("product_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-3-inner-card-model"
-                    classes="mod model text-left text-18 pb-9"
-                    content={t("product_page.vesta_product_model")}
+                    variantLabel="mod model text-left text-18 pb-9"
+                    text={t("product_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -563,16 +563,16 @@ const { t } = i18next;
                 <div>
                   <TitleComponent
                     id="section-3-inner-card-description-title"
-                    classes="h6 heading-6-mobile text-left text-16"
-                    content={t("product_page.vesta_description_title")}
+                    variantTitle="h6 heading-6-mobile text-left text-16"
+                    text={t("product_page.vesta_description_title")}
                   />
                   <Divider
-                    classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
                   />
                   <TextComponent
                     id="section-3-inner-card-description-text"
-                    classes="b2 body-2 text-left text-16"
-                    content={t("product_page.vesta_description_text")}
+                    variantText="b2 body-2 text-left text-16"
+                    text={t("product_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -597,13 +597,13 @@ const { t } = i18next;
                 >
                   <Label
                     id="section-3-inner-card-reference"
-                    classes="ref reference text-left text-20"
-                    content={t("product_page.vesta_product_reference")}
+                    variantLabel="ref reference text-left text-20"
+                    text={t("product_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-3-inner-card-model"
-                    classes="mod model text-left text-18 pb-9"
-                    content={t("product_page.vesta_product_model")}
+                    variantLabel="mod model text-left text-18 pb-9"
+                    text={t("product_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -671,16 +671,16 @@ const { t } = i18next;
                 <div>
                   <TitleComponent
                     id="section-3-inner-card-description-title"
-                    classes="h6 heading-6-mobile text-left text-16"
-                    content={t("product_page.vesta_description_title")}
+                    variantTitle="h6 heading-6-mobile text-left text-16"
+                    text={t("product_page.vesta_description_title")}
                   />
                   <Divider
-                    classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
                   />
                   <TextComponent
                     id="section-3-inner-card-description-text"
-                    classes="b2 body-2 text-left text-16"
-                    content={t("product_page.vesta_description_text")}
+                    variantText="b2 body-2 text-left text-16"
+                    text={t("product_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -693,13 +693,13 @@ const { t } = i18next;
 
   <!-- section 4 -->
   <section id="products-page-section-4">
-    <div class="flex flex-col p-4 lg:p-8 xl:p-12 2xl:p-24">
+    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
       <TitleComponent
         id="section-4-title"
-        classes="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        content={t("product_page.radio_detectors")}
+        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+        text={t("product_page.radio_detectors")}
       />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
           id="card-container-1"
           class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
@@ -719,13 +719,13 @@ const { t } = i18next;
                   >
                     <Label
                       id="section-4-inner-card-reference"
-                      classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                      content={t("product_page.vesta_product_reference")}
+                      variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                      text={t("product_page.vesta_product_reference")}
                     />
                     <Label
                       id="section-4-inner-card-model"
-                      classes="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                      content={t("product_page.vesta_product_model")}
+                      variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
+                      text={t("product_page.vesta_product_model")}
                     />
                     <div>
                       <!-- Icons Grid -->
@@ -793,22 +793,22 @@ const { t } = i18next;
                   <div>
                     <TitleComponent
                       id="section-4-inner-card-description-title"
-                      classes="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                      content={t("product_page.vesta_description_title")}
+                      variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
+                      text={t("product_page.vesta_description_title")}
                     />
                     <Divider
-                      classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                      variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
                     />
                     <TextComponent
                       id="section-4-inner-card-description-text"
-                      classes="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                      content={t("product_page.vesta_description_text")}
+                      variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                      text={t("product_page.vesta_description_text")}
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             <div class="flex flex-col md:flex-row md:gap-6 my-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
@@ -819,22 +819,22 @@ const { t } = i18next;
               <div class="flex flex-col">
                 <Label
                   id="section-4-product-reference"
-                  classes="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  content={t("product_page.vesta_product_reference")}
+                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
+                  text={t("product_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
-                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  content={t("product_page.vesta_product_model")}
+                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
+                  text={t("product_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
-                  classes="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  content={t("product_page.vesta_description_title")}
+                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
+                  text={t("product_page.vesta_description_title")}
                 />
               </div>
             </div>
-            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             <div class="flex flex-col md:flex-row md:gap-6 mt-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
@@ -845,18 +845,18 @@ const { t } = i18next;
               <div class="flex flex-col">
                 <Label
                   id="section-4-product-reference"
-                  classes="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  content={t("product_page.vesta_product_reference")}
+                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
+                  text={t("product_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
-                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  content={t("product_page.vesta_product_model")}
+                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
+                  text={t("product_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
-                  classes="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  content={t("product_page.vesta_description_title")}
+                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
+                  text={t("product_page.vesta_description_title")}
                 />
               </div>
             </div>
@@ -881,13 +881,13 @@ const { t } = i18next;
                   >
                     <Label
                       id="section-4-inner-card-reference"
-                      classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                      content={t("product_page.vesta_product_reference")}
+                      variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                      text={t("product_page.vesta_product_reference")}
                     />
                     <Label
                       id="section-4-inner-card-model"
-                      classes="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                      content={t("product_page.vesta_product_model")}
+                      variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
+                      text={t("product_page.vesta_product_model")}
                     />
                     <div>
                       <!-- Icons Grid -->
@@ -955,22 +955,22 @@ const { t } = i18next;
                   <div>
                     <TitleComponent
                       id="section-4-inner-card-description-title"
-                      classes="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                      content={t("product_page.vesta_description_title")}
+                      variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
+                      text={t("product_page.vesta_description_title")}
                     />
                     <Divider
-                      classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                      variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
                     />
                     <TextComponent
                       id="section-4-inner-card-description-text"
-                      classes="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                      content={t("product_page.vesta_description_text")}
+                      variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                      text={t("product_page.vesta_description_text")}
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             <div class="flex flex-col md:flex-row md:gap-6 my-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
@@ -981,22 +981,22 @@ const { t } = i18next;
               <div class="flex flex-col">
                 <Label
                   id="section-4-product-reference"
-                  classes="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  content={t("product_page.vesta_product_reference")}
+                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
+                  text={t("product_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
-                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  content={t("product_page.vesta_product_model")}
+                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
+                  text={t("product_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
-                  classes="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  content={t("product_page.vesta_description_title")}
+                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
+                  text={t("product_page.vesta_description_title")}
                 />
               </div>
             </div>
-            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             <div class="flex flex-col md:flex-row md:gap-6 mt-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
@@ -1007,18 +1007,18 @@ const { t } = i18next;
               <div class="flex flex-col">
                 <Label
                   id="section-4-product-reference"
-                  classes="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  content={t("product_page.vesta_product_reference")}
+                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
+                  text={t("product_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
-                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  content={t("product_page.vesta_product_model")}
+                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
+                  text={t("product_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
-                  classes="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  content={t("product_page.vesta_description_title")}
+                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
+                  text={t("product_page.vesta_description_title")}
                 />
               </div>
             </div>
@@ -1043,13 +1043,13 @@ const { t } = i18next;
                   >
                     <Label
                       id="section-4-inner-card-reference"
-                      classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                      content={t("product_page.vesta_product_reference")}
+                      variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                      text={t("product_page.vesta_product_reference")}
                     />
                     <Label
                       id="section-4-inner-card-model"
-                      classes="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                      content={t("product_page.vesta_product_model")}
+                      variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
+                      text={t("product_page.vesta_product_model")}
                     />
                     <div>
                       <!-- Icons Grid -->
@@ -1117,22 +1117,22 @@ const { t } = i18next;
                   <div>
                     <TitleComponent
                       id="section-4-inner-card-description-title"
-                      classes="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                      content={t("product_page.vesta_description_title")}
+                      variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
+                      text={t("product_page.vesta_description_title")}
                     />
                     <Divider
-                      classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                      variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
                     />
                     <TextComponent
                       id="section-4-inner-card-description-text"
-                      classes="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                      content={t("product_page.vesta_description_text")}
+                      variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                      text={t("product_page.vesta_description_text")}
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             <div class="flex flex-col md:flex-row md:gap-6 my-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
@@ -1143,22 +1143,22 @@ const { t } = i18next;
               <div class="flex flex-col">
                 <Label
                   id="section-4-product-reference"
-                  classes="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  content={t("product_page.vesta_product_reference")}
+                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
+                  text={t("product_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
-                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  content={t("product_page.vesta_product_model")}
+                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
+                  text={t("product_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
-                  classes="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  content={t("product_page.vesta_description_title")}
+                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
+                  text={t("product_page.vesta_description_title")}
                 />
               </div>
             </div>
-            <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             <div class="flex flex-col md:flex-row md:gap-6 mt-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
@@ -1169,18 +1169,18 @@ const { t } = i18next;
               <div class="flex flex-col">
                 <Label
                   id="section-4-product-reference"
-                  classes="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  content={t("product_page.vesta_product_reference")}
+                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
+                  text={t("product_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
-                  classes="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  content={t("product_page.vesta_product_model")}
+                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
+                  text={t("product_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
-                  classes="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  content={t("product_page.vesta_description_title")}
+                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
+                  text={t("product_page.vesta_description_title")}
                 />
               </div>
             </div>
@@ -1192,13 +1192,13 @@ const { t } = i18next;
 
   <!-- section 5 -->
   <section id="products-page-section-5">
-    <div class="flex flex-col p-4 lg:p-8 xl:p-12 2xl:p-24">
+    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
       <TitleComponent
         id="section-5-title"
-        classes="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        content={t("product_page.magnetic_contacts")}
+        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+        text={t("product_page.magnetic_contacts")}
       />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
           id="card-container-1"
           class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
@@ -1217,13 +1217,13 @@ const { t } = i18next;
                 >
                   <Label
                     id="section-5-inner-card-reference"
-                    classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                    content={t("product_page.vesta_product_reference")}
+                    variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                    text={t("product_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-5-inner-card-model"
-                    classes="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                    content={t("product_page.vesta_product_model")}
+                    variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
+                    text={t("product_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -1291,16 +1291,16 @@ const { t } = i18next;
                 <div>
                   <TitleComponent
                     id="section-5-inner-card-description-title"
-                    classes="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                    content={t("product_page.vesta_description_title")}
+                    variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
+                    text={t("product_page.vesta_description_title")}
                   />
                   <Divider
-                    classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
                   />
                   <TextComponent
                     id="section-5-inner-card-description-text"
-                    classes="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                    content={t("product_page.vesta_description_text")}
+                    variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                    text={t("product_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -1325,13 +1325,13 @@ const { t } = i18next;
                 >
                   <Label
                     id="section-5-inner-card-reference"
-                    classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                    content={t("product_page.vesta_product_reference")}
+                    variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                    text={t("product_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-5-inner-card-model"
-                    classes="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                    content={t("product_page.vesta_product_model")}
+                    variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
+                    text={t("product_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -1399,16 +1399,16 @@ const { t } = i18next;
                 <div>
                   <TitleComponent
                     id="section-5-inner-card-description-title"
-                    classes="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                    content={t("product_page.vesta_description_title")}
+                    variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
+                    text={t("product_page.vesta_description_title")}
                   />
                   <Divider
-                    classes="my-2 h-0.25 border-t-0 bg-primary-60-light"
+                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
                   />
                   <TextComponent
                     id="section-5-inner-card-description-text"
-                    classes="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                    content={t("product_page.vesta_description_text")}
+                    variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                    text={t("product_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -1421,13 +1421,13 @@ const { t } = i18next;
 
   <!-- section 6 -->
   <section id="products-page-section-6">
-    <div class="flex flex-col p-4 lg:p-8 xl:p-12 2xl:p-24">
+    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
       <TitleComponent
         id="section-6-title"
-        classes="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        content={t("product_page.radio_accessories")}
+        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+        text={t("product_page.radio_accessories")}
       />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 lg:gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
           id="card-container-1"
           class="product-card-container rounded-xl p-4 md:p-6 item-center lg:items-start"
@@ -1436,10 +1436,10 @@ const { t } = i18next;
             <div>
               <TitleComponent
                 id="section-6-inner-card-description-title"
-                classes="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
-                content={t("product_page.vesta_description_title")}
+                variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
+                text={t("product_page.vesta_description_title")}
               />
-              <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+              <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             </div>
             <div class="place-items-center">
               <img
@@ -1450,20 +1450,20 @@ const { t } = i18next;
             <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
               <Label
                 id="section-6-inner-card-reference"
-                classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                content={t("product_page.vesta_product_reference")}
+                variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                text={t("product_page.vesta_product_reference")}
               />
               <Label
                 id="section-6-inner-card-model"
-                classes="mod model text-left text-14 md:text-16 lg:text-18"
-                content={t("product_page.vesta_product_model")}
+                variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
+                text={t("product_page.vesta_product_model")}
               />
             </div>
             <div>
               <TextComponent
                 id="section-6-inner-card-description-text"
-                classes="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                content={t("product_page.vesta_description_text")}
+                variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                text={t("product_page.vesta_description_text")}
               />
             </div>
           </div>
@@ -1476,10 +1476,10 @@ const { t } = i18next;
             <div>
               <TitleComponent
                 id="section-6-inner-card-description-title"
-                classes="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
-                content={t("product_page.vesta_description_title")}
+                variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
+                text={t("product_page.vesta_description_title")}
               />
-              <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+              <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             </div>
             <div class="place-items-center">
               <img
@@ -1490,20 +1490,20 @@ const { t } = i18next;
             <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
               <Label
                 id="section-6-inner-card-reference"
-                classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                content={t("product_page.vesta_product_reference")}
+                variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                text={t("product_page.vesta_product_reference")}
               />
               <Label
                 id="section-6-inner-card-model"
-                classes="mod model text-left text-14 md:text-16 lg:text-18"
-                content={t("product_page.vesta_product_model")}
+                variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
+                text={t("product_page.vesta_product_model")}
               />
             </div>
             <div>
               <TextComponent
                 id="section-6-inner-card-description-text"
-                classes="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                content={t("product_page.vesta_description_text")}
+                variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                text={t("product_page.vesta_description_text")}
               />
             </div>
           </div>
@@ -1516,10 +1516,10 @@ const { t } = i18next;
             <div>
               <TitleComponent
                 id="section-6-inner-card-description-title"
-                classes="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
-                content={t("product_page.vesta_description_title")}
+                variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
+                text={t("product_page.vesta_description_title")}
               />
-              <Divider classes="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+              <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
             </div>
             <div class="place-items-center">
               <img
@@ -1530,20 +1530,20 @@ const { t } = i18next;
             <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
               <Label
                 id="section-6-inner-card-reference"
-                classes="ref reference text-left text-16 md:text-18 lg:text-20"
-                content={t("product_page.vesta_product_reference")}
+                variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
+                text={t("product_page.vesta_product_reference")}
               />
               <Label
                 id="section-6-inner-card-model"
-                classes="mod model text-left text-14 md:text-16 lg:text-18"
-                content={t("product_page.vesta_product_model")}
+                variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
+                text={t("product_page.vesta_product_model")}
               />
             </div>
             <div>
               <TextComponent
                 id="section-6-inner-card-description-text"
-                classes="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                content={t("product_page.vesta_description_text")}
+                variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                text={t("product_page.vesta_description_text")}
               />
             </div>
           </div>
