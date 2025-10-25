@@ -4,6 +4,6 @@ const { id, variantLink = "default", text, href } = Astro.props;
 
 <a
   id={id}
-  class={`link caption link:hover ${variantLink}`}
+  class={`${variantLink}`}
   data-i18n={`${text}`}
   href={href}></a>

@@ -20,17 +20,19 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
   class="grid grid-cols-1 items-center md:items-start gap-4 lg:gap-5 xl:gap-6 bg-primary-20-dark px-8 xl:px-12 2xl:px-24 py-6 lg:py-8 xl:py-12 2xl:pt-24 2xl:pb-12 text-white md:grid-cols-6"
 >
   <!-- Column 1 -->
-  <div class="flex flex-col space-y-4 text-center md:text-left">
+  <div
+    class="flex flex-col space-y-1 md:space-y-2 lg:space-y-4 text-center md:text-left"
+  >
     <LabelComponent
       id="security-alarm-label"
-      variantLabel="text-md font-bold text-secondary-90-light"
+      variantLabel="label-2 text-secondary-90-light text-14 lg:text-16 text-line-height-20"
       text={t("footer.security_alarm")}
     />
-    <ul class="space-y-2">
+    <ul class="space-y-0 md:space-y-1 lg:space-y-2">
       <li>
         <LinkComponent
           id="alarma-via-radio-link"
-          variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           text={t("footer.radio_alarm")}
           href="#"
         />
@@ -38,7 +40,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
       <li>
         <LinkComponent
           id="alarma-a-pilas-link"
-          variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           text={t("footer.battery_powered_alarm")}
           href="#"
         />
@@ -46,7 +48,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
       <li>
         <LinkComponent
           id="alarma-hibrida-link"
-          variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           text={t("footer.hybrid_alarm")}
           href="#"
         />
@@ -55,17 +57,19 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
   </div>
 
   <!-- Column 2 -->
-  <div class="flex flex-col space-y-4 text-center md:text-left">
+  <div
+    class="flex flex-col space-y-1 md:space-y-2 lg:space-y-4 text-center md:text-left"
+  >
     <LabelComponent
       id="medical-alarm-label"
-      variantLabel="text-md font-bold text-secondary-90-light"
+      variantLabel="label-2 text-secondary-90-light text-14 lg:text-16 text-line-height-20"
       text={t("footer.medical_alarm")}
     />
-    <ul class="space-y-2">
+    <ul class="space-y-0 md:space-y-1 lg:space-y-2">
       <li>
         <LinkComponent
           id="serie-mobile-pro-link"
-          variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           text={t("footer.mobile_pro_series")}
           href="#"
         />
@@ -73,7 +77,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
       <li>
         <LinkComponent
           id="serie-mx-link"
-          variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           text={t("footer.mx_series")}
           href="#"
         />
@@ -81,7 +85,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
       <li>
         <LinkComponent
           id="serie-gx-link"
-          variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+          variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           text={t("footer.gx_series")}
           href="#"
         />
@@ -90,18 +94,22 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
   </div>
 
   <!-- Column 3 -->
-  <div>
-    <div class="flex flex-col space-y-4 text-center md:text-left">
+  <div
+    class="flex flex-col space-y-2 md:space-y-4 lg:space-y-6 text-center md:text-left"
+  >
+    <div
+      class="flex flex-col space-y-1 md:space-y-2 lg:space-y-4 text-center md:text-left"
+    >
       <LabelComponent
         id="video-surveillance-label"
-        variantLabel="text-md font-bold text-secondary-90-light"
+        variantLabel="label-2 text-secondary-90-light text-14 lg:text-16 text-line-height-20"
         text={t("footer.video_surveillance")}
       />
-      <ul class="space-y-2">
+      <ul class="space-y-0 md:space-y-1 lg:space-y-2">
         <li>
           <LinkComponent
             id="vesta-home-video-link"
-            variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+            variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
             text={t("footer.vesta_home_video")}
             href="#"
           />
@@ -109,24 +117,26 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <li>
           <LinkComponent
             id="vesta-advances-video-link"
-            variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+            variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
             text={t("footer.vesta_advanced_video")}
             href="#"
           />
         </li>
       </ul>
     </div>
-    <div class="mt-6 flex flex-col space-y-4 text-center md:text-left">
+    <div
+      class="flex flex-col space-y-1 md:space-y-2 lg:space-y-4 text-center md:text-left"
+    >
       <LabelComponent
         id="general-catalog-label"
-        variantLabel="text-md font-bold text-secondary-90-light"
+        variantLabel="label-2 text-secondary-90-light text-14 lg:text-16 text-line-height-20"
         text={t("footer.general_catalog")}
       />
-      <ul class="space-y-2">
+      <ul class="space-y-0 md:space-y-1 lg:space-y-2">
         <li>
           <LinkComponent
             id="todos-los-productos-link"
-            variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+            variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
             text={t("footer.all_products")}
             href="#"
           />
@@ -136,18 +146,20 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
   </div>
 
   <!-- Column 4 -->
-  <div>
-    <div class="flex flex-col space-y-4 text-center md:text-left">
+  <div
+    class="flex flex-col space-y-2 md:space-y-4 lg:space-y-6 text-center md:text-left"
+  >
+    <div class="flex flex-col space-y-1 md:space-y-2 lg:space-y-4">
       <LabelComponent
         id="news-and-events-label"
-        variantLabel="text-md font-bold text-secondary-90-light"
+        variantLabel="label-2 text-secondary-90-light text-14 lg:text-16 text-line-height-20"
         text={t("header.news_and_events")}
       />
-      <ul class="space-y-2">
+      <ul class="space-y-0 md:space-y-1 lg:space-y-2">
         <li>
           <LinkComponent
             id="blog-de-noticias-link"
-            variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+            variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
             text={t("footer.news_blog")}
             href="#"
           />
@@ -155,31 +167,33 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <li>
           <LinkComponent
             id="academia-vesta-link"
-            variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+            variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
             text={t("footer.vesta_academy")}
             href="#"
           />
         </li>
       </ul>
     </div>
-    <div class="mt-6 flex flex-col space-y-4 text-center md:text-left">
+    <div
+      class="flex flex-col space-y-1 md:space-y-2 lg:space-y-4 text-center md:text-left"
+    >
       <LabelComponent
         id="about-vesta-security-label"
-        variantLabel="text-md font-bold text-secondary-90-light"
+        variantLabel="label-2 text-secondary-90-light text-14 lg:text-16 text-line-height-20"
         text={t("header.about_vesta_security")}
       />
-      <ul class="space-y-2">
+      <ul class="space-y-0 md:space-y-1 lg:space-y-2">
         <li>
           <LinkComponent
             id="acerca-de-nosotros-link"
-            variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+            variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
             text={t("footer.about_us")}
             href="#"
           />
           <li>
             <LinkComponent
               id="vesta-partner-program-link"
-              variantLink="text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
+              variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
               text={t("header.vesta_partner_program")}
               href="#"
             />
@@ -190,52 +204,56 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
   </div>
 
   <!-- Column 5 -->
-  <div>
-    <div class="flex flex-col space-y-4 text-center md:text-left">
-      <LabelComponent
-        id="software-label"
-        variantLabel="text-md font-bold text-secondary-90-light"
-        text={t("footer.software")}
-      />
-      <ul class="space-y-2">
-        <li>
-          <a
-            href="#"
-            class="block text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-            data-i18n="footer.smart_home_sec"></a>
-        </li>
-        <li>
-          <a
-            href="#"
-            class="block text-sm underline text-secondary-60-light hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-            data-i18n="footer.medAlert_shs"></a>
-        </li>
-      </ul>
+  <div
+    class="flex flex-col space-y-1 md:space-y-2 lg:space-y-4 text-center md:text-left"
+  >
+    <LabelComponent
+      id="software-label"
+      variantLabel="label-2 text-secondary-90-light text-14 lg:text-16 text-line-height-20"
+      text={t("footer.software")}
+    />
+    <ul class="space-y-0 md:space-y-1 lg:space-y-2">
+      <li>
+        <LinkComponent
+          id="smart-home-sec-link"
+          variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
+          text={t("footer.smart_home_sec")}
+          href="#"
+        />
+      </li>
+      <li>
+        <LinkComponent
+          id="medAlert-shs-link"
+          variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
+          text={t("footer.medAlert_shs")}
+          href="#"
+        />
+      </li>
+    </ul>
 
-      <div
-        class="flex flex-col gap-4 items-center justify-center md:items-start md:justify-start"
-      >
-        <ButtonComponent
-          id="footer-apple-store-btn"
-          hasLabel="false"
-          hasImage="true"
-          imagePath={AppleStoreImagePath}
-          imageAltText="Apple Store button"
-          href="https://www.apple.com/store"
-          type="button"
-          variantImage="h-11 w-32 hover:animate-wiggle-3"
-        />
-        <ButtonComponent
-          id="footer-google-play-btn"
-          hasLabel="false"
-          hasImage="true"
-          imagePath={GooglePlayImagePath}
-          imageAltText="Google Play button"
-          href="https://play.google.com/store/apps?hl=en"
-          type="button"
-          variantImage="h-11 w-32 hover:animate-wiggle-3"
-        />
-      </div>
+    <div
+      class="flex flex-col gap-2 md:gap-3 lg:gap-4 items-center justify-center md:items-start md:justify-start"
+    >
+      <ButtonComponent
+        id="footer-apple-store-btn"
+        hasLabel="false"
+        hasImage="true"
+        imagePath={AppleStoreImagePath}
+        imageAltText="Apple Store button"
+        href="https://www.apple.com/store"
+        type="button"
+        variantImage="h-11 w-32 mt-1 lg:mt-0 cursor-pointer hover:animate-wiggle-3"
+      />
+      <ButtonComponent
+        id="footer-google-play-btn"
+        hasLabel="false"
+        hasImage="true"
+        imagePath={GooglePlayImagePath}
+        imageAltText="Google Play button"
+        href="https://play.google.com/store/apps?hl=en"
+        type="button"
+        variantImage="h-11 w-32 cursor-pointer hover:animate-wiggle-3"
+      />
     </div>
   </div>
 
@@ -264,13 +282,13 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         id="LinkedinImage"
         path={LinkedinImagePath}
         altText="Linkedin image"
-        variantImage="w-7/8 h-7/8 sm:w-7/8 sm:h-7/8 hover:animate-wiggle-5"
+        variantImage="w-7/8 h-7/8 sm:w-7/8 sm:h-7/8 cursor-pointer hover:animate-wiggle-5"
       />
       <ImageComponent
         id="LinkedinImage"
         path={LinkedinImagePath}
         altText="Linkedin image"
-        variantImage="w-7/8 h-7/8 sm:w-7/8 sm:h-7/8 hover:animate-wiggle-5"
+        variantImage="w-7/8 h-7/8 sm:w-7/8 sm:h-7/8 cursor-pointer hover:animate-wiggle-5"
       />
     </div>
   </div>
