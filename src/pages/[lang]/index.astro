@@ -7,9 +7,20 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 // import SelectClient from "../components/LanguageDropdown.js";
 import { initI18n } from '../../i18n/i18n.js';
 
-const lang = 'fr';
+export async function getStaticPaths() {
+  // Define which locales to build
+  const languages = ['en', 'fr', 'es'];
+
+  return languages.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props;
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
+
 ---
 
 <BaseLayout lang={lang}>
