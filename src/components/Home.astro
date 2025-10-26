@@ -1,7 +1,6 @@
 ---
 import i18next from "../i18n.ts";
 import TitleComponent from "./core/Title.astro";
-import TextComponent from "./core/Text.astro";
 import ButtonComponent from "./core/Button.astro";
 
 const { t } = i18next;
@@ -12,11 +11,6 @@ const { t } = i18next;
 		id="section1-title"
 		variantTitle="text-sky-600 text-xl font-bold m-4"
 		text={t("test.welcome")}
-	/>
-	<TextComponent
-		id="section1-text"
-		variantText="m-4"
-		text={t("test.hello")}
 	/>
 	<ButtonComponent
 		id="section1-products-btn"

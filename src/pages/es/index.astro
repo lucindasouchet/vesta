@@ -1,16 +1,15 @@
 ---
-import "../styles/global.css";
-import HomeComponent from "../components/Home.astro";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import "../../styles/global.css";
+import HomeComponent from "../../components/Home.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 // import HeaderComponent from "../../components/Header.astro";
 // import FooterComponent from "../../components/Footer.astro";
 // import SelectClient from "../components/LanguageDropdown.js";
-import { initI18n } from '../i18n/i18n.js';
+import { initI18n } from '../../i18n/i18n.js';
 
-const lang = 'en';
+const lang = 'es';
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
-
 ---
 
 <BaseLayout lang={lang}>

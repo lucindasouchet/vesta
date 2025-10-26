@@ -1,29 +1,48 @@
 ---
 import "../styles/global.css";
+import HeaderComponent from "../components/Header.astro";
+import FooterComponent from "../components/Footer.astro";
+
+const { lang } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Vesta</title>
-	</head>
-	<body>
-		<div class="wrapper">
-			<slot />
-		</div>
-		
-	</body>
-</html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title><slot name="title" /></title>
+  </head>
+  <body>
+    <header>
+      <slot name="header" />
+      <HeaderComponent />
+    </header>
+    <main>
+      <nav class="flex gap-2 mb-4">
+        <a href="/en/">EN</a>
+        <a href="/fr/">FR</a>
+        <a href="/es/">ES</a>
+      </nav>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+      <div class="wrapper">
+        <slot />
+      </div>
+    </main>
+
+    <footer>
+      <slot name="footer" />
+      <FooterComponent />
+    </footer>
+  </body>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</html>
