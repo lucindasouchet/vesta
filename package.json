@@ -9,12 +9,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^6.5.11",
     "@tailwindcss/vite": "^4.1.13",
     "astro": "^5.13.10",
     "i18next": "^25.5.3",
-    "i18next-browser-languagedetector": "^8.2.0",
-    "i18next-http-backend": "^3.0.2",
     "tailwindcss": "^4.1.13"
   }
 }

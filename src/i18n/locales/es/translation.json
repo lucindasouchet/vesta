@@ -1,7 +1,18 @@
 {
+  "title": "Bienvenido a nuestro sitio",
+  "description": "Esta es la versión en español.",
+  "not_found": {
+    "title": "Página no encontrada",
+    "description": "Lo sentimos, la página que buscas no existe."
+  },
+  "meta": {
+    "title": "Bienvenido a nuestro sitio",
+    "description": "Explora nuestro contenido en español.",
+    "og_title": "Bienvenido a nuestro sitio en español",
+    "og_description": "Descubre todo nuestro contenido en español."
+  },
   "test": {
-    "welcome": "¡Bienvenido a la página de inicio!",
-    "hello": "Hola ...",
+    "welcome": "¡Estáis en la página de inicio!",
     "products_page": "Página de productos"
   },
   "header": {
@@ -47,7 +58,7 @@
     "smartHomeSec_privacy_policy": "Política de privacidad de SmartHomeSec",
     "medAlert_shs_privacy_policy": "Política de privacidad de MedAlert SHS"
   },
-  "product_page": {
+  "products_page": {
     "vesta_security_systems": "Sistemas de Seguridad VESTA: una solución para cada necesidad",
     "three_communication_technologies": "Tres tecnologías de comunicación que se adaptan a cualquier problemática de hogar o negocio, con diversas  posibilidades de zonas y particiones, así como más de 70 dispositivos  propios y la integración de marcas líderes de videovigilancia, intrusión y domótica.",
     "radio_alarm_centers": "Centrales de Alarma vía radio",
@@ -59,6 +70,13 @@
     "radio_detectors": "Detectores vía radio",
     "magnetic_contacts": "Contactos magnéticos",
     "radio_accessories": "Accesorios vía radio",
-    "all_products": "Todos los productos"
+    "all_products": "Todos los productos",
+    "title": "Productos",
+    "meta": {
+      "title": "Página de productos – Español",
+      "description": "Todos los productos Vesta",
+      "og_title": "Página de productos",
+      "og_description": "Descubra todos los productos Vesta"
+    }
   }
 }

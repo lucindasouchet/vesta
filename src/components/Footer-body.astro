@@ -4,9 +4,21 @@ import ButtonComponent from "../components/core/Button.astro";
 import LabelComponent from "./core/Label.astro";
 import LinkComponent from "./core/Link.astro";
 
-import i18next from "../i18n.ts";
+// import i18next from "../i18n.old.ts";
+// const { t } = i18next;
 
-const { t } = i18next;
+import { initI18n } from "../i18n/i18n.ts";
+import { useLang } from "../helpers/context.ts";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+const lang = useLang(Astro);
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
+
 const LogoVestaMediumDarkModeImagePath =
   "/images/logos/logo-vesta-medium-dark-mode-min.svg";
 const LogoVestaLargeDarkModeImagePath =

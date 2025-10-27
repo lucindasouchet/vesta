@@ -1,11 +1,23 @@
 ---
 import TitleComponent from "./core/Title.astro";
 import TextComponent from "./core/Text.astro";
-import i18next from "i18next";
 import Divider from "./core/Divider.astro";
 import Label from "./core/Label.astro";
 
-const { t } = i18next;
+// import i18next from "../i18n.old.ts";
+// const { t } = i18next;
+
+import { initI18n } from "../i18n/i18n.ts";
+import { useLang } from "../helpers/context.ts";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+const lang = useLang(Astro);
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
 ---
 
 <div
@@ -20,12 +32,12 @@ const { t } = i18next;
     <TitleComponent
       id="section-1-title"
       variantTitle="h2 text-center text-39 line-height-45 lg:text-67 lg:line-height-78 heading-2-mobile pb-4 md:pb-8 lg:pb-12 2xl:pb-24"
-      text={t("product_page.vesta_security_systems")}
+      text={t("products_page.vesta_security_systems")}
     />
     <TextComponent
       id="section-1-text"
       variantText="b0 text-center text-20 lg:text-24 body-0"
-      text={t("product_page.three_communication_technologies")}
+      text={t("products_page.three_communication_technologies")}
     />
   </section>
 
@@ -35,7 +47,7 @@ const { t } = i18next;
       <TitleComponent
         id="section-2-title"
         variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("product_page.radio_alarm_centers")}
+        text={t("products_page.radio_alarm_centers")}
       />
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
@@ -46,7 +58,7 @@ const { t } = i18next;
             <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
               <div class="place-items-center">
                 <img
-                  src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                  src="https://placehold.co/366x305?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -54,12 +66,12 @@ const { t } = i18next;
                 <Label
                   id="section-2-inner-card-reference"
                   variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                  text={t("product_page.vesta_product_reference")}
+                  text={t("products_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-2-inner-card-model"
                   variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
-                  text={t("product_page.vesta_product_model")}
+                  text={t("products_page.vesta_product_model")}
                 />
                 <div>
                   <!-- Icons Grid -->
@@ -132,13 +144,15 @@ const { t } = i18next;
             <TitleComponent
               id="section-2-inner-card-description-title"
               variantTitle="h6 heading-6-mobile text-left text-16"
-              text={t("product_page.vesta_description_title")}
+              text={t("products_page.vesta_description_title")}
             />
-            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider
+              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+            />
             <TextComponent
               id="section-2-inner-card-description-text"
               variantText="b2 body-2 text-left text-16"
-              text={t("product_page.vesta_description_text")}
+              text={t("products_page.vesta_description_text")}
             />
           </div>
         </div>
@@ -150,7 +164,7 @@ const { t } = i18next;
             <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
               <div class="place-items-center">
                 <img
-                  src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                  src="https://placehold.co/366x305?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -158,12 +172,12 @@ const { t } = i18next;
                 <Label
                   id="section-2-inner-card-reference"
                   variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                  text={t("product_page.vesta_product_reference")}
+                  text={t("products_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-2-inner-card-model"
                   variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
-                  text={t("product_page.vesta_product_model")}
+                  text={t("products_page.vesta_product_model")}
                 />
                 <div>
                   <!-- Icons Grid -->
@@ -236,13 +250,15 @@ const { t } = i18next;
             <TitleComponent
               id="section-2-inner-card-description-title"
               variantTitle="h6 heading-6-mobile text-left text-16"
-              text={t("product_page.vesta_description_title")}
+              text={t("products_page.vesta_description_title")}
             />
-            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider
+              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+            />
             <TextComponent
               id="section-2-inner-card-description-text"
               variantText="b2 body-2 text-left text-16"
-              text={t("product_page.vesta_description_text")}
+              text={t("products_page.vesta_description_text")}
             />
           </div>
         </div>
@@ -254,7 +270,7 @@ const { t } = i18next;
             <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
               <div class="place-items-center">
                 <img
-                  src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                  src="https://placehold.co/366x305?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -262,12 +278,12 @@ const { t } = i18next;
                 <Label
                   id="section-2-inner-card-reference"
                   variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                  text={t("product_page.vesta_product_reference")}
+                  text={t("products_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-2-inner-card-model"
                   variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
-                  text={t("product_page.vesta_product_model")}
+                  text={t("products_page.vesta_product_model")}
                 />
                 <div>
                   <!-- Icons Grid -->
@@ -340,13 +356,15 @@ const { t } = i18next;
             <TitleComponent
               id="section-2-inner-card-description-title"
               variantTitle="h6 heading-6-mobile text-left text-16"
-              text={t("product_page.vesta_description_title")}
+              text={t("products_page.vesta_description_title")}
             />
-            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider
+              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+            />
             <TextComponent
               id="section-2-inner-card-description-text"
               variantText="b2 body-2 text-left text-16"
-              text={t("product_page.vesta_description_text")}
+              text={t("products_page.vesta_description_text")}
             />
           </div>
         </div>
@@ -360,7 +378,7 @@ const { t } = i18next;
       <TitleComponent
         id="section-3-title"
         variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("product_page.wireless_keyboards")}
+        text={t("products_page.wireless_keyboards")}
       />
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
@@ -370,7 +388,7 @@ const { t } = i18next;
           <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
             <div class="place-items-center">
               <img
-                src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                src="https://placehold.co/366x305?text=imagen producto"
                 alt="imagen producto"
               />
             </div>
@@ -382,12 +400,12 @@ const { t } = i18next;
                   <Label
                     id="section-3-inner-card-reference"
                     variantLabel="ref reference text-left text-20"
-                    text={t("product_page.vesta_product_reference")}
+                    text={t("products_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-3-inner-card-model"
                     variantLabel="mod model text-left text-18 pb-9"
-                    text={t("product_page.vesta_product_model")}
+                    text={t("products_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -456,7 +474,7 @@ const { t } = i18next;
                   <TitleComponent
                     id="section-3-inner-card-description-title"
                     variantTitle="h6 heading-6-mobile text-left text-16"
-                    text={t("product_page.vesta_description_title")}
+                    text={t("products_page.vesta_description_title")}
                   />
                   <Divider
                     variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
@@ -464,7 +482,7 @@ const { t } = i18next;
                   <TextComponent
                     id="section-3-inner-card-description-text"
                     variantText="b2 body-2 text-left text-16"
-                    text={t("product_page.vesta_description_text")}
+                    text={t("products_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -478,7 +496,7 @@ const { t } = i18next;
           <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
             <div class="place-items-center">
               <img
-                src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                src="https://placehold.co/366x305?text=imagen producto"
                 alt="imagen producto"
               />
             </div>
@@ -490,12 +508,12 @@ const { t } = i18next;
                   <Label
                     id="section-3-inner-card-reference"
                     variantLabel="ref reference text-left text-20"
-                    text={t("product_page.vesta_product_reference")}
+                    text={t("products_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-3-inner-card-model"
                     variantLabel="mod model text-left text-18 pb-9"
-                    text={t("product_page.vesta_product_model")}
+                    text={t("products_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -564,7 +582,7 @@ const { t } = i18next;
                   <TitleComponent
                     id="section-3-inner-card-description-title"
                     variantTitle="h6 heading-6-mobile text-left text-16"
-                    text={t("product_page.vesta_description_title")}
+                    text={t("products_page.vesta_description_title")}
                   />
                   <Divider
                     variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
@@ -572,7 +590,7 @@ const { t } = i18next;
                   <TextComponent
                     id="section-3-inner-card-description-text"
                     variantText="b2 body-2 text-left text-16"
-                    text={t("product_page.vesta_description_text")}
+                    text={t("products_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -586,7 +604,7 @@ const { t } = i18next;
           <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
             <div class="place-items-center">
               <img
-                src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                src="https://placehold.co/366x305?text=imagen producto"
                 alt="imagen producto"
               />
             </div>
@@ -598,12 +616,12 @@ const { t } = i18next;
                   <Label
                     id="section-3-inner-card-reference"
                     variantLabel="ref reference text-left text-20"
-                    text={t("product_page.vesta_product_reference")}
+                    text={t("products_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-3-inner-card-model"
                     variantLabel="mod model text-left text-18 pb-9"
-                    text={t("product_page.vesta_product_model")}
+                    text={t("products_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -672,7 +690,7 @@ const { t } = i18next;
                   <TitleComponent
                     id="section-3-inner-card-description-title"
                     variantTitle="h6 heading-6-mobile text-left text-16"
-                    text={t("product_page.vesta_description_title")}
+                    text={t("products_page.vesta_description_title")}
                   />
                   <Divider
                     variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
@@ -680,7 +698,7 @@ const { t } = i18next;
                   <TextComponent
                     id="section-3-inner-card-description-text"
                     variantText="b2 body-2 text-left text-16"
-                    text={t("product_page.vesta_description_text")}
+                    text={t("products_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -697,7 +715,7 @@ const { t } = i18next;
       <TitleComponent
         id="section-4-title"
         variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("product_page.radio_detectors")}
+        text={t("products_page.radio_detectors")}
       />
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
@@ -708,7 +726,7 @@ const { t } = i18next;
             <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 mb-6">
               <div class="place-items-center">
                 <img
-                  src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                  src="https://placehold.co/366x305?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -720,12 +738,12 @@ const { t } = i18next;
                     <Label
                       id="section-4-inner-card-reference"
                       variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                      text={t("product_page.vesta_product_reference")}
+                      text={t("products_page.vesta_product_reference")}
                     />
                     <Label
                       id="section-4-inner-card-model"
                       variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                      text={t("product_page.vesta_product_model")}
+                      text={t("products_page.vesta_product_model")}
                     />
                     <div>
                       <!-- Icons Grid -->
@@ -794,7 +812,7 @@ const { t } = i18next;
                     <TitleComponent
                       id="section-4-inner-card-description-title"
                       variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                      text={t("product_page.vesta_description_title")}
+                      text={t("products_page.vesta_description_title")}
                     />
                     <Divider
                       variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
@@ -802,17 +820,19 @@ const { t } = i18next;
                     <TextComponent
                       id="section-4-inner-card-description-text"
                       variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                      text={t("product_page.vesta_description_text")}
+                      text={t("products_page.vesta_description_text")}
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider
+              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+            />
             <div class="flex flex-col md:flex-row md:gap-6 my-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
-                  src="https://placehold.co/338x83?text=imagen&nbsp;producto"
+                  src="https://placehold.co/338x83?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -820,25 +840,27 @@ const { t } = i18next;
                 <Label
                   id="section-4-product-reference"
                   variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("product_page.vesta_product_reference")}
+                  text={t("products_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
                   variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("product_page.vesta_product_model")}
+                  text={t("products_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
                   variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("product_page.vesta_description_title")}
+                  text={t("products_page.vesta_description_title")}
                 />
               </div>
             </div>
-            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider
+              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+            />
             <div class="flex flex-col md:flex-row md:gap-6 mt-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
-                  src="https://placehold.co/338x83?text=imagen&nbsp;producto"
+                  src="https://placehold.co/338x83?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -846,17 +868,17 @@ const { t } = i18next;
                 <Label
                   id="section-4-product-reference"
                   variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("product_page.vesta_product_reference")}
+                  text={t("products_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
                   variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("product_page.vesta_product_model")}
+                  text={t("products_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
                   variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("product_page.vesta_description_title")}
+                  text={t("products_page.vesta_description_title")}
                 />
               </div>
             </div>
@@ -870,7 +892,7 @@ const { t } = i18next;
             <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 mb-6">
               <div class="place-items-center">
                 <img
-                  src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                  src="https://placehold.co/366x305?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -882,12 +904,12 @@ const { t } = i18next;
                     <Label
                       id="section-4-inner-card-reference"
                       variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                      text={t("product_page.vesta_product_reference")}
+                      text={t("products_page.vesta_product_reference")}
                     />
                     <Label
                       id="section-4-inner-card-model"
                       variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                      text={t("product_page.vesta_product_model")}
+                      text={t("products_page.vesta_product_model")}
                     />
                     <div>
                       <!-- Icons Grid -->
@@ -956,7 +978,7 @@ const { t } = i18next;
                     <TitleComponent
                       id="section-4-inner-card-description-title"
                       variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                      text={t("product_page.vesta_description_title")}
+                      text={t("products_page.vesta_description_title")}
                     />
                     <Divider
                       variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
@@ -964,17 +986,19 @@ const { t } = i18next;
                     <TextComponent
                       id="section-4-inner-card-description-text"
                       variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                      text={t("product_page.vesta_description_text")}
+                      text={t("products_page.vesta_description_text")}
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider
+              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+            />
             <div class="flex flex-col md:flex-row md:gap-6 my-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
-                  src="https://placehold.co/338x83?text=imagen&nbsp;producto"
+                  src="https://placehold.co/338x83?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -982,25 +1006,27 @@ const { t } = i18next;
                 <Label
                   id="section-4-product-reference"
                   variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("product_page.vesta_product_reference")}
+                  text={t("products_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
                   variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("product_page.vesta_product_model")}
+                  text={t("products_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
                   variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("product_page.vesta_description_title")}
+                  text={t("products_page.vesta_description_title")}
                 />
               </div>
             </div>
-            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider
+              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+            />
             <div class="flex flex-col md:flex-row md:gap-6 mt-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
-                  src="https://placehold.co/338x83?text=imagen&nbsp;producto"
+                  src="https://placehold.co/338x83?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -1008,17 +1034,17 @@ const { t } = i18next;
                 <Label
                   id="section-4-product-reference"
                   variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("product_page.vesta_product_reference")}
+                  text={t("products_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
                   variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("product_page.vesta_product_model")}
+                  text={t("products_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
                   variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("product_page.vesta_description_title")}
+                  text={t("products_page.vesta_description_title")}
                 />
               </div>
             </div>
@@ -1032,7 +1058,7 @@ const { t } = i18next;
             <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 mb-6">
               <div class="place-items-center">
                 <img
-                  src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                  src="https://placehold.co/366x305?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -1044,12 +1070,12 @@ const { t } = i18next;
                     <Label
                       id="section-4-inner-card-reference"
                       variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                      text={t("product_page.vesta_product_reference")}
+                      text={t("products_page.vesta_product_reference")}
                     />
                     <Label
                       id="section-4-inner-card-model"
                       variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                      text={t("product_page.vesta_product_model")}
+                      text={t("products_page.vesta_product_model")}
                     />
                     <div>
                       <!-- Icons Grid -->
@@ -1118,7 +1144,7 @@ const { t } = i18next;
                     <TitleComponent
                       id="section-4-inner-card-description-title"
                       variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                      text={t("product_page.vesta_description_title")}
+                      text={t("products_page.vesta_description_title")}
                     />
                     <Divider
                       variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
@@ -1126,17 +1152,19 @@ const { t } = i18next;
                     <TextComponent
                       id="section-4-inner-card-description-text"
                       variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                      text={t("product_page.vesta_description_text")}
+                      text={t("products_page.vesta_description_text")}
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider
+              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+            />
             <div class="flex flex-col md:flex-row md:gap-6 my-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
-                  src="https://placehold.co/338x83?text=imagen&nbsp;producto"
+                  src="https://placehold.co/338x83?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -1144,25 +1172,27 @@ const { t } = i18next;
                 <Label
                   id="section-4-product-reference"
                   variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("product_page.vesta_product_reference")}
+                  text={t("products_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
                   variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("product_page.vesta_product_model")}
+                  text={t("products_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
                   variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("product_page.vesta_description_title")}
+                  text={t("products_page.vesta_description_title")}
                 />
               </div>
             </div>
-            <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+            <Divider
+              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+            />
             <div class="flex flex-col md:flex-row md:gap-6 mt-6">
               <div class="place-items-center mb-3 md:mb-0">
                 <img
-                  src="https://placehold.co/338x83?text=imagen&nbsp;producto"
+                  src="https://placehold.co/338x83?text=imagen producto"
                   alt="imagen producto"
                 />
               </div>
@@ -1170,17 +1200,17 @@ const { t } = i18next;
                 <Label
                   id="section-4-product-reference"
                   variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("product_page.vesta_product_reference")}
+                  text={t("products_page.vesta_product_reference")}
                 />
                 <Label
                   id="section-4-product-model"
                   variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("product_page.vesta_product_model")}
+                  text={t("products_page.vesta_product_model")}
                 />
                 <TitleComponent
                   id="section-4-product-description-title"
                   variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("product_page.vesta_description_title")}
+                  text={t("products_page.vesta_description_title")}
                 />
               </div>
             </div>
@@ -1196,7 +1226,7 @@ const { t } = i18next;
       <TitleComponent
         id="section-5-title"
         variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("product_page.magnetic_contacts")}
+        text={t("products_page.magnetic_contacts")}
       />
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
@@ -1206,7 +1236,7 @@ const { t } = i18next;
           <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
             <div class="place-items-center">
               <img
-                src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                src="https://placehold.co/366x305?text=imagen producto"
                 alt="imagen producto"
               />
             </div>
@@ -1218,12 +1248,12 @@ const { t } = i18next;
                   <Label
                     id="section-5-inner-card-reference"
                     variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                    text={t("product_page.vesta_product_reference")}
+                    text={t("products_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-5-inner-card-model"
                     variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                    text={t("product_page.vesta_product_model")}
+                    text={t("products_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -1292,7 +1322,7 @@ const { t } = i18next;
                   <TitleComponent
                     id="section-5-inner-card-description-title"
                     variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                    text={t("product_page.vesta_description_title")}
+                    text={t("products_page.vesta_description_title")}
                   />
                   <Divider
                     variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
@@ -1300,7 +1330,7 @@ const { t } = i18next;
                   <TextComponent
                     id="section-5-inner-card-description-text"
                     variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                    text={t("product_page.vesta_description_text")}
+                    text={t("products_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -1314,7 +1344,7 @@ const { t } = i18next;
           <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
             <div class="place-items-center">
               <img
-                src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                src="https://placehold.co/366x305?text=imagen producto"
                 alt="imagen producto"
               />
             </div>
@@ -1326,12 +1356,12 @@ const { t } = i18next;
                   <Label
                     id="section-5-inner-card-reference"
                     variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                    text={t("product_page.vesta_product_reference")}
+                    text={t("products_page.vesta_product_reference")}
                   />
                   <Label
                     id="section-5-inner-card-model"
                     variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                    text={t("product_page.vesta_product_model")}
+                    text={t("products_page.vesta_product_model")}
                   />
                   <div>
                     <!-- Icons Grid -->
@@ -1400,7 +1430,7 @@ const { t } = i18next;
                   <TitleComponent
                     id="section-5-inner-card-description-title"
                     variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                    text={t("product_page.vesta_description_title")}
+                    text={t("products_page.vesta_description_title")}
                   />
                   <Divider
                     variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
@@ -1408,7 +1438,7 @@ const { t } = i18next;
                   <TextComponent
                     id="section-5-inner-card-description-text"
                     variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                    text={t("product_page.vesta_description_text")}
+                    text={t("products_page.vesta_description_text")}
                   />
                 </div>
               </div>
@@ -1425,7 +1455,7 @@ const { t } = i18next;
       <TitleComponent
         id="section-6-title"
         variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("product_page.radio_accessories")}
+        text={t("products_page.radio_accessories")}
       />
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
         <div
@@ -1437,13 +1467,15 @@ const { t } = i18next;
               <TitleComponent
                 id="section-6-inner-card-description-title"
                 variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
-                text={t("product_page.vesta_description_title")}
+                text={t("products_page.vesta_description_title")}
               />
-              <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+              <Divider
+                variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+              />
             </div>
             <div class="place-items-center">
               <img
-                src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                src="https://placehold.co/366x305?text=imagen producto"
                 alt="imagen producto"
               />
             </div>
@@ -1451,19 +1483,19 @@ const { t } = i18next;
               <Label
                 id="section-6-inner-card-reference"
                 variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                text={t("product_page.vesta_product_reference")}
+                text={t("products_page.vesta_product_reference")}
               />
               <Label
                 id="section-6-inner-card-model"
                 variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
-                text={t("product_page.vesta_product_model")}
+                text={t("products_page.vesta_product_model")}
               />
             </div>
             <div>
               <TextComponent
                 id="section-6-inner-card-description-text"
                 variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                text={t("product_page.vesta_description_text")}
+                text={t("products_page.vesta_description_text")}
               />
             </div>
           </div>
@@ -1477,13 +1509,15 @@ const { t } = i18next;
               <TitleComponent
                 id="section-6-inner-card-description-title"
                 variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
-                text={t("product_page.vesta_description_title")}
+                text={t("products_page.vesta_description_title")}
               />
-              <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+              <Divider
+                variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+              />
             </div>
             <div class="place-items-center">
               <img
-                src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                src="https://placehold.co/366x305?text=imagen producto"
                 alt="imagen producto"
               />
             </div>
@@ -1491,19 +1525,19 @@ const { t } = i18next;
               <Label
                 id="section-6-inner-card-reference"
                 variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                text={t("product_page.vesta_product_reference")}
+                text={t("products_page.vesta_product_reference")}
               />
               <Label
                 id="section-6-inner-card-model"
                 variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
-                text={t("product_page.vesta_product_model")}
+                text={t("products_page.vesta_product_model")}
               />
             </div>
             <div>
               <TextComponent
                 id="section-6-inner-card-description-text"
                 variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                text={t("product_page.vesta_description_text")}
+                text={t("products_page.vesta_description_text")}
               />
             </div>
           </div>
@@ -1517,13 +1551,15 @@ const { t } = i18next;
               <TitleComponent
                 id="section-6-inner-card-description-title"
                 variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
-                text={t("product_page.vesta_description_title")}
+                text={t("products_page.vesta_description_title")}
               />
-              <Divider variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light" />
+              <Divider
+                variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
+              />
             </div>
             <div class="place-items-center">
               <img
-                src="https://placehold.co/366x305?text=imagen&nbsp;producto"
+                src="https://placehold.co/366x305?text=imagen producto"
                 alt="imagen producto"
               />
             </div>
@@ -1531,19 +1567,19 @@ const { t } = i18next;
               <Label
                 id="section-6-inner-card-reference"
                 variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                text={t("product_page.vesta_product_reference")}
+                text={t("products_page.vesta_product_reference")}
               />
               <Label
                 id="section-6-inner-card-model"
                 variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
-                text={t("product_page.vesta_product_model")}
+                text={t("products_page.vesta_product_model")}
               />
             </div>
             <div>
               <TextComponent
                 id="section-6-inner-card-description-text"
                 variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                text={t("product_page.vesta_description_text")}
+                text={t("products_page.vesta_description_text")}
               />
             </div>
           </div>

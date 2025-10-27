@@ -24,9 +24,18 @@ const {
   <a href={`${href}`}>
     <button id={id} type={type} class={`flex items-center ${variantButton}`}>
       {hasIcon && Icon && !isIconRight && <Icon class={`${variantIcon}`} />}
-      {hasLabel && <span data-i18n={`${label}`} class={`${variantLabel}`}></span>}
+      {hasLabel && <span class={`${variantLabel}`}>{`${label}`}</span>}
+      <!-- {hasLabel && <span data-i18n={`${label}`} class={`${variantLabel}`}></span>} -->
       {hasIcon && Icon && isIconRight && <Icon class={`${variantIcon}`} />}
-      {hasImage && imagePath && <img src={`${imagePath}`} alt={`${imageAltText}`} class={`${variantImage}`} />}
+      {
+        hasImage && imagePath && (
+          <img
+            src={`${imagePath}`}
+            alt={`${imageAltText}`}
+            class={`${variantImage}`}
+          />
+        )
+      }
     </button>
   </a>
 </div>

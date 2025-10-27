@@ -29,5 +29,4 @@ pnpm-debug.log*
 # Local Netlify folder
 .netlify
 
-# tests i18n SSR and CSR
-scripts/
+i18n.old.ts

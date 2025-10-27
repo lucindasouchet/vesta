@@ -1,13 +1,20 @@
 ---
 import HeaderTopComponent from "./Header-top.astro";
 import NavigationComponent from "./Navigation.astro";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+import { useLang } from "../helpers/context.ts";
+
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+const lang = useLang(Astro);
 ---
 
 <header>
-    <!-- top header menu -->
-    <HeaderTopComponent />
+  <!-- top header menu -->
+  <HeaderTopComponent lang={lang} />
 
-    <!-- navbar content -->
-    <NavigationComponent />
-
+  <!-- navbar content -->
+  <NavigationComponent lang={lang} />
 </header>

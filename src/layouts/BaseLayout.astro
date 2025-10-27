@@ -1,29 +1,106 @@
 ---
 import "../styles/global.css";
+import HeaderComponent from "../components/Header.astro";
+import FooterComponent from "../components/Footer.astro";
+import { initI18n } from "../i18n/i18n.ts";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+import { useLang } from "../helpers/context.ts";
+
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+// const { meta } = Astro.props;
+const lang = useLang(Astro);
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
+
+const siteUrl = Astro.site?.toString() || "https://vesta.com";
+const currentUrl = new URL(Astro.url.pathname, siteUrl);
+const supportedLangs = ["en", "fr", "es"];
+const langNames = { en: "English", fr: "Français", es: "Español" };
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Vesta</title>
-	</head>
-	<body>
-		<div class="wrapper">
-			<slot />
-		</div>
-		
-	</body>
-</html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <!-- SEO -->
+    <title>{t("meta.title")}</title>
+    <meta name="description" content={t("meta.description")} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={t("meta.og_title")} />
+    <meta property="og:description" content={t("meta.og_description")} />
+    <meta property="og:url" content={currentUrl.href} />
+    <meta property="og:type" content="website" />
+
+    <!-- Alternate hreflang links for SEO -->
+    {
+      supportedLangs.map((l) => (
+        <link rel="alternate" hreflang={l} href={`${siteUrl}${l}/`} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}en/`} />
+  </head>
+
+  <body>
+    <header>
+      <slot name="header">
+        <HeaderComponent lang={lang} />
+      </slot>
+    </header>
+    <main>
+      <!-- language selector -->
+      <!-- <div class="mx-2 my-4 flex items-center gap-4">
+        <select
+          id="lang-select"
+          class="px-2 py-1"
+          onchange="location = this.value"
+        >
+          {
+            supportedLangs.map((l) => (
+              <option value={`/${l}/`} selected={l === lang}>
+                {langNames[l as keyof typeof langNames]}
+              </option>
+            ))
+          }
+        </select>
+      </div>
+
+      <nav class="mx-4 flex gap-2 mb-4">
+        <a
+          href={`/${lang}/`}
+          class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+          >{t("title")}</a
+        >
+        <a
+          href={`/${lang}/products`}
+          class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+          >{t("products_page.title")}</a
+        >
+      </nav> -->
+
+      <div class="wrapper">
+        <slot />
+      </div>
+    </main>
+
+    <footer>
+      <slot name="footer" />
+      <FooterComponent lang={lang} />
+    </footer>
+  </body>
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</html>
