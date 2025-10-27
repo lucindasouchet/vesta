@@ -58,7 +58,7 @@
     "smartHomeSec_privacy_policy": "Política de privacidad de SmartHomeSec",
     "medAlert_shs_privacy_policy": "Política de privacidad de MedAlert SHS"
   },
-  "product_page": {
+  "products_page": {
     "vesta_security_systems": "Sistemas de Seguridad VESTA: una solución para cada necesidad",
     "three_communication_technologies": "Tres tecnologías de comunicación que se adaptan a cualquier problemática de hogar o negocio, con diversas  posibilidades de zonas y particiones, así como más de 70 dispositivos  propios y la integración de marcas líderes de videovigilancia, intrusión y domótica.",
     "radio_alarm_centers": "Centrales de Alarma vía radio",
@@ -71,7 +71,7 @@
     "magnetic_contacts": "Contactos magnéticos",
     "radio_accessories": "Accesorios vía radio",
     "all_products": "Todos los productos",
-    "title": "Producto",
+    "title": "Productos",
     "meta": {
       "title": "Página de productos – Español",
       "description": "Todos los productos Vesta",
