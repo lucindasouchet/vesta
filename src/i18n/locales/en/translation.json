@@ -1,6 +1,10 @@
 {
   "title": "Welcome to our site",
   "description": "This is the English version.",
+  "not_found": {
+    "title": "Page not found",
+    "description": "Sorry, the page you’re looking for doesn’t exist."
+  },
   "test": {
     "welcome": "You're on the home page!",
     "products_page": "Products page"

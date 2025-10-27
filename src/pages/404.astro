@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { initI18n } from '../i18n/i18n.js';
+
+export async function getStaticPaths() {
+  const languages = ['en', 'fr', 'es'];
+  return languages.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props;
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
+---
+
+<BaseLayout lang={lang}>
+  <Fragment slot="title">{t('not_found.title')}</Fragment>
+
+  <div id="page-container">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold mb-2">{t("not_found.title")}</h1>
+      <p class="mb-4 text-gray-600">{t("not_found.description")}</p>
+      <a href={`/${lang}/`} class="text-blue-600 underline">
+        ← {t("title")}
+      </a>
+    </div>
+  </div>
+</BaseLayout>

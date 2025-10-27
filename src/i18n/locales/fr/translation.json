@@ -1,6 +1,10 @@
 {
   "title": "Bienvenue sur notre site",
   "description": "Ceci est la version française.",
+  "not_found": {
+    "title": "Page non trouvée",
+    "description": "Désolé, la page que vous recherchez n'existe pas."
+  },
   "test": {
     "welcome": "Vous êtes sur la page d'accueil !",
     "products_page": "Page produits"
