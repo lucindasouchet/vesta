@@ -17,8 +17,9 @@ const t = i18n.t.bind(i18n);
   <Fragment slot="title">{t("not_found.title")}</Fragment>
 
   <div id="page-container">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold mb-2">{t("not_found.title")}</h1>
+    <div id="404-page-container" class="flex flex-col place-items-center gap-2">
+      <img src="../../favicon.png" alt="Vesta logo" class="w-1/10 h-1/10"/>
+      <h1 class="text-4xl font-bold">{t("not_found.title")}</h1>
       <p class="mb-4 text-gray-600">{t("not_found.description")}</p>
       <a href={`/${lang}/`} class="text-blue-600 underline">
         ← {t("title")}
