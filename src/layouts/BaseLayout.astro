@@ -5,9 +5,13 @@ import FooterComponent from "../components/Footer.astro";
 import { initI18n } from '../i18n/i18n.ts';
 
 
-const { lang } = Astro.props;
+const { lang, meta } = Astro.props;
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
+
+const siteUrl = Astro.site?.toString() || 'https://vesta.com';
+const currentUrl = new URL(Astro.url.pathname, siteUrl);
+const supportedLangs = ['en', 'fr', 'es'];
 ---
 
 <html lang={lang}>
@@ -16,8 +20,26 @@ const t = i18n.t.bind(i18n);
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title><slot name="title" /></title>
+    
+    <!-- SEO -->
+    <title>{t("meta.title")}</title>
+    <meta name="description" content={t("meta.description")} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={t("meta.og_title")} />
+    <meta property="og:description" content={t("meta.og_description")} />
+    <meta property="og:url" content={currentUrl.href} />
+    <meta property="og:type" content="website" />
+
+    <!-- Alternate hreflang links for SEO -->
+    {
+      supportedLangs.map((l) => (
+        <link rel="alternate" hreflang={l} href={`${siteUrl}${l}/`} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={`${siteUrl}en/`} />
   </head>
+  
   <body>
     <header>
       <slot name="header">

@@ -5,6 +5,12 @@
     "title": "Page non trouvée",
     "description": "Désolé, la page que vous recherchez n'existe pas."
   },
+  "meta": {
+    "title": "Bienvenue sur notre site",
+    "description": "Découvrez notre contenu en français.",
+    "og_title": "Bienvenue sur notre site français",
+    "og_description": "Découvrez tout notre contenu en français."
+  },
   "test": {
     "welcome": "Vous êtes sur la page d'accueil !",
     "products_page": "Page produits"

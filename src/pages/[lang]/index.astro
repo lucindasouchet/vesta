@@ -20,10 +20,12 @@ export async function getStaticPaths() {
 const { lang } = Astro.props;
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
+
+const meta = t('meta', { returnObjects: true });
 ---
 
-<BaseLayout lang={lang}>
-  <Fragment slot="title">{t('title')}</Fragment>
+<BaseLayout lang={lang} meta={meta}>
+  <!-- <Fragment slot="title">{t('title')}</Fragment> -->
   <h1>{t('title')}</h1>
   <p>{t('description')}</p>
 

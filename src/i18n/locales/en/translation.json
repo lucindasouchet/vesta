@@ -5,6 +5,12 @@
     "title": "Page not found",
     "description": "Sorry, the page you’re looking for doesn’t exist."
   },
+  "meta": {
+    "title": "Welcome to our site",
+    "description": "Explore our content in English.",
+    "og_title": "Welcome to our English site",
+    "og_description": "Discover all our great content in English."
+  },
   "test": {
     "welcome": "You're on the home page!",
     "products_page": "Products page"
