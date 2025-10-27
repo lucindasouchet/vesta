@@ -2,16 +2,23 @@
 import TitleComponent from "./core/Title.astro";
 import ButtonComponent from "./core/Button.astro";
 
-import i18next from "../i18n.old.ts";
-const { t } = i18next;
+// import i18next from "../i18n.old.ts";
+// const { t } = i18next;
 
-// import { initI18n } from '../i18n/i18n.ts';
+import { initI18n } from "../i18n/i18n.ts";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+import { useLang } from "../helpers/context.ts";
 
-// const { lang } = Astro.props;
-// const i18n = await initI18n(lang);
-// const t = i18n.t.bind(i18n);
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+const lang = useLang(Astro);
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
 ---
 
+<p class="ml-4 mt-2">lang = {lang}</p>
 <div id="page-container">
   <TitleComponent
     id="section1-title"

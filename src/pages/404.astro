@@ -1,21 +1,27 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { initI18n } from '../i18n/i18n.js';
+import { initI18n } from "../i18n/i18n.js";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+import { useLang } from "../helpers/context.ts";
 
-const lang = 'en';
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
 ---
 
 <BaseLayout lang={lang}>
-  <Fragment slot="title">{t('not_found.title')}</Fragment>
+  <Fragment slot="title">{t("not_found.title")}</Fragment>
 
   <div id="page-container">
-    <div id="404-page-container" class="flex flex-col place-items-center gap-2">
-      <img src="../../favicon.png" alt="Vesta logo" class="w-1/10 h-1/10"/>
+    <div id="404-page-container" class="flex flex-col place-items-center gap-3">
+      <img src="../../favicon.png" alt="Vesta logo" class="w-1/8 h-1/8 mb-6" />
       <h1 class="text-4xl font-bold">{t("not_found.title")}</h1>
-      <p class="mb-4 text-gray-600">{t("not_found.description")}</p>
+      <p class="mb-6 text-gray-600">{t("not_found.description")}</p>
       <a href={`/${lang}/`} class="text-blue-600 underline">
         ← {t("title")}
       </a>

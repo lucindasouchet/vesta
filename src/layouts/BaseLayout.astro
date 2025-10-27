@@ -3,8 +3,15 @@ import "../styles/global.css";
 import HeaderComponent from "../components/Header.astro";
 import FooterComponent from "../components/Footer.astro";
 import { initI18n } from "../i18n/i18n.ts";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+import { useLang } from "../helpers/context.ts";
 
-const { lang, meta } = Astro.props;
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+// const { meta } = Astro.props;
+const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
 
@@ -43,7 +50,7 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
   <body>
     <header>
       <slot name="header">
-        <HeaderComponent />
+        <HeaderComponent lang={lang} />
       </slot>
     </header>
     <main>
@@ -88,7 +95,7 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
 
     <footer>
       <slot name="footer" />
-      <FooterComponent />
+      <FooterComponent lang={lang} />
     </footer>
   </body>
 
