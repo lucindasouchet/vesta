@@ -17,6 +17,9 @@ export async function getStaticPaths() {
 const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
+
+const supportedLangs = ["en", "fr", "es"];
+const langNames = { en: "English", fr: "Français", es: "Español" };
 ---
 
 <div
@@ -74,6 +77,24 @@ const t = i18n.t.bind(i18n);
         href="#"
       />
     </div>
+  </div>
+  <div>
+      <!-- language selector -->
+      <div class="mx-2 my-0 md:my-4 items-center gap-4 px-6 py-0 md:py-4 hover:text-secondary-00 focus:outline-none focus:text-primary-10-light focus:border-primary-10-light">
+        <select
+          id="lang-select-footer"
+          class="px-1 py-0 md:px-2 md:py-1 drop-up"
+          onchange="location = this.value"
+        >
+          {
+            supportedLangs.map((l) => (
+              <option value={`/${l}/`} selected={l === lang} class="bg-neutral-05 text-black">
+                {langNames[l as keyof typeof langNames]}
+              </option>
+            ))
+          }
+        </select>
+      </div>
   </div>
 
   <!-- HOVER Footer Language selector - Dropdown Wrapper (Desktop) -->
@@ -184,3 +205,10 @@ const t = i18n.t.bind(i18n);
         }
     });
 </script> -->
+
+<style>
+  .drop-up {
+  top: auto;
+  bottom: 100%;
+}
+</script>
