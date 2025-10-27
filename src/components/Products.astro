@@ -1,11 +1,16 @@
 ---
 import TitleComponent from "./core/Title.astro";
 import TextComponent from "./core/Text.astro";
-import i18next from "i18next";
 import Divider from "./core/Divider.astro";
 import Label from "./core/Label.astro";
 
+import i18next from "../i18n.old.ts";
 const { t } = i18next;
+
+// import { initI18n } from '../i18n/i18n.ts';
+// const { lang } = Astro.props;
+// const i18n = await initI18n(lang);
+// const t = i18n.t.bind(i18n);
 ---
 
 <div

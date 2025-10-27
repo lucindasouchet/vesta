@@ -2,10 +2,16 @@
 // import LanguageDropdownComponent from "./LanguageDropdown.astro";
 import ButtonComponent from "../components/core/Button.astro";
 import PartnerIcon from "../../public/images/icons/partner-min.svg";
-import i18next from "../i18n.ts";
+
 import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
 
+import i18next from "../i18n.old.ts";
 const { t } = i18next;
+
+// import { initI18n } from '../i18n/i18n.ts';
+// const { lang } = Astro.props;
+// const i18n = await initI18n(lang);
+// const t = i18n.t.bind(i18n);
 ---
 
 <div id="header-top">
@@ -32,10 +38,10 @@ const { t } = i18next;
 				/>
 
 				<!-- language select -->
-				<LanguageDropdownComponent
+				<!-- <LanguageDropdownComponent
 					id="languageDdlIndex"
 					name="languageDdlIndex"
-				/>
+				/> -->
 			</div>
 		</div>
 	</div>

@@ -2,8 +2,12 @@
 import "../styles/global.css";
 import HeaderComponent from "../components/Header.astro";
 import FooterComponent from "../components/Footer.astro";
+import { initI18n } from '../i18n/i18n.ts';
+
 
 const { lang } = Astro.props;
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
 ---
 
 <html lang={lang}>
@@ -16,8 +20,9 @@ const { lang } = Astro.props;
   </head>
   <body>
     <header>
-      <slot name="header" />
-      <HeaderComponent />
+      <slot name="header">
+        <HeaderComponent />
+      </slot>
     </header>
     <main>
       <nav class="flex gap-2 mb-4">
@@ -32,8 +37,10 @@ const { lang } = Astro.props;
     </main>
 
     <footer>
-      <slot name="footer" />
-      <FooterComponent />
+      <slot name="footer">
+
+      </slot>
+        <FooterComponent />
     </footer>
   </body>
 
