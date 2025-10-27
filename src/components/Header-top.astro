@@ -3,46 +3,66 @@
 import ButtonComponent from "../components/core/Button.astro";
 import PartnerIcon from "../../public/images/icons/partner-min.svg";
 
-import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
+// import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
 
 import i18next from "../i18n.old.ts";
 const { t } = i18next;
 
-// import { initI18n } from '../i18n/i18n.ts';
-// const { lang } = Astro.props;
+// import { initI18n } from "../i18n/i18n.ts";
+const { lang } = Astro.props;
 // const i18n = await initI18n(lang);
 // const t = i18n.t.bind(i18n);
+
+const supportedLangs = ["en", "fr", "es"];
+const langNames = { en: "English", fr: "Français", es: "Español" };
 ---
 
 <div id="header-top">
-	<div class="shadow-sm">
-		<div
-			class="hidden md:flex h-10 items-center justify-end md:text-lg lg:text-xl/6"
-		>
-			<!-- Right: Links and actions -->
-			<div class="flex items-center gap-8">
-				<!-- Partner Program button with Icon -->
-				<ButtonComponent
-					id="partner-btn"
+  <div class="shadow-sm">
+    <div
+      class="hidden md:flex h-10 items-center justify-end md:text-lg lg:text-xl/6"
+    >
+      <!-- Right: Links and actions -->
+      <div class="flex items-center gap-8">
+        <!-- Partner Program button with Icon -->
+        <ButtonComponent
+          id="partner-btn"
           hasLabel="true"
-					label={t("header.vesta_partner_program")}
+          label={t("header.vesta_partner_program")}
           hasIcon={true}
-					icon={PartnerIcon}
+          icon={PartnerIcon}
           isIconRight={false}
           variantFullComponent="py-2.5 2xl:py-4 pr-6 pl-3 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:stroke-primary-10-light"
-					variantButton="gap-3"
-					variantLabel="label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
-					variantIcon="h-7 w-7"
-					type="button"
-					href="/#"
-				/>
+          variantButton="gap-3"
+          variantLabel="label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
+          variantIcon="h-7 w-7"
+          type="button"
+          href="/#"
+        />
 
-				<!-- language select -->
-				<!-- <LanguageDropdownComponent
+        <!-- language select -->
+        <!-- <LanguageDropdownComponent
 					id="languageDdlIndex"
 					name="languageDdlIndex"
 				/> -->
-			</div>
-		</div>
-	</div>
+
+        <nav class="flex items-center gap-4 mr-4">
+          <label for="lang-select" class="sr-only">Select language</label>
+          <select
+            id="lang-select"
+            class="px-2 py-1"
+            onchange="location = this.value"
+          >
+            {
+              supportedLangs.map((l) => (
+                <option value={`/${l}/`} selected={l === lang}>
+                  {langNames[l as keyof typeof langNames]}
+                </option>
+              ))
+            }
+          </select>
+        </nav>
+      </div>
+    </div>
+  </div>
 </div>
