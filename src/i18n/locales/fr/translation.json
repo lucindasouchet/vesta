@@ -69,6 +69,13 @@
     "wireless_keyboards": "Claviers sans fil",
     "radio_detectors": "Détecteurs radio",
     "magnetic_contacts": "Contacts magnétiques",
-    "radio_accessories": "Accessoires radio"
+    "radio_accessories": "Accessoires radio",
+    "title": "Produits",
+    "meta": {
+      "title": "Page des produits – Français",
+      "description": "Tous les products Vesta",
+      "og_title": "Page des produits",
+      "og_description": "Découvrez tous les produits Vesta"
+    }
   }
 }

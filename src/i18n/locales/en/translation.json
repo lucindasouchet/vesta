@@ -70,7 +70,14 @@
     "radio_detectors": "Radio detectors",
     "magnetic_contacts": "Magnetic contacts",
     "radio_accessories":"Radio accessories",
-    "all_products": "all products"
+    "all_products": "all products",
+    "title": "Products",
+    "meta": {
+      "title": "Products page – English",
+      "description": "All Vesta products",
+      "og_title": "Products page",
+      "og_description": "Discover more about all Vesta products"
+    }
   }
 
 }

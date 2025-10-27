@@ -4,25 +4,22 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import HeaderComponent from "../../components/Header.astro";
 import FooterComponent from "../../components/Footer.astro";
 import { initI18n } from "../../i18n/i18n.js";
+import { getLocalizedPaths } from "../../helpers/utils.ts";
 
 export async function getStaticPaths() {
-  // Define which locales to build
-  const languages = ["en", "fr", "es"];
-
-  return languages.map((lang) => ({
-    params: { lang },
-    props: { lang },
-  }));
+  return getLocalizedPaths();
 }
 
 const { lang } = Astro.props;
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
+
+const meta = t('product.meta', { returnObjects: true });
 ---
 
 <BaseLayout lang={lang}>
-  <Fragment slot="title">{t("title")}</Fragment>
-  <h1>{t("title")}</h1>
+  <!-- <Fragment slot="title">{t("title")}</Fragment> -->
+  <!-- <h1>{t("title")}</h1> -->
   <p>{t("description")}</p>
   <!-- <HeaderComponent /> -->
   <ProductsComponent lang={lang} />

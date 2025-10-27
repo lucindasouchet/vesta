@@ -2,16 +2,15 @@
 import "../styles/global.css";
 import HeaderComponent from "../components/Header.astro";
 import FooterComponent from "../components/Footer.astro";
-import { initI18n } from '../i18n/i18n.ts';
-
+import { initI18n } from "../i18n/i18n.ts";
 
 const { lang, meta } = Astro.props;
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
 
-const siteUrl = Astro.site?.toString() || 'https://vesta.com';
+const siteUrl = Astro.site?.toString() || "https://vesta.com";
 const currentUrl = new URL(Astro.url.pathname, siteUrl);
-const supportedLangs = ['en', 'fr', 'es'];
+const supportedLangs = ["en", "fr", "es"];
 ---
 
 <html lang={lang}>
@@ -20,7 +19,7 @@ const supportedLangs = ['en', 'fr', 'es'];
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- SEO -->
     <title>{t("meta.title")}</title>
     <meta name="description" content={t("meta.description")} />
@@ -39,7 +38,7 @@ const supportedLangs = ['en', 'fr', 'es'];
     }
     <link rel="alternate" hreflang="x-default" href={`${siteUrl}en/`} />
   </head>
-  
+
   <body>
     <header>
       <slot name="header">
@@ -53,16 +52,19 @@ const supportedLangs = ['en', 'fr', 'es'];
         <a href="/es/">ES</a>
       </nav>
 
+      <nav class="flex gap-4 mb-6">
+        <a href={`/${lang}/`}>{t("title")}</a>
+        <a href={`/${lang}/products`}>{t("product_page.title")}</a>
+      </nav>
+
       <div class="wrapper">
         <slot />
       </div>
     </main>
 
     <footer>
-      <slot name="footer">
-
-      </slot>
-        <FooterComponent />
+      <slot name="footer" />
+      <FooterComponent />
     </footer>
   </body>
 

@@ -2,13 +2,10 @@
 import "../../styles/global.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { initI18n } from "../../i18n/i18n.js";
+import { getLocalizedPaths } from "../../helpers/utils.ts";
 
 export async function getStaticPaths() {
-  const languages = ["en", "fr", "es"];
-  return languages.map((lang) => ({
-    params: { lang },
-    props: { lang },
-  }));
+  return getLocalizedPaths();
 }
 
 const { lang } = Astro.props;
