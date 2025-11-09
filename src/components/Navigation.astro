@@ -40,18 +40,10 @@ const LogoVestaLargeLightModeImagePath =
       <!-- Left: Logo -->
       <a href="./index.html">
         <div class="flex items-center space-x-2">
-          <ImageComponent
-            id="LogoVestaMediumLightMode"
-            path={LogoVestaMediumLightModeImagePath}
-            altText="Logo Vesta large light mode"
-            variantImage="h-3/4 w-3/4 lg:hidden"
-          />
-          <ImageComponent
-            id="LogoVestaLargeLightMode"
-            path={LogoVestaLargeLightModeImagePath}
-            altText="Logo Vesta large light mode"
-            variantImage="h-3/4 w-3/4 hidden lg:flex"
-          />
+          <!-- Icon (placeholder box) -->
+          <div class="h-7 w-5 md:h-8 md:w-6 lg:h-10 lg:w-7 rounded bg-sky-300">
+          </div>
+          <span class="font-bold text-3xl md:text-4xl lg:text-5xl">Zigzag</span>
         </div>
       </a>
 
@@ -525,10 +517,10 @@ const LogoVestaLargeLightModeImagePath =
 
   // Mobile Language dropdown toggle onclick
   const btnDdpMobileLanguage = document.getElementById(
-    "dropdownBtnMobileLanguage",
+    "dropdownBtnMobileLanguage"
   )!;
   const menuDdpMobileLanguage = document.getElementById(
-    "dropdownMenuMobileLanguage",
+    "dropdownMenuMobileLanguage"
   )!;
 
   btnDdpMobileLanguage.addEventListener("click", () => {
@@ -547,10 +539,10 @@ const LogoVestaLargeLightModeImagePath =
 
   // Mobile Noticias y eventos dropdown toggle onclick
   const btnDdpMobileNoticias = document.getElementById(
-    "dropdownBtnMobileNoticias",
+    "dropdownBtnMobileNoticias"
   )!;
   const menuDdpMobileNoticias = document.getElementById(
-    "dropdownMenuMobileNoticias",
+    "dropdownMenuMobileNoticias"
   )!;
 
   btnDdpMobileNoticias.addEventListener("click", () => {
@@ -559,10 +551,10 @@ const LogoVestaLargeLightModeImagePath =
 
   // Mobile Noticias y eventos dropdown toggle onclick
   const btnDdpMobileVestaSecurity = document.getElementById(
-    "dropdownBtnMobileVestaSecurity",
+    "dropdownBtnMobileVestaSecurity"
   )!;
   const menuDdpMobileVestaSecurity = document.getElementById(
-    "dropdownMenuMobileVestaSecurity",
+    "dropdownMenuMobileVestaSecurity"
   )!;
 
   btnDdpMobileVestaSecurity.addEventListener("click", () => {
