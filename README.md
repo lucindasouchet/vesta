@@ -23,21 +23,62 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── public/
 │   ├── favicon.svg
 │   ├── images
-│   |   └── image.svg
-│   ├── locales
-│   │   ├── en
-│   │   |   └── translation.json
-│   │   ├── es
-│   │   |   └── translation.json
-│   └── └── fr
-│           └── translation.json
+│   │   ├── image.svg
+│   │   ├── ...
+│   │   ├── icons
+│   │   │   ├── icon.svg
+│   │   │   ├── ...
+│   │   │   ...
+│   │   ├── logo
+│   │   │   ├── logo.svg
+│   │   │   ├── ...
+│   │   │   ...
+│   │   ... 
 ├── src
 │   ├── components
-│   │   └── Home.astro
+│   │   ├── core
+│   │   │   ├── Button.astro
+│   │   │   ├── Label.astro
+│   │   │   ├── ...
+│   │   │   ...
+│   │   ├── Header.astro
+│   │   ├── Footer.astro
+│   │   ├── Home.astro
+│   │   ├── ...
+│   │   ...
 │   ├── layouts
-│   │   └── BaseLayout.astro
-│   └── pages
-│       └── index.astro
+│   │   ├── BaseLayout.astro
+│   │   ├── ...
+│   │   ...
+│   ├── pages
+│   │   ├── [lang]
+│   │   │   ├── index.astro
+│   │   │   ├── products.astro
+│   │   │   ├── 404.astro
+│   │   │   ├── ...
+│   │   │   ...
+│   │   ├── index.astro
+│   │   ├── products.astro
+│   │   ├── 404.astro
+│   │   ├── ...
+│   │   ...
+│   ├── i18n
+│   │   ├── locales
+│   │   │    ├── en
+│   │   │    │   ├── translations.json
+│   │   │    │   ...
+│   │   │    ├── es
+│   │   │    │   ├── translations.json
+│   │   │    │   ...
+│   │   │    ├── fr
+│   │   │    │    ├── translations.json
+│   │   │    ├── ...
+│   │   │    ...
+│   │   ├── i18n.ts
+│   │   ...
+│   ...
+├── astro.config.mjs
+├── tsconfig.json
 └── package.json
 ```
 

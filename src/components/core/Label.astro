@@ -1,7 +1,9 @@
 ---
-const { id, variantLabel = "default", text } = Astro.props;
+const { id, variantFullComponent = "default", variantLabel = "default", text } = Astro.props;
 ---
 
-<label id={id} class={`${variantLabel}`} data-i18n={`${text}`}
-  >{`${text}`}</label
->
+<div class={`${variantFullComponent}`}>
+  <label id={id} class={`${variantLabel}`} data-i18n={`${text}`}
+    >{`${text}`}</label
+  >
+</div>

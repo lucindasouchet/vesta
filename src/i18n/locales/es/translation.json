@@ -5,15 +5,19 @@
     "title": "Página no encontrada",
     "description": "Lo sentimos, la página que buscas no existe."
   },
-  "meta": {
-    "title": "Bienvenido a nuestro sitio",
-    "description": "Explora nuestro contenido en español.",
-    "og_title": "Bienvenido a nuestro sitio en español",
-    "og_description": "Descubre todo nuestro contenido en español."
+  "website": {
+    "meta": {
+      "title": "Bienvenido a nuestro sitio Vesta",
+      "description": "Explora nuestro contenido Vesta en español",
+      "og_title": "Bienvenido a nuestro sitio Vesta en español",
+      "og_description": "Descubre todo nuestro contenido Vesta en español"
+    }
   },
   "test": {
     "welcome": "¡Estáis en la página de inicio!",
-    "products_page": "Página de productos"
+    "products_page": "Página de productos",
+    "version": "Versión",
+    "product_details_page": "Página de detalles del producto"
   },
   "header": {
     "products_page": "Página de productos",
@@ -59,6 +63,12 @@
     "medAlert_shs_privacy_policy": "Política de privacidad de MedAlert SHS"
   },
   "products_page": {
+    "meta": {
+      "title": "Página de productos – Español",
+      "description": "Todos los productos Vesta",
+      "og_title": "Página de productos",
+      "og_description": "Descubra todos los productos Vesta"
+    },
     "vesta_security_systems": "Sistemas de Seguridad VESTA: una solución para cada necesidad",
     "three_communication_technologies": "Tres tecnologías de comunicación que se adaptan a cualquier problemática de hogar o negocio, con diversas  posibilidades de zonas y particiones, así como más de 70 dispositivos  propios y la integración de marcas líderes de videovigilancia, intrusión y domótica.",
     "radio_alarm_centers": "Centrales de Alarma vía radio",
@@ -71,12 +81,17 @@
     "magnetic_contacts": "Contactos magnéticos",
     "radio_accessories": "Accesorios vía radio",
     "all_products": "Todos los productos",
-    "title": "Productos",
-    "meta": {
-      "title": "Página de productos – Español",
-      "description": "Todos los productos Vesta",
-      "og_title": "Página de productos",
-      "og_description": "Descubra todos los productos Vesta"
-    }
+    "title": "Productos"
+  },
+  "product_details_page": {
+    "product_title_hero_section": "Título del producto",
+    "product_reference": "Referencia del producto",
+    "product_model": "Modelo del producto",
+    "product_caracteristic": "Características del producto",
+    "highlights": "Puntos a destacar",
+    "principales_caracteristics": "Principales características",
+    "specifications": "Especificaciones",
+    "download": "Descargas",
+    "documentation": "Documentación" 
   }
 }

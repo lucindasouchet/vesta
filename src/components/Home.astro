@@ -1,10 +1,6 @@
 ---
 import TitleComponent from "./core/Title.astro";
-import ButtonComponent from "./core/Button.astro";
-
-// import i18next from "../i18n.old.ts";
-// const { t } = i18next;
-
+import LinkButtonComponent from "./core/LinkButton.astro";
 import { initI18n } from "../i18n/i18n.ts";
 import { getLocalizedPaths } from "../helpers/utils.ts";
 import { useLang } from "../helpers/context.ts";
@@ -24,13 +20,23 @@ const t = i18n.t.bind(i18n);
     variantTitle="text-sky-600 text-md font-bold m-4"
     text={t("test.welcome")}
   />
-  <ButtonComponent
-    id="section1-products-btn"
+  <LinkButtonComponent
+    id="section-1-products-btn"
     hasLabel="true"
     label={t("test.products_page")}
     variantButton="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-4"
     variantLabel="text-white"
     type="button"
-    href="/products"
+    href={`/${lang}/products`}
+  />
+
+  <LinkButtonComponent
+    id="section-1-product-details-btn"
+    hasLabel="true"
+    label={t("test.product_details_page")}
+    variantButton="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded m-4"
+    variantLabel="text-white"
+    type="button"
+    href={`/${lang}/products/product-details`}
   />
 </div>

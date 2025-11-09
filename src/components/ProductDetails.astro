@@ -1,0 +1,817 @@
+---
+import { initI18n } from "../i18n/i18n.ts";
+import { useLang } from "../helpers/context.ts";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+import TitleComponent from "./core/Title.astro";
+import LabelComponent from "./core/Label.astro";
+import ListItemComponent from "./core/ListItem.astro";
+import DividerComponent from "./core/Divider.astro";
+import CarouselComponent from "./Carousel.astro";
+import { generateProducts } from "../fake-data-api/generateProducts.ts";
+import ImageComponent from "./core/Image.astro";
+import Frame176495Icon from "../../public/images/icons/frame-176495-min.svg";
+import TextComponent from "./core/Text.astro";
+import ButtonComponent from "../components/core/Button.astro";
+import ChevronDown2Icon from "../../public/images/icons/chevron-down-2-min.svg";
+import BrochureIcon from "../../public/images/icons/brochure-min.svg";
+import CeIcon from "../../public/images/icons/ce-min.svg";
+import CertificateIcon from "../../public/images/icons/certificate-min.svg";
+import DatasheetIcon from "../../public/images/icons/datasheet-min.svg";
+import ImageIcon from "../../public/images/icons/image-min.svg";
+import ManualIcon from "../../public/images/icons/manual-min.svg";
+import VideoIcon from "../../public/images/icons/video-min.svg";
+
+export async function getStaticPaths() {
+  return (
+    getLocalizedPaths()
+  );
+  // getLocalizedPaths() && getProductsArray
+}
+
+let lang = useLang(Astro);
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
+
+// const p = useProd(Astro);
+// const { product } = Astro.props;
+
+// Example usage:
+let products = generateProducts(10);
+// console.log(products);
+
+const ZoneIconPath = "../../public/images/icons/zones-min.svg";
+const PartitionsIconPath = "../../public/images/icons/partitions-min.svg";
+const F1IconPath = "../../public/images/icons/f1-min.svg";
+const Sfr1IconPath = "../../public/images/icons/sfr1-min.svg";
+const EthernetIconPath = "../../public/images/icons/ethernet-min.svg";
+const G2IconPath = "../../public/images/icons/2g-min.svg";
+const G4IconPath = "../../public/images/icons/4g-min.svg";
+const ZwaveIconPath = "../../public/images/icons/zwave-min.svg";
+const UsbIconPath = "../../public/images/icons/usb-min.svg";
+const PircamsSupportedIconPath =
+  "../../public/images/icons/pircams-supported-min.svg";
+const IpCameraSupportedIconPath =
+  "../../public/images/icons/ip-camera-supported-min.svg";
+const BeepIconPath = "../../public/images/icons/beep-min.svg";
+const SirenOnBoardIconPath = "../../public/images/icons/siren-on-board-min.svg";
+const MultipleSoundsIconPath =
+  "../../public/images/icons/multiple-sounds-min.svg";
+const OtaIconPath = "../../public/images/icons/ota-min.svg";
+const RemoteConfigIconPath = "../../public/images/icons/remote-config-min.svg";
+const V220IconPath = "../../public/images/icons/220v-min.svg";
+const IncludedIconPath = "../../public/images/icons/included-min.svg";
+const IndoorIconPath = "../../public/images/icons/indoor-min.svg";
+const Grade2IconPath = "../../public/images/icons/grade2-min.svg";
+// const BrochureIcon = "../../public/images/icons/brochure-min.svg";
+// const CeIcon = "../../public/images/icons/ce-min.svg";
+// const CertificateIcon = "../../public/images/icons/certificate-min.svg";
+// const DatasheetIcon = "../../public/images/icons/datasheet-min.svg";
+// const ImageIcon = "../../public/images/icons/image-min.svg";
+// const ManualIcon = "../../public/images/icons/manual-min.svg";
+// const VideoIcon = "../../public/images/icons/video-min.svg";
+
+
+const slides = [
+  { src: 'https://picsum.photos/800/400?random=1', alt: "Random image 1" },
+  { src: 'https://picsum.photos/800/400?random=2', alt: "Random image 2" },
+  { src: 'https://picsum.photos/800/400?random=3', alt: "Random image 3" },
+];
+// { src: `${products[0].imageUrl1}`, alt: "Random image 1" },
+
+const heroCaracteristics = [
+  ["Central de Seguridad VESTA para el hogar"],
+  ["640 zonas vía radio"],
+  ["240 usuarios, 8 particiones"],
+  ["Soporta dispositivos RF 868-F1 (hasta 2 km) y Z-Wave"],
+  ["Módulo TCP/IP", "Frecuencia RF: 868MHz"],
+  ["Compatible con PIRCAMS HD y audio bidireccional SF1"],
+  ["Conectividad TCP/IP y 4G (pincho WiFi opcional)"],
+  ["Solución integral con gestión remota"],
+  ["Domótica y supervisión en directo"],
+  ["Soporta batería externa"],
+  ["Incluye conector rápido Mini USB para batería orgánica externa"],
+  ["Envío de informes vía CID/SIA, Email, SMS y Push. App iOS y Android y navegador web"],
+  ["Compatible con Google Home y Alexa"],
+  ["EN50131 Grado 2"]
+];
+
+const caracteristics = [
+  ["640 zonas vía radio", "Supervisión de emergencias 24/7"],
+  ["240 usuarios", "Gestión remota"],
+  ["8 particiones", "Incorpora sirena"],
+  [
+    "Comunicación:",
+    "Protocolo Z-Wave: Z-Wave Plus 500, 868.40MHz (EU)"
+  ],
+  ["Módulo TCP/IP", "Frecuencia RF: 868MHz"],
+  ["Módulo 4G", "Alimentación: 12V, 1A"],
+  ["WiFi (mediante pincho opcional)", "Preparada para soportar batería externa de alta capacidad (DEM-7M-BACKUP, DEM-8M-BACKUP y DEM-9M-BACKUP)"],
+  ["Soporta dispositivos RF 868-F1 y Z-Wave", "Incluye conector rápido Mini USB para conectar batería orgánica externa"],
+  ["Compatible con dispositivos de transmisión HD (PIRCAMS) y audio bidireccional SF1", "Temperatura de funcionamiento de -10°C ~ +45°C"],
+  ["Conexión rápida amplificada para antena GPRS externa (no incluida, VESTA-274 recomendada)", "Humedad relativa: Hasta el 85% (sin condensación)"],
+  ["Métodos de reporte: CID/SIA, Email, SMS, Notificación Push", "Dimensiones: 140 (An) x 150 (Al) x 42 mm"],
+  ["Métodos de programación: Web y App", "Certificado EN50131 Grado 2, Clase ambiental II"],
+  ["Verificación visual en directo", "La central vía radio de VESTA es compatible con Google Home y Alexa"],
+  ["Automatización del hogar", "Integración con dispositivos automáticos de Fibaro (Fibaro Dimmer 2, Roller Shutter 3, Smart Module, Single Switch 2)"],
+  ["Administración de energía"]
+];
+
+const specs = [
+  { label: "Alimentación", value: "230V CA" },
+  { label: "Tipo de pila", value: "Ni-MH 2.4V/1100 mAh" },
+  { label: "Audio", value: "No" },
+  { label: "Ranura SD", value: "No" },
+  { label: "Sistema", value: "Vía radio" },
+  { label: "Protocolo", value: "IP1, 2.4 GHz" },
+  { label: "Color", value: "Blanco" },
+  { label: "Zonas", value: "64G" },
+  { label: "Particiones", value: "8" },
+  { label: "Número de teclados", value: "64G" },
+  { label: "Certificado", value: "Grade 2" },
+  { label: "Ambiente de instalación", value: "Interior" },
+  { label: "Autonomía de batería", value: "12 horas (especial)" },
+  { label: "Conectividad", value: "2G, 4G, IP, GPS" },
+  { label: "Compatibilidad", value: "Alexa, Google Home" },
+  { label: "Pantalla", value: "Sí" },
+  { label: "Supervisión", value: "CID, FTP, HTTP, SIA, SMTP, XML" },
+  { label: "Sirena a bordo", value: "Sí" },
+  { label: "Actualización OTA", value: "Sí" },
+  { label: "Configuración remota", value: "Sí" },
+  { label: "Cámara a bordo", value: "Sí" },
+  { label: "Bips de entrada de entrada/salida", value: "Sí" },
+  { label: "Pilas", value: "Incluidas" },
+  { label: "IA a bordo", value: "No" },
+  { label: "Cámaras IP soportadas", value: "Sí" },
+  { label: "Salidas cableadas a bordo", value: "No" },
+  { label: "Pircams soportadas", value: "Sí" },
+  { label: "Disparador autónomo", value: "Sí" },
+  { label: "Bocina múltiple", value: "Sí" },
+];
+
+let isOpen = false;
+
+function toggle() {
+  isOpen = !isOpen;
+}
+---
+
+<div
+  id="page-container"
+  class="flex flex-col gap-8 mt-8 mb-12 lg:mt-12 lg:gap-12 lg:mb-24 2xl:mt-24 2xl:gap-24 2xl:mb-36"
+>
+  <!-- section 1 - Hero section -->
+  <section
+    id="section-hero"
+    class="grid md:grid-cols-2 gap-2 md:gap-4 lg:gap-5 xl:gap-6 items-center max-w-7xl mx-auto px-4 py-6 md:px-6 md:py-8 lg:px-8 lg:py-12 xl:px-12"
+  >
+    <div class="space-y-10 md:space-y-12 lg:space-y-15">
+      <TitleComponent
+        id="hero-title"
+        variantTitle="heading-2-mobile h2 text-left text-39 line-height-45 lg:text-67 lg:line-height-78"
+        text={`${t("test.version")} ${lang} - ${products[0].name}`}
+      />
+      <div class="p-12 bg-gray-100 rounded">
+        <LabelComponent
+          id="hero-lebel-reference"
+          variantLabel="ref reference text-left text-16 md:text-18 lg:text-20 mb-2"
+          text={`VESTA-${products[0].reference}`}
+        />
+        <LabelComponent
+          id="hero-label-model"
+          variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
+          text={products[0].model}
+        />
+        <DividerComponent
+          variantDivider="my-4 h-0.25 border-t-0 bg-primary-60-light"
+        />
+        <ul class="list-disc list-inside text-sm space-y-1">
+          { 
+            heroCaracteristics.map((value) => (
+              <ListItemComponent
+                hasIcon={true}
+                icon={Frame176495Icon}
+                isIconRight={false}
+                variantListItem="b2 body-2 text-left text-16 gap-3"
+                variantText="text-neutral-60 font-normal text-xs md:text-sm lg:text-base/5"
+                variantIcon ="mr-1"
+                text={value}
+              />
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <CarouselComponent images={slides} />
+  </section>
+
+  <!-- section 2 - Puntos a destacar -->
+  <section id="section-highlights">
+    <div
+      class="max-w-7xl mx-auto text-center p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24"
+    >
+      <!-- Title -->
+      <TitleComponent
+        id="section-highlights-title"
+        variantTitle="mb-4 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-24 heading-4-mobile h4 text-24 line-height-30 lg:text-37 lg:line-height-44 xl:text-50 xl:line-height-59 text-primary-40-light"
+        text={t("product_details_page.highlights")}
+      />
+
+      <!-- Icons Grid -->
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-8 gap-4 md:gap-6 lg:gap-8 xl:gap-12 2xl:gap-y-12 2xl:gap-x-16 justify-center"
+      >
+        <!-- Item -->
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-zone-icon"
+            path={ZoneIconPath}
+            altText="640 zonas icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-zone-label"
+            variantLabel="label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="640 Zonas"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-partitions-icon"
+            path={PartitionsIconPath}
+            altText="partitions icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-partitions-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="8 particiones"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-sf1-icon"
+            path={F1IconPath}
+            altText="Sf1 icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-sf1-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Vía radio SF1"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-f1-icon"
+            path={Sfr1IconPath}
+            altText="f1 icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-f1-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Vía radio F1"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-ethernet-icon"
+            path={EthernetIconPath}
+            altText="ethernet icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-ethernet-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Conexión IP"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-2g-icon"
+            path={G2IconPath}
+            altText="2g icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-2g-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Conexión 2G"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-4g-icon"
+            path={G4IconPath}
+            altText="4g icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-4g-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Conexión 4G"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-zwave-icon"
+            path={ZwaveIconPath}
+            altText="zwave icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-zwave-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Z-Wave"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-usb-icon"
+            path={UsbIconPath}
+            altText="usb icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-usb-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Conexión USB"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-pircams-supported-icon"
+            path={PircamsSupportedIconPath}
+            altText="Pircams supported icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-pircams-supported-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Hasta 16 Pircams"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-ip-camera-supported-icon"
+            path={IpCameraSupportedIconPath}
+            altText="Ip camera supported icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-camera-supported-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Hasta 24 cámaras IP"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-ip-beep-icon"
+            path={BeepIconPath}
+            altText="Beep icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-beep-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Bips de retardo"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-siren-on-board-icon"
+            path={SirenOnBoardIconPath}
+            altText="Siren on board icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-siren-on-board-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Sirena a bordo"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-multiple-sounds-icon"
+            path={MultipleSoundsIconPath}
+            altText="Multiple sounds icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-multiple-sounds-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Sonido múltiple"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-Ota-icon"
+            path={OtaIconPath}
+            altText="Ota icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-Ota-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Actualización OTA"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-remote-config-icon"
+            path={RemoteConfigIconPath}
+            altText="Remote config icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-remote-config-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Configuración remota"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-220v-icon"
+            path={V220IconPath}
+            altText="220V icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-220v-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="220V CA"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-included-icon"
+            path={IncludedIconPath}
+            altText="Included icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-included-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Pilas incluidas"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-indoor-icon"
+            path={IndoorIconPath}
+            altText="Indoor icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-indoor-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Instalación en interior"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-indoor-icon"
+            path={Grade2IconPath}
+            altText="Grade 2 icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-indoor-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="EN50131 de Grado 2"
+          />
+        </div>
+
+        <div class="flex flex-col items-center text-center">
+          <ImageComponent
+            id="section-2-zwave-icon"
+            path={ZwaveIconPath}
+            altText="zwave icon"
+            variantFullComponent=""
+            variantImage="w-8 h-8 mb-2"
+          />
+          <LabelComponent
+            id="section-2-zwave-label"
+            variantLabel=" label-2 l2 text-12 md:text-14 lg:text-16 line-height-20"
+            text="Z-Wave"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- section 3 - Principales caracteristicas -->
+  <section>
+    <div
+      class="mx-auto text-center py-4 md:py-6 lg:py-8 xl:py-12 2xl:py-24"
+    >
+      <!-- Title -->
+      <TitleComponent
+        id="section-highlights-title"
+        variantTitle="px-8 md:px-12 lg:px-24 mb-4 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-24 heading-4-mobile h4 text-24 line-height-30 lg:text-37 lg:line-height-44 xl:text-50 xl:line-height-59 text-primary-40-light"
+        text={t("product_details_page.principales_caracteristics")}
+      />
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-y-6 2xl:gap-y-10 px-4 pb-4 md:px-6 md:pb-6 lg:px-8 lg:pb-8 xl:px-12 xl:pb-12 2xl:px-60 2xl:pb-24"
+      >
+      { 
+        caracteristics.map(([left, right]) => (
+          <div class="flex">
+            <ListItemComponent
+              hasIcon={true}
+              icon={Frame176495Icon}
+              isIconRight={false}
+              variantListItem="gap-3"
+              variantText="text-neutral-80 b0 body-0 text-left text-16 md:text-18 lg:text-24"
+              variantIcon="mr-1"
+              text={left}
+            />
+          </div>
+          
+          <ListItemComponent
+            hasIcon={true}
+            icon={Frame176495Icon}
+            isIconRight={false}
+            variantListItem="gap-3"
+            variantText="text-neutral-80 b0 body-0 text-left text-16 md:text-18 lg:text-24"
+            variantIcon="mr-1"
+            text={right}
+          />
+        ))
+      }
+      </div>
+    </div>
+  </section>
+
+  <!-- section 4 - Especificaciones -->
+  <section>
+    <div
+      class="mx-auto text-center py-4 md:py-6 lg:py-8 xl:py-12 2xl:py-24"
+    >
+      <!-- Title -->
+      <TitleComponent
+        id="section-highlights-title"
+        variantTitle="px-8 md:px-12 lg:px-24 mb-4 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-24 heading-4-mobile h4 text-24 line-height-30 lg:text-37 lg:line-height-44 xl:text-50 xl:line-height-59 text-primary-40-light"
+        text={t("product_details_page.specifications")}
+      />
+
+      <div
+        class="grid grid-cols-2 px-4 pb-4 md:px-6 md:pb-6 lg:px-8 lg:pb-8 xl:px-12 xl:pb-12 2xl:px-60 2xl:pb-36 text-left"
+      >
+        {
+          specs.map(({ label, value }) => (
+            <LabelComponent 
+              id="section-4-label"
+              variantFullComponent="flex border-b border-primary-60-light"
+              variantLabel="pt-4 pb-1.5 pr-4 lg:py-6 lg:pr-5 2xl:pr-6 heading-5-mobile h5 text-16 md:text-20 lg:text-28 line-height-38"
+              text={label}
+            />
+            <TextComponent 
+              id="section-4-text"
+              variantFullComponent="flex  border-b border-l border-primary-60-light"
+              variantText="py-4 px-4 lg:py-6 lg:px-6 lg:body-0 text-neutral-60 text-14 md:text-16 lg:text-24"
+              text={value}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- section 5 - Descargas -->
+  <section>
+    <div
+      class="mx-auto text-center px-4 pt-4 pb-8 md:px-6 md:pt-6 md:pb-12 lg:px-24 lg:pt-8 lg:pb-16 xl:pt-24 xl:pb-36"
+    >
+      <!-- Title -->
+      <TitleComponent
+        id="section-highlights-title"
+        variantTitle="px-8 mb-4 md:px-12 md:mb-6 lg:px-24 lg:mb-8 xl:mb-12 2xl:mb-24 heading-4-mobile h4 text-24 line-height-30 lg:text-37 lg:line-height-44 xl:text-50 xl:line-height-59 text-primary-40-light"
+        text={t("product_details_page.download")}
+      />
+      <div class="bg-opacities-dark-05 rounded-xl">
+        <div class="flex justify-between items-center">
+          <LabelComponent
+          id="section-5-documentation-label"
+          text={t("product_details_page.documentation")}
+          variantFullComponent="px-4 py-2 md:px-5 md:py-3 lg:px-6 lg:py-3"
+          variantLabel="text-20 line-height-30 lg:text-24 lg:line-height-40 text-primary-00 font-extrabold"
+          />
+          <ButtonComponent
+          id="section-5-documentation-btn"
+          hasLabel="true"
+          label = "",
+          hasIcon={true}
+          icon={ChevronDown2Icon}
+          isIconRight={true}
+          variantFullComponent="px-4 py-2 md:px-5 md:py-3 lg:px-6 lg:py-3"
+          variantButton=""
+          variantLabel=""
+          variantIcon="stroke-primary-00"
+          type="button"
+          />
+        </div>
+
+      <div class="px-4 pb-4 pt-2 md:px-5 md:pb-5 md:pt-3 lg:px-6 lg:pb-6">  
+        <div class="flex flex-col md:flex-row flex-wrap text-left md:gap-x-12 md:gap-y-6 ">
+          <ButtonComponent 
+            id="section-5-brochure-btn"
+            hasLabel={true}
+            label="Folleto"
+            hasIcon={true},
+            icon={BrochureIcon}
+            isIconRight={false}
+            hasImage={false},
+            type="button"
+            variantFullComponent="icon-button py-1 py-2 md:py-2 md:px-4 cursor-pointer"
+            variantButton="inline-flex gap-4 py-1 cursor-pointer" 
+            variantLabel="text-label text-primary-20-light underline"
+            variantIcon="icon stroke-primary-20-light"
+          />
+          <ButtonComponent 
+            id="section-5-technical-specifications-btn"
+            hasLabel={true}
+            label="Ficha técnica"
+            hasIcon={true},
+            icon={DatasheetIcon}
+            isIconRight={false}
+            hasImage={false},
+            type="button"
+            variantFullComponent="icon-button py-1 py-2 md:py-2 md:px-4 cursor-pointer"
+            variantButton="inline-flex gap-4 py-1 cursor-pointer" 
+            variantLabel="text-label text-primary-20-light underline"
+            variantIcon="icon stroke-primary-20-light"
+          />
+          <ButtonComponent 
+            id="section-5-user-manual-btn"
+            hasLabel={true}
+            label="Manual de usario"
+            hasIcon={true},
+            icon={ManualIcon}
+            isIconRight={false}
+            hasImage={false},
+            type="button"
+            variantFullComponent="icon-button py-1 py-2 md:py-2 md:px-4 cursor-pointer"
+            variantButton="inline-flex gap-4 py-1 cursor-pointer" 
+            variantLabel="text-label text-primary-20-light underline"
+            variantIcon="icon stroke-primary-20-light"
+          />
+          <ButtonComponent 
+            id="section-5-image-btn"
+            hasLabel={true}
+            label="Imagen"
+            hasIcon={true},
+            icon={ImageIcon}
+            isIconRight={false}
+            hasImage={false},
+            type="button"
+            variantFullComponent="icon-button py-1 py-2 md:py-2 md:px-4 cursor-pointer"
+            variantButton="inline-flex gap-4 py-1 cursor-pointer" 
+            variantLabel="text-label text-primary-20-light underline"
+            variantIcon="icon stroke-primary-20-light"
+          />
+          <ButtonComponent 
+            id="section-5-video-btn"
+            hasLabel={true}
+            label="Vídeo"
+            hasIcon={true},
+            icon={VideoIcon}
+            isIconRight={false}
+            hasImage={false},
+            type="button"
+            variantFullComponent="icon-button py-1 py-2 md:py-2 md:px-4 cursor-pointer"
+            variantButton="inline-flex gap-4 py-1 cursor-pointer" 
+            variantLabel="text-label text-primary-20-light underline"
+            variantIcon="icon stroke-primary-20-light"
+          />
+          <ButtonComponent 
+            id="section-5-certificate-btn"
+            hasLabel={true}
+            label="Certificado"
+            hasIcon={true},
+            icon={CertificateIcon}
+            isIconRight={false}
+            hasImage={false},
+            type="button"
+            variantFullComponent="icon-button py-1 py-2 md:py-2 md:px-4 cursor-pointer"
+            variantButton="inline-flex gap-4 py-1 cursor-pointer" 
+            variantLabel="text-label text-primary-20-light underline"
+            variantIcon="icon stroke-primary-20-light"
+          />
+          <ButtonComponent 
+            id="section-5-compliance-btn"
+            hasLabel={true}
+            label="Conformidad"
+            hasIcon={true},
+            icon={CeIcon}
+            isIconRight={false}
+            hasImage={false},
+            type="button"
+            variantFullComponent="icon-button py-1 py-2 md:py-2 md:px-4 cursor-pointer"
+            variantButton="inline-flex gap-4 py-1 cursor-pointer" 
+            variantLabel="text-label text-primary-20-light underline"
+            variantIcon="icon stroke-primary-20-light"
+          />
+          <!-- <button class="icon-button">
+            <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14" stroke="#555" stroke-width="2" stroke-linecap="round" />
+              <path d="M12 5l7 7-7 7" stroke="#555" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="label">Next</span>
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </section> 
+</div>
+
+<script>
+  document.getElementById("section-5-documentation-btn")?.addEventListener("click", () => {
+    alert("Botón 'Documentación' pulsado! Continuará...");
+  });
+  document.getElementById("section-5-brochure-btn")?.addEventListener("click", () => {
+    alert("Botón 'Folleto' pulsado! Continuará...");
+  });
+  document.getElementById("section-5-technical-specifications-btn")?.addEventListener("click", () => {
+    alert("Botón 'Ficha técnica' pulsado! Continuará...");
+  });
+  document.getElementById("section-5-user-manual-btn")?.addEventListener("click", () => {
+    alert("Botón 'Manual de usario' pulsado! Continuará...");
+  });
+  document.getElementById("section-5-image-btn")?.addEventListener("click", () => {
+    alert("Botón 'Imagen' pulsado! Continuará...");
+  });
+  document.getElementById("section-5-video-btn")?.addEventListener("click", () => {
+    alert("Botón 'Video' pulsado! Continuará...");
+  });
+  document.getElementById("section-5-certificate-btn")?.addEventListener("click", () => {
+    alert("Botón 'Certificado' pulsado! Continuará...");
+  });
+  document.getElementById("section-5-compliance-btn")?.addEventListener("click", () => {
+    alert("Botón 'Conformidad' pulsado! Continuará...");
+  });
+</script>
+
+<!-- <style>
+  /* .icon-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #555;
+    transition: color 0.25s ease;
+  }
+
+  .icon-button .icon path {
+    transition: stroke 0.25s ease;
+  } */
+
+  /* .icon-button:hover {
+    color: #007bff;
+  }
+
+  .icon-button:hover .icon path {
+    stroke: #007bff;
+  }  */
+</style> -->

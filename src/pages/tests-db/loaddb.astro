@@ -1,0 +1,58 @@
+---
+interface Producto {
+  idProductTable: number;
+  referencia: string;
+  modelo: string;
+  specs: string;
+  titulo: string;
+  meta_title: string;
+  meta_desc: string;
+  visible: boolean;
+  imagen: string;
+  dcorta: string;
+  idProducto: number;
+}
+
+let productos: Producto[] = [];
+---
+
+<h1>Productos desde MySQL</h1>
+<ul id="productos-list"></ul>
+
+<!-- Carga global de DOMPurify desde CDNJS -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.7/purify.min.js"></script> -->
+
+<script type="module">
+  async function loadProductos() {
+    try {
+      const res = await fetch('../api/productos');
+      if (!res.ok) throw new Error(`Error ${res.status}`);
+      const data = /** @type {Producto[]} */ (await res.json());
+      const ul = document.getElementById('productos-list');
+      ul.innerHTML = '';
+      data.forEach(p => {
+        const li = document.createElement('li');
+        //TXT VERSION
+        // li.textContent = `${p.idProducto} <br> <strong>${p.referencia}</strong> <br><br> ${p.specs}`;
+        //HTML VERSION
+        li.innerHTML = `${p.idProducto} <br> <strong>${p.referencia}</strong> <br><br> ${p.specs}`;
+
+        // SANITIZE HTML TO PREVENT XSS ATTACKS
+        // const safeHTML = DOMPurify.sanitize(`
+        //   ${p.idProducto} <br>
+        //   <strong>${p.referencia}</strong> <br><br>
+        //   ${p.specs}
+        // `);
+        // li.innerHTML = safeHTML;
+
+        ul.appendChild(li);
+      });
+    } catch (err) {
+        debugger;
+      console.error(err);
+      document.getElementById('productos-list').innerHTML = '<li>Error cargando productos</li>';
+    }
+  }
+
+  loadProductos();
+</script>

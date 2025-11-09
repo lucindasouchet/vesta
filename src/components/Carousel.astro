@@ -1,0 +1,104 @@
+---
+const { images = [] } = Astro.props;
+---
+
+<div class="carousel" id="carousel">
+  <div class="slides">
+    {
+      images.map((img: { src: string | null | undefined; alt: any }) => (
+        <img src={img.src} alt={img.alt || "Slide"} loading="lazy" />
+      ))
+    }
+  </div>
+  <button class="nav prev">‹</button>
+  <button class="nav next">›</button>
+</div>
+
+<script>
+  const carousel = document.getElementById("carousel") as HTMLElement;
+  const slides = carousel!.querySelector(".slides") as HTMLElement;
+  const btnPrev = carousel!.querySelector(".prev") as HTMLElement;
+  const btnNext = carousel!.querySelector(".next") as HTMLElement;
+  const images = slides!.querySelectorAll("img");
+  let index = 0;
+
+  const update = () => {
+    slides!.style.transform = `translateX(-${index * 100}%)`;
+  };
+
+  btnNext.addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    update();
+  });
+
+  btnPrev.addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    update();
+  });
+</script>
+
+<style>
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 200rem;
+    margin: 2rem auto;
+  }
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slides img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+  }
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    color: black;
+  }
+  .nav.prev {
+    left: 0.625rem;
+  }
+  .nav.next {
+    right: 0.625rem;
+  }
+</style>
+
+<!-- Carousel controls -->
+<!-- <div class="text-primary-medium">
+  <button id="prev" class="absolute top-1/2 left-4 -translate-y-1/2">
+    <svg
+      class="h-8 w-8"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1"
+      viewBox="0 0 24 24"
+      transform="rotate(90)"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"
+      ></path>
+    </svg>
+  </button>
+  <button id="next" class="absolute top-1/2 right-4 -translate-y-1/2">
+    <svg
+      class="h-8 w-8"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1"
+      viewBox="0 0 24 24"
+      transform="rotate(-90)"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"
+      ></path>
+    </svg>
+  </button>
+</div> -->

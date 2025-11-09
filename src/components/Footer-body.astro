@@ -1,12 +1,8 @@
 ---
 import ImageComponent from "../components/core/Image.astro";
-import ButtonComponent from "../components/core/Button.astro";
+import LinkButtonComponent from "../components/core/LinkButton.astro";
 import LabelComponent from "./core/Label.astro";
 import LinkComponent from "./core/Link.astro";
-
-// import i18next from "../i18n.old.ts";
-// const { t } = i18next;
-
 import { initI18n } from "../i18n/i18n.ts";
 import { useLang } from "../helpers/context.ts";
 import { getLocalizedPaths } from "../helpers/utils.ts";
@@ -45,7 +41,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <LinkComponent
           id="alarma-via-radio-link"
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-          text={t("footer.radio_alarm")}
+          label={t("footer.radio_alarm")}
           href="#"
         />
       </li>
@@ -53,7 +49,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <LinkComponent
           id="alarma-a-pilas-link"
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-          text={t("footer.battery_powered_alarm")}
+          label={t("footer.battery_powered_alarm")}
           href="#"
         />
       </li>
@@ -61,7 +57,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <LinkComponent
           id="alarma-hibrida-link"
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-          text={t("footer.hybrid_alarm")}
+          label={t("footer.hybrid_alarm")}
           href="#"
         />
       </li>
@@ -82,7 +78,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <LinkComponent
           id="serie-mobile-pro-link"
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-          text={t("footer.mobile_pro_series")}
+          label={t("footer.mobile_pro_series")}
           href="#"
         />
       </li>
@@ -90,7 +86,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <LinkComponent
           id="serie-mx-link"
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-          text={t("footer.mx_series")}
+          label={t("footer.mx_series")}
           href="#"
         />
       </li>
@@ -98,7 +94,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <LinkComponent
           id="serie-gx-link"
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-          text={t("footer.gx_series")}
+          label={t("footer.gx_series")}
           href="#"
         />
       </li>
@@ -122,7 +118,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           <LinkComponent
             id="vesta-home-video-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-            text={t("footer.vesta_home_video")}
+            label={t("footer.vesta_home_video")}
             href="#"
           />
         </li>
@@ -130,7 +126,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           <LinkComponent
             id="vesta-advances-video-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-            text={t("footer.vesta_advanced_video")}
+            label={t("footer.vesta_advanced_video")}
             href="#"
           />
         </li>
@@ -149,7 +145,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           <LinkComponent
             id="todos-los-productos-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-            text={t("footer.all_products")}
+            label={t("footer.all_products")}
             href="#"
           />
         </li>
@@ -172,7 +168,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           <LinkComponent
             id="blog-de-noticias-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-            text={t("footer.news_blog")}
+            label={t("footer.news_blog")}
             href="#"
           />
         </li>
@@ -180,7 +176,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           <LinkComponent
             id="academia-vesta-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-            text={t("footer.vesta_academy")}
+            label={t("footer.vesta_academy")}
             href="#"
           />
         </li>
@@ -199,14 +195,14 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           <LinkComponent
             id="acerca-de-nosotros-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-            text={t("footer.about_us")}
+            label={t("footer.about_us")}
             href="#"
           />
           <li>
             <LinkComponent
               id="vesta-partner-program-link"
               variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-              text={t("header.vesta_partner_program")}
+              label={t("header.vesta_partner_program")}
               href="#"
             />
           </li>
@@ -229,7 +225,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <LinkComponent
           id="smart-home-sec-link"
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-          text={t("footer.smart_home_sec")}
+          label={t("footer.smart_home_sec")}
           href="#"
         />
       </li>
@@ -237,7 +233,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         <LinkComponent
           id="medAlert-shs-link"
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-          text={t("footer.medAlert_shs")}
+          label={t("footer.medAlert_shs")}
           href="#"
         />
       </li>
@@ -246,23 +242,25 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
     <div
       class="flex flex-col gap-2 md:gap-3 lg:gap-4 items-center justify-center md:items-start md:justify-start"
     >
-      <ButtonComponent
-        id="footer-apple-store-btn"
+      <LinkButtonComponent
+        id="footer-body-apple-store-btn"
         hasLabel="false"
         hasImage="true"
         imagePath={AppleStoreImagePath}
         imageAltText="Apple Store button"
-        href="https://www.apple.com/store"
+        href="https://apps.apple.com/lu/developer/bydemes/id522581434"
+        target="_blank"
         type="button"
         variantImage="h-11 w-32 mt-1 lg:mt-0 cursor-pointer hover:animate-wiggle-3"
       />
-      <ButtonComponent
-        id="footer-google-play-btn"
+      <LinkButtonComponent
+        id="footer-body-google-play-btn"
         hasLabel="false"
         hasImage="true"
         imagePath={GooglePlayImagePath}
         imageAltText="Google Play button"
-        href="https://play.google.com/store/apps?hl=en"
+        href="https://play.google.com/store/apps/details?id=com.bydemes.smarthomesec&hl=en"
+        target="_blank"
         type="button"
         variantImage="h-11 w-32 cursor-pointer hover:animate-wiggle-3"
       />
@@ -273,16 +271,21 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
   <div
     class="flex flex-col items-center justify-center md:items-start md:justify-start gap-1 md:gap-6"
   >
-    <div class="flex items-center space-x-2">
-      <div class="flex items-center space-x-2">
-        <!-- Icon (placeholder box) -->
-        <div class="h-7 w-5 md:h-8 md:w-6 lg:h-10 lg:w-7 rounded bg-sky-300">
-        </div>
-        <span
-          class="font-bold text-2xl md:text-3xl lg:text-4xl text-secondary-90-light"
-          >Zigzag</span
-        >
-      </div>
+    <div class="flex place-self-center">
+      <a href="../index.html">
+        <ImageComponent
+          id="LogoVestaLargeDarkMode"
+          path={LogoVestaLargeDarkModeImagePath}
+          altText="Logo Vesta large dark mode"
+          variantImage="hidden md:flex"
+        />
+        <ImageComponent
+          id="LogoVestaMediumDarkMode"
+          path={LogoVestaMediumDarkModeImagePath}
+          altText="Logo Vesta large dark mode"
+          variantImage="w-3/4 h-3/4 sm:w-3/4 sm:h-3/4 md:hidden place-self-center"
+        />
+      </a>
     </div>
     <div class="flex flex-row gap-1 lg:gap-4">
       <ImageComponent

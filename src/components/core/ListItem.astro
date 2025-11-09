@@ -1,0 +1,17 @@
+---
+const {
+  hasIcon = false,
+  icon: Icon,
+  isIconRight = true,
+  text,
+  variantListItem = "default",
+  variantText = "default",
+  variantIcon = "default",
+} = Astro.props;
+---
+
+<p class={`flex ${variantListItem}`}>
+  {hasIcon && Icon && !isIconRight && <Icon class={`${variantIcon}`} />}
+  <span class={`${variantText}`} data-i18n={`${text}`}>{`${text}`}</span>
+  {hasIcon && Icon && isIconRight && <Icon class={`${variantIcon}`} />}
+</p>

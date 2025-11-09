@@ -10,9 +10,10 @@ const {
   hasImage = false,
   imagePath,
   imageAltText,
-  href,
+  // href,
   type,
   variantFullComponent = "default",
+  // variantLink = "default",
   variantButton = "default",
   variantLabel = "default",
   variantIcon = "default",
@@ -21,11 +22,10 @@ const {
 ---
 
 <div class={`${variantFullComponent}`}>
-  <a href={`${href}`}>
+  <!-- <a href={`${href}`} class={`${variantLink}`}> -->
     <button id={id} type={type} class={`flex items-center ${variantButton}`}>
       {hasIcon && Icon && !isIconRight && <Icon class={`${variantIcon}`} />}
-      {hasLabel && <span class={`${variantLabel}`}>{`${label}`}</span>}
-      <!-- {hasLabel && <span data-i18n={`${label}`} class={`${variantLabel}`}></span>} -->
+      {hasLabel && <span class={`${variantLabel}`} data-i18n={`${label}`}>{`${label}`}</span>}
       {hasIcon && Icon && isIconRight && <Icon class={`${variantIcon}`} />}
       {
         hasImage && imagePath && (
@@ -37,5 +37,5 @@ const {
         )
       }
     </button>
-  </a>
+  <!-- </a> -->
 </div>
