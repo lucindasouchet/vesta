@@ -5,13 +5,20 @@ import PartnerIcon from "../../public/images/icons/partner-min.svg";
 
 // import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
 
-import i18next from "../i18n.old.ts";
-const { t } = i18next;
+// import i18next from "../i18n.old.ts";
+// const { t } = i18next;
 
-// import { initI18n } from "../i18n/i18n.ts";
-const { lang } = Astro.props;
-// const i18n = await initI18n(lang);
-// const t = i18n.t.bind(i18n);
+import { initI18n } from "../i18n/i18n.ts";
+import { useLang } from "../helpers/context.ts";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+const lang = useLang(Astro);
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
 
 const supportedLangs = ["en", "fr", "es"];
 const langNames = { en: "English", fr: "Français", es: "Español" };
@@ -47,15 +54,15 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
 				/> -->
 
         <nav class="flex items-center gap-4 mr-4">
-          <label for="lang-select" class="sr-only">Select language</label>
+          <!-- <label for="lang-select-header" class="sr-only">Select language</label> -->
           <select
-            id="lang-select"
-            class="px-2 py-1"
+            id="lang-select-header"
+            class="px-2 py-1 text-14 lg:text-16 xl:text-18 2xl:text-20 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light"
             onchange="location = this.value"
           >
             {
               supportedLangs.map((l) => (
-                <option value={`/${l}/`} selected={l === lang}>
+                <option value={`/${l}/`} selected={l === lang} class="bg-neutral-05 text-black">
                   {langNames[l as keyof typeof langNames]}
                 </option>
               ))

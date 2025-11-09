@@ -13,7 +13,7 @@
   },
   "test": {
     "welcome": "Vous êtes sur la page d'accueil !",
-    "products_page": "Page produits"
+    "products_page": "Page des produits"
   },
   "header": {
     "products_page": "Page produits",

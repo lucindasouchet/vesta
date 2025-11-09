@@ -10,13 +10,23 @@ import WirelessIcon from "../../public/images/icons/wireless-min.svg";
 import ChevronBuyVestaBtnIcon from "../../public/images/icons/chevron-buy-vesta-btn-min.svg";
 import ImageComponent from "./core/Image.astro";
 
-import i18next from "../i18n.old.ts";
-const { t } = i18next;
+// import i18next from "../i18n.old.ts";
+// const { t } = i18next;
 
-// import { initI18n } from '../i18n/i18n.ts';
-// const { lang } = Astro.props;
-// const i18n = await initI18n(lang);
-// const t = i18n.t.bind(i18n);
+import { initI18n } from "../i18n/i18n.ts";
+import { useLang } from "../helpers/context.ts";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+const lang = useLang(Astro);
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
+
+const supportedLangs = ["en", "fr", "es"];
+const langNames = { en: "English", fr: "Français", es: "Español" };
 
 const LogoVestaMediumLightModeImagePath =
   "/images/logos/logo-vesta-medium-light-mode-min.svg";
@@ -515,10 +525,10 @@ const LogoVestaLargeLightModeImagePath =
 
   // Mobile Language dropdown toggle onclick
   const btnDdpMobileLanguage = document.getElementById(
-    "dropdownBtnMobileLanguage"
+    "dropdownBtnMobileLanguage",
   )!;
   const menuDdpMobileLanguage = document.getElementById(
-    "dropdownMenuMobileLanguage"
+    "dropdownMenuMobileLanguage",
   )!;
 
   btnDdpMobileLanguage.addEventListener("click", () => {
@@ -537,10 +547,10 @@ const LogoVestaLargeLightModeImagePath =
 
   // Mobile Noticias y eventos dropdown toggle onclick
   const btnDdpMobileNoticias = document.getElementById(
-    "dropdownBtnMobileNoticias"
+    "dropdownBtnMobileNoticias",
   )!;
   const menuDdpMobileNoticias = document.getElementById(
-    "dropdownMenuMobileNoticias"
+    "dropdownMenuMobileNoticias",
   )!;
 
   btnDdpMobileNoticias.addEventListener("click", () => {
@@ -549,10 +559,10 @@ const LogoVestaLargeLightModeImagePath =
 
   // Mobile Noticias y eventos dropdown toggle onclick
   const btnDdpMobileVestaSecurity = document.getElementById(
-    "dropdownBtnMobileVestaSecurity"
+    "dropdownBtnMobileVestaSecurity",
   )!;
   const menuDdpMobileVestaSecurity = document.getElementById(
-    "dropdownMenuMobileVestaSecurity"
+    "dropdownMenuMobileVestaSecurity",
   )!;
 
   btnDdpMobileVestaSecurity.addEventListener("click", () => {

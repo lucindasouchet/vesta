@@ -27,7 +27,15 @@ const {
       {hasLabel && <span class={`${variantLabel}`}>{`${label}`}</span>}
       <!-- {hasLabel && <span data-i18n={`${label}`} class={`${variantLabel}`}></span>} -->
       {hasIcon && Icon && isIconRight && <Icon class={`${variantIcon}`} />}
-      {hasImage && imagePath && <img src={`${imagePath}`} alt={`${imageAltText}`} class={`${variantImage}`} />}
+      {
+        hasImage && imagePath && (
+          <img
+            src={`${imagePath}`}
+            alt={`${imageAltText}`}
+            class={`${variantImage}`}
+          />
+        )
+      }
     </button>
   </a>
 </div>

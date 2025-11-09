@@ -2,5 +2,4 @@
 const { id, variantTitle = "default", text } = Astro.props;
 ---
 
-<h2 id={id} class={`${variantTitle}`} >{`${text}`}</h2>
-<!-- data-i18n={`${text}`} -->
+<h2 id={id} class={`${variantTitle}`} data-i18n={`${text}`}>{`${text}`}</h2>

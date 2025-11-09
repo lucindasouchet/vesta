@@ -3,8 +3,15 @@ import "../styles/global.css";
 import HeaderComponent from "../components/Header.astro";
 import FooterComponent from "../components/Footer.astro";
 import { initI18n } from "../i18n/i18n.ts";
+import { getLocalizedPaths } from "../helpers/utils.ts";
+import { useLang } from "../helpers/context.ts";
 
-const { lang, meta } = Astro.props;
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+// const { meta } = Astro.props;
+const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
 
@@ -43,16 +50,12 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
   <body>
     <header>
       <slot name="header">
-        <HeaderComponent />
+        <HeaderComponent lang={lang} />
       </slot>
     </header>
     <main>
-      <!-- <nav class="flex gap-2 mb-4">
-        <a href="/en/">EN</a>
-        <a href="/fr/">FR</a>
-        <a href="/es/">ES</a>
-      </nav> -->
-      <div class="mx-2 my-4 flex items-center gap-4">
+      <!-- language selector -->
+      <!-- <div class="mx-2 my-4 flex items-center gap-4">
         <select
           id="lang-select"
           class="px-2 py-1"
@@ -79,7 +82,7 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
           class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
           >{t("products_page.title")}</a
         >
-      </nav>
+      </nav> -->
 
       <div class="wrapper">
         <slot />
@@ -88,7 +91,7 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
 
     <footer>
       <slot name="footer" />
-      <FooterComponent />
+      <FooterComponent lang={lang} />
     </footer>
   </body>
 
