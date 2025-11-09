@@ -12,6 +12,6 @@ export default defineConfig({
     enabled: false
   },
   output: 'static', // enable SSG
-  site: 'https://vesta.com', // replace with our site URL -optional,
+  site: 'https://zigzag.com', // replace with our site URL -optional,
   middleware: ['./src/middleware/middleware.ts'],
 });
