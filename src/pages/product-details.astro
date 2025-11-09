@@ -1,0 +1,71 @@
+---
+import { initI18n } from "../i18n/i18n.js";
+import { getLocalizedPaths } from "../utils/utils.ts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { generateProducts } from "../fake data/generateProducts.ts";
+
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+const { lang } = Astro.props;
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
+
+const meta = t("product.meta", { returnObjects: true });
+
+
+// Example usage:
+const products = generateProducts(10);
+console.log(products);
+---
+
+<BaseLayout lang={lang}>
+  <article
+    class="max-w-md mx-auto bg-white rounded-2xl shadow-md overflow-hidden p-6"
+  >
+    <img
+      src={products[0].imageUrl}
+      alt={products[0].name}
+      class="w-full h-64 object-cover rounded-xl"
+    />
+
+    <div class="mt-4">
+      <h2 class="text-2xl font-bold mb-2">{products[0].name}</h2>
+      <p class="text-gray-600 mb-2">{products[0].category}</p>
+      <p class="text-gray-800 mb-4">{products[0].description}</p>
+      <p class="text-lg font-semibold text-blue-600">
+        ${products[0].price.toFixed(2)}
+      </p>
+      <p class="text-sm text-gray-400 mt-2">
+        Added on: {products[0].createdAt.toDateString()}
+      </p>
+    </div>
+  </article>
+</BaseLayout>
+
+<!-- <script>
+  import { faker } from "@faker-js/faker";
+
+  export interface Product {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    category: string;
+    imageUrl: string;
+    createdAt: Date;
+  }
+
+  export function generateProducts(count: number): Product[] {
+    return Array.from({ length: count }, () => ({
+      id: faker.string.uuid(),
+      name: faker.commerce.productName(),
+      description: faker.commerce.productDescription(),
+      price: parseFloat(faker.commerce.price({ min: 10, max: 1000 })),
+      category: faker.commerce.department(),
+      imageUrl: faker.image.urlLoremFlickr({ category: "product" }),
+      createdAt: faker.date.past(),
+    }));
+  }
+</script> -->

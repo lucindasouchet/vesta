@@ -1,0 +1,36 @@
+---
+import { faker } from '@faker-js/faker';
+import { initI18n } from "../../i18n/i18n.js";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getLocalizedPaths } from "../../utils/utils.ts";
+
+export async function getStaticPaths() {
+  return getLocalizedPaths();
+}
+
+const { lang } = Astro.props;
+const i18n = await initI18n(lang);
+const t = i18n.t.bind(i18n);
+
+const meta = t('product.meta', { returnObjects: true });
+
+interface User {
+  id: number;
+  name: string;
+  email: string;
+  createdAt: Date;
+}
+
+const users: User[] = Array.from({ length: 10 }, (_, i) => ({
+  id: i + 1,
+  name: faker.person.fullName(),
+  email: faker.internet.email(),
+  createdAt: faker.date.past(),
+}));
+
+console.log(users);
+---
+
+<BaseLayout lang={lang}>
+  <p>product details</p>
+</BaseLayout>
