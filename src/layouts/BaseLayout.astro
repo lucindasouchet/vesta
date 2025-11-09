@@ -15,7 +15,7 @@ const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
 
-const siteUrl = Astro.site?.toString() || "https://vesta.com";
+const siteUrl = Astro.site?.toString() || "https://zigzag.com";
 const currentUrl = new URL(Astro.url.pathname, siteUrl);
 const supportedLangs = ["en", "es", "fr"];
 const langNames = { en: "English", es: "Español", fr: "Français" };
@@ -34,7 +34,10 @@ const langNames = { en: "English", es: "Español", fr: "Français" };
 
     <!-- Open Graph -->
     <meta property="og:title" content={t("website.meta.og_title")} />
-    <meta property="og:description" content={t("website.meta.og_description")} />
+    <meta
+      property="og:description"
+      content={t("website.meta.og_description")}
+    />
     <meta property="og:url" content={currentUrl.href} />
     <meta property="og:type" content="website" />
 

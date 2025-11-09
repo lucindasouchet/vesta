@@ -15,10 +15,6 @@ const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
 
-const LogoVestaMediumDarkModeImagePath =
-  "/images/logos/logo-vesta-medium-dark-mode-min.svg";
-const LogoVestaLargeDarkModeImagePath =
-  "/images/logos/logo-vesta-large-dark-mode-min.svg";
 const LinkedinImagePath = "/images/linkedin-min.svg";
 const AppleStoreImagePath = "/images/app-store-min.svg";
 const GooglePlayImagePath = "/images/google-play-min.svg";
@@ -43,6 +39,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           label={t("footer.radio_alarm")}
           href="#"
+          type="button"
         />
       </li>
       <li>
@@ -51,6 +48,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           label={t("footer.battery_powered_alarm")}
           href="#"
+          type="button"
         />
       </li>
       <li>
@@ -59,6 +57,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           label={t("footer.hybrid_alarm")}
           href="#"
+          type="button"
         />
       </li>
     </ul>
@@ -80,6 +79,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           label={t("footer.mobile_pro_series")}
           href="#"
+          type="button"
         />
       </li>
       <li>
@@ -88,6 +88,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           label={t("footer.mx_series")}
           href="#"
+          type="button"
         />
       </li>
       <li>
@@ -96,6 +97,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           label={t("footer.gx_series")}
           href="#"
+          type="button"
         />
       </li>
     </ul>
@@ -116,18 +118,20 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
       <ul class="space-y-0 md:space-y-1 lg:space-y-2">
         <li>
           <LinkComponent
-            id="vesta-home-video-link"
+            id="zigzag-home-video-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-            label={t("footer.vesta_home_video")}
+            label={t("footer.zigzag_home_video")}
             href="#"
+            type="button"
           />
         </li>
         <li>
           <LinkComponent
-            id="vesta-advances-video-link"
+            id="zigzag-advances-video-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-            label={t("footer.vesta_advanced_video")}
+            label={t("footer.zigzag_advanced_video")}
             href="#"
+            type="button"
           />
         </li>
       </ul>
@@ -146,7 +150,8 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
             id="todos-los-productos-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
             label={t("footer.all_products")}
-            href="#"
+            href={`/${lang}/products`}
+            type="button"
           />
         </li>
       </ul>
@@ -170,14 +175,16 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
             label={t("footer.news_blog")}
             href="#"
+            type="button"
           />
         </li>
         <li>
           <LinkComponent
-            id="academia-vesta-link"
+            id="academia-zigzag-link"
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-            label={t("footer.vesta_academy")}
+            label={t("footer.zigzag_academy")}
             href="#"
+            type="button"
           />
         </li>
       </ul>
@@ -186,9 +193,9 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
       class="flex flex-col space-y-1 md:space-y-2 lg:space-y-4 text-center md:text-left"
     >
       <LabelComponent
-        id="about-vesta-security-label"
+        id="about-zigzag-security-label"
         variantLabel="label-2 text-secondary-90-light text-14 lg:text-16 text-line-height-20"
-        text={t("header.about_vesta_security")}
+        text={t("header.about_zigzag_security")}
       />
       <ul class="space-y-0 md:space-y-1 lg:space-y-2">
         <li>
@@ -197,13 +204,15 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
             variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
             label={t("footer.about_us")}
             href="#"
+            type="button"
           />
           <li>
             <LinkComponent
-              id="vesta-partner-program-link"
+              id="zigzag-partner-program-link"
               variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
-              label={t("header.vesta_partner_program")}
+              label={t("header.zigzag_partner_program")}
               href="#"
+              type="button"
             />
           </li>
         </li>
@@ -227,6 +236,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           label={t("footer.smart_home_sec")}
           href="#"
+          type="button"
         />
       </li>
       <li>
@@ -235,6 +245,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
           variantLink="link caption text-10 md:text-12 text-line-height-14 link:hover focus:outline-none focus:text-primary-10-light"
           label={t("footer.medAlert_shs")}
           href="#"
+          type="button"
         />
       </li>
     </ul>
@@ -248,7 +259,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         hasImage="true"
         imagePath={AppleStoreImagePath}
         imageAltText="Apple Store button"
-        href="https://apps.apple.com/lu/developer/bydemes/id522581434"
+        href="https://apps.apple.com/"
         target="_blank"
         type="button"
         variantImage="h-11 w-32 mt-1 lg:mt-0 cursor-pointer hover:animate-wiggle-3"
@@ -259,7 +270,7 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
         hasImage="true"
         imagePath={GooglePlayImagePath}
         imageAltText="Google Play button"
-        href="https://play.google.com/store/apps/details?id=com.bydemes.smarthomesec&hl=en"
+        href="https://play.google.com/"
         target="_blank"
         type="button"
         variantImage="h-11 w-32 cursor-pointer hover:animate-wiggle-3"
@@ -271,35 +282,114 @@ const GooglePlayImagePath = "/images/google-play-min.svg";
   <div
     class="flex flex-col items-center justify-center md:items-start md:justify-start gap-1 md:gap-6"
   >
-    <div class="flex place-self-center">
-      <a href="../index.html">
-        <ImageComponent
-          id="LogoVestaLargeDarkMode"
-          path={LogoVestaLargeDarkModeImagePath}
-          altText="Logo Vesta large dark mode"
-          variantImage="hidden md:flex"
-        />
-        <ImageComponent
-          id="LogoVestaMediumDarkMode"
-          path={LogoVestaMediumDarkModeImagePath}
-          altText="Logo Vesta large dark mode"
-          variantImage="w-3/4 h-3/4 sm:w-3/4 sm:h-3/4 md:hidden place-self-center"
-        />
-      </a>
+    <div class="flex items-center space-x-2">
+      <div class="flex items-center space-x-2">
+        <!-- Icon (placeholder box) -->
+        <div class="h-7 w-5 md:h-8 md:w-6 lg:h-10 lg:w-7 rounded bg-sky-300">
+        </div>
+        <span
+          class="font-bold text-2xl md:text-3xl lg:text-4xl text-secondary-90-light"
+          >Zigzag</span
+        >
+      </div>
     </div>
     <div class="flex flex-row gap-1 lg:gap-4">
-      <ImageComponent
-        id="LinkedinImage"
-        path={LinkedinImagePath}
-        altText="Linkedin image"
+      <LinkButtonComponent
+        id="LinkedinImage-1"
+        hasLabel="false"
+        hasImage="true"
+        imagePath={LinkedinImagePath}
+        imageAltText="Linkedin image"
+        href="https://www.linkedin.com/"
+        target="_blank"
+        type="button"
         variantImage="w-7/8 h-7/8 md:w-3/4 md:h-3/4 lg:w-1/1 lg:h-1/1 cursor-pointer hover:animate-wiggle-5"
       />
-      <ImageComponent
-        id="LinkedinImage"
-        path={LinkedinImagePath}
-        altText="Linkedin image"
+      <LinkButtonComponent
+        id="LinkedinImage-2"
+        hasLabel="false"
+        hasImage="true"
+        imagePath={LinkedinImagePath}
+        imageAltText="Linkedin image"
+        href="https://www.linkedin.com/"
+        target="_blank"
+        type="button"
         variantImage="w-7/8 h-7/8 md:w-3/4 md:h-3/4 lg:w-1/1 lg:h-1/1 cursor-pointer hover:animate-wiggle-5"
       />
     </div>
   </div>
 </div>
+
+<script>
+  document
+    .getElementById("alarma-via-radio-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'alarma-via-radio' pulsado! Continuará...");
+    });
+  document
+    .getElementById("alarma-a-pilas-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'alarma-a-pilas' pulsado! Continuará...");
+    });
+  document
+    .getElementById("alarma-hibrida-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'alarma-hibrida' pulsado! Continuará...");
+    });
+  document
+    .getElementById("serie-mobile-pro-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'serie-mobile-pro' pulsado! Continuará...");
+    });
+  document.getElementById("serie-mx-link")?.addEventListener("click", () => {
+    alert("Enlace 'serie-mx' pulsado! Continuará...");
+  });
+  document.getElementById("serie-gx-link")?.addEventListener("click", () => {
+    alert("Enlace 'serie-gx' pulsado! Continuará...");
+  });
+  document
+    .getElementById("zigzag-home-video-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'zigzag-home-video' pulsado! Continuará...");
+    });
+  document
+    .getElementById("zigzag-advances-video-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'zigzag-advances-video' pulsado! Continuará...");
+    });
+  // document
+  //   .getElementById("todos-los-productos-link")
+  //   ?.addEventListener("click", () => {
+  //     alert("Enlace 'todos-los-productos' pulsado! Continuará...");
+  //   });
+  document
+    .getElementById("blog-de-noticias-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'blog-de-noticias' pulsado! Continuará...");
+    });
+  document
+    .getElementById("academia-zigzag-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'academia-zigzag' pulsado! Continuará...");
+    });
+  document
+    .getElementById("acerca-de-nosotros-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'acerca-de-nosotros' pulsado! Continuará...");
+    });
+  document
+    .getElementById("zigzag-partner-program-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'zigzag-partner-program' pulsado! Continuará...");
+    });
+  document
+    .getElementById("smart-home-sec-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'smart-home-sec' pulsado! Continuará...");
+    });
+  document
+    .getElementById("medAlert-shs-link")
+    ?.addEventListener("click", () => {
+      alert("Enlace 'MedAlert SHS' pulsado! Continuará...");
+    });
+</script>

@@ -26,7 +26,7 @@ const t = i18n.t.bind(i18n);
         <ButtonComponent
           id="header-top-partner-program-btn"
           hasLabel={true}
-          label={t("header.vesta_partner_program")}
+          label={t("header.zigzag_partner_program")}
           hasIcon={true}
           icon={PartnerIcon}
           isIconRight={false}
@@ -36,7 +36,7 @@ const t = i18n.t.bind(i18n);
           variantIcon="h-7 w-7"
           type="button"
         />
-        
+
         <!-- language dropdown selector -->
         <LanguageSelector
           id="header-top-lang-selector"
@@ -52,7 +52,9 @@ const t = i18n.t.bind(i18n);
 </div>
 
 <script>
-  document.getElementById("header-top-partner-program-btn")?.addEventListener("click", () => {
-    alert("Botón 'Vesta Partner Program' pulsado! Continuará...");
-  });
+  document
+    .getElementById("header-top-partner-program-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Zigzag Partner Program' pulsado! Continuará...");
+    });
 </script>

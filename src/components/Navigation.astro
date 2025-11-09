@@ -8,7 +8,7 @@ import HybridIcon from "../../public/images/icons/hybrid-min.svg";
 import MedicalIcon from "../../public/images/icons/medical-min.svg";
 import SurveillanceIcon from "../../public/images/icons/surveillance-min.svg";
 import WirelessIcon from "../../public/images/icons/wireless-min.svg";
-import ChevronBuyVestaBtnIcon from "../../public/images/icons/chevron-buy-vesta-btn-min.svg";
+import ChevronBuyZigzagBtnIcon from "../../public/images/icons/chevron-buy-zigzag-btn-min.svg";
 import ImageComponent from "./core/Image.astro";
 import { initI18n } from "../i18n/i18n.ts";
 import { useLang } from "../helpers/context.ts";
@@ -21,30 +21,22 @@ export async function getStaticPaths() {
 const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
-const LogoVestaMediumLightModeImagePath =
-  "/images/logos/logo-vesta-medium-light-mode-min.svg";
-const LogoVestaLargeLightModeImagePath =
-  "/images/logos/logo-vesta-large-light-mode-min.svg";
+const LogoZigzagMediumLightModeImagePath =
+  "/images/logos/logo-zigzag-medium-light-mode-min.svg";
+const LogoZigzagLargeLightModeImagePath =
+  "/images/logos/logo-zigzag-large-light-mode-min.svg";
 ---
 
 <nav class="shadow-md z-0">
   <div class="px-4 md:px-6 lg:px-8 xl:px-12 2xl:px-24">
     <div class="flex h-23 items-center justify-between">
       <!-- Left: Logo -->
-      <a href="../index.html">
+      <a href="./index.html">
         <div class="flex items-center space-x-2">
-          <ImageComponent
-            id="LogoVestaMediumLightMode"
-            path={LogoVestaMediumLightModeImagePath}
-            altText="Logo Vesta large light mode"
-            variantImage="h-3/4 w-3/4 lg:hidden"
-          />
-          <ImageComponent
-            id="LogoVestaLargeLightMode"
-            path={LogoVestaLargeLightModeImagePath}
-            altText="Logo Vesta large light mode"
-            variantImage="h-3/4 w-3/4 hidden lg:flex"
-          />
+          <!-- Icon (placeholder box) -->
+          <div class="h-7 w-5 md:h-8 md:w-6 lg:h-10 lg:w-7 rounded bg-sky-300">
+          </div>
+          <span class="font-bold text-3xl md:text-4xl lg:text-5xl">Zigzag</span>
         </div>
       </a>
 
@@ -147,9 +139,9 @@ const LogoVestaLargeLightModeImagePath =
               type="button"
             />
             <ButtonComponent
-              id="navigation-vesta-home-video-btn"
+              id="navigation-zigzag-home-video-btn"
               hasLabel="true"
-              label={t("footer.vesta_home_video")}
+              label={t("footer.zigzag_home_video")}
               hasIcon={true}
               icon={SurveillanceIcon}
               isIconRight={false}
@@ -160,9 +152,9 @@ const LogoVestaLargeLightModeImagePath =
               type="button"
             />
             <ButtonComponent
-              id="navigation-vesta-advanced-video-btn"
+              id="navigation-zigzag-advanced-video-btn"
               hasLabel="true"
-              label={t("footer.vesta_advanced_video")}
+              label={t("footer.zigzag_advanced_video")}
               hasIcon={true}
               icon={SurveillanceIcon}
               isIconRight={false}
@@ -217,9 +209,9 @@ const LogoVestaLargeLightModeImagePath =
               type="button"
             />
             <ButtonComponent
-              id="navigation-vesta-academy-btn"
+              id="navigation-zigzag-academy-btn"
               hasLabel="true"
-              label={t("header.vesta_academy")}
+              label={t("header.zigzag_academy")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
               variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
@@ -228,12 +220,12 @@ const LogoVestaLargeLightModeImagePath =
           </div>
         </div>
 
-        <!-- Sobre Vesta Security Dropdown -->
+        <!-- Sobre Zigzag Security Dropdown -->
         <div class="relative group">
           <ButtonComponent
-            id="navigation-sobre-vesta-security-btn"
+            id="navigation-sobre-zigzag-security-btn"
             hasLabel="true"
-            label={t("header.about_vesta_security")}
+            label={t("header.about_zigzag_security")}
             hasIcon={true}
             icon={ChevronDownIcon}
             isIconRight={true}
@@ -258,7 +250,7 @@ const LogoVestaLargeLightModeImagePath =
             <ButtonComponent
               id="navigation-partner-program-btn"
               hasLabel="true"
-              label={t("header.vesta_partner_program")}
+              label={t("header.zigzag_partner_program")}
               variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
               variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
@@ -268,11 +260,11 @@ const LogoVestaLargeLightModeImagePath =
         </div>
 
         <ButtonComponent
-          id="navigation-buy-vesta-btn"
+          id="navigation-buy-zigzag-btn"
           hasLabel="true"
-          label={t("header.buy_vesta")}
+          label={t("header.buy_zigzag")}
           hasIcon={true}
-          icon={ChevronBuyVestaBtnIcon}
+          icon={ChevronBuyZigzagBtnIcon}
           isIconRight={true}
           variantFullComponent="ml-5 py-2 px-2 lg:py-1 lg:pl-5 lg:pr-3 rounded-full border md:border-2 border-primary-00 md:text-sm text-primary-00 stroke-primary-00 hover:bg-neutral-05 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light cursor-pointer"
           variantButton="gap-0 lg:gap-1 cursor-pointer"
@@ -383,7 +375,7 @@ const LogoVestaLargeLightModeImagePath =
         type="button"
         class="block hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
       >
-        Vesta Partner Program
+        Zigzag Partner Program
       </button>
     </div>
 
@@ -416,18 +408,18 @@ const LogoVestaLargeLightModeImagePath =
         <a
           href="#"
           class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-          >Academia VESTA</a
+          >Academia ZIGZAG</a
         >
       </div>
     </div>
 
-    <!-- Sobre Vesta Security Dropdown (Mobile) -->
+    <!-- Sobre Zigzag Security Dropdown (Mobile) -->
     <div>
       <button
-        id="dropdownBtnMobileVestaSecurity"
+        id="dropdownBtnMobileZigzagSecurity"
         class="w-full flex justify-between items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
       >
-        Sobre Vesta Security
+        Sobre Zigzag Security
         <svg
           class="w-4 h-4"
           fill="none"
@@ -442,7 +434,7 @@ const LogoVestaLargeLightModeImagePath =
         </svg>
       </button>
       <div
-        id="dropdownMenuMobileVestaSecurity"
+        id="dropdownMenuMobileZigzagSecurity"
         class="hidden pl-4 space-y-4 mt-3"
       >
         <a
@@ -453,7 +445,7 @@ const LogoVestaLargeLightModeImagePath =
         <a
           href="#"
           class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-          >VESTA Partner Program</a
+          >ZIGZAG Partner Program</a
         >
       </div>
     </div>
@@ -472,54 +464,82 @@ const LogoVestaLargeLightModeImagePath =
 </div>
 
 <script>
-  document.getElementById("navigation-radio-alarm-btn")?.addEventListener("click", () => {
-    alert("Botón 'Alarma vía radio' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-battery-powered-alarm-btn")?.addEventListener("click", () => {
-    alert("Botón 'Alarma a pilas' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-hybrid-alarm-btn")?.addEventListener("click", () => {
-    alert("Botón 'Alarma híbrida' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-medical-alarm-serie-mobile-pro-btn")?.addEventListener("click", () => {
-    alert("Botón 'Alarma médica Serie Mobile Pro' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-medical-alarm-mx-series-btn")?.addEventListener("click", () => {
-    alert("Botón 'Alarma médica Serie MX' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-medical-alarm-gx-series-btn")?.addEventListener("click", () => {
-    alert("Botón 'Alarma médica Serie GX' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-vesta-home-video-btn")?.addEventListener("click", () => {
-    alert("Botón 'Vesta Home Video' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-vesta-advanced-video-btn")?.addEventListener("click", () => {
-    alert("Botón 'Vesta Advance Video' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-all-products-btn")?.addEventListener("click", () => {
-    // alert("Botón 'Todos los productos' pulsado! Continuará...");
-    location.href= `/products`
-  });
-  document.getElementById("navigation-news-blog-btn")?.addEventListener("click", () => {
-    alert("Botón 'Blog de noticias' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-vesta-academy-btn")?.addEventListener("click", () => {
-    alert("Botón 'Academia Vesta' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-about-us-btn")?.addEventListener("click", () => {
-    alert("Botón 'Acerca de nosotros' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-partner-program-btn")?.addEventListener("click", () => {
-    alert("Botón 'Vesta Partner Program' pulsado! Continuará...");
-  });
-  document.getElementById("navigation-buy-vesta-btn")?.addEventListener("click", () => {
-    alert("Botón 'Comprar Vesta' pulsado! Continuará...");
-  });
+  document
+    .getElementById("navigation-radio-alarm-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma vía radio' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-battery-powered-alarm-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma a pilas' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-hybrid-alarm-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma híbrida' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-medical-alarm-serie-mobile-pro-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma médica Serie Mobile Pro' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-medical-alarm-mx-series-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma médica Serie MX' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-medical-alarm-gx-series-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma médica Serie GX' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-zigzag-home-video-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Zigzag Home Video' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-zigzag-advanced-video-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Zigzag Advance Video' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-all-products-btn")
+    ?.addEventListener("click", () => {
+      // alert("Botón 'Todos los productos' pulsado! Continuará...");
+      location.href = `/products`;
+    });
+  document
+    .getElementById("navigation-news-blog-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Blog de noticias' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-zigzag-academy-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Academia Zigzag' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-about-us-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Acerca de nosotros' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-partner-program-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Zigzag Partner Program' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-buy-zigzag-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Comprar Zigzag' pulsado! Continuará...");
+    });
 
-  // /* Event listener on #buy-vesta-btn*/
-  // const buyVestaBtn = document.querySelector("#buy-vesta-btn");
-  // buyVestaBtn!.addEventListener("click", () => {
-  //   console.log("Hello, on client from #buy-vesta-btn!");
+  // /* Event listener on #buy-zigzag-btn*/
+  // const buyZigzagBtn = document.querySelector("#buy-zigzag-btn");
+  // buyZigzagBtn!.addEventListener("click", () => {
+  //   console.log("Hello, on client from #buy-zigzag-btn!");
   // });
 
   //****************************************************** Mobile  - TO UPDATE *************************************/
@@ -552,10 +572,10 @@ const LogoVestaLargeLightModeImagePath =
 
   // Mobile Language dropdown toggle onclick
   const btnDdpMobileLanguage = document.getElementById(
-    "dropdownBtnMobileLanguage",
+    "dropdownBtnMobileLanguage"
   )!;
   const menuDdpMobileLanguage = document.getElementById(
-    "dropdownMenuMobileLanguage",
+    "dropdownMenuMobileLanguage"
   )!;
 
   btnDdpMobileLanguage.addEventListener("click", () => {
@@ -574,10 +594,10 @@ const LogoVestaLargeLightModeImagePath =
 
   // Mobile Noticias y eventos dropdown toggle onclick
   const btnDdpMobileNoticias = document.getElementById(
-    "dropdownBtnMobileNoticias",
+    "dropdownBtnMobileNoticias"
   )!;
   const menuDdpMobileNoticias = document.getElementById(
-    "dropdownMenuMobileNoticias",
+    "dropdownMenuMobileNoticias"
   )!;
 
   btnDdpMobileNoticias.addEventListener("click", () => {
@@ -585,15 +605,15 @@ const LogoVestaLargeLightModeImagePath =
   });
 
   // Mobile Noticias y eventos dropdown toggle onclick
-  const btnDdpMobileVestaSecurity = document.getElementById(
-    "dropdownBtnMobileVestaSecurity",
+  const btnDdpMobileZigzagSecurity = document.getElementById(
+    "dropdownBtnMobileZigzagSecurity"
   )!;
-  const menuDdpMobileVestaSecurity = document.getElementById(
-    "dropdownMenuMobileVestaSecurity",
+  const menuDdpMobileZigzagSecurity = document.getElementById(
+    "dropdownMenuMobileZigzagSecurity"
   )!;
 
-  btnDdpMobileVestaSecurity.addEventListener("click", () => {
-    menuDdpMobileVestaSecurity.classList.toggle("hidden");
+  btnDdpMobileZigzagSecurity.addEventListener("click", () => {
+    menuDdpMobileZigzagSecurity.classList.toggle("hidden");
   });
 
   // Close if clicked outside
@@ -606,10 +626,10 @@ const LogoVestaLargeLightModeImagePath =
     }
 
     if (
-      !btnDdpMobileVestaSecurity.contains(event.target) &&
-      !menuDdpMobileVestaSecurity.contains(event.target)
+      !btnDdpMobileZigzagSecurity.contains(event.target) &&
+      !menuDdpMobileZigzagSecurity.contains(event.target)
     ) {
-      menuDdpMobileVestaSecurity.classList.add("hidden");
+      menuDdpMobileZigzagSecurity.classList.add("hidden");
     }
   });
 </script>
