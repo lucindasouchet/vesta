@@ -5,29 +5,33 @@
     "title": "Page not found",
     "description": "Sorry, the page you’re looking for doesn’t exist."
   },
-  "meta": {
-    "title": "Welcome to our site",
-    "description": "Explore our content in English.",
-    "og_title": "Welcome to our English site",
-    "og_description": "Discover all our great content in English."
+  "website": {
+    "meta": {
+      "title": "Welcome to our Zigzag website",
+      "description": "Explore our Zigzag content in English.",
+      "og_title": "Welcome to our Zigzag English website",
+      "og_description": "Discover all our great Zigzag content in English."
+    }
   },
   "test": {
     "welcome": "You're on the home page!",
-    "products_page": "Products page"
+    "products_page": "Products page",
+    "version": "Version",
+    "product_details_page": "Product details page"
   },
   "header": {
     "products_page": "Products page",
-    "vesta_partner_program": "Vesta Partner Program",
+    "zigzag_partner_program": "Zigzag Partner Program",
     "products": "Products",
     "news_and_events": "News and events",
-    "about_vesta_security": "About Vesta Security",
-    "buy_vesta": "Buy Vesta",
+    "about_zigzag_security": "About Zigzag Security",
+    "buy_zigzag": "Buy Zigzag",
     "medical_alarm_serie_mobile_pro": "Medical alarm Mobile Pro Series",
     "medical_alarm_mx_series": "Medical alarm MX Series",
     "medical_alarm_gx_series": "Medical alarm GX Series",
     "all_products": "All products",
     "news_blog": "News blog",
-    "vesta_academy": "VESTA Academy",
+    "zigzag_academy": "ZIGZAG Academy",
     "about_us": "About us"
   },
   "footer": {
@@ -40,17 +44,17 @@
     "mx_series": "MX Series",
     "gx_series": "GX Series",
     "video_surveillance": "Video surveillance",
-    "vesta_home_video": "Vesta Home Video",
-    "vesta_advanced_video": "Vesta Advanced Video",
+    "zigzag_home_video": "Zigzag Home Video",
+    "zigzag_advanced_video": "Zigzag Advanced Video",
     "general_catalog": "General catalog",
     "all_products": "All products",
     "news_blog": "News blog",
-    "vesta_academy": "VESTA Academy",
+    "zigzag_academy": "ZIGZAG Academy",
     "about_us": "About us",
     "software": "Software",
     "smart_home_sec": "Smart Home Sec",
     "medAlert_shs": "MedAlert SHS",
-    "copyright": "© Copyright 2025 VESTA",
+    "copyright": "© Copyright 2025 ZIGZAG",
     "privacy_policy": "Privacy Policy",
     "cookie_policy": "Cookie policy",
     "cookie_settings": "Cookie settings",
@@ -59,25 +63,35 @@
     "medAlert_shs_privacy_policy": "MedAlert SHS Privacy Policy"
   },
   "products_page": {
-    "vesta_security_systems": "VESTA Security Systems: a solution for every need",
+    "meta": {
+      "title": "Products page – English",
+      "description": "All Zigzag products",
+      "og_title": "Products page",
+      "og_description": "Discover more about all Zigzag products"
+    },
+    "zigzag_security_systems": "ZIGZAG Security Systems: a solution for every need",
     "three_communication_technologies": "Three communication technologies that adapt to any home or business issue, with various possibilities for zones and partitions, as well as more than 70 proprietary devices and the integration of leading brands in video surveillance, intrusion detection, and home automation.",
     "radio_alarm_centers": "Radio alarm centers",
-    "vesta_product_reference": "Vesta - product reference",
-    "vesta_product_model": "Product model",
-    "vesta_description_title": "Product - description title",
-    "vesta_description_text": "Product - description text",
+    "zigzag_product_reference": "Zigzag - product reference",
+    "zigzag_product_model": "Product model",
+    "zigzag_description_title": "Product - description title",
+    "zigzag_description_text": "Product - description text",
     "wireless_keyboards": "Wireless keyboards",
     "radio_detectors": "Radio detectors",
     "magnetic_contacts": "Magnetic contacts",
-    "radio_accessories":"Radio accessories",
+    "radio_accessories": "Radio accessories",
     "all_products": "all products",
-    "title": "Products",
-    "meta": {
-      "title": "Products page – English",
-      "description": "All Vesta products",
-      "og_title": "Products page",
-      "og_description": "Discover more about all Vesta products"
-    }
+    "title": "Products"
+  },
+  "product_details_page": {
+    "product_title_hero_section": "Product title",
+    "product_reference": "Product reference",
+    "product_model": "Product model",
+    "product_caracteristic": "Product caracteristic",
+    "highlights": "Highlights",
+    "principales_caracteristics": "Principales caracteristics",
+    "specifications": "Specifications",
+    "download": "Download",
+    "documentation": "Documentation"
   }
-
 }

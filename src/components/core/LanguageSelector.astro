@@ -1,0 +1,80 @@
+---
+const {
+  id,
+  hasLabel,
+  label = "",
+  lang,
+  variantFullComponent = "default",
+  variantSelect = "default",
+  variantOption = "default",
+} = Astro.props;
+
+// Supported languages and labels
+const supportedLangs = ["en", "es", "fr"];
+const langNames = { en: "English", es: "Español", fr: "Français" };
+---
+
+<div class={`flex items-center ${variantFullComponent}`}>
+  <!-- <label for="lang-select-header" class="sr-only">Select language</label> -->
+  <select
+    id={id}
+    class={`${variantSelect}`}
+    onchange="location = this.value"
+  >
+    {
+      supportedLangs.map((lng) => (
+        <option
+          value={`/${lng}/`}
+          selected={lng === lang}
+          class={`${variantOption}`}
+        >
+          {langNames[lng as keyof typeof langNames]}
+        </option>
+      ))
+    }
+  </select>
+</div>
+
+<!-- To test and debug ---
+const {
+  id,
+  hasLabel,
+  label = "",
+  lang,
+  variantSelect = "default",
+  variantOption = "default",
+} = Astro.props;
+
+// Supported languages and labels
+const supportedLangs = ["en", "es", "fr"];
+const langNames = { en: "English", es: "Español", fr: "Français" };
+---
+
+<div class="flex items-center gap-4 mr-4">-->
+<!-- <label for="lang-select-header" class="sr-only">Select language</label> -->
+<!-- <select
+    id={id}
+    class={`${variantSelect}`}
+    onchange="
+    const newLang = this.value;
+    const path = window.location.pathname;
+
+    // Match the current language prefix (/en, /fr, /es)
+    const newPath = path.replace(/^\/(en|fr|es)(?=\/|$)/, '/' + newLang);
+
+    // If it wasn't prefixed (e.g., '/'), prepend the language
+    const finalPath = newPath === path ? '/' + newLang + path : newPath;
+
+    // Redirect, preserving query params and hash
+    window.location.href = finalPath + window.location.search + window.location.hash;
+  "
+  >
+    {
+      supportedLangs.map((lng) => (
+        <option value={lng} selected={lng === lang} class="bg-neutral-05 text-black">
+          {langNames[lng as keyof typeof langNames]}
+        </option>
+      ))
+    }
+  </select>
+</div> -->

@@ -2,12 +2,7 @@
 import "../../styles/global.css";
 import HomeComponent from "../../components/Home.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-// import HeaderComponent from "../../components/Header.astro";
-// import FooterComponent from "../../components/Footer.astro";
-// import SelectClient from "../components/LanguageDropdown.js";
-import { initI18n } from "../../i18n/i18n.ts";
-import TextComponent from "../../components/core/Text.astro";
-import TitleComponent from "../../components/core/Title.astro";
+// import { initI18n } from "../../i18n/i18n.ts";
 import { getLocalizedPaths } from "../../helpers/utils.ts";
 import { useLang } from "../../helpers/context.ts";
 
@@ -16,29 +11,12 @@ export async function getStaticPaths() {
 }
 
 const lang = useLang(Astro);
-const i18n = await initI18n(lang);
-const t = i18n.t.bind(i18n);
-
-const meta = t("meta", { returnObjects: true });
+// const i18n = await initI18n(lang);
+// const t = i18n.t.bind(i18n);
+// const meta = t("meta", { returnObjects: true });
 ---
 
-<BaseLayout lang={lang}
-  ><!-- meta={meta}  -->
-
-  <!-- <Fragment slot="title">{t('title')}</Fragment> -->
-  <!-- <TextComponent id="test-text" text={t("description")} variantText="ml-4" />
-  <TitleComponent id="test-title" text={t("title")} variantTitle="ml-4" /> -->
-
-  <!-- <HeaderComponent /> -->
+<BaseLayout lang={lang}>
+  <!-- meta={meta}  -->
   <HomeComponent lang={lang} />
-  <!-- <FooterComponent /> -->
 </BaseLayout>
-
-<!-- <script type="module">
-	// safe: run after the element exists in the DOM
-	const countrySelect = document.getElementById("countrySelect");
-	console.log("select id:", countrySelect.id); // -> "countrySelect"
-	countrySelect.addEventListener("change", (e) => {
-		console.log("selected value:", e.target.value);
-	});
-</script> -->

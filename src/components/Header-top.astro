@@ -1,16 +1,10 @@
 ---
-// import LanguageDropdownComponent from "./LanguageDropdown.astro";
 import ButtonComponent from "../components/core/Button.astro";
 import PartnerIcon from "../../public/images/icons/partner-min.svg";
-
-// import LanguageDropdownComponent from "../components/LanguageDropdown.astro";
-
-// import i18next from "../i18n.old.ts";
-// const { t } = i18next;
-
 import { initI18n } from "../i18n/i18n.ts";
 import { useLang } from "../helpers/context.ts";
 import { getLocalizedPaths } from "../helpers/utils.ts";
+import LanguageSelector from "./core/LanguageSelector.astro";
 
 export async function getStaticPaths() {
   return getLocalizedPaths();
@@ -19,9 +13,6 @@ export async function getStaticPaths() {
 const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
-
-const supportedLangs = ["en", "fr", "es"];
-const langNames = { en: "English", fr: "Français", es: "Español" };
 ---
 
 <div id="header-top">
@@ -33,43 +24,37 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
       <div class="flex items-center gap-8">
         <!-- Partner Program button with Icon -->
         <ButtonComponent
-          id="partner-btn"
-          hasLabel="true"
-          label={t("header.vesta_partner_program")}
+          id="header-top-partner-program-btn"
+          hasLabel={true}
+          label={t("header.zigzag_partner_program")}
           hasIcon={true}
           icon={PartnerIcon}
           isIconRight={false}
-          variantFullComponent="py-2.5 2xl:py-4 pr-6 pl-3 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:stroke-primary-10-light"
-          variantButton="gap-3"
+          variantFullComponent="py-2.5 2xl:py-4 pr-6 pl-3 cursor-pointer hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:stroke-primary-10-light"
+          variantButton="gap-3 cursor-pointer"
           variantLabel="label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
           variantIcon="h-7 w-7"
           type="button"
-          href="/#"
         />
 
-        <!-- language select -->
-        <!-- <LanguageDropdownComponent
-					id="languageDdlIndex"
-					name="languageDdlIndex"
-				/> -->
-
-        <nav class="flex items-center gap-4 mr-4">
-          <!-- <label for="lang-select-header" class="sr-only">Select language</label> -->
-          <select
-            id="lang-select-header"
-            class="px-2 py-1 text-14 lg:text-16 xl:text-18 2xl:text-20 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light"
-            onchange="location = this.value"
-          >
-            {
-              supportedLangs.map((l) => (
-                <option value={`/${l}/`} selected={l === lang} class="bg-neutral-05 text-black">
-                  {langNames[l as keyof typeof langNames]}
-                </option>
-              ))
-            }
-          </select>
-        </nav>
+        <!-- language dropdown selector -->
+        <LanguageSelector
+          id="header-top-lang-selector"
+          hasLabel="false"
+          lang={lang}
+          variantFullComponent="gap-4 mr-4 cursor-pointer"
+          variantSelect="px-2 py-1 text-14 lg:text-16 xl:text-18 2xl:text-20 cursor-pointer hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light"
+          variantOption="bg-neutral-05 text-black cursor-pointer"
+        />
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  document
+    .getElementById("header-top-partner-program-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Zigzag Partner Program' pulsado! Continuará...");
+    });
+</script>

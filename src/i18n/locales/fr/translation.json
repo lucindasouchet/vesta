@@ -5,29 +5,33 @@
     "title": "Page non trouvée",
     "description": "Désolé, la page que vous recherchez n'existe pas."
   },
-  "meta": {
-    "title": "Bienvenue sur notre site",
-    "description": "Découvrez notre contenu en français.",
-    "og_title": "Bienvenue sur notre site français",
-    "og_description": "Découvrez tout notre contenu en français."
+  "website": {
+    "meta": {
+      "title": "Bienvenue sur notre site Zigzag",
+      "description": "Découvrez notre contenu Zigzag en français.",
+      "og_title": "Bienvenue sur notre site français Zigzag",
+      "og_description": "Découvrez tout notre contenu Zigzag en français."
+    }
   },
   "test": {
     "welcome": "Vous êtes sur la page d'accueil !",
-    "products_page": "Page des produits"
+    "products_page": "Page des produits",
+    "version": "Version",
+    "product_details_page": "Page détails du produit"
   },
   "header": {
     "products_page": "Page produits",
-    "vesta_partner_program": "Vesta Partner Program",
+    "zigzag_partner_program": "Zigzag Partner Program",
     "products": "Produits",
     "news_and_events": "Actualités et événements",
-    "about_vesta_security": "À propos de Vesta Security",
-    "buy_vesta": "Acheter Vesta",
+    "about_zigzag_security": "À propos de Zigzag Security",
+    "buy_zigzag": "Acheter Zigzag",
     "medical_alarm_serie_mobile_pro": "Alarme médicale Série Mobile Pro",
     "medical_alarm_mx_series": "Alarme médicale Série MX",
     "medical_alarm_gx_series": "Alarme médicale Série GX",
     "all_products": "Tous les produits",
     "news_blog": " Blog d'actualités",
-    "vesta_academy": "Académie VESTA",
+    "zigzag_academy": "Académie ZIGZAG",
     "about_us": "À propos de nous"
   },
   "footer": {
@@ -40,17 +44,17 @@
     "mx_series": "Série MX",
     "gx_series": "Série GX",
     "video_surveillance": "Vidéosurveillance",
-    "vesta_home_video": "Vesta Home Video",
-    "vesta_advanced_video": "Vesta Advanced Video",
+    "zigzag_home_video": "Zigzag Home Video",
+    "zigzag_advanced_video": "Zigzag Advanced Video",
     "general_catalog": "Catalogue général",
     "all_products": "Tous les produits",
     "news_blog": " Blog d'actualités",
-    "vesta_academy": "Académie VESTA",
+    "zigzag_academy": "Académie ZIGZAG",
     "about_us": "À propos de nous",
     "software": "Logiciel",
     "smart_home_sec": "Smart Home Sec",
     "medAlert_shs": "MedAlert SHS",
-    "copyright": "© Copyright 2025 VESTA",
+    "copyright": "© Copyright 2025 ZIGZAG",
     "privacy_policy": "Politique de confidentialité",
     "cookie_policy": "Politique en matière de cookies",
     "cookie_settings": "Paramètres des cookies",
@@ -59,23 +63,34 @@
     "medAlert_shs_privacy_policy": "Politique de confidentialité de MedAlert SHS"
   },
   "products_page": {
-    "vesta_security_systems": "Systèmes de sécurité VESTA : une solution pour chaque besoin",
+    "meta": {
+      "title": "Page des produits – Français",
+      "description": "Tous les products Zigzag",
+      "og_title": "Page des produits",
+      "og_description": "Découvrez tous les produits Zigzag"
+    },
+    "zigzag_security_systems": "Systèmes de sécurité ZIGZAG : une solution pour chaque besoin",
     "three_communication_technologies": "Trois technologies de communication qui s'adaptent à tous les problèmes domestiques ou professionnels, avec diverses  possibilités de zones et de partitions, ainsi que plus de 70 appareils  propres et l'intégration de marques leaders dans les domaines de la vidéosurveillance, de la détection d'intrusion et de la domotique.",
     "radio_alarm_centers": "Centrale d'alarme par radio",
-    "vesta_product_reference": "Vesta - référence produit",
-    "vesta_product_model": "Modèle produit",
-    "vesta_description_title": "Produit - titre description",
-    "vesta_description_text": "Produit - texte description",
+    "zigzag_product_reference": "Zigzag - référence produit",
+    "zigzag_product_model": "Modèle produit",
+    "zigzag_description_title": "Produit - titre description",
+    "zigzag_description_text": "Produit - texte description",
     "wireless_keyboards": "Claviers sans fil",
     "radio_detectors": "Détecteurs radio",
     "magnetic_contacts": "Contacts magnétiques",
     "radio_accessories": "Accessoires radio",
-    "title": "Produits",
-    "meta": {
-      "title": "Page des produits – Français",
-      "description": "Tous les products Vesta",
-      "og_title": "Page des produits",
-      "og_description": "Découvrez tous les produits Vesta"
-    }
+    "title": "Produits"
+  },
+  "product_details_page": {
+    "product_title_hero_section": "Título del producto",
+    "product_reference": "Referencia del producto",
+    "product_model": "Modelo del producto",
+    "product_caracteristic": "Características del producto",
+    "highlights": "Points à souligner",
+    "principales_caracteristics": "Principales caractéristiques",
+    "specifications": "Spécifications",
+    "download": "Téléchargement",
+    "documentation": "Documentation"  
   }
 }

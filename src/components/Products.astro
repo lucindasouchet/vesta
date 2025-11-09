@@ -1,1590 +1,677 @@
 ---
 import TitleComponent from "./core/Title.astro";
 import TextComponent from "./core/Text.astro";
-import Divider from "./core/Divider.astro";
+import DividerComponent from "./core/Divider.astro";
 import Label from "./core/Label.astro";
-
-// import i18next from "../i18n.old.ts";
-// const { t } = i18next;
-
 import { initI18n } from "../i18n/i18n.ts";
 import { useLang } from "../helpers/context.ts";
 import { getLocalizedPaths } from "../helpers/utils.ts";
+import { generateProducts } from "../fake-data-api/generateProducts.ts";
 
 export async function getStaticPaths() {
-  return getLocalizedPaths();
+  return (
+    getLocalizedPaths()
+  );
+  // getLocalizedPaths() && getProductsArray
 }
 
-const lang = useLang(Astro);
+let lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
+
+// const p = useProd(Astro);
+// const { product } = Astro.props;
+
+// Example usage:
+let productsSection2 = generateProducts(3);
+let productsSection3 = generateProducts(3);
+let productsSection4 = generateProducts(9);
+let productsSection5 = generateProducts(2);
+let productsSection6 = generateProducts(4);
 ---
 
 <div
   id="page-container"
   class="flex flex-col gap-8 mt-8 mb-12 lg:mt-12 lg:gap-12 lg:mb-24 2xl:mt-24 2xl:gap-24 2xl:mb-36"
 >
-  <!-- section 1 -->
-  <section
-    id="products-page-section-1"
-    class="items-center p-4 md:p-6 lg:px-8 xl:p-12 2xl:px-24"
-  >
-    <TitleComponent
-      id="section-1-title"
-      variantTitle="h2 text-center text-39 line-height-45 lg:text-67 lg:line-height-78 heading-2-mobile pb-4 md:pb-8 lg:pb-12 2xl:pb-24"
-      text={t("products_page.vesta_security_systems")}
-    />
-    <TextComponent
-      id="section-1-text"
-      variantText="b0 text-center text-20 lg:text-24 body-0"
-      text={t("products_page.three_communication_technologies")}
-    />
-  </section>
-
-  <!-- section 2 -->
-  <section id="products-page-section-2">
-    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
+   
+  <!-- section 1 - Centrales de Alarma vía radio -->
+    <section
+      id="products-page-section-1"
+      class="items-center p-4 md:p-6 lg:px-8 xl:p-12 2xl:px-24"
+    >
       <TitleComponent
-        id="section-2-title"
-        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("products_page.radio_alarm_centers")}
+        id="section-1-title"
+        variantTitle="h2 text-center text-39 line-height-45 lg:text-67 lg:line-height-78 heading-2-mobile pb-4 md:pb-8 lg:pb-12 2xl:pb-24"
+        text={t("products_page.zigzag_security_systems")}
       />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
-        <div
-          id="card-container-1"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12 item-center lg:items-start"
-        >
-          <div class="flex flex-col mb-4 md:mb-8 lg:mb-12">
-            <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
-              <div class="place-items-center">
-                <img
-                  src="https://placehold.co/366x305?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
-                <Label
-                  id="section-2-inner-card-reference"
-                  variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                  text={t("products_page.vesta_product_reference")}
-                />
-                <Label
-                  id="section-2-inner-card-model"
-                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
-                  text={t("products_page.vesta_product_model")}
-                />
-                <div>
-                  <!-- Icons Grid -->
-                  <div
-                    class="flex flex-row flex-wrap items-start place-items-center gap-6"
-                  >
-                    <!-- Item -->
-                    <div
-                      class="flex flex-col items-center text-center flex-wrap"
-                    >
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0Aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro\nproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <TitleComponent
-              id="section-2-inner-card-description-title"
-              variantTitle="h6 heading-6-mobile text-left text-16"
-              text={t("products_page.vesta_description_title")}
-            />
-            <Divider
-              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-            />
-            <TextComponent
-              id="section-2-inner-card-description-text"
-              variantText="b2 body-2 text-left text-16"
-              text={t("products_page.vesta_description_text")}
-            />
-          </div>
-        </div>
-        <div
-          id="card-container-2"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12 item-center lg:items-start"
-        >
-          <div class="flex flex-col mb-4 md:mb-8 lg:mb-12">
-            <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
-              <div class="place-items-center">
-                <img
-                  src="https://placehold.co/366x305?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
-                <Label
-                  id="section-2-inner-card-reference"
-                  variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                  text={t("products_page.vesta_product_reference")}
-                />
-                <Label
-                  id="section-2-inner-card-model"
-                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
-                  text={t("products_page.vesta_product_model")}
-                />
-                <div>
-                  <!-- Icons Grid -->
-                  <div
-                    class="flex flex-row flex-wrap items-start place-items-center gap-6"
-                  >
-                    <!-- Item -->
-                    <div
-                      class="flex flex-col items-center text-center flex-wrap"
-                    >
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <TitleComponent
-              id="section-2-inner-card-description-title"
-              variantTitle="h6 heading-6-mobile text-left text-16"
-              text={t("products_page.vesta_description_title")}
-            />
-            <Divider
-              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-            />
-            <TextComponent
-              id="section-2-inner-card-description-text"
-              variantText="b2 body-2 text-left text-16"
-              text={t("products_page.vesta_description_text")}
-            />
-          </div>
-        </div>
-        <div
-          id="card-container-3"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12 item-center lg:items-start"
-        >
-          <div class="flex flex-col mb-4 md:mb-8 lg:mb-12">
-            <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
-              <div class="place-items-center">
-                <img
-                  src="https://placehold.co/366x305?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
-                <Label
-                  id="section-2-inner-card-reference"
-                  variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                  text={t("products_page.vesta_product_reference")}
-                />
-                <Label
-                  id="section-2-inner-card-model"
-                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
-                  text={t("products_page.vesta_product_model")}
-                />
-                <div>
-                  <!-- Icons Grid -->
-                  <div
-                    class="flex flex-row flex-wrap items-start place-items-center gap-6"
-                  >
-                    <!-- Item -->
-                    <div
-                      class="flex flex-col items-center text-center flex-wrap"
-                    >
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-
-                    <div class="flex flex-col items-center text-center">
-                      <img
-                        src="https://placehold.co/26x26?text=filtro%0aproducto"
-                        alt="Nombre filtro producto"
-                        class="w-8 h-8 mb-2"
-                      />
-                      <span
-                        class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                      ></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div>
-            <TitleComponent
-              id="section-2-inner-card-description-title"
-              variantTitle="h6 heading-6-mobile text-left text-16"
-              text={t("products_page.vesta_description_title")}
-            />
-            <Divider
-              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-            />
-            <TextComponent
-              id="section-2-inner-card-description-text"
-              variantText="b2 body-2 text-left text-16"
-              text={t("products_page.vesta_description_text")}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- section 3 -->
-  <section id="products-page-section-3">
-    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
-      <TitleComponent
-        id="section-3-title"
-        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("products_page.wireless_keyboards")}
+      <TextComponent
+        id="section-1-text"
+        variantText="b0 text-center text-20 lg:text-24 body-0"
+        text={t("products_page.three_communication_technologies")}
       />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
-        <div
-          id="card-container-1"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
-        >
-          <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
-            <div class="place-items-center">
-              <img
-                src="https://placehold.co/366x305?text=imagen producto"
-                alt="imagen producto"
-              />
-            </div>
-            <div class="flex flex-col md:flex-row md:gap-6">
-              <div class="flex flex-col">
-                <div
-                  class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9"
-                >
-                  <Label
-                    id="section-3-inner-card-reference"
-                    variantLabel="ref reference text-left text-20"
-                    text={t("products_page.vesta_product_reference")}
-                  />
-                  <Label
-                    id="section-3-inner-card-model"
-                    variantLabel="mod model text-left text-18 pb-9"
-                    text={t("products_page.vesta_product_model")}
-                  />
-                  <div>
-                    <!-- Icons Grid -->
-                    <div class="flex flex-row flex-wrap items-start gap-6">
-                      <!-- Item -->
-                      <div
-                        class="flex flex-col items-center text-center flex-wrap"
-                      >
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
+    </section>
 
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
+    <!-- section 2 - Centrales de Alarma vía radio -->
+    <section id="products-page-section-2">
+      <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
+        <TitleComponent
+          id="section-2-title"
+          variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+          text={t("products_page.radio_alarm_centers")}
+        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
+          {productsSection2.map((p) => (  
+            <a href={`/${lang}/products/product-details`} class="cursor-pointer">
+            <div
+              id={`product-card-container-zigzag-${p.reference}`}
+              class="product-card-container rounded-xl p-4 md:p-8 lg:p-12 item-center lg:items-start"
+            >           
+                <div class="flex flex-col mb-4 md:mb-8 lg:mb-12">
+                  <div class="flex flex-col md:flex-row gap-4 lg:gap-6">
+                    <div class="place-items-center md:w-1/2">
+                      <img
+                        src={p.imageUrl1}
+                        alt="imagen producto"
+                      />
                     </div>
-                  </div>
-                </div>
-                <div>
-                  <TitleComponent
-                    id="section-3-inner-card-description-title"
-                    variantTitle="h6 heading-6-mobile text-left text-16"
-                    text={t("products_page.vesta_description_title")}
-                  />
-                  <Divider
-                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-                  />
-                  <TextComponent
-                    id="section-3-inner-card-description-text"
-                    variantText="b2 body-2 text-left text-16"
-                    text={t("products_page.vesta_description_text")}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          id="card-container-2"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
-        >
-          <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
-            <div class="place-items-center">
-              <img
-                src="https://placehold.co/366x305?text=imagen producto"
-                alt="imagen producto"
-              />
-            </div>
-            <div class="flex flex-col md:flex-row md:gap-6">
-              <div class="flex flex-col">
-                <div
-                  class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9"
-                >
-                  <Label
-                    id="section-3-inner-card-reference"
-                    variantLabel="ref reference text-left text-20"
-                    text={t("products_page.vesta_product_reference")}
-                  />
-                  <Label
-                    id="section-3-inner-card-model"
-                    variantLabel="mod model text-left text-18 pb-9"
-                    text={t("products_page.vesta_product_model")}
-                  />
-                  <div>
-                    <!-- Icons Grid -->
-                    <div class="flex flex-row flex-wrap items-start gap-6">
-                      <!-- Item -->
-                      <div
-                        class="flex flex-col items-center text-center flex-wrap"
-                      >
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <TitleComponent
-                    id="section-3-inner-card-description-title"
-                    variantTitle="h6 heading-6-mobile text-left text-16"
-                    text={t("products_page.vesta_description_title")}
-                  />
-                  <Divider
-                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-                  />
-                  <TextComponent
-                    id="section-3-inner-card-description-text"
-                    variantText="b2 body-2 text-left text-16"
-                    text={t("products_page.vesta_description_text")}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          id="card-container-3"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
-        >
-          <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
-            <div class="place-items-center">
-              <img
-                src="https://placehold.co/366x305?text=imagen producto"
-                alt="imagen producto"
-              />
-            </div>
-            <div class="flex flex-col md:flex-row md:gap-6">
-              <div class="flex flex-col">
-                <div
-                  class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9"
-                >
-                  <Label
-                    id="section-3-inner-card-reference"
-                    variantLabel="ref reference text-left text-20"
-                    text={t("products_page.vesta_product_reference")}
-                  />
-                  <Label
-                    id="section-3-inner-card-model"
-                    variantLabel="mod model text-left text-18 pb-9"
-                    text={t("products_page.vesta_product_model")}
-                  />
-                  <div>
-                    <!-- Icons Grid -->
-                    <div class="flex flex-row flex-wrap items-start gap-6">
-                      <!-- Item -->
-                      <div
-                        class="flex flex-col items-center text-center flex-wrap"
-                      >
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <TitleComponent
-                    id="section-3-inner-card-description-title"
-                    variantTitle="h6 heading-6-mobile text-left text-16"
-                    text={t("products_page.vesta_description_title")}
-                  />
-                  <Divider
-                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-                  />
-                  <TextComponent
-                    id="section-3-inner-card-description-text"
-                    variantText="b2 body-2 text-left text-16"
-                    text={t("products_page.vesta_description_text")}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- section 4 -->
-  <section id="products-page-section-4">
-    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
-      <TitleComponent
-        id="section-4-title"
-        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("products_page.radio_detectors")}
-      />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
-        <div
-          id="card-container-1"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
-        >
-          <div class="flex flex-col">
-            <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 mb-6">
-              <div class="place-items-center">
-                <img
-                  src="https://placehold.co/366x305?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col md:flex-row md:gap-6">
-                <div class="flex flex-col">
-                  <div
-                    class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9"
-                  >
-                    <Label
-                      id="section-4-inner-card-reference"
-                      variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                      text={t("products_page.vesta_product_reference")}
-                    />
-                    <Label
-                      id="section-4-inner-card-model"
-                      variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                      text={t("products_page.vesta_product_model")}
-                    />
-                    <div>
-                      <!-- Icons Grid -->
-                      <div class="flex flex-row flex-wrap items-start gap-6">
-                        <!-- Item -->
+                    <div class="flex flex-col p-6 md:w-1/2 rounded-xl bg-opacities-dark-05 gap-5 md:gap-7 ld:gap-9">
+                        <div>
+                          <Label
+                              id="section-2-inner-card-reference"
+                              variantLabel="ref reference text-left text-16 md:text-18 lg:text-20 mb-2"
+                              text={`REF-${p.reference}`}
+                            />
+                          <Label
+                            id="section-2-inner-card-model"
+                            variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-5 md:mb-7 lg:mb-9"
+                            text={p.model}
+                          />
+                        </div>
+                      <div>
+                        <!-- Icons Grid -->
                         <div
-                          class="flex flex-col items-center text-center flex-wrap"
+                          class="flex flex-row flex-wrap items-start place-items-center gap-6"
                         >
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
+                          <!-- Item -->
+                          <div
+                            class="flex flex-col items-center text-center flex-wrap"
+                          >
+                            <img
+                              src="https://placehold.co/26x26?text=filtro%0Aproducto"
+                              alt="Nombre filtro producto"
+                              class="w-8 h-8 mb-2"
+                            />
+                            <span
+                              class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                            ></span>
+                          </div>
 
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
+                          <div class="flex flex-col items-center text-center">
+                            <img
+                              src="https://placehold.co/26x26?text=filtro\nproducto"
+                              alt="Nombre filtro producto"
+                              class="w-8 h-8 mb-2"
+                            />
+                            <span
+                              class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                            ></span>
+                          </div>
 
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
+                          <div class="flex flex-col items-center text-center">
+                            <img
+                              src="https://placehold.co/26x26?text=filtro%0aproducto"
+                              alt="Nombre filtro producto"
+                              class="w-8 h-8 mb-2"
+                            />
+                            <span
+                              class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                            ></span>
+                          </div>
 
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
+                          <div class="flex flex-col items-center text-center">
+                            <img
+                              src="https://placehold.co/26x26?text=filtro%0aproducto"
+                              alt="Nombre filtro producto"
+                              class="w-8 h-8 mb-2"
+                            />
+                            <span
+                              class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                            ></span>
+                          </div>
 
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
+                          <div class="flex flex-col items-center text-center">
+                            <img
+                              src="https://placehold.co/26x26?text=filtro%0aproducto"
+                              alt="Nombre filtro producto"
+                              class="w-8 h-8 mb-2"
+                            />
+                            <span
+                              class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                            ></span>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
+                </div>            
+              <div>
+                <TitleComponent
+                  id="section-2-inner-card-description-title"
+                  variantTitle="h6 heading-6-mobile text-left text-16"
+                  text={p.name}
+                />
+                <DividerComponent
+                  variantDivider="my-2 h-px border-t-0 bg-primary-60-light"
+                />
+                <TextComponent
+                  id="section-2-inner-card-description-text"
+                  variantText="b2 body-2 text-left text-16"
+                  text={p.description}
+                />
+              </div>              
+            </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- section 3 - Teclados vía radio -->
+    <section id="products-page-section-3">
+      <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
+        <TitleComponent
+          id="section-3-title"
+          variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+          text={t("products_page.wireless_keyboards")}
+        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
+          {productsSection3.map((p) => (
+            <a href={`/${lang}/products/product-details`} class="cursor-pointer">
+              <div
+                id={`product-card-container-zigzag-${p.reference}`}
+                class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
+              >
+                <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
+                  <div class="place-items-center md:w-1/2">
+                    <img
+                      src={p.imageUrl1}
+                      alt="imagen producto"
+                    />
+                  </div>
+                  <div class="flex flex-col md:flex-row md:gap-6 md:w-1/2">
+                    <div class="flex flex-col">
+                      <div
+                        class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9 gap-5 md:gap-7 ld:gap-9"
+                      >
+                        <div>
+                          <Label
+                            id="section-3-inner-card-reference"
+                            variantLabel="ref reference text-left text-20 mb-2"
+                            text={`REF-${p.reference}`}
+                          />
+                          <Label
+                            id="section-3-inner-card-model"
+                            variantLabel="mod model text-left text-18 pb-9"
+                            text={p.model}
+                          />
+                        </div>
+                        <div>
+                          <!-- Icons Grid -->
+                          <div class="flex flex-row flex-wrap items-start gap-6">
+                            <!-- Item -->
+                            <div
+                              class="flex flex-col items-center text-center flex-wrap"
+                            >
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center">
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center">
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center">
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center">
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <TitleComponent
+                          id="section-3-inner-card-description-title"
+                          variantTitle="h6 heading-6-mobile text-left text-16"
+                          text={p.name}
+                        />
+                        <DividerComponent
+                          variantDivider="my-2 h-px border-t-0 bg-primary-60-light"
+                        />
+                        <TextComponent
+                          id="section-3-inner-card-description-text"
+                          variantText="b2 body-2 text-left text-16"
+                          text={p.description}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- section 4 - Detectores vía radio -->
+    <section id="products-page-section-4">
+      <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
+        <TitleComponent
+          id="section-4-title"
+          variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+          text={t("products_page.radio_detectors")}
+        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
+          {productsSection4.map((p) => (
+            <a href={`/${lang}/products/product-details`} class="cursor-pointer">
+              <div
+                id={`product-card-container-zigzag-${p.reference}`}
+                class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
+              >
+                <div class="flex flex-col">
+                  <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 mb-6">
+                    <div class="place-items-center md:w-1/2">
+                      <img
+                        src={p.imageUrl1}
+                        alt="imagen producto"
+                      />
+                    </div>
+                    <div class="flex flex-col md:flex-row md:gap-6 md:w-1/2">
+                      <div class="flex flex-col">
+                        <div
+                          class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9 gap-5 md:gap-7 ld:gap-9"
+                        >
+                          <div>
+                            <Label
+                              id="section-4-inner-card-reference"
+                              variantLabel="ref reference text-left text-16 md:text-18 lg:text-20 mb-2"
+                              text={`REF-${p.reference}`}
+                            />
+                            <Label
+                              id="section-4-inner-card-model"
+                              variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9 mb-3"
+                              text={p.model}
+                            />
+                          </div>    
+                          <div>
+                            <!-- Icons Grid -->
+                            <div class="flex flex-row flex-wrap items-start gap-6">
+                              <!-- Item -->
+                              <div
+                                class="flex flex-col items-center text-center flex-wrap"
+                              >
+                                <img
+                                  src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                  alt="Nombre filtro producto"
+                                  class="w-8 h-8 mb-2"
+                                />
+                                <span
+                                  class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                                ></span>
+                              </div>
+
+                              <div class="flex flex-col items-center text-center">
+                                <img
+                                  src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                  alt="Nombre filtro producto"
+                                  class="w-8 h-8 mb-2"
+                                />
+                                <span
+                                  class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                                ></span>
+                              </div>
+
+                              <div class="flex flex-col items-center text-center">
+                                <img
+                                  src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                  alt="Nombre filtro producto"
+                                  class="w-8 h-8 mb-2"
+                                />
+                                <span
+                                  class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                                ></span>
+                              </div>
+
+                              <div class="flex flex-col items-center text-center">
+                                <img
+                                  src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                  alt="Nombre filtro producto"
+                                  class="w-8 h-8 mb-2"
+                                />
+                                <span
+                                  class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                                ></span>
+                              </div>
+
+                              <div class="flex flex-col items-center text-center">
+                                <img
+                                  src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                  alt="Nombre filtro producto"
+                                  class="w-8 h-8 mb-2"
+                                />
+                                <span
+                                  class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <TitleComponent
+                            id="section-4-inner-card-description-title"
+                            variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
+                            text={p.name}
+                          />
+                          <DividerComponent
+                            variantDivider="my-2 h-px border-t-0 bg-primary-60-light"
+                          />
+                          <TextComponent
+                            id="section-4-inner-card-description-text"
+                            variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                            text={p.description}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <DividerComponent
+                    variantDivider="my-2 h-px border-t-0 bg-primary-60-light"
+                  />
+                  <div class="flex flex-col md:flex-row md:gap-6 my-6">
+                    <div class="place-items-center mb-3 md:mb-0 md:w-1/2">
+                      <img
+                        src={p.imageUrl2}
+                        alt="imagen producto"
+                      />
+                    </div>
+                    <div class="flex flex-col md:w-1/2">
+                      <Label
+                        id="section-4-product-reference"
+                        variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
+                        text={`REF-${p.reference}`}
+                      />
+                      <Label
+                        id="section-4-product-model"
+                        variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
+                        text={p.model}
+                      />
+                      <TitleComponent
+                        id="section-4-product-description-title"
+                        variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
+                        text={p.name}
+                      />
+                    </div>
+                  </div>
+                  <DividerComponent
+                    variantDivider="my-2 h-px border-t-0 bg-primary-60-light"
+                  />
+                  <div class="flex flex-col md:flex-row md:gap-6 mt-6">
+                    <div class="place-items-center mb-3 md:mb-0 md:w-1/2">
+                      <img
+                        src={p.imageUrl3}
+                        alt="imagen producto"
+                      />
+                    </div>
+                    <div class="flex flex-col md:w-1/2">
+                      <Label
+                        id="section-4-product-reference"
+                        variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
+                        text={`REF-${p.reference}`}
+                      />
+                      <Label
+                        id="section-4-product-model"
+                        variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
+                        text={p.model}
+                      />
+                      <TitleComponent
+                        id="section-4-product-description-title"
+                        variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
+                        text={p.name}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- section 5 - Contactos magnéticos -->
+    <section id="products-page-section-5">
+      <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
+        <TitleComponent
+          id="section-5-title"
+          variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+          text={t("products_page.magnetic_contacts")}
+        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
+          {productsSection5.map((p) => (
+            <a href={`/${lang}/products/product-details`} class="cursor-pointer">
+              <div
+                id={`product-card-container-zigzag-${p.reference}`}
+                class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
+              >
+                <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
+                  <div class="place-items-center md:w-1/2">
+                    <img
+                      src={p.imageUrl1}
+                      alt="imagen producto"
+                    />
+                  </div>
+                  <div class="flex flex-col md:flex-row md:gap-6 md:w-1/2">
+                    <div class="flex flex-col">
+                      <div
+                        class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9 gap-5 md:gap-7 ld:gap-9"
+                      >
+                        <div>
+                          <Label
+                            id="section-5-inner-card-reference"
+                            variantLabel="ref reference text-left text-16 md:text-18 lg:text-20 mb-2"
+                            text={`REF-${p.reference}`}
+                          />
+                          <Label
+                            id="section-5-inner-card-model"
+                            variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9 mb-3"
+                            text={p.model}
+                          />
+                        </div>
+                        <div>
+                          <!-- Icons Grid -->
+                          <div class="flex flex-row flex-wrap items-start gap-6">
+                            <!-- Item -->
+                            <div
+                              class="flex flex-col items-center text-center flex-wrap"
+                            >
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center">
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center">
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center">
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+
+                            <div class="flex flex-col items-center text-center">
+                              <img
+                                src="https://placehold.co/26x26?text=filtro%0aproducto"
+                                alt="Nombre filtro producto"
+                                class="w-8 h-8 mb-2"
+                              />
+                              <span
+                                class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
+                              ></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <TitleComponent
+                          id="section-5-inner-card-description-title"
+                          variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
+                          text={p.name}
+                        />
+                        <DividerComponent
+                          variantDivider="my-2 h-px border-t-0 bg-primary-60-light"
+                        />
+                        <TextComponent
+                          id="section-5-inner-card-description-text"
+                          variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
+                          text={p.description}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- section 6 - Accesorios vía radio -->
+    <section id="products-page-section-6">
+      <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
+        <TitleComponent
+          id="section-6-title"
+          variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
+          text={t("products_page.radio_accessories")}
+        />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
+          {productsSection6.map((p) => (
+            <a href={`/${lang}/products/product-details`} class="cursor-pointer">
+              <div
+                id={`product-card-container-zigzag-${p.reference}`}
+                class="product-card-container rounded-xl p-4 md:p-6 item-center lg:items-start"
+              >
+                <div class="flex flex-col gap-4 lg:gap-6">
                   <div>
                     <TitleComponent
-                      id="section-4-inner-card-description-title"
-                      variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                      text={t("products_page.vesta_description_title")}
+                      id="section-6-inner-card-description-title"
+                      variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
+                      text={p.name}
                     />
-                    <Divider
-                      variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-                    />
-                    <TextComponent
-                      id="section-4-inner-card-description-text"
-                      variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                      text={t("products_page.vesta_description_text")}
+                    <DividerComponent
+                      variantDivider="my-2 h-px border-t-0 bg-primary-60-light"
                     />
                   </div>
-                </div>
-              </div>
-            </div>
-            <Divider
-              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-            />
-            <div class="flex flex-col md:flex-row md:gap-6 my-6">
-              <div class="place-items-center mb-3 md:mb-0">
-                <img
-                  src="https://placehold.co/338x83?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col">
-                <Label
-                  id="section-4-product-reference"
-                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("products_page.vesta_product_reference")}
-                />
-                <Label
-                  id="section-4-product-model"
-                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("products_page.vesta_product_model")}
-                />
-                <TitleComponent
-                  id="section-4-product-description-title"
-                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("products_page.vesta_description_title")}
-                />
-              </div>
-            </div>
-            <Divider
-              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-            />
-            <div class="flex flex-col md:flex-row md:gap-6 mt-6">
-              <div class="place-items-center mb-3 md:mb-0">
-                <img
-                  src="https://placehold.co/338x83?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col">
-                <Label
-                  id="section-4-product-reference"
-                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("products_page.vesta_product_reference")}
-                />
-                <Label
-                  id="section-4-product-model"
-                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("products_page.vesta_product_model")}
-                />
-                <TitleComponent
-                  id="section-4-product-description-title"
-                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("products_page.vesta_description_title")}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          id="card-container-2"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
-        >
-          <div class="flex flex-col">
-            <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 mb-6">
-              <div class="place-items-center">
-                <img
-                  src="https://placehold.co/366x305?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col md:flex-row md:gap-6">
-                <div class="flex flex-col">
-                  <div
-                    class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9"
-                  >
+                  <div class="place-items-center">
+                    <img
+                      src={p.imageUrl1}
+                      alt="imagen producto"
+                    />
+                  </div>
+                  <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
                     <Label
-                      id="section-4-inner-card-reference"
+                      id="section-6-inner-card-reference"
                       variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                      text={t("products_page.vesta_product_reference")}
+                      text={`REF-${p.reference}`}
                     />
                     <Label
-                      id="section-4-inner-card-model"
-                      variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                      text={t("products_page.vesta_product_model")}
+                      id="section-6-inner-card-model"
+                      variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
+                      text={p.model}
                     />
-                    <div>
-                      <!-- Icons Grid -->
-                      <div class="flex flex-row flex-wrap items-start gap-6">
-                        <!-- Item -->
-                        <div
-                          class="flex flex-col items-center text-center flex-wrap"
-                        >
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-                      </div>
-                    </div>
                   </div>
                   <div>
-                    <TitleComponent
-                      id="section-4-inner-card-description-title"
-                      variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                      text={t("products_page.vesta_description_title")}
-                    />
-                    <Divider
-                      variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-                    />
                     <TextComponent
-                      id="section-4-inner-card-description-text"
+                      id="section-6-inner-card-description-text"
                       variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                      text={t("products_page.vesta_description_text")}
+                      text={p.description}
                     />
                   </div>
                 </div>
               </div>
-            </div>
-            <Divider
-              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-            />
-            <div class="flex flex-col md:flex-row md:gap-6 my-6">
-              <div class="place-items-center mb-3 md:mb-0">
-                <img
-                  src="https://placehold.co/338x83?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col">
-                <Label
-                  id="section-4-product-reference"
-                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("products_page.vesta_product_reference")}
-                />
-                <Label
-                  id="section-4-product-model"
-                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("products_page.vesta_product_model")}
-                />
-                <TitleComponent
-                  id="section-4-product-description-title"
-                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("products_page.vesta_description_title")}
-                />
-              </div>
-            </div>
-            <Divider
-              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-            />
-            <div class="flex flex-col md:flex-row md:gap-6 mt-6">
-              <div class="place-items-center mb-3 md:mb-0">
-                <img
-                  src="https://placehold.co/338x83?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col">
-                <Label
-                  id="section-4-product-reference"
-                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("products_page.vesta_product_reference")}
-                />
-                <Label
-                  id="section-4-product-model"
-                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("products_page.vesta_product_model")}
-                />
-                <TitleComponent
-                  id="section-4-product-description-title"
-                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("products_page.vesta_description_title")}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          id="card-container-3"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
-        >
-          <div class="flex flex-col">
-            <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6 mb-6">
-              <div class="place-items-center">
-                <img
-                  src="https://placehold.co/366x305?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col md:flex-row md:gap-6">
-                <div class="flex flex-col">
-                  <div
-                    class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9"
-                  >
-                    <Label
-                      id="section-4-inner-card-reference"
-                      variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                      text={t("products_page.vesta_product_reference")}
-                    />
-                    <Label
-                      id="section-4-inner-card-model"
-                      variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                      text={t("products_page.vesta_product_model")}
-                    />
-                    <div>
-                      <!-- Icons Grid -->
-                      <div class="flex flex-row flex-wrap items-start gap-6">
-                        <!-- Item -->
-                        <div
-                          class="flex flex-col items-center text-center flex-wrap"
-                        >
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-
-                        <div class="flex flex-col items-center text-center">
-                          <img
-                            src="https://placehold.co/26x26?text=filtro%0aproducto"
-                            alt="Nombre filtro producto"
-                            class="w-8 h-8 mb-2"
-                          />
-                          <span
-                            class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                          ></span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <TitleComponent
-                      id="section-4-inner-card-description-title"
-                      variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                      text={t("products_page.vesta_description_title")}
-                    />
-                    <Divider
-                      variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-                    />
-                    <TextComponent
-                      id="section-4-inner-card-description-text"
-                      variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                      text={t("products_page.vesta_description_text")}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Divider
-              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-            />
-            <div class="flex flex-col md:flex-row md:gap-6 my-6">
-              <div class="place-items-center mb-3 md:mb-0">
-                <img
-                  src="https://placehold.co/338x83?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col">
-                <Label
-                  id="section-4-product-reference"
-                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("products_page.vesta_product_reference")}
-                />
-                <Label
-                  id="section-4-product-model"
-                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("products_page.vesta_product_model")}
-                />
-                <TitleComponent
-                  id="section-4-product-description-title"
-                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("products_page.vesta_description_title")}
-                />
-              </div>
-            </div>
-            <Divider
-              variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-            />
-            <div class="flex flex-col md:flex-row md:gap-6 mt-6">
-              <div class="place-items-center mb-3 md:mb-0">
-                <img
-                  src="https://placehold.co/338x83?text=imagen producto"
-                  alt="imagen producto"
-                />
-              </div>
-              <div class="flex flex-col">
-                <Label
-                  id="section-4-product-reference"
-                  variantLabel="reference text-left text-16 md:text-18 lg:text-20 text-neutral-60 mb-2"
-                  text={t("products_page.vesta_product_reference")}
-                />
-                <Label
-                  id="section-4-product-model"
-                  variantLabel="mod model text-left text-14 md:text-16 lg:text-18 mb-3"
-                  text={t("products_page.vesta_product_model")}
-                />
-                <TitleComponent
-                  id="section-4-product-description-title"
-                  variantTitle="heading-6-mobile text-left text-12 md:text-14 lg:text-16 text-primary-40-light"
-                  text={t("products_page.vesta_description_title")}
-                />
-              </div>
-            </div>
-          </div>
+            </a>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- section 5 -->
-  <section id="products-page-section-5">
-    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
-      <TitleComponent
-        id="section-5-title"
-        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("products_page.magnetic_contacts")}
-      />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
-        <div
-          id="card-container-1"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
-        >
-          <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
-            <div class="place-items-center">
-              <img
-                src="https://placehold.co/366x305?text=imagen producto"
-                alt="imagen producto"
-              />
-            </div>
-            <div class="flex flex-col md:flex-row md:gap-6">
-              <div class="flex flex-col">
-                <div
-                  class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9"
-                >
-                  <Label
-                    id="section-5-inner-card-reference"
-                    variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                    text={t("products_page.vesta_product_reference")}
-                  />
-                  <Label
-                    id="section-5-inner-card-model"
-                    variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                    text={t("products_page.vesta_product_model")}
-                  />
-                  <div>
-                    <!-- Icons Grid -->
-                    <div class="flex flex-row flex-wrap items-start gap-6">
-                      <!-- Item -->
-                      <div
-                        class="flex flex-col items-center text-center flex-wrap"
-                      >
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <TitleComponent
-                    id="section-5-inner-card-description-title"
-                    variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                    text={t("products_page.vesta_description_title")}
-                  />
-                  <Divider
-                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-                  />
-                  <TextComponent
-                    id="section-5-inner-card-description-text"
-                    variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                    text={t("products_page.vesta_description_text")}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          id="card-container-2"
-          class="product-card-container rounded-xl p-4 md:p-8 lg:p-12"
-        >
-          <div class="flex flex-col md:flex-row gap-4 md:gap-4 lg:gap-6">
-            <div class="place-items-center">
-              <img
-                src="https://placehold.co/366x305?text=imagen producto"
-                alt="imagen producto"
-              />
-            </div>
-            <div class="flex flex-col md:flex-row md:gap-6">
-              <div class="flex flex-col">
-                <div
-                  class="flex flex-col p-6 rounded-xl bg-opacities-dark-05 mb-4 md:mb-7 lg:mb-9"
-                >
-                  <Label
-                    id="section-5-inner-card-reference"
-                    variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                    text={t("products_page.vesta_product_reference")}
-                  />
-                  <Label
-                    id="section-5-inner-card-model"
-                    variantLabel="mod model text-left text-14 md:text-16 lg:text-18 pb-9"
-                    text={t("products_page.vesta_product_model")}
-                  />
-                  <div>
-                    <!-- Icons Grid -->
-                    <div class="flex flex-row flex-wrap items-start gap-6">
-                      <!-- Item -->
-                      <div
-                        class="flex flex-col items-center text-center flex-wrap"
-                      >
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-
-                      <div class="flex flex-col items-center text-center">
-                        <img
-                          src="https://placehold.co/26x26?text=filtro%0aproducto"
-                          alt="Nombre filtro producto"
-                          class="w-8 h-8 mb-2"
-                        />
-                        <span
-                          class="font-medium text-xs md:text-sm lg:text-base/5 text-neutral-60"
-                        ></span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <TitleComponent
-                    id="section-5-inner-card-description-title"
-                    variantTitle="h6 heading-6-mobile text-left text-12 md:text-14 lg:text-16"
-                    text={t("products_page.vesta_description_title")}
-                  />
-                  <Divider
-                    variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-                  />
-                  <TextComponent
-                    id="section-5-inner-card-description-text"
-                    variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                    text={t("products_page.vesta_description_text")}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- section 6 -->
-  <section id="products-page-section-6">
-    <div class="flex flex-col p-4 md:p-6 lg:p-8 xl:p-12 2xl:p-24">
-      <TitleComponent
-        id="section-6-title"
-        variantTitle="h3 text-center text-31 line-height-36 lg:text-50 lg:line-height-59 heading-3-mobile pb-8 lg:pb-12 2xl:pb-24"
-        text={t("products_page.radio_accessories")}
-      />
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-5 lg:gap-6">
-        <div
-          id="card-container-1"
-          class="product-card-container rounded-xl p-4 md:p-6 item-center lg:items-start"
-        >
-          <div class="flex flex-col gap-4 lg:gap-6">
-            <div>
-              <TitleComponent
-                id="section-6-inner-card-description-title"
-                variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
-                text={t("products_page.vesta_description_title")}
-              />
-              <Divider
-                variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-              />
-            </div>
-            <div class="place-items-center">
-              <img
-                src="https://placehold.co/366x305?text=imagen producto"
-                alt="imagen producto"
-              />
-            </div>
-            <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
-              <Label
-                id="section-6-inner-card-reference"
-                variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                text={t("products_page.vesta_product_reference")}
-              />
-              <Label
-                id="section-6-inner-card-model"
-                variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
-                text={t("products_page.vesta_product_model")}
-              />
-            </div>
-            <div>
-              <TextComponent
-                id="section-6-inner-card-description-text"
-                variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                text={t("products_page.vesta_description_text")}
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          id="card-container-2"
-          class="product-card-container rounded-xl p-4 md:p-6 item-center lg:items-start"
-        >
-          <div class="flex flex-col gap-4 lg:gap-6">
-            <div>
-              <TitleComponent
-                id="section-6-inner-card-description-title"
-                variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
-                text={t("products_page.vesta_description_title")}
-              />
-              <Divider
-                variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-              />
-            </div>
-            <div class="place-items-center">
-              <img
-                src="https://placehold.co/366x305?text=imagen producto"
-                alt="imagen producto"
-              />
-            </div>
-            <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
-              <Label
-                id="section-6-inner-card-reference"
-                variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                text={t("products_page.vesta_product_reference")}
-              />
-              <Label
-                id="section-6-inner-card-model"
-                variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
-                text={t("products_page.vesta_product_model")}
-              />
-            </div>
-            <div>
-              <TextComponent
-                id="section-6-inner-card-description-text"
-                variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                text={t("products_page.vesta_description_text")}
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          id="card-container-3"
-          class="product-card-container rounded-xl p-4 md:p-6 item-center lg:items-start"
-        >
-          <div class="flex flex-col gap-4 lg:gap-6">
-            <div>
-              <TitleComponent
-                id="section-6-inner-card-description-title"
-                variantTitle="h6 heading-6-mobile text-center text-12 md:text-14 lg:text-16"
-                text={t("products_page.vesta_description_title")}
-              />
-              <Divider
-                variantDivider="my-2 h-0.25 border-t-0 bg-primary-60-light"
-              />
-            </div>
-            <div class="place-items-center">
-              <img
-                src="https://placehold.co/366x305?text=imagen producto"
-                alt="imagen producto"
-              />
-            </div>
-            <div class="flex flex-col p-6 rounded-xl bg-opacities-dark-05">
-              <Label
-                id="section-6-inner-card-reference"
-                variantLabel="ref reference text-left text-16 md:text-18 lg:text-20"
-                text={t("products_page.vesta_product_reference")}
-              />
-              <Label
-                id="section-6-inner-card-model"
-                variantLabel="mod model text-left text-14 md:text-16 lg:text-18"
-                text={t("products_page.vesta_product_model")}
-              />
-            </div>
-            <div>
-              <TextComponent
-                id="section-6-inner-card-description-text"
-                variantText="b2 body-2 text-left text-12 md:text-14 lg:text-16"
-                text={t("products_page.vesta_description_text")}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </div>

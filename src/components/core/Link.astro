@@ -1,7 +1,17 @@
 ---
-const { id, variantLink = "default", text, href } = Astro.props;
+// destructuring icon as Icon and rendering it like a component - this works if the SVG is imported as a component
+const {
+  id,
+  label,
+  href,
+  variantFullComponent = "default",
+  variantLink = "default",
+  variantLabel = "default",
+} = Astro.props;
 ---
 
-<a id={id} class={`${variantLink}`} href={href} data-i18n={`${text}`}
-  >{`${text}`}</a
->
+<div class={`${variantFullComponent}`}>
+  <a id={id} class={`${variantLink}`} href={href}>
+      <span class={`${variantLabel}`} data-i18n={`${label}`}>{`${label}`}</span>
+  </a>
+</div>

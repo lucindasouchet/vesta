@@ -1,5 +1,6 @@
 ---
 import ButtonComponent from "./core/Button.astro";
+import LinkButtonComponent from "./core/LinkButton.astro";
 import ChevronRightIcon from "../../public/images/icons/chevron-right-min.svg";
 import ChevronDownIcon from "../../public/images/icons/chevron-down-min.svg";
 import BatteryIcon from "../../public/images/icons/battery-min.svg";
@@ -7,12 +8,8 @@ import HybridIcon from "../../public/images/icons/hybrid-min.svg";
 import MedicalIcon from "../../public/images/icons/medical-min.svg";
 import SurveillanceIcon from "../../public/images/icons/surveillance-min.svg";
 import WirelessIcon from "../../public/images/icons/wireless-min.svg";
-import ChevronBuyVestaBtnIcon from "../../public/images/icons/chevron-buy-vesta-btn-min.svg";
+import ChevronBuyZigzagBtnIcon from "../../public/images/icons/chevron-buy-zigzag-btn-min.svg";
 import ImageComponent from "./core/Image.astro";
-
-// import i18next from "../i18n.old.ts";
-// const { t } = i18next;
-
 import { initI18n } from "../i18n/i18n.ts";
 import { useLang } from "../helpers/context.ts";
 import { getLocalizedPaths } from "../helpers/utils.ts";
@@ -24,14 +21,10 @@ export async function getStaticPaths() {
 const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
-
-const supportedLangs = ["en", "fr", "es"];
-const langNames = { en: "English", fr: "Français", es: "Español" };
-
-const LogoVestaMediumLightModeImagePath =
-  "/images/logos/logo-vesta-medium-light-mode-min.svg";
-const LogoVestaLargeLightModeImagePath =
-  "/images/logos/logo-vesta-large-light-mode-min.svg";
+const LogoZigzagMediumLightModeImagePath =
+  "/images/logos/logo-zigzag-medium-light-mode-min.svg";
+const LogoZigzagLargeLightModeImagePath =
+  "/images/logos/logo-zigzag-large-light-mode-min.svg";
 ---
 
 <nav class="shadow-md z-0">
@@ -52,7 +45,7 @@ const LogoVestaLargeLightModeImagePath =
         <!-- Productos -->
         <div class="relative group">
           <ButtonComponent
-            id="productos-btn"
+            id="navigation-products-btn"
             hasLabel="true"
             label={t("header.products")}
             hasIcon={true}
@@ -63,144 +56,135 @@ const LogoVestaLargeLightModeImagePath =
             variantLabel="label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
             variantIcon="h-4 md:w-3 lg:w-4 2xl:h-7 2xl:w-7"
             type="button"
-            href="/#"
           />
           <div
             class="absolute right-auto w-76 lg:w-84 xl:w-92 2xl:98 p-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10 justify-start"
           >
             <ButtonComponent
-              id="radio-alarm-btn"
+              id="navigation-radio-alarm-btn"
               hasLabel="true"
               label={t("footer.radio_alarm")}
               hasIcon={true}
               icon={WirelessIcon}
               isIconRight={false}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               variantIcon="h-7 w-7 stroke-primary-20-dark"
               type="button"
-              href="/#"
             />
             <ButtonComponent
-              id="battery-powered-alarm-btn"
+              id="navigation-battery-powered-alarm-btn"
               hasLabel="true"
               label={t("footer.battery_powered_alarm")}
               hasIcon={true}
               icon={BatteryIcon}
               isIconRight={false}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
-              href="/#"
             />
             <ButtonComponent
-              id="hybrid-alarm-btn"
+              id="navigation-hybrid-alarm-btn"
               hasLabel="true"
               label={t("footer.hybrid_alarm")}
               hasIcon={true}
               icon={HybridIcon}
               isIconRight={false}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
-              href="/#"
             />
             <ButtonComponent
-              id="medical-alarm-serie-mobile-pro-btn"
+              id="navigation-medical-alarm-serie-mobile-pro-btn"
               hasLabel="true"
               label={t("header.medical_alarm_serie_mobile_pro")}
               hasIcon={true}
               icon={MedicalIcon}
               isIconRight={false}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
-              href="/#"
             />
             <ButtonComponent
-              id="medical-alarm-mx-series-btn"
+              id="navigation-medical-alarm-mx-series-btn"
               hasLabel="true"
               label={t("header.medical_alarm_mx_series")}
               hasIcon={true}
               icon={MedicalIcon}
               isIconRight={false}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
-              href="/#"
             />
             <ButtonComponent
-              id="medical-alarm-gx-series-btn"
+              id="navigation-medical-alarm-gx-series-btn"
               hasLabel="true"
               label={t("header.medical_alarm_gx_series")}
               hasIcon={true}
               icon={MedicalIcon}
               isIconRight={false}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
-              href="/#"
             />
             <ButtonComponent
-              id="vesta-home-video-btn"
+              id="navigation-zigzag-home-video-btn"
               hasLabel="true"
-              label={t("footer.vesta_home_video")}
+              label={t("footer.zigzag_home_video")}
               hasIcon={true}
               icon={SurveillanceIcon}
               isIconRight={false}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
-              href="/#"
             />
             <ButtonComponent
-              id="vesta-advanced-video-btn"
+              id="navigation-zigzag-advanced-video-btn"
               hasLabel="true"
-              label={t("footer.vesta_advanced_video")}
+              label={t("footer.zigzag_advanced_video")}
               hasIcon={true}
               icon={SurveillanceIcon}
               isIconRight={false}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
-              href="/#"
             />
-            <ButtonComponent
-              id="all-products-btn"
+            <LinkButtonComponent
+              id="navigation-all-products-btn"
               hasLabel="true"
               label={t("header.all_products")}
               hasIcon={true}
               icon={ChevronRightIcon}
               isIconRight={false}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="gap-4 lg:gap-6 focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               variantIcon="h-7 w-7 stroke-primary-40-dark"
               type="button"
-              href="/#"
+              href={`/${lang}/products`}
             />
           </div>
         </div>
 
-        <!-- Sobre Noticia y eventos Dropdown -->
+        <!-- Noticia y eventos Dropdown -->
         <div class="relative group">
           <ButtonComponent
-            id="news-and-events-btn"
+            id="navigation-news-and-events-btn"
             hasLabel="true"
             label={t("header.news_and_events")}
             hasIcon={true}
@@ -211,40 +195,37 @@ const LogoVestaLargeLightModeImagePath =
             variantLabel="label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
             variantIcon="h-4 md:w-3 lg:w-4 2xl:h-7 2xl:w-7"
             type="button"
-            href="/#"
           />
           <div
             class="absolute right-auto w-auto p-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
             <ButtonComponent
-              id="news-blog-btn"
+              id="navigation-news-blog-btn"
               hasLabel="true"
               label={t("header.news_blog")}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               type="button"
-              href="/#"
             />
             <ButtonComponent
-              id="vesta-academy-btn"
+              id="navigation-zigzag-academy-btn"
               hasLabel="true"
-              label={t("header.vesta_academy")}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              label={t("header.zigzag_academy")}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               type="button"
-              href="/#"
             />
           </div>
         </div>
 
-        <!-- Sobre Vesta Security Dropdown -->
+        <!-- Sobre Zigzag Security Dropdown -->
         <div class="relative group">
           <ButtonComponent
-            id="sobre-vesta-security-btn"
+            id="navigation-sobre-zigzag-security-btn"
             hasLabel="true"
-            label={t("header.about_vesta_security")}
+            label={t("header.about_zigzag_security")}
             hasIcon={true}
             icon={ChevronDownIcon}
             isIconRight={true}
@@ -253,51 +234,47 @@ const LogoVestaLargeLightModeImagePath =
             variantLabel="label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
             variantIcon="h-4 md:w-3 lg:w-4 2xl:h-7 2xl:w-7"
             type="button"
-            href="/#"
           />
           <div
             class="absolute right-auto w-50 p-3 bg-bg-primary-light rounded-xl shadow-md inset-shadow-xs opacity-100 group-hover:opacity-100 invisible group-hover:visible transition-opacity z-10"
           >
             <ButtonComponent
-              id="news-blog-btn"
+              id="navigation-about-us-btn"
               hasLabel="true"
               label={t("header.about_us")}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               type="button"
-              href="/#"
             />
             <ButtonComponent
-              id="news-blog-btn"
+              id="navigation-partner-program-btn"
               hasLabel="true"
-              label={t("header.vesta_partner_program")}
-              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3"
-              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05"
+              label={t("header.zigzag_partner_program")}
+              variantFullComponent="hover:bg-neutral-05 hover:text-secondary-20-dark py-4 pr-6 pl-3 cursor-pointer"
+              variantButton="focus:outline-none focus:text-primary-10-light hover:bg-neutral-05 cursor-pointer"
               variantLabel="text-left label-1 text-14 lg:text-16 xl:text-18 2xl:text-20"
               type="button"
-              href="/#"
             />
           </div>
         </div>
 
         <ButtonComponent
-          id="buy-vesta-btn"
+          id="navigation-buy-zigzag-btn"
           hasLabel="true"
-          label={t("header.buy_vesta")}
+          label={t("header.buy_zigzag")}
           hasIcon={true}
-          icon={ChevronBuyVestaBtnIcon}
+          icon={ChevronBuyZigzagBtnIcon}
           isIconRight={true}
-          variantFullComponent="ml-5 py-2 px-2 lg:py-1 lg:pl-5 lg:pr-3 rounded-full border md:border-2 border-primary-00 md:text-sm text-primary-00 stroke-primary-00 hover:bg-neutral-05 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light"
-          variantButton="gap-0 lg:gap-1"
+          variantFullComponent="ml-5 py-2 px-2 lg:py-1 lg:pl-5 lg:pr-3 rounded-full border md:border-2 border-primary-00 md:text-sm text-primary-00 stroke-primary-00 hover:bg-neutral-05 hover:text-secondary-20-dark hover:stroke-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light cursor-pointer"
+          variantButton="gap-0 lg:gap-1 cursor-pointer"
           variantLabel="label-1 text-14"
           variantIcon="h-4 w-4"
           type="button"
-          href=""
         />
       </div>
 
-      <!-- Mobile menu button -->
+      <!-- Mobile menu button - TO UPDATE -->
       <div class="md:hidden">
         <button id="openMenu">
           <svg
@@ -318,11 +295,11 @@ const LogoVestaLargeLightModeImagePath =
   </div>
 </nav>
 
-<!-- Mobile menu Background -->
+<!-- Mobile menu Background - TO UPDATE -->
 <div id="menuBg" class="bg-opacity-50 fixed inset-0 hidden bg-primary-00 z-10">
 </div>
 
-<!-- Mobile menu -->
+<!-- Mobile menu - TO UPDATE -->
 <div
   id="mobileMenu"
   class="fixed top-0 right-0 z-50 h-full w-76 translate-x-full transform bg-bg-primary-light shadow-lg transition-transform duration-300 ease-in-out"
@@ -398,7 +375,7 @@ const LogoVestaLargeLightModeImagePath =
         type="button"
         class="block hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
       >
-        Vesta Partner Program
+        Zigzag Partner Program
       </button>
     </div>
 
@@ -431,18 +408,18 @@ const LogoVestaLargeLightModeImagePath =
         <a
           href="#"
           class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-          >Academia VESTA</a
+          >Academia ZIGZAG</a
         >
       </div>
     </div>
 
-    <!-- Sobre Vesta Security Dropdown (Mobile) -->
+    <!-- Sobre Zigzag Security Dropdown (Mobile) -->
     <div>
       <button
-        id="dropdownBtnMobileVestaSecurity"
+        id="dropdownBtnMobileZigzagSecurity"
         class="w-full flex justify-between items-center hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
       >
-        Sobre Vesta Security
+        Sobre Zigzag Security
         <svg
           class="w-4 h-4"
           fill="none"
@@ -457,7 +434,7 @@ const LogoVestaLargeLightModeImagePath =
         </svg>
       </button>
       <div
-        id="dropdownMenuMobileVestaSecurity"
+        id="dropdownMenuMobileZigzagSecurity"
         class="hidden pl-4 space-y-4 mt-3"
       >
         <a
@@ -468,7 +445,7 @@ const LogoVestaLargeLightModeImagePath =
         <a
           href="#"
           class="block text-sm hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light"
-          >VESTA Partner Program</a
+          >ZIGZAG Partner Program</a
         >
       </div>
     </div>
@@ -487,8 +464,86 @@ const LogoVestaLargeLightModeImagePath =
 </div>
 
 <script>
-  //****************************************************** Mobile  *************************************/
-  // Mobile Menu toggle
+  document
+    .getElementById("navigation-radio-alarm-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma vía radio' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-battery-powered-alarm-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma a pilas' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-hybrid-alarm-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma híbrida' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-medical-alarm-serie-mobile-pro-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma médica Serie Mobile Pro' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-medical-alarm-mx-series-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma médica Serie MX' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-medical-alarm-gx-series-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Alarma médica Serie GX' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-zigzag-home-video-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Zigzag Home Video' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-zigzag-advanced-video-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Zigzag Advance Video' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-all-products-btn")
+    ?.addEventListener("click", () => {
+      // alert("Botón 'Todos los productos' pulsado! Continuará...");
+      location.href = `/products`;
+    });
+  document
+    .getElementById("navigation-news-blog-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Blog de noticias' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-zigzag-academy-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Academia Zigzag' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-about-us-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Acerca de nosotros' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-partner-program-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Zigzag Partner Program' pulsado! Continuará...");
+    });
+  document
+    .getElementById("navigation-buy-zigzag-btn")
+    ?.addEventListener("click", () => {
+      alert("Botón 'Comprar Zigzag' pulsado! Continuará...");
+    });
+
+  // /* Event listener on #buy-zigzag-btn*/
+  // const buyZigzagBtn = document.querySelector("#buy-zigzag-btn");
+  // buyZigzagBtn!.addEventListener("click", () => {
+  //   console.log("Hello, on client from #buy-zigzag-btn!");
+  // });
+
+  //****************************************************** Mobile  - TO UPDATE *************************************/
+  // Mobile Menu toggle - TO UPDATE
   // Typescript also has a non-null assertion that you can use when you are sure
   // that the value is never null by adding the ! operator to the end of your statement
   const openBtn: HTMLElement = document.querySelector("#openMenu")!;
@@ -550,15 +605,15 @@ const LogoVestaLargeLightModeImagePath =
   });
 
   // Mobile Noticias y eventos dropdown toggle onclick
-  const btnDdpMobileVestaSecurity = document.getElementById(
-    "dropdownBtnMobileVestaSecurity"
+  const btnDdpMobileZigzagSecurity = document.getElementById(
+    "dropdownBtnMobileZigzagSecurity"
   )!;
-  const menuDdpMobileVestaSecurity = document.getElementById(
-    "dropdownMenuMobileVestaSecurity"
+  const menuDdpMobileZigzagSecurity = document.getElementById(
+    "dropdownMenuMobileZigzagSecurity"
   )!;
 
-  btnDdpMobileVestaSecurity.addEventListener("click", () => {
-    menuDdpMobileVestaSecurity.classList.toggle("hidden");
+  btnDdpMobileZigzagSecurity.addEventListener("click", () => {
+    menuDdpMobileZigzagSecurity.classList.toggle("hidden");
   });
 
   // Close if clicked outside
@@ -571,16 +626,10 @@ const LogoVestaLargeLightModeImagePath =
     }
 
     if (
-      !btnDdpMobileVestaSecurity.contains(event.target) &&
-      !menuDdpMobileVestaSecurity.contains(event.target)
+      !btnDdpMobileZigzagSecurity.contains(event.target) &&
+      !menuDdpMobileZigzagSecurity.contains(event.target)
     ) {
-      menuDdpMobileVestaSecurity.classList.add("hidden");
+      menuDdpMobileZigzagSecurity.classList.add("hidden");
     }
-  });
-
-  /* Event listener on #buy-vesta-btn*/
-  const buyVestaBtn = document.querySelector("#buy-vesta-btn");
-  buyVestaBtn!.addEventListener("click", () => {
-    console.log("Hello, on client from #buy-vesta-btn!");
   });
 </script>

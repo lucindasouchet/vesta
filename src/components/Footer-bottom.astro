@@ -1,14 +1,10 @@
 ---
-import LanguageDropdownComponent from "./LanguageDropdown.astro";
 import LabelComponent from "./core/Label.astro";
 import LinkComponent from "./core/Link.astro";
-
-// import i18next from "../i18n.old.ts";
-// const { t } = i18next;
-
 import { initI18n } from "../i18n/i18n.ts";
 import { useLang } from "../helpers/context.ts";
 import { getLocalizedPaths } from "../helpers/utils.ts";
+import LanguageSelector from "./core/LanguageSelector.astro";
 
 export async function getStaticPaths() {
   return getLocalizedPaths();
@@ -17,19 +13,16 @@ export async function getStaticPaths() {
 const lang = useLang(Astro);
 const i18n = await initI18n(lang);
 const t = i18n.t.bind(i18n);
-
-const supportedLangs = ["en", "fr", "es"];
-const langNames = { en: "English", fr: "Français", es: "Español" };
 ---
 
 <div
   class="flex flex-col md:flex-row items-center justify-between bg-primary-60-dark px-6 lg:px-8 xl:px-12 pt-6 pb-3 2xl:px-24 2xl:pt-12 2xl:pb-6 text-xs text-white"
 >
   <!-- Left -->
-  <div class="flex flex-col justify-left text-center">
+  <div class="flex flex-col justify-left text-center md:text-left">
     <LabelComponent
       id="copyright-label"
-      variantLabel="label-3 text-12 sm:text-12 md:text-14 text-center md:text-left"
+      variantLabel="label-3 text-12 sm:text-12 md:text-14"
       text={t("footer.copyright")}
     />
     <div
@@ -38,67 +31,60 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
       <LinkComponent
         id="privacy-policy-link"
         variantLink="caption text-10 md:text-12 text-neutral-05 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-        text={t("footer.privacy_policy")}
+        label={t("footer.privacy_policy")}
         href="#"
       />
       <span class="label-3 hidden md:inline">|</span>
       <LinkComponent
         id="cookie-policy-link"
         variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-        text={t("footer.cookie_policy")}
+        label={t("footer.cookie_policy")}
         href="#"
       />
       <span class="label-3 hidden md:inline">|</span>
       <LinkComponent
         id="cookie-settings-link"
         variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-        text={t("footer.cookie_settings")}
+        label={t("footer.cookie_settings")}
         href="#"
       />
       <span class="label-3 hidden md:inline">|</span>
       <LinkComponent
         id="legal-notice-link"
         variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-        text={t("footer.legal_notice")}
+        label={t("footer.legal_notice")}
         href="#"
       />
       <span class="label-3 hidden md:inline">|</span>
       <LinkComponent
         id="smartHomeSec-privacy-policy-link"
         variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-        text={t("footer.smartHomeSec_privacy_policy")}
+        label={t("footer.smartHomeSec_privacy_policy")}
         href="#"
       />
       <span class="label-3 hidden md:inline">|</span>
       <LinkComponent
         id="medAlert-shs-privacy-policy-link"
         variantLink="caption text-10 md:text-12 hover:underline sm:mb-2 mb-3 md:mb-0 focus:outline-none focus:text-primary-10-light"
-        text={t("footer.medAlert_shs_privacy_policy")}
+        label={t("footer.medAlert_shs_privacy_policy")}
         href="#"
       />
     </div>
   </div>
-  <div>
-      <!-- language selector -->
-      <div class="mx-2 my-0 md:my-4 items-center gap-4 px-6 py-0 md:py-4 hover:text-secondary-00 focus:outline-none focus:text-primary-10-light focus:border-primary-10-light">
-        <select
-          id="lang-select-footer"
-          class="px-1 py-0 md:px-2 md:py-1 drop-up"
-          onchange="location = this.value"
-        >
-          {
-            supportedLangs.map((l) => (
-              <option value={`/${l}/`} selected={l === lang} class="bg-neutral-05 text-black">
-                {langNames[l as keyof typeof langNames]}
-              </option>
-            ))
-          }
-        </select>
-      </div>
-  </div>
 
-  <!-- HOVER Footer Language selector - Dropdown Wrapper (Desktop) -->
-  <!-- <div class="relative group z-10">
+  <!-- language dropdown selector -->
+  <LanguageSelector
+    id="footer-bottom-lang-selector"
+    hasLabel="false"
+    lang={lang}
+    variantFullComponent="gap-4 mx-4 mt-2 md:mt-0 cursor-pointer"
+    variantSelect="px-1 py-0 md:px-2 md:py-1 drop-up text-12 cursor-pointer hover:text-secondary-00 focus:outline-none focus:text-primary-10-light focus:border-primary-10-light"
+    variantOption="bg-neutral-05 text-black cursor-pointer"
+  />
+</div>
+
+<!-- HOVER Footer Language selector - Dropdown Wrapper (Desktop) - to test on current version -->
+<!-- <div class="relative group z-10">
         <button
             id="desktop-footer-language-selector"
             class="items-center px-6 py-4 hover:text-secondary-20-dark focus:outline-none focus:text-primary-10-light focus:border-primary-10-light hidden md:flex"
@@ -137,10 +123,10 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
         </div>
     </div> -->
 
-  <!-- <LanguageDropdownComponent id="languageDdlFooter" name="languageDdlFooter" /> -->
+<!-- <LanguageDropdownComponent id="languageDdlFooter" name="languageDdlFooter" /> -->
 
-  <!-- ON CLICK Footer Language selector - Dropdown Wrapper (Mobile) -->
-  <!-- <div class="relative inline-block text-left mt-3 md:hidden">
+<!-- ON CLICK Footer Language selector - Dropdown Wrapper (Mobile) - to test on current version -->
+<!-- <div class="relative inline-block text-left mt-3 md:hidden">
         <button
             id="dropdownBtnFooterLanguageMobile"
             class="inline-flex cursor-pointer items-center hover:underline"
@@ -179,9 +165,15 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
             >
         </div>
     </div> -->
-</div>
 
-<!-- scripts used with the dd language selector -->
+<style>
+  .drop-up {
+    top: auto;
+    bottom: 100%;
+  }
+</style>
+
+<!-- scripts used with the dd language selector - to test on current version -->
 <!-- <script>
     // Footer Language dropdown toggle onclick
     const btnDdpFooterLanguageMobile = document.getElementById(
@@ -205,10 +197,3 @@ const langNames = { en: "English", fr: "Français", es: "Español" };
         }
     });
 </script> -->
-
-<style>
-  .drop-up {
-  top: auto;
-  bottom: 100%;
-}
-</script>

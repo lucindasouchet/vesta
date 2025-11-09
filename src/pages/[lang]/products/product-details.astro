@@ -1,0 +1,28 @@
+---
+import ProductDetailsComponent from "../../../components/ProductDetails.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+// import { initI18n } from "../i18n/i18n.js";
+import { getLocalizedPaths } from "../../../helpers/utils.ts";
+import { useLang } from "../../../helpers/context.ts";
+
+export async function getStaticPaths() {
+  return (
+    getLocalizedPaths()
+  );
+  // getLocalizedPaths() && getProductsArray
+}
+
+const lang = useLang(Astro);
+// const i18n = await initI18n(lang);
+// const t = i18n.t.bind(i18n);
+// const meta = t("product.meta", { returnObjects: true });
+
+// let p = useProd(Astro);
+// const { product } = Astro.props;
+---
+
+<BaseLayout lang={lang}>
+  <!-- meta={meta}  -->
+  <ProductDetailsComponent lang={lang} />
+  <!-- product={product} -->
+</BaseLayout>
